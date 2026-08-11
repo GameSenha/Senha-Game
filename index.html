@@ -615,11 +615,1125 @@ function adicionarHistorico(numero, resultado) {
 
     if (tentativas === 1) {
         historico.innerHTML = "";
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Senha</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #101827;
+    color: white;
+    min-height: 100vh;
+}
+
+.app {
+    width: 100%;
+    max-width: 430px;
+    margin: auto;
+    padding: 25px 18px 40px;
+}
+
+.logo {
+    text-align: center;
+    font-size: 42px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #aeb7c7;
+    margin: 8px 0 25px;
+}
+
+.card {
+    background: #202b3d;
+    border-radius: 22px;
+    padding: 22px;
+    margin-bottom: 18px;
+}
+
+button {
+    width: 100%;
+    border: none;
+    border-radius: 13px;
+    padding: 16px;
+    margin-top: 10px;
+    font-size: 17px;
+    font-weight: bold;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.secondary {
+    background: #3b4659;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* =========================
+   SENHA
+========================= */
+
+.digits {
+    display: flex;
+    justify-content: center;
+    gap: 9px;
+    margin: 20px 0;
+}
+
+.digit {
+    width: 58px;
+    height: 68px;
+    border-radius: 13px;
+    border: 2px solid #536075;
+    background: #101827;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.keyboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.key {
+    margin: 0;
+    padding: 15px 5px;
+    background: #3b4659;
+}
+
+.message {
+    text-align: center;
+    color: #cbd5e1;
+    margin-top: 15px;
+    min-height: 22px;
+}
+
+
+/* =========================
+   JOGO
+========================= */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.status {
+    color: #cbd5e1;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.timer {
+    font-size: 32px;
+    font-weight: bold;
+    color: #60a5fa;
+    min-width: 55px;
+    text-align: center;
+}
+
+.timer.warning {
+    color: #facc15;
+}
+
+.timer.danger {
+    color: #ef4444;
+}
+
+
+.guess-display {
+    display: flex;
+    justify-content: center;
+    gap: 9px;
+    margin: 20px 0;
+}
+
+.guess-digit {
+    width: 55px;
+    height: 62px;
+    border-radius: 12px;
+    border: 2px solid #536075;
+    background: #101827;
+    color: white;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 58px;
+}
+
+
+.history-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.history-item {
+    background: #111a29;
+    border-radius: 12px;
+    padding: 13px;
+    margin-top: 8px;
+}
+
+.history-guess {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+.result {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #cbd5e1;
+}
+
+.green {
+    color: #4ade80;
+}
+
+.yellow {
+    color: #facc15;
+}
+
+
+/* =========================
+   VITÓRIA
+========================= */
+
+.win {
+    text-align: center;
+}
+
+.win-icon {
+    font-size: 70px;
+}
+
+.win h2 {
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+.win p {
+    color: #cbd5e1;
+}
+
+
+/* =========================
+   INFO DO TURNO
+========================= */
+
+.turn-info {
+    text-align: center;
+    color: #9ca3af;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="app">
+
+
+<!-- ==================================================
+     TELA INICIAL
+================================================== -->
+
+<div id="home">
+
+    <div class="logo">
+        🔐 SENHA
+    </div>
+
+    <div class="subtitle">
+        Descubra a senha antes do adversário.
+    </div>
+
+    <div class="card">
+
+        <button onclick="iniciarCriacaoSenha()">
+            JOGAR
+        </button>
+
+        <button
+            class="secondary"
+            onclick="alert('O modo online será ativado em breve!')">
+
+            JOGAR ONLINE
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- ==================================================
+     CRIAR SENHA
+================================================== -->
+
+<div id="senhaScreen" class="hidden">
+
+    <div class="logo">
+        🔐
+    </div>
+
+    <div class="subtitle">
+        Crie sua senha secreta
+    </div>
+
+    <div class="card">
+
+        <p style="text-align:center;">
+            Escolha 4 números diferentes.
+        </p>
+
+        <div class="digits">
+
+            <input
+                class="digit"
+                id="s1"
+                readonly>
+
+            <input
+                class="digit"
+                id="s2"
+                readonly>
+
+            <input
+                class="digit"
+                id="s3"
+                readonly>
+
+            <input
+                class="digit"
+                id="s4"
+                readonly>
+
+        </div>
+
+
+        <div class="keyboard">
+
+            <button
+                class="key"
+                onclick="digitarSenha('1')">
+                1
+            </button>
+
+            <button
+                class="key"
+                onclick="digitarSenha('2')">
+                2
+            </button>
+
+            <button
+                class="key"
+                onclick="digitarSenha('3')">
+                3
+            </button>
+
+
+            <button
+                class="key"
+                onclick="digitarSenha('4')">
+                4
+            </button>
+
+            <button
+                class="key"
+                onclick="digitarSenha('5')">
+                5
+            </button>
+
+            <button
+                class="key"
+                onclick="digitarSenha('6')">
+                6
+            </button>
+
+
+            <button
+                class="key"
+                onclick="digitarSenha('7')">
+                7
+            </button>
+
+            <button
+                class="key"
+                onclick="digitarSenha('8')">
+                8
+            </button>
+
+            <button
+                class="key"
+                onclick="digitarSenha('9')">
+                9
+            </button>
+
+
+            <button
+                class="key"
+                onclick="apagarSenha()">
+                ⌫
+            </button>
+
+            <button
+                class="key"
+                onclick="digitarSenha('0')">
+                0
+            </button>
+
+            <button
+                class="key"
+                onclick="confirmarSenha()">
+                ✓
+            </button>
+
+        </div>
+
+
+        <div
+            id="senhaMensagem"
+            class="message">
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ==================================================
+     JOGO
+================================================== -->
+
+<div id="gameScreen" class="hidden">
+
+
+    <div class="topbar">
+
+        <div>
+
+            <strong>
+                🎯 SUA VEZ
+            </strong>
+
+            <div class="status">
+                Descubra a senha
+            </div>
+
+        </div>
+
+
+        <div
+            id="timer"
+            class="timer">
+
+            30
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <p style="text-align:center;">
+            Você tem 30 segundos para esta tentativa.
+        </p>
+
+
+        <div class="guess-display">
+
+            <div
+                class="guess-digit"
+                id="g1">
+            </div>
+
+            <div
+                class="guess-digit"
+                id="g2">
+            </div>
+
+            <div
+                class="guess-digit"
+                id="g3">
+            </div>
+
+            <div
+                class="guess-digit"
+                id="g4">
+            </div>
+
+        </div>
+
+
+
+        <div class="keyboard">
+
+
+            <button
+                class="key"
+                onclick="digitarChute('1')">
+                1
+            </button>
+
+            <button
+                class="key"
+                onclick="digitarChute('2')">
+                2
+            </button>
+
+            <button
+                class="key"
+                onclick="digitarChute('3')">
+                3
+            </button>
+
+
+            <button
+                class="key"
+                onclick="digitarChute('4')">
+                4
+            </button>
+
+            <button
+                class="key"
+                onclick="digitarChute('5')">
+                5
+            </button>
+
+            <button
+                class="key"
+                onclick="digitarChute('6')">
+                6
+            </button>
+
+
+            <button
+                class="key"
+                onclick="digitarChute('7')">
+                7
+            </button>
+
+            <button
+                class="key"
+                onclick="digitarChute('8')">
+                8
+            </button>
+
+            <button
+                class="key"
+                onclick="digitarChute('9')">
+                9
+            </button>
+
+
+            <button
+                class="key"
+                onclick="apagarChute()">
+                ⌫
+            </button>
+
+            <button
+                class="key"
+                onclick="digitarChute('0')">
+                0
+            </button>
+
+            <button
+                class="key"
+                onclick="confirmarChute()">
+                ✓
+            </button>
+
+        </div>
+
+
+        <div
+            id="chuteMensagem"
+            class="message">
+        </div>
+
+
+        <div class="turn-info">
+            ⏱️ O tempo reinicia a cada nova tentativa.
+        </div>
+
+    </div>
+
+
+
+    <div class="card">
+
+        <div class="history-title">
+            📋 Tentativas
+        </div>
+
+
+        <div id="historico">
+
+            <p
+                style="
+                color:#9ca3af;
+                text-align:center;
+                ">
+
+                Nenhuma tentativa ainda.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ==================================================
+     VITÓRIA
+================================================== -->
+
+<div id="winScreen" class="hidden">
+
+    <div class="card win">
+
+        <div class="win-icon">
+            🏆
+        </div>
+
+        <h2>
+            Você venceu!
+        </h2>
+
+        <p id="winMessage">
+        </p>
+
+
+        <button onclick="novoJogo()">
+            JOGAR NOVAMENTE
+        </button>
+
+
+        <button
+            class="secondary"
+            onclick="voltarInicio()">
+
+            VOLTAR AO INÍCIO
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+
+/* ==================================================
+   VARIÁVEIS DO JOGO
+================================================== */
+
+let senha = "";
+
+let chute = "";
+
+let tentativas = 0;
+
+let tempo = 30;
+
+let intervalo = null;
+
+
+/* ==================================================
+   CONTROLE DAS TELAS
+================================================== */
+
+function esconderTodas() {
+
+    document
+        .getElementById("home")
+        .classList
+        .add("hidden");
+
+    document
+        .getElementById("senhaScreen")
+        .classList
+        .add("hidden");
+
+    document
+        .getElementById("gameScreen")
+        .classList
+        .add("hidden");
+
+    document
+        .getElementById("winScreen")
+        .classList
+        .add("hidden");
+
+}
+
+
+/* ==================================================
+   COMEÇAR
+================================================== */
+
+function iniciarCriacaoSenha() {
+
+    clearInterval(intervalo);
+
+    senha = "";
+
+    chute = "";
+
+    tentativas = 0;
+
+    tempo = 30;
+
+
+    esconderTodas();
+
+
+    document
+        .getElementById("senhaScreen")
+        .classList
+        .remove("hidden");
+
+
+    atualizarSenha();
+
+}
+
+
+/* ==================================================
+   DIGITAR SENHA
+================================================== */
+
+function digitarSenha(numero) {
+
+    if (senha.length >= 4) {
+        return;
     }
 
-    let item = document.createElement("div");
 
-    item.className = "history-item";
+    if (senha.includes(numero)) {
+
+        document
+            .getElementById("senhaMensagem")
+            .innerText =
+            "⚠️ Os 4 números precisam ser diferentes.";
+
+        return;
+
+    }
+
+
+    senha += numero;
+
+
+    atualizarSenha();
+
+}
+
+
+/* ==================================================
+   ATUALIZAR SENHA NA TELA
+================================================== */
+
+function atualizarSenha() {
+
+    document
+        .getElementById("s1")
+        .value = senha[0] || "";
+
+    document
+        .getElementById("s2")
+        .value = senha[1] || "";
+
+    document
+        .getElementById("s3")
+        .value = senha[2] || "";
+
+    document
+        .getElementById("s4")
+        .value = senha[3] || "";
+
+
+    document
+        .getElementById("senhaMensagem")
+        .innerText = "";
+
+}
+
+
+/* ==================================================
+   APAGAR SENHA
+================================================== */
+
+function apagarSenha() {
+
+    senha = senha.slice(0, -1);
+
+    atualizarSenha();
+
+}
+
+
+/* ==================================================
+   CONFIRMAR SENHA
+================================================== */
+
+function confirmarSenha() {
+
+    if (senha.length !== 4) {
+
+        document
+            .getElementById("senhaMensagem")
+            .innerText =
+            "Escolha exatamente 4 números.";
+
+        return;
+
+    }
+
+
+    iniciarJogo();
+
+}
+
+
+/* ==================================================
+   INICIAR JOGO
+================================================== */
+
+function iniciarJogo() {
+
+    clearInterval(intervalo);
+
+
+    esconderTodas();
+
+
+    document
+        .getElementById("gameScreen")
+        .classList
+        .remove("hidden");
+
+
+    chute = "";
+
+    tentativas = 0;
+
+    tempo = 30;
+
+
+    document
+        .getElementById("historico")
+        .innerHTML =
+        '<p style="color:#9ca3af;text-align:center;">Nenhuma tentativa ainda.</p>';
+
+
+    atualizarChute();
+
+
+    iniciarCronometro();
+
+}
+
+
+/* ==================================================
+   DIGITAR CHUTE
+================================================== */
+
+function digitarChute(numero) {
+
+    if (chute.length >= 4) {
+        return;
+    }
+
+
+    if (chute.includes(numero)) {
+
+        document
+            .getElementById("chuteMensagem")
+            .innerText =
+            "⚠️ Os números precisam ser diferentes.";
+
+        return;
+
+    }
+
+
+    chute += numero;
+
+
+    atualizarChute();
+
+}
+
+
+/* ==================================================
+   ATUALIZAR CHUTE
+================================================== */
+
+function atualizarChute() {
+
+    document
+        .getElementById("g1")
+        .innerText = chute[0] || "";
+
+    document
+        .getElementById("g2")
+        .innerText = chute[1] || "";
+
+    document
+        .getElementById("g3")
+        .innerText = chute[2] || "";
+
+    document
+        .getElementById("g4")
+        .innerText = chute[3] || "";
+
+
+    document
+        .getElementById("chuteMensagem")
+        .innerText = "";
+
+}
+
+
+/* ==================================================
+   APAGAR CHUTE
+================================================== */
+
+function apagarChute() {
+
+    chute = chute.slice(0, -1);
+
+    atualizarChute();
+
+}
+
+
+/* ==================================================
+   CALCULAR RESULTADO
+================================================== */
+
+function calcularResultado(senha, tentativa) {
+
+    let certosLugar = 0;
+
+    let certosFora = 0;
+
+
+    for (let i = 0; i < 4; i++) {
+
+        /*
+         * Primeiro verifica se o número
+         * está exatamente na posição correta.
+         */
+
+        if (tentativa[i] === senha[i]) {
+
+            certosLugar++;
+
+        }
+
+        /*
+         * Se não estiver na posição correta,
+         * verifica se o número existe na senha.
+         */
+
+        else if (senha.includes(tentativa[i])) {
+
+            certosFora++;
+
+        }
+
+    }
+
+
+    return {
+
+        certosLugar: certosLugar,
+
+        certosFora: certosFora
+
+    };
+
+}
+
+
+/* ==================================================
+   CONFIRMAR CHUTE
+================================================== */
+
+function confirmarChute() {
+
+    /*
+     * Não permite enviar menos de
+     * quatro números.
+     */
+
+    if (chute.length !== 4) {
+
+        document
+            .getElementById("chuteMensagem")
+            .innerText =
+            "Digite 4 números.";
+
+        return;
+
+    }
+
+
+    /*
+     * Conta a tentativa.
+     */
+
+    tentativas++;
+
+
+    /*
+     * Calcula o resultado.
+     */
+
+    let resultado =
+        calcularResultado(
+            senha,
+            chute
+        );
+
+
+    /*
+     * Adiciona ao histórico.
+     */
+
+    adicionarHistorico(
+        chute,
+        resultado
+    );
+
+
+    /*
+     * Se os quatro estiverem
+     * na posição correta,
+     * o jogador venceu.
+     */
+
+    if (
+        resultado.certosLugar === 4
+    ) {
+
+        vencer();
+
+        return;
+
+    }
+
+
+    /*
+     * Limpa o chute atual.
+     */
+
+    chute = "";
+
+
+    atualizarChute();
+
+
+    /*
+     * IMPORTANTE:
+     *
+     * Cada nova tentativa recebe
+     * um novo período de 30 segundos.
+     */
+
+    iniciarCronometro();
+
+}
+
+
+/* ==================================================
+   HISTÓRICO
+================================================== */
+
+function adicionarHistorico(
+    numero,
+    resultado
+) {
+
+    let historico =
+        document.getElementById(
+            "historico"
+        );
+
+
+    /*
+     * Remove a mensagem
+     * "Nenhuma tentativa ainda"
+     * na primeira tentativa.
+     */
+
+    if (tentativas === 1) {
+
+        historico.innerHTML = "";
+
+    }
+
+
+    let item =
+        document.createElement(
+            "div"
+        );
+
+
+    item.className =
+        "history-item";
+
 
     item.innerHTML = `
 
@@ -630,93 +1744,254 @@ function adicionarHistorico(numero, resultado) {
         <div class="result">
 
             <span class="green">
-                🟢 ${resultado.certosLugar} certo(s) no lugar
+                🟢 ${resultado.certosLugar}
+                certo(s) no lugar
             </span>
 
             <br>
 
             <span class="yellow">
-                🟡 ${resultado.certosFora} certo(s) fora do lugar
+                🟡 ${resultado.certosFora}
+                certo(s) fora do lugar
             </span>
 
         </div>
 
     `;
 
+
+    /*
+     * Coloca a tentativa mais recente
+     * no topo.
+     */
+
     historico.prepend(item);
 
 }
 
 
-/* ================= CRONÔMETRO ================= */
+/* ==================================================
+   CRONÔMETRO
+================================================== */
 
 function iniciarCronometro() {
 
+    /*
+     * Para qualquer cronômetro anterior.
+     */
+
     clearInterval(intervalo);
 
-    intervalo = setInterval(function() {
 
-        tempo--;
+    /*
+     * Cada tentativa começa
+     * novamente com 30 segundos.
+     */
 
-        document.getElementById("timer").innerText = tempo;
+    tempo = 30;
 
-        if (tempo <= 0) {
 
-            clearInterval(intervalo);
+    atualizarTimer();
 
-            alert("⏰ Tempo esgotado!");
 
-            novoJogo();
+    /*
+     * Começa a contagem.
+     */
 
-        }
+    intervalo =
+        setInterval(function() {
 
-    }, 1000);
+            tempo--;
+
+
+            atualizarTimer();
+
+
+            /*
+             * Quando chega a zero:
+             */
+
+            if (tempo <= 0) {
+
+                clearInterval(intervalo);
+
+
+                /*
+                 * A tentativa atual é perdida.
+                 */
+
+                chute = "";
+
+
+                atualizarChute();
+
+
+                /*
+                 * Informa ao jogador.
+                 */
+
+                document
+                    .getElementById(
+                        "chuteMensagem"
+                    )
+                    .innerText =
+                    "⏰ Tempo esgotado! " +
+                    "Você perdeu esta tentativa.";
+
+
+                /*
+                 * Inicia automaticamente
+                 * uma nova tentativa com
+                 * mais 30 segundos.
+                 */
+
+                setTimeout(function() {
+
+                    document
+                        .getElementById(
+                            "chuteMensagem"
+                        )
+                        .innerText =
+                        "Nova tentativa! Você tem 30 segundos.";
+
+                    iniciarCronometro();
+
+                }, 1000);
+
+            }
+
+        }, 1000);
 
 }
 
 
-/* ================= VITÓRIA ================= */
+/* ==================================================
+   ATUALIZAR TIMER
+================================================== */
+
+function atualizarTimer() {
+
+    let timer =
+        document.getElementById(
+            "timer"
+        );
+
+
+    timer.innerText =
+        tempo;
+
+
+    /*
+     * Remove estados anteriores.
+     */
+
+    timer.classList.remove(
+        "warning",
+        "danger"
+    );
+
+
+    /*
+     * Menos de 10 segundos:
+     * fica vermelho.
+     */
+
+    if (tempo <= 10) {
+
+        timer.classList.add(
+            "danger"
+        );
+
+    }
+
+    /*
+     * Entre 11 e 15 segundos:
+     * fica amarelo.
+     */
+
+    else if (tempo <= 15) {
+
+        timer.classList.add(
+            "warning"
+        );
+
+    }
+
+}
+
+
+/* ==================================================
+   VITÓRIA
+================================================== */
 
 function vencer() {
 
     clearInterval(intervalo);
 
+
     esconderTodas();
 
-    document.getElementById("winScreen").classList.remove("hidden");
 
-    document.getElementById("winMessage").innerText =
-    `Você descobriu a senha em ${tentativas} tentativa(s)!`;
+    document
+        .getElementById("winScreen")
+        .classList
+        .remove("hidden");
+
+
+    document
+        .getElementById("winMessage")
+        .innerText =
+        "Você descobriu a senha em " +
+        tentativas +
+        " tentativa(s)!";
 
 }
 
 
-/* ================= NOVO JOGO ================= */
+/* ==================================================
+   JOGAR NOVAMENTE
+================================================== */
 
 function novoJogo() {
 
     clearInterval(intervalo);
 
+
     senha = "";
+
     chute = "";
+
     tentativas = 0;
+
+    tempo = 30;
+
 
     iniciarCriacaoSenha();
 
 }
 
 
+/* ==================================================
+   VOLTAR AO INÍCIO
+================================================== */
+
 function voltarInicio() {
 
     clearInterval(intervalo);
 
+
     esconderTodas();
 
-    document.getElementById("home").classList.remove("hidden");
+
+    document
+        .getElementById("home")
+        .classList
+        .remove("hidden");
 
 }
 
 </script>
 
 </body>
+
 </html>
