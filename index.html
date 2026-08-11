@@ -9,849 +9,439 @@
 
 <title>SENHA</title>
 
-
 <style>
-
-/* ==================================================
-   CONFIGURAÇÕES GERAIS
-================================================== */
 
 * {
     box-sizing: border-box;
 }
 
 body {
-
     margin: 0;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    background:
-        linear-gradient(
-            160deg,
-            #0f172a,
-            #111827,
-            #172554
-        );
-
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(160deg, #0f172a, #111827, #172554);
     color: white;
-
     min-height: 100vh;
 }
-
 
 .app {
-
     width: 100%;
-
     max-width: 440px;
-
     min-height: 100vh;
-
     margin: auto;
-
-    padding:
-        25px
-        18px
-        40px;
-
+    padding: 25px 18px 40px;
 }
-
-
-/* ==================================================
-   TELAS
-================================================== */
 
 .screen {
-
     width: 100%;
-
 }
-
 
 .hidden {
-
     display: none !important;
-
 }
 
 
-/* ==================================================
+/* =========================
    LOGO
-================================================== */
+========================= */
 
 .logo {
-
     text-align: center;
-
     font-size: 48px;
-
     font-weight: 900;
-
     letter-spacing: 2px;
-
     margin-top: 20px;
-
 }
-
 
 .logo-icon {
-
     font-size: 55px;
-
     display: block;
-
     margin-bottom: 5px;
-
 }
-
 
 .subtitle {
-
     text-align: center;
-
     color: #aab4c5;
-
     font-size: 15px;
-
     margin-top: 8px;
-
     margin-bottom: 30px;
-
 }
 
 
-/* ==================================================
+/* =========================
    CARDS
-================================================== */
+========================= */
 
 .card {
-
-    background:
-        rgba(
-            31,
-            41,
-            55,
-            0.92
-        );
-
-    border:
-        1px solid
-        rgba(
-            255,
-            255,
-            255,
-            0.06
-        );
-
+    background: rgba(31, 41, 55, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 22px;
-
     padding: 20px;
-
     margin-bottom: 16px;
-
-    box-shadow:
-        0 12px 35px
-        rgba(
-            0,
-            0,
-            0,
-            0.22
-        );
-
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.22);
 }
 
 
-/* ==================================================
+/* =========================
    BOTÕES
-================================================== */
+========================= */
 
 button {
-
     width: 100%;
-
     border: none;
-
     border-radius: 15px;
-
     padding: 16px;
-
     margin-top: 10px;
-
     font-size: 16px;
-
     font-weight: 800;
-
     color: white;
-
-    background:
-        #2563eb;
-
+    background: #2563eb;
     cursor: pointer;
-
-    transition:
-        transform .15s,
-        opacity .15s;
-
 }
-
 
 button:active {
-
-    transform:
-        scale(0.98);
-
+    transform: scale(0.98);
 }
-
 
 button:hover {
-
-    opacity: .92;
-
+    opacity: 0.92;
 }
-
 
 .button-secondary {
-
-    background:
-        #374151;
-
+    background: #374151;
 }
-
 
 .button-disabled {
-
-    background:
-        #1f2937;
-
-    color:
-        #6b7280;
-
-    border:
-        1px solid
-        #374151;
-
-    cursor:
-        not-allowed;
-
+    background: #1f2937;
+    color: #6b7280;
+    border: 1px solid #374151;
+    cursor: not-allowed;
 }
 
 
-/* ==================================================
-   BOTÕES DO MENU PRINCIPAL
-================================================== */
+/* =========================
+   MENU PRINCIPAL
+========================= */
 
 .menu-button {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    text-align:
-        left;
-
-    gap:
-        15px;
-
-    padding:
-        18px;
-
-    margin-top:
-        12px;
-
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 15px;
+    padding: 18px;
+    margin-top: 12px;
 }
-
 
 .menu-icon {
-
-    font-size:
-        30px;
-
-    width:
-        42px;
-
-    text-align:
-        center;
-
+    font-size: 30px;
+    width: 42px;
+    text-align: center;
 }
-
 
 .menu-text {
-
-    flex:
-        1;
-
+    flex: 1;
 }
-
 
 .menu-title {
-
-    font-size:
-        17px;
-
-    font-weight:
-        800;
-
+    font-size: 17px;
+    font-weight: 800;
 }
-
 
 .menu-description {
-
-    font-size:
-        12px;
-
-    color:
-        #9ca3af;
-
-    margin-top:
-        4px;
-
+    font-size: 12px;
+    color: #9ca3af;
+    margin-top: 4px;
 }
 
 
-/* ==================================================
+/* =========================
    TÍTULOS
-================================================== */
+========================= */
 
 .page-title {
-
-    text-align:
-        center;
-
-    font-size:
-        27px;
-
-    font-weight:
-        900;
-
-    margin:
-        15px 0 8px;
-
+    text-align: center;
+    font-size: 27px;
+    font-weight: 900;
+    margin: 15px 0 8px;
 }
-
 
 .page-description {
-
-    text-align:
-        center;
-
-    color:
-        #9ca3af;
-
-    font-size:
-        14px;
-
-    margin-bottom:
-        22px;
-
+    text-align: center;
+    color: #9ca3af;
+    font-size: 14px;
+    margin-bottom: 22px;
 }
 
 
-/* ==================================================
+/* =========================
    OPÇÕES
-================================================== */
+========================= */
 
 .option-title {
-
-    font-size:
-        14px;
-
-    font-weight:
-        800;
-
-    color:
-        #d1d5db;
-
-    margin-top:
-        20px;
-
-    margin-bottom:
-        8px;
-
+    font-size: 14px;
+    font-weight: 800;
+    color: #d1d5db;
+    margin-top: 20px;
+    margin-bottom: 8px;
 }
-
 
 .options {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap:
-        8px;
-
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
 }
-
 
 .option {
-
-    background:
-        #374151;
-
-    border:
-        2px solid
-        transparent;
-
-    border-radius:
-        12px;
-
-    padding:
-        14px 5px;
-
-    text-align:
-        center;
-
-    cursor:
-        pointer;
-
-    font-weight:
-        800;
-
+    background: #374151;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 14px 5px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 800;
 }
-
 
 .option.selected {
-
-    background:
-        #1d4ed8;
-
-    border-color:
-        #60a5fa;
-
+    background: #1d4ed8;
+    border-color: #60a5fa;
 }
-
 
 .option-small {
-
-    font-size:
-        13px;
-
+    font-size: 13px;
 }
 
 
-/* ==================================================
+/* =========================
    SENHA
-================================================== */
+========================= */
 
 .digits {
-
-    display:
-        flex;
-
-    justify-content:
-        center;
-
-    gap:
-        9px;
-
-    margin:
-        20px 0;
-
+    display: flex;
+    justify-content: center;
+    gap: 9px;
+    margin: 20px 0;
 }
-
 
 .digit {
-
-    width:
-        58px;
-
-    height:
-        68px;
-
-    border-radius:
-        13px;
-
-    border:
-        2px solid
-        #536075;
-
-    background:
-        #101827;
-
-    color:
-        white;
-
-    text-align:
-        center;
-
-    font-size:
-        30px;
-
-    font-weight:
-        bold;
-
+    width: 58px;
+    height: 68px;
+    border-radius: 13px;
+    border: 2px solid #536075;
+    background: #101827;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 
-/* ==================================================
+/* =========================
    TECLADO
-================================================== */
+========================= */
 
 .keyboard {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap:
-        8px;
-
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
 }
-
 
 .key {
-
-    margin:
-        0;
-
-    padding:
-        15px 5px;
-
-    background:
-        #374151;
-
-    font-size:
-        18px;
-
+    margin: 0;
+    padding: 15px 5px;
+    background: #374151;
+    font-size: 18px;
 }
-
 
 .message {
-
-    text-align:
-        center;
-
-    color:
-        #cbd5e1;
-
-    margin-top:
-        15px;
-
-    min-height:
-        22px;
-
+    text-align: center;
+    color: #cbd5e1;
+    margin-top: 15px;
+    min-height: 22px;
 }
 
 
-/* ==================================================
+/* =========================
    JOGO
-================================================== */
+========================= */
 
 .topbar {
-
-    display:
-        flex;
-
-    justify-content:
-        space-between;
-
-    align-items:
-        center;
-
-    margin-bottom:
-        15px;
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
 }
-
 
 .status {
-
-    color:
-        #cbd5e1;
-
-    font-size:
-        14px;
-
-    margin-top:
-        5px;
-
+    color: #cbd5e1;
+    font-size: 14px;
+    margin-top: 5px;
 }
-
 
 .timer {
-
-    font-size:
-        32px;
-
-    font-weight:
-        900;
-
-    color:
-        #60a5fa;
-
-    min-width:
-        55px;
-
-    text-align:
-        center;
-
+    font-size: 32px;
+    font-weight: 900;
+    color: #60a5fa;
+    min-width: 55px;
+    text-align: center;
 }
-
 
 .timer.warning {
-
-    color:
-        #facc15;
-
+    color: #facc15;
 }
-
 
 .timer.danger {
-
-    color:
-        #ef4444;
-
+    color: #ef4444;
 }
-
 
 .guess-display {
-
-    display:
-        flex;
-
-    justify-content:
-        center;
-
-    gap:
-        9px;
-
-    margin:
-        20px 0;
-
+    display: flex;
+    justify-content: center;
+    gap: 9px;
+    margin: 20px 0;
 }
-
 
 .guess-digit {
-
-    width:
-        55px;
-
-    height:
-        62px;
-
-    border-radius:
-        12px;
-
-    border:
-        2px solid
-        #536075;
-
-    background:
-        #101827;
-
-    color:
-        white;
-
-    text-align:
-        center;
-
-    font-size:
-        28px;
-
-    font-weight:
-        bold;
-
-    line-height:
-        58px;
-
+    width: 55px;
+    height: 62px;
+    border-radius: 12px;
+    border: 2px solid #536075;
+    background: #101827;
+    color: white;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 58px;
 }
 
 
-/* ==================================================
+/* =========================
    HISTÓRICO
-================================================== */
+========================= */
 
 .history-title {
-
-    font-size:
-        18px;
-
-    font-weight:
-        bold;
-
-    margin-bottom:
-        10px;
-
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
-
 
 .history-item {
-
-    background:
-        #111a29;
-
-    border-radius:
-        12px;
-
-    padding:
-        13px;
-
-    margin-top:
-        8px;
-
+    background: #111a29;
+    border-radius: 12px;
+    padding: 13px;
+    margin-top: 8px;
 }
-
 
 .history-guess {
-
-    font-size:
-        20px;
-
-    font-weight:
-        bold;
-
-    letter-spacing:
-        5px;
-
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 5px;
 }
-
 
 .result {
-
-    margin-top:
-        6px;
-
-    font-size:
-        14px;
-
+    margin-top: 6px;
+    font-size: 14px;
 }
-
 
 .green {
-
-    color:
-        #4ade80;
-
+    color: #4ade80;
 }
-
 
 .yellow {
-
-    color:
-        #facc15;
-
+    color: #facc15;
 }
 
 
-/* ==================================================
-   VITÓRIA
-================================================== */
+/* =========================
+   VITÓRIA / DERROTA
+========================= */
 
 .win {
-
-    text-align:
-        center;
-
+    text-align: center;
 }
-
 
 .win-icon {
-
-    font-size:
-        75px;
-
+    font-size: 75px;
 }
-
 
 .win h2 {
-
-    font-size:
-        30px;
-
-    margin:
-        10px 0;
-
+    font-size: 30px;
+    margin: 10px 0;
 }
-
 
 .win p {
-
-    color:
-        #cbd5e1;
-
+    color: #cbd5e1;
+    line-height: 1.5;
 }
 
 
-/* ==================================================
-   BADGE
-================================================== */
+/* =========================
+   BADGES
+========================= */
 
 .badge {
-
-    display:
-        inline-block;
-
-    padding:
-        5px 9px;
-
-    border-radius:
-        20px;
-
-    font-size:
-        11px;
-
-    font-weight:
-        bold;
-
-    background:
-        #374151;
-
-    color:
-        #9ca3af;
-
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+    background: #374151;
+    color: #9ca3af;
 }
-
 
 .badge-coming {
-
-    background:
-        #292524;
-
-    color:
-        #fbbf24;
-
+    background: #292524;
+    color: #fbbf24;
 }
 
 
-/* ==================================================
+/* =========================
    VOLTAR
-================================================== */
+========================= */
 
 .back-button {
-
-    background:
-        transparent;
-
-    color:
-        #9ca3af;
-
-    border:
-        1px solid
-        #374151;
-
-    margin-bottom:
-        10px;
-
+    background: transparent;
+    color: #9ca3af;
+    border: 1px solid #374151;
+    margin-bottom: 10px;
 }
 
+
+/* =========================
+   DESAFIO BLOQUEADO
+========================= */
+
+.daily-locked {
+    text-align: center;
+}
+
+.daily-locked-icon {
+    font-size: 65px;
+    margin-bottom: 10px;
+}
+
+.daily-attempts {
+    text-align: center;
+    color: #9ca3af;
+    margin-top: 10px;
+}
+
+
+/* =========================
+   TURNO
+========================= */
+
+.turn-info {
+    text-align: center;
+    color: #9ca3af;
+    font-size: 14px;
+    margin-top: 10px;
+}
 
 </style>
 
 </head>
 
 
-
 <body>
-
 
 <div class="app">
 
@@ -860,10 +450,7 @@ button:hover {
      MENU PRINCIPAL
 ================================================== -->
 
-<div
-    id="home"
-    class="screen">
-
+<div id="home" class="screen">
 
     <div class="logo">
 
@@ -875,26 +462,18 @@ button:hover {
 
     </div>
 
-
     <div class="subtitle">
-
         Descubra. Desafie. Vença.
-
     </div>
 
-
-
-    <!-- DESAFIO DIÁRIO -->
 
     <button
         class="menu-button"
         onclick="abrirDesafioDiario()">
 
-
         <div class="menu-icon">
             📅
         </div>
-
 
         <div class="menu-text">
 
@@ -908,22 +487,16 @@ button:hover {
 
         </div>
 
-
     </button>
 
-
-
-    <!-- DUELO ONLINE -->
 
     <button
         class="menu-button"
         onclick="abrirDueloOnline()">
 
-
         <div class="menu-icon">
             ⚔️
         </div>
-
 
         <div class="menu-text">
 
@@ -937,22 +510,16 @@ button:hover {
 
         </div>
 
-
     </button>
 
-
-
-    <!-- DESAFIAR AMIGO -->
 
     <button
         class="menu-button"
         onclick="abrirDesafioAmigo()">
 
-
         <div class="menu-icon">
             👥
         </div>
-
 
         <div class="menu-text">
 
@@ -966,22 +533,16 @@ button:hover {
 
         </div>
 
-
     </button>
 
-
-
-    <!-- TORNEIO -->
 
     <button
         class="menu-button button-disabled"
         onclick="mostrarTorneioBloqueado()">
 
-
         <div class="menu-icon">
             🏆
         </div>
-
 
         <div class="menu-text">
 
@@ -1001,9 +562,7 @@ button:hover {
 
         </div>
 
-
     </button>
-
 
 </div>
 
@@ -1013,10 +572,7 @@ button:hover {
      DESAFIO DIÁRIO
 ================================================== -->
 
-<div
-    id="dailyScreen"
-    class="screen hidden">
-
+<div id="dailyScreen" class="screen hidden">
 
     <button
         class="back-button"
@@ -1028,21 +584,18 @@ button:hover {
 
 
     <div class="page-title">
-
         📅 Desafio Diário
-
     </div>
 
 
     <div class="page-description">
-
         Todos tentam descobrir a mesma senha.
-
     </div>
 
 
-    <div class="card">
-
+    <div
+        id="dailyAvailable"
+        class="card">
 
         <div
             style="
@@ -1083,9 +636,38 @@ button:hover {
 
         </button>
 
-
     </div>
 
+
+    <div
+        id="dailyLocked"
+        class="card daily-locked hidden">
+
+        <div class="daily-locked-icon">
+            🔒
+        </div>
+
+
+        <h2>
+            Desafio concluído
+        </h2>
+
+
+        <p>
+            Você já participou do Desafio Diário de hoje.
+        </p>
+
+
+        <p>
+            Volte amanhã para um novo desafio.
+        </p>
+
+
+        <div class="daily-attempts">
+            Sua participação de hoje já foi registrada.
+        </div>
+
+    </div>
 
 </div>
 
@@ -1095,10 +677,7 @@ button:hover {
      DUELO ONLINE
 ================================================== -->
 
-<div
-    id="onlineScreen"
-    class="screen hidden">
-
+<div id="onlineScreen" class="screen hidden">
 
     <button
         class="back-button"
@@ -1110,21 +689,16 @@ button:hover {
 
 
     <div class="page-title">
-
         ⚔️ Duelo Online
-
     </div>
 
 
     <div class="page-description">
-
         Encontre outro jogador e dispute uma partida.
-
     </div>
 
 
     <div class="card">
-
 
         <div
             style="
@@ -1166,9 +740,7 @@ button:hover {
 
         </button>
 
-
     </div>
-
 
 </div>
 
@@ -1178,10 +750,7 @@ button:hover {
      DESAFIAR AMIGO
 ================================================== -->
 
-<div
-    id="friendScreen"
-    class="screen hidden">
-
+<div id="friendScreen" class="screen hidden">
 
     <button
         class="back-button"
@@ -1193,28 +762,20 @@ button:hover {
 
 
     <div class="page-title">
-
         👥 Desafiar Amigo
-
     </div>
 
 
     <div class="page-description">
-
         Escolha as regras da partida.
-
     </div>
 
 
     <div class="card">
 
 
-        <!-- MELHOR DE -->
-
         <div class="option-title">
-
             Melhor de:
-
         </div>
 
 
@@ -1268,17 +829,11 @@ button:hover {
 
             </div>
 
-
         </div>
 
 
-
-        <!-- TEMPO -->
-
         <div class="option-title">
-
             Tempo por turno:
-
         </div>
 
 
@@ -1314,9 +869,7 @@ button:hover {
 
             </div>
 
-
         </div>
-
 
 
         <div
@@ -1334,7 +887,6 @@ button:hover {
         </div>
 
 
-
         <button
             onclick="criarDesafioAmigo()">
 
@@ -1342,22 +894,17 @@ button:hover {
 
         </button>
 
-
     </div>
-
 
 </div>
 
 
 
 <!-- ==================================================
-     TORNEIO BLOQUEADO
+     TORNEIO
 ================================================== -->
 
-<div
-    id="tournamentScreen"
-    class="screen hidden">
-
+<div id="tournamentScreen" class="screen hidden">
 
     <button
         class="back-button"
@@ -1369,17 +916,13 @@ button:hover {
 
 
     <div class="page-title">
-
         🏆 Torneio
-
     </div>
 
 
-    <div class="card"
-         style="
-         text-align:center;
-         ">
-
+    <div
+        class="card"
+        style="text-align:center;">
 
         <div
             style="
@@ -1392,9 +935,7 @@ button:hover {
 
 
         <h2>
-
             Em breve
-
         </h2>
 
 
@@ -1410,16 +951,13 @@ button:hover {
         </p>
 
 
-        <button
-            class="button-disabled">
+        <button class="button-disabled">
 
             TORNEIO INDISPONÍVEL
 
         </button>
 
-
     </div>
-
 
 </div>
 
@@ -1429,10 +967,7 @@ button:hover {
      CRIAR SENHA
 ================================================== -->
 
-<div
-    id="senhaScreen"
-    class="screen hidden">
-
+<div id="senhaScreen" class="screen hidden">
 
     <button
         class="back-button"
@@ -1444,16 +979,12 @@ button:hover {
 
 
     <div class="page-title">
-
         🔐 Sua senha
-
     </div>
 
 
     <div class="page-description">
-
         Escolha 4 números diferentes.
-
     </div>
 
 
@@ -1462,37 +993,30 @@ button:hover {
 
         <div class="digits">
 
-
             <input
                 class="digit"
                 id="s1"
                 readonly>
-
 
             <input
                 class="digit"
                 id="s2"
                 readonly>
 
-
             <input
                 class="digit"
                 id="s3"
                 readonly>
-
 
             <input
                 class="digit"
                 id="s4"
                 readonly>
 
-
         </div>
 
 
-
         <div class="keyboard">
-
 
             <button
                 class="key"
@@ -1500,13 +1024,11 @@ button:hover {
                 1
             </button>
 
-
             <button
                 class="key"
                 onclick="digitarSenha('2')">
                 2
             </button>
-
 
             <button
                 class="key"
@@ -1514,13 +1036,11 @@ button:hover {
                 3
             </button>
 
-
             <button
                 class="key"
                 onclick="digitarSenha('4')">
                 4
             </button>
-
 
             <button
                 class="key"
@@ -1528,13 +1048,11 @@ button:hover {
                 5
             </button>
 
-
             <button
                 class="key"
                 onclick="digitarSenha('6')">
                 6
             </button>
-
 
             <button
                 class="key"
@@ -1542,13 +1060,11 @@ button:hover {
                 7
             </button>
 
-
             <button
                 class="key"
                 onclick="digitarSenha('8')">
                 8
             </button>
-
 
             <button
                 class="key"
@@ -1556,13 +1072,11 @@ button:hover {
                 9
             </button>
 
-
             <button
                 class="key"
                 onclick="apagarSenha()">
                 ⌫
             </button>
-
 
             <button
                 class="key"
@@ -1570,13 +1084,11 @@ button:hover {
                 0
             </button>
 
-
             <button
                 class="key"
                 onclick="confirmarSenha()">
                 ✓
             </button>
-
 
         </div>
 
@@ -1586,9 +1098,7 @@ button:hover {
             class="message">
         </div>
 
-
     </div>
-
 
 </div>
 
@@ -1598,20 +1108,16 @@ button:hover {
      JOGO
 ================================================== -->
 
-<div
-    id="gameScreen"
-    class="screen hidden">
+<div id="gameScreen" class="screen hidden">
 
 
     <div class="topbar">
-
 
         <div>
 
             <strong>
                 🎯 SUA VEZ
             </strong>
-
 
             <div class="status">
                 Descubra a senha
@@ -1628,9 +1134,7 @@ button:hover {
 
         </div>
 
-
     </div>
-
 
 
     <div class="card">
@@ -1648,37 +1152,30 @@ button:hover {
 
         <div class="guess-display">
 
-
             <div
                 class="guess-digit"
                 id="g1">
             </div>
-
 
             <div
                 class="guess-digit"
                 id="g2">
             </div>
 
-
             <div
                 class="guess-digit"
                 id="g3">
             </div>
-
 
             <div
                 class="guess-digit"
                 id="g4">
             </div>
 
-
         </div>
 
 
-
         <div class="keyboard">
-
 
             <button
                 class="key"
@@ -1686,13 +1183,11 @@ button:hover {
                 1
             </button>
 
-
             <button
                 class="key"
                 onclick="digitarChute('2')">
                 2
             </button>
-
 
             <button
                 class="key"
@@ -1700,13 +1195,11 @@ button:hover {
                 3
             </button>
 
-
             <button
                 class="key"
                 onclick="digitarChute('4')">
                 4
             </button>
-
 
             <button
                 class="key"
@@ -1714,13 +1207,11 @@ button:hover {
                 5
             </button>
 
-
             <button
                 class="key"
                 onclick="digitarChute('6')">
                 6
             </button>
-
 
             <button
                 class="key"
@@ -1728,13 +1219,11 @@ button:hover {
                 7
             </button>
 
-
             <button
                 class="key"
                 onclick="digitarChute('8')">
                 8
             </button>
-
 
             <button
                 class="key"
@@ -1742,13 +1231,11 @@ button:hover {
                 9
             </button>
 
-
             <button
                 class="key"
                 onclick="apagarChute()">
                 ⌫
             </button>
-
 
             <button
                 class="key"
@@ -1756,13 +1243,11 @@ button:hover {
                 0
             </button>
 
-
             <button
                 class="key"
                 onclick="confirmarChute()">
                 ✓
             </button>
-
 
         </div>
 
@@ -1783,23 +1268,17 @@ button:hover {
 
         </div>
 
-
     </div>
-
 
 
     <div class="card">
 
-
         <div class="history-title">
-
             📋 Tentativas
-
         </div>
 
 
         <div id="historico">
-
 
             <p
                 style="
@@ -1811,41 +1290,33 @@ button:hover {
 
             </p>
 
-
         </div>
 
-
     </div>
-
 
 </div>
 
 
 
 <!-- ==================================================
-     VITÓRIA
+     RESULTADO
 ================================================== -->
 
-<div
-    id="winScreen"
-    class="screen hidden">
+<div id="winScreen" class="screen hidden">
 
+    <div class="card win">
 
-    <div
-        class="card win">
-
-
-        <div class="win-icon">
+        <div
+            id="winIcon"
+            class="win-icon">
 
             🏆
 
         </div>
 
 
-        <h2>
-
+        <h2 id="winTitle">
             Você venceu!
-
         </h2>
 
 
@@ -1854,27 +1325,15 @@ button:hover {
 
 
         <button
-            onclick="novoJogo()">
-
-            JOGAR NOVAMENTE
-
-        </button>
-
-
-        <button
-            class="secondary"
             onclick="voltarInicio()">
 
             VOLTAR AO INÍCIO
 
         </button>
 
-
     </div>
 
-
 </div>
-
 
 
 </div>
@@ -1899,29 +1358,106 @@ let tempo = 30;
 let intervalo = null;
 
 
-/*
- * Configurações da partida.
- */
+/* Configurações */
 
 let melhorDe = 3;
 
 let tempoTurno = 30;
 
 
-/*
- * Modo atual.
- */
+/* Modo atual */
 
 let modoAtual = "normal";
 
 
-/*
- * Desafio diário.
- */
+/* Desafio Diário */
 
 let tentativasDiarias = 0;
 
 let senhaDiaria = "";
+
+
+/* ==================================================
+   DATA DO DESAFIO
+================================================== */
+
+function obterDataHoje() {
+
+    let agora = new Date();
+
+    let ano = agora.getFullYear();
+
+    let mes =
+        String(
+            agora.getMonth() + 1
+        ).padStart(2, "0");
+
+    let dia =
+        String(
+            agora.getDate()
+        ).padStart(2, "0");
+
+
+    return (
+        ano +
+        "-" +
+        mes +
+        "-" +
+        dia
+    );
+
+}
+
+
+/* ==================================================
+   CHAVE DO DESAFIO DIÁRIO
+================================================== */
+
+function obterChaveDesafioDiario() {
+
+    return (
+        "senha_desafio_diario_" +
+        obterDataHoje()
+    );
+
+}
+
+
+/* ==================================================
+   VERIFICAR SE JÁ JOGOU
+================================================== */
+
+function desafioDiarioConcluidoHoje() {
+
+    let chave =
+        obterChaveDesafioDiario();
+
+
+    return (
+        localStorage.getItem(
+            chave
+        ) === "concluido"
+    );
+
+}
+
+
+/* ==================================================
+   MARCAR DESAFIO COMO CONCLUÍDO
+================================================== */
+
+function marcarDesafioDiarioConcluido() {
+
+    let chave =
+        obterChaveDesafioDiario();
+
+
+    localStorage.setItem(
+        chave,
+        "concluido"
+    );
+
+}
 
 
 /* ==================================================
@@ -1932,11 +1468,15 @@ function esconderTodas() {
 
     document
         .querySelectorAll(".screen")
-        .forEach(function(screen) {
+        .forEach(
+            function(screen) {
 
-            screen.classList.add("hidden");
+                screen
+                    .classList
+                    .add("hidden");
 
-        });
+            }
+        );
 
 }
 
@@ -1960,22 +1500,6 @@ function voltarInicio() {
 
 
 /* ==================================================
-   TORNEIO
-================================================== */
-
-function mostrarTorneioBloqueado() {
-
-    esconderTodas();
-
-    document
-        .getElementById("tournamentScreen")
-        .classList
-        .remove("hidden");
-
-}
-
-
-/* ==================================================
    DESAFIO DIÁRIO
 ================================================== */
 
@@ -1983,58 +1507,209 @@ function abrirDesafioDiario() {
 
     esconderTodas();
 
+
     document
         .getElementById("dailyScreen")
         .classList
         .remove("hidden");
 
+
+    verificarTelaDesafioDiario();
+
 }
 
+
+/* ==================================================
+   ATUALIZAR TELA DO DESAFIO
+================================================== */
+
+function verificarTelaDesafioDiario() {
+
+    let disponivel =
+        document
+        .getElementById(
+            "dailyAvailable"
+        );
+
+
+    let bloqueado =
+        document
+        .getElementById(
+            "dailyLocked"
+        );
+
+
+    if (
+        desafioDiarioConcluidoHoje()
+    ) {
+
+        disponivel
+            .classList
+            .add("hidden");
+
+
+        bloqueado
+            .classList
+            .remove("hidden");
+
+    }
+
+    else {
+
+        disponivel
+            .classList
+            .remove("hidden");
+
+
+        bloqueado
+            .classList
+            .add("hidden");
+
+    }
+
+}
+
+
+/* ==================================================
+   GERAR SENHA DIÁRIA
+================================================== */
+
+function gerarSenhaDiaria() {
+
+    /*
+     * Nesta fase usamos uma geração
+     * determinística baseada na data.
+     *
+     * Isso garante que todos que
+     * jogarem neste navegador no mesmo
+     * dia recebam a mesma senha.
+     *
+     * Na versão online definitiva,
+     * a senha ficará no servidor.
+     */
+
+
+    let data =
+        obterDataHoje()
+        .replace(/-/g, "");
+
+
+    let numero =
+        parseInt(data, 10);
+
+
+    let numeros = [];
+
+
+    while (
+        numeros.length < 4
+    ) {
+
+        numero =
+            (
+                numero * 9301 +
+                49297
+            ) %
+            233280;
+
+
+        let digito =
+            numero % 10;
+
+
+        if (
+            !numeros.includes(
+                digito
+            )
+        ) {
+
+            numeros.push(
+                digito
+            );
+
+        }
+
+    }
+
+
+    return numeros.join("");
+
+}
+
+
+/* ==================================================
+   INICIAR DESAFIO DIÁRIO
+================================================== */
 
 function iniciarDesafioDiario() {
 
     /*
-     * Nesta primeira versão,
-     * usamos uma senha fixa para teste.
-     *
-     * Depois vamos substituir por
-     * uma senha que muda automaticamente
-     * todos os dias.
+     * Bloqueio principal.
      */
 
-    senhaDiaria = "5831";
+    if (
+        desafioDiarioConcluidoHoje()
+    ) {
+
+        verificarTelaDesafioDiario();
+
+        return;
+
+    }
+
+
+    senhaDiaria =
+        gerarSenhaDiaria();
+
 
     tentativasDiarias = 0;
 
-    modoAtual = "diario";
-
-    senha = senhaDiaria;
+    tentativas = 0;
 
     chute = "";
 
-    tentativas = 0;
+    senha = senhaDiaria;
+
+    modoAtual = "diario";
+
+
+    clearInterval(intervalo);
+
 
     esconderTodas();
 
+
     document
-        .getElementById("gameScreen")
+        .getElementById(
+            "gameScreen"
+        )
         .classList
         .remove("hidden");
 
+
     document
-        .getElementById("tempoTexto")
+        .getElementById(
+            "tempoTexto"
+        )
         .innerText =
         "sem limite";
 
+
     document
-        .getElementById("timer")
+        .getElementById(
+            "timer"
+        )
         .innerText =
         "∞";
 
+
     document
-        .getElementById("historico")
+        .getElementById(
+            "historico"
+        )
         .innerHTML =
         '<p style="color:#9ca3af;text-align:center;">Nenhuma tentativa ainda.</p>';
+
 
     atualizarChute();
 
@@ -2050,7 +1725,9 @@ function abrirDueloOnline() {
     esconderTodas();
 
     document
-        .getElementById("onlineScreen")
+        .getElementById(
+            "onlineScreen"
+        )
         .classList
         .remove("hidden");
 
@@ -2066,7 +1743,9 @@ function abrirDesafioAmigo() {
     esconderTodas();
 
     document
-        .getElementById("friendScreen")
+        .getElementById(
+            "friendScreen"
+        )
         .classList
         .remove("hidden");
 
@@ -2087,10 +1766,12 @@ function selecionarMelhorDe(valor) {
         .classList
         .remove("selected");
 
+
     document
         .getElementById("best5")
         .classList
         .remove("selected");
+
 
     document
         .getElementById("best7")
@@ -2099,7 +1780,9 @@ function selecionarMelhorDe(valor) {
 
 
     document
-        .getElementById("best" + valor)
+        .getElementById(
+            "best" + valor
+        )
         .classList
         .add("selected");
 
@@ -2123,10 +1806,12 @@ function selecionarTempo(valor) {
         .classList
         .remove("selected");
 
+
     document
         .getElementById("time45")
         .classList
         .remove("selected");
+
 
     document
         .getElementById("time60")
@@ -2135,7 +1820,9 @@ function selecionarTempo(valor) {
 
 
     document
-        .getElementById("time" + valor)
+        .getElementById(
+            "time" + valor
+        )
         .classList
         .add("selected");
 
@@ -2146,13 +1833,15 @@ function selecionarTempo(valor) {
 
 
 /* ==================================================
-   ATUALIZAR RESUMO
+   RESUMO DA PARTIDA
 ================================================== */
 
 function atualizarResumo() {
 
     document
-        .getElementById("configResumo")
+        .getElementById(
+            "configResumo"
+        )
         .innerHTML =
 
         "Melhor de " +
@@ -2169,11 +1858,6 @@ function atualizarResumo() {
 ================================================== */
 
 function criarDesafioAmigo() {
-
-    /*
-     * Nesta fase ainda não criamos
-     * a sala online.
-     */
 
     alert(
 
@@ -2210,12 +1894,17 @@ function iniciarCriacaoSenha() {
 
     modoAtual = "normal";
 
+
     esconderTodas();
 
+
     document
-        .getElementById("senhaScreen")
+        .getElementById(
+            "senhaScreen"
+        )
         .classList
         .remove("hidden");
+
 
     atualizarSenha();
 
@@ -2228,7 +1917,9 @@ function iniciarCriacaoSenha() {
 
 function digitarSenha(numero) {
 
-    if (senha.length >= 4) {
+    if (
+        senha.length >= 4
+    ) {
 
         return;
 
@@ -2236,14 +1927,17 @@ function digitarSenha(numero) {
 
 
     /*
-     * A senha NÃO pode ter
-     * números repetidos.
+     * Senha não permite repetição.
      */
 
-    if (senha.includes(numero)) {
+    if (
+        senha.includes(numero)
+    ) {
 
         document
-            .getElementById("senhaMensagem")
+            .getElementById(
+                "senhaMensagem"
+            )
             .innerText =
             "⚠️ Os 4 números precisam ser diferentes.";
 
@@ -2253,6 +1947,7 @@ function digitarSenha(numero) {
 
 
     senha += numero;
+
 
     atualizarSenha();
 
@@ -2290,7 +1985,9 @@ function atualizarSenha() {
 
 
     document
-        .getElementById("senhaMensagem")
+        .getElementById(
+            "senhaMensagem"
+        )
         .innerText =
         "";
 
@@ -2317,10 +2014,14 @@ function apagarSenha() {
 
 function confirmarSenha() {
 
-    if (senha.length !== 4) {
+    if (
+        senha.length !== 4
+    ) {
 
         document
-            .getElementById("senhaMensagem")
+            .getElementById(
+                "senhaMensagem"
+            )
             .innerText =
             "Escolha exatamente 4 números.";
 
@@ -2342,6 +2043,7 @@ function iniciarJogo() {
 
     clearInterval(intervalo);
 
+
     modoAtual = "normal";
 
     chute = "";
@@ -2355,24 +2057,39 @@ function iniciarJogo() {
 
 
     document
-        .getElementById("gameScreen")
+        .getElementById(
+            "gameScreen"
+        )
         .classList
         .remove("hidden");
 
 
     document
-        .getElementById("tempoTexto")
+        .getElementById(
+            "tempoTexto"
+        )
         .innerText =
         tempoTurno;
 
 
     document
-        .getElementById("historico")
+        .getElementById(
+            "timer"
+        )
+        .innerText =
+        tempoTurno;
+
+
+    document
+        .getElementById(
+            "historico"
+        )
         .innerHTML =
         '<p style="color:#9ca3af;text-align:center;">Nenhuma tentativa ainda.</p>';
 
 
     atualizarChute();
+
 
     iniciarCronometro();
 
@@ -2386,11 +2103,12 @@ function iniciarJogo() {
 function digitarChute(numero) {
 
     /*
-     * O CHUTE PODE TER
-     * NÚMEROS REPETIDOS.
+     * Chutes podem repetir números.
      */
 
-    if (chute.length >= 4) {
+    if (
+        chute.length >= 4
+    ) {
 
         return;
 
@@ -2398,6 +2116,7 @@ function digitarChute(numero) {
 
 
     chute += numero;
+
 
     atualizarChute();
 
@@ -2435,7 +2154,9 @@ function atualizarChute() {
 
 
     document
-        .getElementById("chuteMensagem")
+        .getElementById(
+            "chuteMensagem"
+        )
         .innerText =
         "";
 
@@ -2488,7 +2209,7 @@ function calcularResultado(
 
     /*
      * PRIMEIRA ETAPA:
-     * posições corretas.
+     * números na posição correta.
      */
 
     for (
@@ -2498,7 +2219,8 @@ function calcularResultado(
     ) {
 
         if (
-            tentativa[i] === senha[i]
+            tentativa[i] ===
+            senha[i]
         ) {
 
             certosLugar++;
@@ -2549,7 +2271,8 @@ function calcularResultado(
 
 
             if (
-                tentativa[i] === senha[j]
+                tentativa[i] ===
+                senha[j]
             ) {
 
                 certosFora++;
@@ -2605,7 +2328,7 @@ function confirmarChute() {
 
 
     /*
-     * DESAFIO DIÁRIO
+     * Desafio Diário.
      */
 
     if (
@@ -2642,6 +2365,16 @@ function confirmarChute() {
         resultado.certosLugar === 4
     ) {
 
+        if (
+            modoAtual ===
+            "diario"
+        ) {
+
+            marcarDesafioDiarioConcluido();
+
+        }
+
+
         vencer();
 
         return;
@@ -2650,8 +2383,7 @@ function confirmarChute() {
 
 
     /*
-     * DESAFIO DIÁRIO:
-     * máximo de 15 tentativas.
+     * Limite do Desafio Diário.
      */
 
     if (
@@ -2659,6 +2391,8 @@ function confirmarChute() {
         "diario" &&
         tentativasDiarias >= 15
     ) {
+
+        marcarDesafioDiarioConcluido();
 
         perderDesafioDiario();
 
@@ -2673,8 +2407,7 @@ function confirmarChute() {
 
 
     /*
-     * No desafio diário
-     * não existe cronômetro.
+     * Desafio Diário não usa cronômetro.
      */
 
     if (
@@ -2732,6 +2465,7 @@ function adicionarHistorico(
 
         </div>
 
+
         <div class="result">
 
             <span class="green">
@@ -2742,7 +2476,9 @@ function adicionarHistorico(
 
             </span>
 
+
             <br>
+
 
             <span class="yellow">
 
@@ -2771,11 +2507,6 @@ function iniciarCronometro() {
     clearInterval(intervalo);
 
 
-    /*
-     * Não existe cronômetro
-     * no desafio diário.
-     */
-
     if (
         modoAtual ===
         "diario"
@@ -2791,7 +2522,9 @@ function iniciarCronometro() {
 
 
     document
-        .getElementById("tempoTexto")
+        .getElementById(
+            "tempoTexto"
+        )
         .innerText =
         tempoTurno;
 
@@ -2802,7 +2535,6 @@ function iniciarCronometro() {
     intervalo =
         setInterval(
             function() {
-
 
                 tempo--;
 
@@ -2853,7 +2585,6 @@ function iniciarCronometro() {
                     );
 
                 }
-
 
             },
             1000
@@ -2929,19 +2660,60 @@ function vencer() {
 
     document
         .getElementById(
-            "winMessage"
+            "winIcon"
         )
         .innerText =
+        "🏆";
 
-        "Você descobriu a senha em " +
-        tentativas +
-        " tentativa(s)!";
+
+    document
+        .getElementById(
+            "winTitle"
+        )
+        .innerText =
+        "Você venceu!";
+
+
+    if (
+        modoAtual ===
+        "diario"
+    ) {
+
+        document
+            .getElementById(
+                "winMessage"
+            )
+            .innerHTML =
+
+            "Você descobriu a senha do dia!<br><br>" +
+
+            "Tentativas: " +
+            tentativasDiarias +
+            " de 15.<br><br>" +
+
+            "Volte amanhã para um novo desafio.";
+
+    }
+
+    else {
+
+        document
+            .getElementById(
+                "winMessage"
+            )
+            .innerText =
+
+            "Você descobriu a senha em " +
+            tentativas +
+            " tentativa(s)!";
+
+    }
 
 }
 
 
 /* ==================================================
-   PERDEU DESAFIO DIÁRIO
+   DERROTA DO DESAFIO DIÁRIO
 ================================================== */
 
 function perderDesafioDiario() {
@@ -2962,14 +2734,33 @@ function perderDesafioDiario() {
 
     document
         .getElementById(
+            "winIcon"
+        )
+        .innerText =
+        "😔";
+
+
+    document
+        .getElementById(
+            "winTitle"
+        )
+        .innerText =
+        "Desafio encerrado";
+
+
+    document
+        .getElementById(
             "winMessage"
         )
         .innerHTML =
 
-        "😔 Você não conseguiu descobrir " +
-        "a senha em 15 tentativas.<br><br>" +
+        "Você não descobriu a senha " +
+        "em 15 tentativas.<br><br>" +
 
-        "Amanhã haverá um novo desafio.";
+        "Você já participou do desafio " +
+        "de hoje.<br><br>" +
+
+        "Volte amanhã para tentar novamente.";
 
 }
 
@@ -2998,9 +2789,23 @@ function novoJogo() {
 
 }
 
+
+/* ==================================================
+   INICIALIZAÇÃO
+================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        verificarTelaDesafioDiario();
+
+    }
+);
+
 </script>
 
 
 </body>
 
-    </html>
+</html>
