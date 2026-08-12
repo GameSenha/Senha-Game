@@ -1,0 +1,2171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>SENHA • Duelo</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #102a52 0%,
+            #071326 42%,
+            #030812 100%
+        );
+
+    color: #ffffff;
+
+    min-height: 100vh;
+
+    padding:
+        25px
+        18px
+        40px;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+
+    width: 100%;
+
+    max-width: 560px;
+
+    margin: auto;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.header {
+
+    text-align: center;
+
+    margin:
+        20px
+        0
+        30px;
+}
+
+
+.logo {
+
+    font-size: 42px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    line-height: 1;
+}
+
+.logo span {
+
+    color: #1683ff;
+
+}
+
+.subtitle {
+
+    margin-top: 12px;
+
+    color: #9db2d1;
+
+    font-size: 15px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+
+    background:
+        rgba(16, 31, 55, 0.92);
+
+    border:
+        1px solid
+        rgba(90, 139, 205, 0.30);
+
+    border-radius: 25px;
+
+    padding: 25px;
+
+    margin-bottom: 18px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================
+   TITULOS
+========================= */
+
+.card-title {
+
+    font-size: 22px;
+
+    font-weight: 800;
+
+    margin-bottom: 8px;
+}
+
+.card-description {
+
+    color: #8fa6c7;
+
+    font-size: 14px;
+
+    margin-bottom: 22px;
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+label {
+
+    display: block;
+
+    color: #a8bad4;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+input,
+select {
+
+    width: 100%;
+
+    background:
+        #071326;
+
+    border:
+        2px solid
+        #263b5d;
+
+    color: #ffffff;
+
+    border-radius: 15px;
+
+    padding:
+        16px;
+
+    font-size: 17px;
+
+    outline: none;
+
+    transition: .2s;
+}
+
+input:focus,
+select:focus {
+
+    border-color:
+        #167cff;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(22, 124, 255, .12);
+}
+
+
+/* =========================
+   GRUPOS
+========================= */
+
+.field {
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   OPÇÕES
+========================= */
+
+.options {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 9px;
+}
+
+.option {
+
+    position: relative;
+}
+
+.option input {
+
+    position: absolute;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+.option label {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    min-height: 55px;
+
+    padding: 10px;
+
+    margin: 0;
+
+    background:
+        #0a172b;
+
+    border:
+        2px solid
+        #253a5b;
+
+    border-radius: 13px;
+
+    color: #9eb3d0;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: .2s;
+}
+
+.option input:checked + label {
+
+    background:
+        linear-gradient(
+            135deg,
+            #087dff,
+            #5034e8
+        );
+
+    border-color:
+        #3696ff;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 8px 20px
+        rgba(28, 105, 255, .25);
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+button {
+
+    width: 100%;
+
+    border: 0;
+
+    border-radius: 15px;
+
+    padding: 17px;
+
+    font-size: 17px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    color: #ffffff;
+
+    transition:
+        transform .15s,
+        opacity .15s;
+}
+
+button:active {
+
+    transform: scale(.98);
+}
+
+.primary {
+
+    background:
+        linear-gradient(
+            100deg,
+            #087cff,
+            #5133e9
+        );
+
+    box-shadow:
+        0 10px 25px
+        rgba(29, 103, 255, .25);
+}
+
+.secondary {
+
+    background:
+        #1a2a44;
+
+    border:
+        1px solid
+        #314a70;
+}
+
+.whatsapp {
+
+    background:
+        linear-gradient(
+            100deg,
+            #18b85a,
+            #079447
+        );
+}
+
+.danger {
+
+    background:
+        #2a1720;
+
+    color:
+        #ff8e9d;
+
+    border:
+        1px solid
+        #63303c;
+}
+
+button + button {
+
+    margin-top: 12px;
+}
+
+
+/* =========================
+   DIVISOR
+========================= */
+
+.divider {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: #607796;
+
+    font-size: 13px;
+
+    margin:
+        24px
+        0;
+}
+
+.divider::before,
+.divider::after {
+
+    content: "";
+
+    height: 1px;
+
+    flex: 1;
+
+    background:
+        #263a58;
+}
+
+
+/* =========================
+   CÓDIGO DA SALA
+========================= */
+
+.room-code {
+
+    text-align: center;
+
+    font-size: 42px;
+
+    font-weight: 900;
+
+    letter-spacing: 8px;
+
+    color: #ffffff;
+
+    background:
+        #071326;
+
+    border:
+        2px solid
+        #237cff;
+
+    border-radius: 18px;
+
+    padding:
+        20px
+        10px;
+
+    margin:
+        20px
+        0;
+
+    text-shadow:
+        0 0 15px
+        rgba(30, 125, 255, .5);
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+
+    text-align: center;
+
+    padding: 16px;
+
+    border-radius: 15px;
+
+    background:
+        #0a172b;
+
+    color: #9db2d1;
+
+    margin-bottom: 18px;
+}
+
+.status.success {
+
+    color: #55e88a;
+
+    border:
+        1px solid
+        rgba(50, 220, 120, .25);
+}
+
+.status.waiting {
+
+    color: #ffd166;
+}
+
+
+/* =========================
+   JOGADORES
+========================= */
+
+.players {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 40px 1fr;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin:
+        20px
+        0;
+}
+
+.player {
+
+    background:
+        #09172b;
+
+    border-radius: 15px;
+
+    padding: 16px;
+
+    text-align: center;
+
+    border:
+        1px solid
+        #223957;
+}
+
+.player-name {
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.player-label {
+
+    color: #7187a6;
+
+    font-size: 12px;
+
+    margin-top: 5px;
+}
+
+.vs {
+
+    text-align: center;
+
+    font-size: 14px;
+
+    color: #66809f;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   CONFIGURAÇÃO RESUMO
+========================= */
+
+.settings-summary {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 10px;
+}
+
+.setting-box {
+
+    background:
+        #09172b;
+
+    border-radius: 14px;
+
+    padding: 13px;
+
+    text-align: center;
+}
+
+.setting-label {
+
+    font-size: 11px;
+
+    color: #7187a6;
+
+    text-transform: uppercase;
+
+    margin-bottom: 5px;
+}
+
+.setting-value {
+
+    font-size: 16px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   ESCONDER
+========================= */
+
+.hidden {
+
+    display: none !important;
+}
+
+
+/* =========================
+   VOLTAR
+========================= */
+
+.back {
+
+    display: inline-block;
+
+    color: #8fa6c7;
+
+    text-decoration: none;
+
+    margin-bottom: 10px;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 380px) {
+
+    .options {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .room-code {
+
+        font-size: 34px;
+
+        letter-spacing: 5px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+<!-- =========================
+     CABEÇALHO
+========================= -->
+
+<div class="header">
+
+    <div class="logo">
+        SENH<span>A</span>
+    </div>
+
+    <div class="subtitle">
+        DUELAR • DESAFIAR • VENCER
+    </div>
+
+</div>
+
+
+<!-- =========================
+     TELA PRINCIPAL
+========================= -->
+
+<div id="setupScreen">
+
+
+<div class="card">
+
+    <div class="card-title">
+        ⚔️ Desafiar Amigo
+    </div>
+
+    <div class="card-description">
+        Crie uma partida e envie o convite para seu amigo.
+    </div>
+
+
+    <!-- NOME -->
+
+    <div class="field">
+
+        <label>
+            Seu nome
+        </label>
+
+        <input
+            id="playerName"
+            type="text"
+            maxlength="16"
+            placeholder="Digite seu nome"
+            autocomplete="off"
+        >
+
+    </div>
+
+
+    <!-- MELHOR DE -->
+
+    <div class="field">
+
+        <label>
+            Formato da partida
+        </label>
+
+        <div class="options">
+
+
+            <div class="option">
+
+                <input
+                    type="radio"
+                    id="best3"
+                    name="bestOf"
+                    value="3"
+                    checked
+                >
+
+                <label for="best3">
+                    Melhor de 3
+                </label>
+
+            </div>
+
+
+            <div class="option">
+
+                <input
+                    type="radio"
+                    id="best5"
+                    name="bestOf"
+                    value="5"
+                >
+
+                <label for="best5">
+                    Melhor de 5
+                </label>
+
+            </div>
+
+
+            <div class="option">
+
+                <input
+                    type="radio"
+                    id="best7"
+                    name="bestOf"
+                    value="7"
+                >
+
+                <label for="best7">
+                    Melhor de 7
+                </label>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- TEMPO -->
+
+    <div class="field">
+
+        <label>
+            Tempo por rodada
+        </label>
+
+        <div class="options">
+
+
+            <div class="option">
+
+                <input
+                    type="radio"
+                    id="time30"
+                    name="time"
+                    value="30"
+                    checked
+                >
+
+                <label for="time30">
+                    30 segundos
+                </label>
+
+            </div>
+
+
+            <div class="option">
+
+                <input
+                    type="radio"
+                    id="time45"
+                    name="time"
+                    value="45"
+                >
+
+                <label for="time45">
+                    45 segundos
+                </label>
+
+            </div>
+
+
+            <div class="option">
+
+                <input
+                    type="radio"
+                    id="time60"
+                    name="time"
+                    value="60"
+                >
+
+                <label for="time60">
+                    60 segundos
+                </label>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- SEM CRONÔMETRO -->
+
+    <div class="option" style="margin-bottom:20px;">
+
+        <input
+            type="radio"
+            id="timeNone"
+            name="time"
+            value="0"
+        >
+
+        <label for="timeNone">
+            ♾️ Sem cronômetro
+        </label>
+
+    </div>
+
+
+    <!-- CRIAR -->
+
+    <button
+        class="primary"
+        onclick="createRoom()"
+    >
+        🎮 Criar partida
+    </button>
+
+
+    <div class="divider">
+        OU
+    </div>
+
+
+    <!-- ENTRAR -->
+
+    <label>
+        Código da partida
+    </label>
+
+    <input
+        id="joinCode"
+        type="text"
+        maxlength="6"
+        placeholder="Ex.: A7K29P"
+        autocomplete="off"
+        style="text-transform:uppercase;"
+    >
+
+    <button
+        class="secondary"
+        onclick="joinRoom()"
+    >
+        🚪 Entrar em uma partida
+    </button>
+
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     SALA CRIADA
+========================= -->
+
+<div
+    id="roomScreen"
+    class="hidden"
+>
+
+
+<div class="card">
+
+    <div
+        id="roomStatus"
+        class="status waiting"
+    >
+        🟡 Aguardando adversário...
+    </div>
+
+
+    <div class="card-title">
+        Sua sala
+    </div>
+
+    <div class="card-description">
+        Envie o código para seu amigo entrar.
+    </div>
+
+
+    <div
+        id="roomCode"
+        class="room-code"
+    >
+        ------
+    </div>
+
+
+    <div class="settings-summary">
+
+        <div class="setting-box">
+
+            <div class="setting-label">
+                Partida
+            </div>
+
+            <div
+                id="roomBestOf"
+                class="setting-value"
+            >
+                Melhor de 3
+            </div>
+
+        </div>
+
+
+        <div class="setting-box">
+
+            <div class="setting-label">
+                Tempo
+            </div>
+
+            <div
+                id="roomTime"
+                class="setting-value"
+            >
+                30 segundos
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="players">
+
+        <div class="player">
+
+            <div
+                id="hostName"
+                class="player-name"
+            >
+                Você
+            </div>
+
+            <div class="player-label">
+                CRIADOR
+            </div>
+
+        </div>
+
+
+        <div class="vs">
+            VS
+        </div>
+
+
+        <div class="player">
+
+            <div
+                id="guestName"
+                class="player-name"
+            >
+                Aguardando...
+            </div>
+
+            <div class="player-label">
+                ADVERSÁRIO
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <button
+        id="shareButton"
+        class="whatsapp"
+        onclick="shareWhatsApp()"
+    >
+        📲 Convidar pelo WhatsApp
+    </button>
+
+
+    <button
+        class="danger"
+        onclick="cancelRoom()"
+    >
+        ✕ Cancelar partida
+    </button>
+
+
+</div>
+
+
+</div>
+
+
+<!-- =========================
+     PARTIDA ENCONTRADA
+========================= -->
+
+<div
+    id="joinedScreen"
+    class="hidden"
+>
+
+
+<div class="card">
+
+    <div class="status success">
+        🟢 Você entrou na partida!
+    </div>
+
+
+    <div class="card-title">
+        ⚔️ Duelo encontrado
+    </div>
+
+
+    <div class="players">
+
+        <div class="player">
+
+            <div
+                id="joinedHost"
+                class="player-name"
+            >
+                Jogador
+            </div>
+
+            <div class="player-label">
+                CRIADOR
+            </div>
+
+        </div>
+
+
+        <div class="vs">
+            VS
+        </div>
+
+
+        <div class="player">
+
+            <div
+                id="joinedGuest"
+                class="player-name"
+            >
+                Você
+            </div>
+
+            <div class="player-label">
+                VOCÊ
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="settings-summary">
+
+        <div class="setting-box">
+
+            <div class="setting-label">
+                Partida
+            </div>
+
+            <div
+                id="joinedBestOf"
+                class="setting-value"
+            >
+                -
+            </div>
+
+        </div>
+
+
+        <div class="setting-box">
+
+            <div class="setting-label">
+                Tempo
+            </div>
+
+            <div
+                id="joinedTime"
+                class="setting-value"
+            >
+                -
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div
+        id="joinedStatus"
+        class="status waiting"
+        style="margin-top:20px;"
+    >
+        🟡 Aguardando o criador iniciar...
+    </div>
+
+
+    <button
+        class="danger"
+        onclick="leaveRoom()"
+    >
+        ✕ Sair da sala
+    </button>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+<!-- =====================================================
+     FIREBASE
+===================================================== -->
+
+<script type="module">
+
+
+/* =========================
+   IMPORTS
+========================= */
+
+import {
+    initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
+
+
+import {
+    getAuth,
+    signInAnonymously,
+    onAuthStateChanged
+}
+from
+"https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
+
+
+import {
+    getDatabase,
+    ref,
+    set,
+    get,
+    update,
+    onValue,
+    remove
+}
+from
+"https://www.gstatic.com/firebasejs/12.16.0/firebase-database.js";
+
+
+/* =========================
+   CONFIG FIREBASE
+========================= */
+
+const firebaseConfig = {
+
+    apiKey:
+        "AIzaSyAHtU6LyGcsZz_0nWa0JeYycPUX4gX2jvc",
+
+    authDomain:
+        "senha-game-71a6a.firebaseapp.com",
+
+    databaseURL:
+        "https://senha-game-71a6a-default-rtdb.firebaseio.com",
+
+    projectId:
+        "senha-game-71a6a",
+
+    storageBucket:
+        "senha-game-71a6a.firebasestorage.app",
+
+    messagingSenderId:
+        "405309556115",
+
+    appId:
+        "1:405309556115:web:7bbcf7e1438b37a711d466"
+
+};
+
+
+/* =========================
+   FIREBASE
+========================= */
+
+const app =
+    initializeApp(firebaseConfig);
+
+const auth =
+    getAuth(app);
+
+const database =
+    getDatabase(app);
+
+
+/* =========================
+   VARIÁVEIS
+========================= */
+
+let currentUser = null;
+
+let currentRoom = null;
+
+let roomListener = null;
+
+
+/* =========================
+   LOGIN ANÔNIMO
+========================= */
+
+signInAnonymously(auth)
+    .catch(error => {
+
+        console.error(
+            "Erro no login:",
+            error
+        );
+
+        alert(
+            "Não foi possível conectar ao servidor."
+        );
+
+    });
+
+
+onAuthStateChanged(
+    auth,
+    user => {
+
+        if (user) {
+
+            currentUser = user;
+
+            console.log(
+                "Jogador conectado:",
+                user.uid
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================
+   GERAR CÓDIGO
+========================= */
+
+function generateRoomCode() {
+
+    const characters =
+        "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+
+    let code = "";
+
+    for (
+        let i = 0;
+        i < 6;
+        i++
+    ) {
+
+        code +=
+            characters[
+                Math.floor(
+                    Math.random() *
+                    characters.length
+                )
+            ];
+
+    }
+
+    return code;
+
+}
+
+
+/* =========================
+   PEGAR OPÇÃO
+========================= */
+
+function getSelectedValue(name) {
+
+    const selected =
+        document.querySelector(
+            `input[name="${name}"]:checked`
+        );
+
+    return selected
+        ? selected.value
+        : null;
+
+}
+
+
+/* =========================
+   FORMATA TEMPO
+========================= */
+
+function formatTime(seconds) {
+
+    if (
+        seconds === 0 ||
+        seconds === "0"
+    ) {
+
+        return "Sem cronômetro";
+
+    }
+
+    return seconds + " segundos";
+
+}
+
+
+/* =========================
+   FORMATA MELHOR DE
+========================= */
+
+function formatBestOf(value) {
+
+    return "Melhor de " + value;
+
+}
+
+
+/* =========================
+   CRIAR SALA
+========================= */
+
+window.createRoom = async function() {
+
+
+    if (!currentUser) {
+
+        alert(
+            "Conectando ao servidor. Aguarde um instante."
+        );
+
+        return;
+
+    }
+
+
+    const name =
+        document
+            .getElementById("playerName")
+            .value
+            .trim();
+
+
+    if (!name) {
+
+        alert(
+            "Digite seu nome primeiro."
+        );
+
+        document
+            .getElementById("playerName")
+            .focus();
+
+        return;
+
+    }
+
+
+    const bestOf =
+        getSelectedValue("bestOf");
+
+
+    const time =
+        getSelectedValue("time");
+
+
+    let code =
+        generateRoomCode();
+
+
+    let roomRef =
+        ref(
+            database,
+            "rooms/" + code
+        );
+
+
+    /*
+       Verifica se o código já existe.
+    */
+
+    let snapshot =
+        await get(roomRef);
+
+
+    while (snapshot.exists()) {
+
+        code =
+            generateRoomCode();
+
+        roomRef =
+            ref(
+                database,
+                "rooms/" + code
+            );
+
+        snapshot =
+            await get(roomRef);
+
+    }
+
+
+    const roomData = {
+
+        code: code,
+
+        status: "waiting",
+
+        createdAt:
+            Date.now(),
+
+        host: {
+
+            uid:
+                currentUser.uid,
+
+            name:
+                name
+
+        },
+
+        guest: null,
+
+        settings: {
+
+            bestOf:
+                Number(bestOf),
+
+            time:
+                Number(time)
+
+        }
+
+    };
+
+
+    try {
+
+        await set(
+            roomRef,
+            roomData
+        );
+
+
+        currentRoom =
+            code;
+
+
+        showRoomScreen(
+            roomData
+        );
+
+
+        listenToRoom(
+            code
+        );
+
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert(
+            "Erro ao criar a partida."
+        );
+
+    }
+
+};
+
+
+/* =========================
+   MOSTRA SALA
+========================= */
+
+function showRoomScreen(room) {
+
+    document
+        .getElementById("setupScreen")
+        .classList
+        .add("hidden");
+
+
+    document
+        .getElementById("joinedScreen")
+        .classList
+        .add("hidden");
+
+
+    document
+        .getElementById("roomScreen")
+        .classList
+        .remove("hidden");
+
+
+    document
+        .getElementById("roomCode")
+        .textContent =
+            room.code;
+
+
+    document
+        .getElementById("hostName")
+        .textContent =
+            room.host.name;
+
+
+    document
+        .getElementById("roomBestOf")
+        .textContent =
+            formatBestOf(
+                room.settings.bestOf
+            );
+
+
+    document
+        .getElementById("roomTime")
+        .textContent =
+            formatTime(
+                room.settings.time
+            );
+
+}
+
+
+/* =========================
+   ENTRAR NA SALA
+========================= */
+
+window.joinRoom = async function() {
+
+
+    if (!currentUser) {
+
+        alert(
+            "Conectando ao servidor. Aguarde."
+        );
+
+        return;
+
+    }
+
+
+    const name =
+        document
+            .getElementById("playerName")
+            .value
+            .trim();
+
+
+    if (!name) {
+
+        alert(
+            "Digite seu nome primeiro."
+        );
+
+        return;
+
+    }
+
+
+    const code =
+        document
+            .getElementById("joinCode")
+            .value
+            .trim()
+            .toUpperCase();
+
+
+    if (code.length !== 6) {
+
+        alert(
+            "Digite um código de 6 caracteres."
+        );
+
+        return;
+
+    }
+
+
+    const roomRef =
+        ref(
+            database,
+            "rooms/" + code
+        );
+
+
+    try {
+
+        const snapshot =
+            await get(roomRef);
+
+
+        if (!snapshot.exists()) {
+
+            alert(
+                "Essa partida não existe ou já foi encerrada."
+            );
+
+            return;
+
+        }
+
+
+        const room =
+            snapshot.val();
+
+
+        if (room.guest) {
+
+            alert(
+                "Essa partida já tem dois jogadores."
+            );
+
+            return;
+
+        }
+
+
+        if (
+            room.host.uid ===
+            currentUser.uid
+        ) {
+
+            alert(
+                "Você já é o criador dessa partida."
+            );
+
+            return;
+
+        }
+
+
+        await update(
+            roomRef,
+            {
+
+                guest: {
+
+                    uid:
+                        currentUser.uid,
+
+                    name:
+                        name
+
+                },
+
+                status:
+                    "ready"
+
+            }
+        );
+
+
+        currentRoom =
+            code;
+
+
+        showJoinedScreen(
+            room
+        );
+
+
+        listenToRoom(
+            code
+        );
+
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert(
+            "Erro ao entrar na partida."
+        );
+
+    }
+
+};
+
+
+/* =========================
+   MOSTRA JOGADOR CONVIDADO
+========================= */
+
+function showJoinedScreen(room) {
+
+
+    document
+        .getElementById("setupScreen")
+        .classList
+        .add("hidden");
+
+
+    document
+        .getElementById("roomScreen")
+        .classList
+        .add("hidden");
+
+
+    document
+        .getElementById("joinedScreen")
+        .classList
+        .remove("hidden");
+
+
+    document
+        .getElementById("joinedHost")
+        .textContent =
+            room.host.name;
+
+
+    document
+        .getElementById("joinedBestOf")
+        .textContent =
+            formatBestOf(
+                room.settings.bestOf
+            );
+
+
+    document
+        .getElementById("joinedTime")
+        .textContent =
+            formatTime(
+                room.settings.time
+            );
+
+}
+
+
+/* =========================
+   ESCUTAR SALA
+========================= */
+
+function listenToRoom(code) {
+
+
+    if (roomListener) {
+
+        roomListener();
+
+    }
+
+
+    const roomRef =
+        ref(
+            database,
+            "rooms/" + code
+        );
+
+
+    roomListener =
+        onValue(
+            roomRef,
+            snapshot => {
+
+
+                if (
+                    !snapshot.exists()
+                ) {
+
+                    alert(
+                        "A sala foi encerrada."
+                    );
+
+                    location.reload();
+
+                    return;
+
+                }
+
+
+                const room =
+                    snapshot.val();
+
+
+                /*
+                   Se somos o criador,
+                   atualiza o adversário.
+                */
+
+                if (
+                    room.host &&
+                    room.host.uid ===
+                    currentUser.uid
+                ) {
+
+                    if (room.guest) {
+
+                        document
+                            .getElementById(
+                                "guestName"
+                            )
+                            .textContent =
+                                room.guest.name;
+
+
+                        const status =
+                            document
+                                .getElementById(
+                                    "roomStatus"
+                                );
+
+
+                        status.className =
+                            "status success";
+
+
+                        status.innerHTML =
+                            "🟢 Adversário entrou!";
+
+
+                    } else {
+
+                        document
+                            .getElementById(
+                                "guestName"
+                            )
+                            .textContent =
+                                "Aguardando...";
+
+                    }
+
+                }
+
+
+                /*
+                   Se somos o convidado,
+                   atualiza informações.
+                */
+
+                if (
+                    room.guest &&
+                    room.guest.uid ===
+                    currentUser.uid
+                ) {
+
+                    document
+                        .getElementById(
+                            "joinedGuest"
+                        )
+                        .textContent =
+                            room.guest.name;
+
+
+                    if (
+                        room.status ===
+                        "ready"
+                    ) {
+
+                        document
+                            .getElementById(
+                                "joinedStatus"
+                            )
+                            .innerHTML =
+                            "🟢 Você está pronto! Aguardando o início.";
+
+                    }
+
+                }
+
+            }
+        );
+
+}
+
+
+/* =========================
+   WHATSAPP
+========================= */
+
+window.shareWhatsApp = function() {
+
+
+    if (!currentRoom) {
+
+        return;
+
+    }
+
+
+    const url =
+        window.location.origin +
+        window.location.pathname +
+        "?sala=" +
+        currentRoom;
+
+
+    const message =
+        "⚔️ Você foi desafiado para uma partida de SENHA!\n\n" +
+        "Entre na sala usando o código:\n\n" +
+        currentRoom +
+        "\n\n" +
+        "🎮 " +
+        url;
+
+
+    const whatsappUrl =
+        "https://wa.me/?text=" +
+        encodeURIComponent(
+            message
+        );
+
+
+    window.open(
+        whatsappUrl,
+        "_blank"
+    );
+
+};
+
+
+/* =========================
+   CANCELAR SALA
+========================= */
+
+window.cancelRoom = async function() {
+
+
+    if (!currentRoom) {
+
+        location.reload();
+
+        return;
+
+    }
+
+
+    if (
+        !confirm(
+            "Deseja realmente cancelar esta partida?"
+        )
+    ) {
+
+        return;
+
+    }
+
+
+    try {
+
+        await remove(
+            ref(
+                database,
+                "rooms/" +
+                currentRoom
+            )
+        );
+
+
+        location.reload();
+
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert(
+            "Não foi possível cancelar a partida."
+        );
+
+    }
+
+};
+
+
+/* =========================
+   SAIR DA SALA
+========================= */
+
+window.leaveRoom = async function() {
+
+
+    if (!currentRoom) {
+
+        location.reload();
+
+        return;
+
+    }
+
+
+    try {
+
+        const roomRef =
+            ref(
+                database,
+                "rooms/" +
+                currentRoom
+            );
+
+
+        const snapshot =
+            await get(roomRef);
+
+
+        if (snapshot.exists()) {
+
+            const room =
+                snapshot.val();
+
+
+            if (
+                room.guest &&
+                room.guest.uid ===
+                currentUser.uid
+            ) {
+
+                await update(
+                    roomRef,
+                    {
+
+                        guest: null,
+
+                        status:
+                            "waiting"
+
+                    }
+                );
+
+            }
+
+        }
+
+
+        location.reload();
+
+
+    } catch (error) {
+
+        console.error(error);
+
+        location.reload();
+
+    }
+
+};
+
+
+/* =========================
+   ENTRAR PELO LINK
+========================= */
+
+async function checkInviteLink() {
+
+
+    const params =
+        new URLSearchParams(
+            window.location.search
+        );
+
+
+    const code =
+        params
+            .get("sala");
+
+
+    if (!code) {
+
+        return;
+
+    }
+
+
+    document
+        .getElementById("joinCode")
+        .value =
+            code
+            .toUpperCase();
+
+
+    document
+        .getElementById("joinCode")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}
+
+
+/* =========================
+   INICIAR
+========================= */
+
+checkInviteLink();
+
+
+</script>
+
+</body>
+
+</html>
