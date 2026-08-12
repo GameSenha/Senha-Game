@@ -1,30 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<meta name="theme-color"
-content="#07152d">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07152d">
 <title>SENHA — Descubra • Desafie • Vença</title>
 
 <style>
-
-/* ==================================================
-   CONFIGURAÇÕES
-================================================== */
 
 * {
     box-sizing: border-box;
 }
 
 :root {
-
     --bg: #061329;
     --bg2: #0b1b38;
     --card: rgba(18,38,72,.78);
@@ -35,125 +23,74 @@ content="#07152d">
     --indigo: #5146f5;
     --cyan: #11cbd7;
     --dark: #15233b;
-
 }
 
 html,
 body {
-
     margin: 0;
-
     min-height: 100%;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
+    font-family: Arial, Helvetica, sans-serif;
     background: #061329;
-
     color: var(--text);
-
 }
 
 body {
-
     min-height: 100vh;
-
     background:
-
         radial-gradient(
             circle at 8% 0%,
             rgba(22,140,255,.18),
             transparent 28%
         ),
-
         radial-gradient(
             circle at 100% 100%,
             rgba(81,70,245,.16),
             transparent 30%
         ),
-
         linear-gradient(
             145deg,
             #061329,
             #091936 55%,
             #07142b
         );
-
 }
 
 body:before,
 body:after {
-
     content: "";
-
     position: fixed;
-
-    border:
-        1px solid
-        rgba(22,140,255,.2);
-
+    border: 1px solid rgba(22,140,255,.2);
     width: 220px;
-
     height: 220px;
-
     border-radius: 50%;
-
     pointer-events: none;
-
 }
 
 body:before {
-
     left: -150px;
-
     top: -140px;
-
 }
 
 body:after {
-
     right: -160px;
-
     bottom: -150px;
-
 }
 
-
-/* ==================================================
-   APLICATIVO
-================================================== */
-
 .app {
-
     position: relative;
-
     width: 100%;
-
     max-width: 460px;
-
     min-height: 100vh;
-
     margin: auto;
-
-    padding:
-        18px
-        16px
-        42px;
-
+    padding: 18px 16px 42px;
 }
 
 .hidden {
-
     display: none !important;
-
 }
 
 .screen {
-
     width: 100%;
-
 }
 
 
@@ -162,26 +99,16 @@ body:after {
 ================================================== */
 
 .logo {
-
     text-align: center;
-
-    margin:
-        8px 0 20px;
-
+    margin: 8px 0 20px;
 }
 
 .logo-image {
-
     width: 315px;
-
     max-width: 92%;
-
     height: auto;
-
     display: block;
-
     margin: auto;
-
 }
 
 
@@ -190,39 +117,22 @@ body:after {
 ================================================== */
 
 .card {
-
     background:
-
         linear-gradient(
             145deg,
             rgba(25,49,88,.78),
             rgba(12,28,56,.82)
         );
-
-    border:
-        1px solid
-        rgba(130,173,240,.2);
-
+    border: 1px solid rgba(130,173,240,.2);
     border-radius: 22px;
-
     padding: 18px;
-
     margin-bottom: 14px;
-
-    box-shadow:
-        0 16px 38px
-        rgba(0,0,0,.22);
-
-    backdrop-filter:
-        blur(10px);
-
+    box-shadow: 0 16px 38px rgba(0,0,0,.22);
+    backdrop-filter: blur(10px);
 }
 
 .name-card {
-
-    padding:
-        17px 18px 14px;
-
+    padding: 17px 18px 14px;
 }
 
 
@@ -231,59 +141,32 @@ body:after {
 ================================================== */
 
 .name-label {
-
     display: block;
-
     font-size: 15px;
-
     font-weight: 800;
-
     margin-bottom: 9px;
-
 }
 
 .name-input {
-
     width: 100%;
-
     padding: 15px 16px;
-
     border-radius: 16px;
-
-    border:
-        2px solid
-        #3262aa;
-
-    background:
-        rgba(3,14,31,.7);
-
+    border: 2px solid #3262aa;
+    background: rgba(3,14,31,.7);
     color: #fff;
-
     font-size: 18px;
-
     outline: none;
-
 }
 
 .name-input:focus {
-
-    border-color:
-        #168cff;
-
-    box-shadow:
-        0 0 0 3px
-        rgba(22,140,255,.12);
-
+    border-color: #168cff;
+    box-shadow: 0 0 0 3px rgba(22,140,255,.12);
 }
 
 .name-help {
-
     color: #8fa4c6;
-
     font-size: 12px;
-
     margin-top: 8px;
-
 }
 
 
@@ -292,167 +175,84 @@ body:after {
 ================================================== */
 
 .menu-button {
-
     width: 100%;
-
     display: flex;
-
     align-items: center;
-
     text-align: left;
-
     gap: 15px;
-
-    padding:
-        16px 17px;
-
-    margin:
-        10px 0 0;
-
-    border:
-        1px solid
-        rgba(255,255,255,.1);
-
+    padding: 16px 17px;
+    margin: 10px 0 0;
+    border: 1px solid rgba(255,255,255,.1);
     border-radius: 20px;
-
     color: #fff;
-
-    box-shadow:
-        0 12px 25px
-        rgba(0,0,0,.18);
-
+    box-shadow: 0 12px 25px rgba(0,0,0,.18);
     position: relative;
-
     overflow: hidden;
-
 }
 
 .menu-button:after {
-
     content: "›";
-
     font-size: 35px;
-
     font-weight: 300;
-
     line-height: 1;
-
     margin-left: auto;
-
     color: #fff;
-
 }
 
 .menu-button:active {
-
-    transform:
-        scale(.985);
-
+    transform: scale(.985);
 }
 
 .menu-daily {
-
-    background:
-        linear-gradient(
-            110deg,
-            #087ff1,
-            #3f35ef
-        );
-
+    background: linear-gradient(110deg,#087ff1,#3f35ef);
 }
 
 .menu-online {
-
-    background:
-        linear-gradient(
-            110deg,
-            #2056e9,
-            #7131ee
-        );
-
+    background: linear-gradient(110deg,#2056e9,#7131ee);
 }
 
 .menu-friend {
-
-    background:
-        linear-gradient(
-            110deg,
-            #04aeb8,
-            #0794a5
-        );
-
+    background: linear-gradient(110deg,#04aeb8,#0794a5);
 }
 
 .menu-tournament {
-
-    background:
-        rgba(27,42,66,.86);
-
+    background: rgba(27,42,66,.86);
     color: #8192ad;
-
-    border-color:
-        rgba(255,255,255,.08);
-
+    border-color: rgba(255,255,255,.08);
 }
 
 .menu-tournament:after {
-
     color: #657790;
-
 }
 
 .menu-icon {
-
     width: 48px;
-
     min-width: 48px;
-
     text-align: center;
-
     font-size: 31px;
-
 }
 
 .menu-title {
-
     font-size: 18px;
-
     font-weight: 900;
-
 }
 
 .menu-description {
-
     font-size: 13px;
-
-    color:
-        rgba(255,255,255,.72);
-
+    color: rgba(255,255,255,.72);
     font-weight: 700;
-
     margin-top: 4px;
-
 }
 
 .badge {
-
     display: inline-block;
-
-    padding:
-        5px 8px;
-
+    padding: 5px 8px;
     border-radius: 20px;
-
     font-size: 9px;
-
     background: #ffbf18;
-
     color: #19223a;
-
     margin-left: 4px;
-
     vertical-align: 3px;
-
 }
 
 
@@ -461,47 +261,29 @@ body:after {
 ================================================== */
 
 .footer {
-
     text-align: center;
-
     color: #8295b5;
-
     font-size: 11px;
-
     letter-spacing: 3px;
-
     margin-top: 24px;
-
 }
 
 .dots {
-
     display: flex;
-
     justify-content: center;
-
     gap: 9px;
-
     margin-top: 12px;
-
 }
 
 .dot {
-
     width: 8px;
-
     height: 8px;
-
     border-radius: 50%;
-
     background: #e8f0ff;
-
 }
 
 .dot.active {
-
     background: #168cff;
-
 }
 
 
@@ -510,31 +292,18 @@ body:after {
 ================================================== */
 
 .page-title {
-
     text-align: center;
-
     font-size: 27px;
-
     font-weight: 900;
-
-    margin:
-        14px 0 6px;
-
+    margin: 14px 0 6px;
 }
 
 .page-description {
-
     text-align: center;
-
     color: #9db0cf;
-
     font-size: 14px;
-
     line-height: 1.5;
-
-    margin:
-        0 0 20px;
-
+    margin: 0 0 20px;
 }
 
 
@@ -543,82 +312,44 @@ body:after {
 ================================================== */
 
 button {
-
     border: 0;
-
     color: #fff;
-
     font-size: 15px;
-
     font-weight: 900;
-
     cursor: pointer;
-
 }
 
 .back-button {
-
     width: 100%;
-
     padding: 12px;
-
     border-radius: 13px;
-
     background: #243652;
-
 }
 
 .primary {
-
     width: 100%;
-
     padding: 15px;
-
     border-radius: 14px;
-
-    background:
-        linear-gradient(
-            110deg,
-            #168cff,
-            #5146f5
-        );
-
+    background: linear-gradient(110deg,#168cff,#5146f5);
     margin-top: 10px;
-
 }
 
 .secondary {
-
     width: 100%;
-
     padding: 15px;
-
     border-radius: 14px;
-
     background: #263854;
-
     margin-top: 10px;
-
 }
 
 .share-button {
-
-    background:
-        #16a34a !important;
-
+    background: #16a34a !important;
 }
 
 .button-disabled {
-
-    background:
-        #17253b !important;
-
-    color:
-        #647893 !important;
-
-    cursor:
-        not-allowed;
-
+    background: #17253b !important;
+    color: #647893 !important;
+    cursor: not-allowed;
 }
 
 
@@ -627,67 +358,37 @@ button {
 ================================================== */
 
 .option-title {
-
     font-size: 13px;
-
     font-weight: 900;
-
     color: #cbd8eb;
-
-    margin:
-        17px 0 8px;
-
+    margin: 17px 0 8px;
 }
 
 .options {
-
     display: grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
+    grid-template-columns: repeat(4,1fr);
     gap: 7px;
-
 }
 
 .option {
-
     background: #233653;
-
-    border:
-        2px solid
-        transparent;
-
+    border: 2px solid transparent;
     border-radius: 12px;
-
-    padding:
-        12px 3px;
-
+    padding: 12px 3px;
     text-align: center;
-
     font-weight: 900;
-
     cursor: pointer;
-
 }
 
 .option.selected {
-
     background: #155bc4;
-
-    border-color:
-        #53a7ff;
-
+    border-color: #53a7ff;
 }
 
 .option-small {
-
     font-size: 9px;
-
     color: #b8c9df;
-
     margin-top: 3px;
-
 }
 
 
@@ -696,54 +397,112 @@ button {
 ================================================== */
 
 .topbar {
-
     display: flex;
-
-    justify-content:
-        space-between;
-
-    align-items:
-        center;
-
-    margin:
-        10px 0 12px;
-
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0 12px;
 }
 
 .status {
-
     color: #8fa4c6;
-
     font-size: 12px;
-
     margin-top: 4px;
-
 }
 
 .timer {
-
     font-size: 32px;
-
     font-weight: 900;
-
     color: #53b0ff;
-
     min-width: 60px;
-
     text-align: center;
-
 }
 
 .timer.warning {
-
     color: #ffd34d;
-
 }
 
 .timer.danger {
-
     color: #ff5d6c;
+}
 
+
+/* ==================================================
+   CONTADOR DE TENTATIVAS
+================================================== */
+
+.attempt-counter {
+    text-align: center;
+    margin: 10px 0 18px;
+}
+
+.attempt-label {
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #8fa4c6;
+    text-transform: uppercase;
+}
+
+.attempt-number {
+    font-size: 30px;
+    font-weight: 900;
+    margin-top: 3px;
+    color: #53b0ff;
+}
+
+.attempt-bar {
+    width: 100%;
+    height: 8px;
+    background: #142641;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 9px;
+}
+
+.attempt-progress {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg,#168cff,#5146f5);
+    border-radius: 20px;
+    transition: width .3s ease, background .3s ease;
+}
+
+.attempt-remaining {
+    font-size: 12px;
+    color: #9db0cf;
+    margin-top: 7px;
+}
+
+.attempt-counter.warning .attempt-number {
+    color: #ffd34d;
+}
+
+.attempt-counter.warning .attempt-progress {
+    background: #ffd34d;
+}
+
+.attempt-counter.danger .attempt-number {
+    color: #ff8a4d;
+}
+
+.attempt-counter.danger .attempt-progress {
+    background: #ff8a4d;
+}
+
+.attempt-counter.last .attempt-number {
+    color: #ff5d6c;
+}
+
+.attempt-counter.last .attempt-progress {
+    background: #ff5d6c;
+}
+
+.attempt-alert {
+    font-size: 13px;
+    font-weight: 900;
+    text-align: center;
+    margin-top: 7px;
+    min-height: 18px;
 }
 
 
@@ -752,50 +511,29 @@ button {
 ================================================== */
 
 .scoreboard {
-
     display: grid;
-
-    grid-template-columns:
-        1fr
-        auto
-        1fr;
-
+    grid-template-columns: 1fr auto 1fr;
     text-align: center;
-
     align-items: center;
-
     gap: 8px;
-
 }
 
 .player-name {
-
     font-size: 14px;
-
     font-weight: 900;
-
     white-space: nowrap;
-
     overflow: hidden;
-
     text-overflow: ellipsis;
-
 }
 
 .score {
-
     font-size: 28px;
-
     font-weight: 900;
-
 }
 
 .vs {
-
     font-size: 10px;
-
     color: #6f84a3;
-
 }
 
 
@@ -804,42 +542,23 @@ button {
 ================================================== */
 
 .guess-display {
-
     display: flex;
-
     justify-content: center;
-
     gap: 8px;
-
-    margin:
-        18px 0;
-
+    margin: 18px 0;
 }
 
 .guess-digit {
-
     width: 54px;
-
     height: 60px;
-
     border-radius: 13px;
-
-    border:
-        2px solid
-        #385173;
-
+    border: 2px solid #385173;
     background: #08152b;
-
     color: #fff;
-
     text-align: center;
-
     font-size: 27px;
-
     font-weight: 900;
-
     line-height: 56px;
-
 }
 
 
@@ -848,41 +567,24 @@ button {
 ================================================== */
 
 .keyboard {
-
     display: grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
+    grid-template-columns: repeat(3,1fr);
     gap: 7px;
-
 }
 
 .key {
-
     width: 100%;
-
-    padding:
-        14px 4px;
-
+    padding: 14px 4px;
     margin: 0;
-
     border-radius: 12px;
-
     background: #263854;
-
 }
 
 .message {
-
     text-align: center;
-
     color: #c8d6e9;
-
     min-height: 21px;
-
     margin-top: 12px;
-
 }
 
 
@@ -891,59 +593,44 @@ button {
 ================================================== */
 
 .history-title {
-
     font-size: 16px;
-
     font-weight: 900;
-
     margin-bottom: 9px;
-
 }
 
 .history-item {
-
     background: #0b1a31;
-
-    border:
-        1px solid
-        rgba(255,255,255,.05);
-
+    border: 1px solid rgba(255,255,255,.05);
     border-radius: 12px;
-
     padding: 12px;
-
     margin-top: 7px;
-
 }
 
 .history-guess {
-
     font-size: 20px;
-
     font-weight: 900;
-
     letter-spacing: 5px;
+}
 
+.history-number {
+    display: inline-block;
+    color: #6f84a3;
+    font-size: 12px;
+    letter-spacing: 0;
+    margin-right: 8px;
 }
 
 .result {
-
     margin-top: 5px;
-
     font-size: 13px;
-
 }
 
 .green {
-
     color: #4ade80;
-
 }
 
 .yellow {
-
     color: #facc15;
-
 }
 
 
@@ -952,29 +639,17 @@ button {
 ================================================== */
 
 .reactions {
-
     display: grid;
-
-    grid-template-columns:
-        repeat(7,1fr);
-
+    grid-template-columns: repeat(7,1fr);
     gap: 5px;
-
 }
 
 .reaction {
-
-    padding:
-        8px 2px;
-
+    padding: 8px 2px;
     margin: 0;
-
     border-radius: 10px;
-
     background: #263854;
-
     font-size: 19px;
-
 }
 
 
@@ -983,62 +658,37 @@ button {
 ================================================== */
 
 .win {
-
     text-align: center;
-
-    padding:
-        28px 20px;
-
+    padding: 28px 20px;
 }
 
 .win-icon {
-
     font-size: 68px;
-
 }
 
 .win h2 {
-
     font-size: 29px;
-
-    margin:
-        8px 0;
-
+    margin: 8px 0;
 }
 
 .win p {
-
     color: #c6d4e8;
-
     line-height: 1.55;
-
 }
 
 .invite-code {
-
     text-align: center;
-
     font-size: 29px;
-
     font-weight: 900;
-
     letter-spacing: 5px;
-
     padding: 15px;
-
     background: #07162d;
-
     border-radius: 13px;
-
-    margin:
-        15px 0;
-
+    margin: 15px 0;
 }
 
 .center {
-
     text-align: center;
-
 }
 
 
@@ -1049,32 +699,23 @@ button {
 @media(max-width:360px) {
 
     .logo-image {
-
         width: 280px;
-
     }
 
     .guess-digit {
-
         width: 49px;
-
     }
 
     .menu-title {
-
         font-size: 16px;
-
     }
 
 }
 
 </style>
-
 </head>
 
-
 <body>
-
 
 <div class="app">
 
@@ -1083,10 +724,7 @@ button {
      TELA INICIAL
 ================================================== -->
 
-<div
-id="home"
-class="screen">
-
+<div id="home" class="screen">
 
     <div class="logo">
 
@@ -1100,7 +738,6 @@ class="screen">
 
     <div class="card name-card">
 
-
         <label
         class="name-label"
         for="playerName">
@@ -1109,13 +746,11 @@ class="screen">
 
         </label>
 
-
         <input
         id="playerName"
         class="name-input"
         maxlength="18"
         placeholder="Digite seu nome">
-
 
         <div class="name-help">
 
@@ -1124,128 +759,85 @@ class="screen">
 
         </div>
 
-
     </div>
 
-
-    <!-- DESAFIO DIÁRIO -->
 
     <button
     class="menu-button menu-daily"
     onclick="abrirDesafioDiario()">
 
-
         <div class="menu-icon">
-
             📅
-
         </div>
-
 
         <div>
 
             <div class="menu-title">
-
                 Desafio Diário
-
             </div>
 
-
             <div class="menu-description">
-
                 Uma senha para todos
-
             </div>
 
         </div>
 
-
     </button>
 
-
-    <!-- DUELO ONLINE -->
 
     <button
     class="menu-button menu-online"
     onclick="abrirDueloOnline()">
 
-
         <div class="menu-icon">
-
             ⚔️
-
         </div>
-
 
         <div>
 
             <div class="menu-title">
-
                 Duelo Online
-
             </div>
 
-
             <div class="menu-description">
-
                 Encontre um adversário
-
             </div>
 
         </div>
 
-
     </button>
 
-
-    <!-- DESAFIAR AMIGO -->
 
     <button
     class="menu-button menu-friend"
     onclick="abrirDesafioAmigo()">
 
-
         <div class="menu-icon">
-
             👥
-
         </div>
-
 
         <div>
 
             <div class="menu-title">
-
                 Desafiar Amigo
-
             </div>
 
-
             <div class="menu-description">
-
                 Convide pelo WhatsApp
-
             </div>
 
         </div>
 
-
     </button>
 
-
-    <!-- TORNEIO -->
 
     <button
     class="menu-button menu-tournament"
     onclick="mostrarTorneioBloqueado()">
 
-
         <div class="menu-icon">
-
             🏆
-
         </div>
-
 
         <div>
 
@@ -1254,45 +846,33 @@ class="screen">
                 Torneio
 
                 <span class="badge">
-
                     EM BREVE
-
                 </span>
 
             </div>
 
-
             <div class="menu-description">
-
                 Campeonatos eliminatórios
-
             </div>
 
         </div>
-
 
     </button>
 
 
     <div class="footer">
-
         SENHA • VERSÃO BETA
-
     </div>
 
 
     <div class="dots">
 
         <span class="dot"></span>
-
         <span class="dot"></span>
-
         <span class="dot"></span>
-
         <span class="dot active"></span>
 
     </div>
-
 
 </div>
 
@@ -1305,7 +885,6 @@ class="screen">
 id="dailyScreen"
 class="screen hidden">
 
-
     <button
     class="back-button"
     onclick="voltarInicio()">
@@ -1316,17 +895,13 @@ class="screen hidden">
 
 
     <div class="page-title">
-
         📅 Desafio Diário
-
     </div>
 
 
     <div class="page-description">
-
         Todos tentam descobrir
         a mesma senha.
-
     </div>
 
 
@@ -1334,37 +909,23 @@ class="screen hidden">
     id="dailyAvailable"
     class="card center">
 
-
-        <div
-        style="
-        font-size:50px;
-        ">
-
+        <div style="font-size:50px">
             🔐
-
         </div>
 
-
         <h3>
-
             Desafio de hoje
-
         </h3>
 
+        <p style="color:#9db0cf">
 
-        <p
-        style="
-        color:#9db0cf;
-        ">
-
-            Até 15 tentativas.
+            🎯 Até <strong>15 tentativas</strong>
 
             <br>
 
-            Sem cronômetro.
+            ♾️ Sem cronômetro.
 
         </p>
-
 
         <button
         class="primary"
@@ -1374,7 +935,6 @@ class="screen hidden">
 
         </button>
 
-
     </div>
 
 
@@ -1382,48 +942,29 @@ class="screen hidden">
     id="dailyLocked"
     class="card hidden center">
 
-
-        <div
-        style="
-        font-size:60px;
-        ">
-
+        <div style="font-size:60px">
             🔒
-
         </div>
 
-
         <h2>
-
             Desafio concluído
-
         </h2>
 
-
-        <p
-        style="
-        color:#9db0cf;
-        ">
+        <p style="color:#9db0cf">
 
             Você já participou
             do Desafio Diário de hoje.
 
         </p>
 
-
-        <p
-        style="
-        color:#8295b5;
-        ">
+        <p style="color:#8295b5">
 
             Volte amanhã para
             um novo desafio.
 
         </p>
 
-
     </div>
-
 
 </div>
 
@@ -1436,7 +977,6 @@ class="screen hidden">
 id="onlineScreen"
 class="screen hidden">
 
-
     <button
     class="back-button"
     onclick="voltarInicio()">
@@ -1447,9 +987,7 @@ class="screen hidden">
 
 
     <div class="page-title">
-
         ⚔️ Duelo Online
-
     </div>
 
 
@@ -1461,26 +999,15 @@ class="screen hidden">
     </div>
 
 
-    <div
-    class="card center">
+    <div class="card center">
 
-
-        <div
-        style="
-        font-size:58px;
-        ">
-
+        <div style="font-size:58px">
             ⚔️
-
         </div>
 
-
         <h3>
-
             Multiplayer em breve
-
         </h3>
-
 
         <p
         style="
@@ -1495,7 +1022,6 @@ class="screen hidden">
 
         </p>
 
-
         <button
         class="primary"
         onclick="
@@ -1507,9 +1033,7 @@ class="screen hidden">
 
         </button>
 
-
     </div>
-
 
 </div>
 
@@ -1522,7 +1046,6 @@ class="screen hidden">
 id="friendScreen"
 class="screen hidden">
 
-
     <button
     class="back-button"
     onclick="voltarInicio()">
@@ -1533,9 +1056,7 @@ class="screen hidden">
 
 
     <div class="page-title">
-
         👥 Desafiar Amigo
-
     </div>
 
 
@@ -1549,12 +1070,9 @@ class="screen hidden">
 
     <div class="card">
 
-
         <div
         class="center"
-        style="
-        font-size:50px;
-        ">
+        style="font-size:50px">
 
             ⚔️
 
@@ -1579,8 +1097,7 @@ class="screen hidden">
         style="
         font-size:21px;
         font-weight:900;
-        margin:
-        8px 0 15px;
+        margin:8px 0 15px;
         ">
 
             Jogador
@@ -1589,14 +1106,11 @@ class="screen hidden">
 
 
         <div class="option-title">
-
             Melhor de:
-
         </div>
 
 
         <div class="options">
-
 
             <div
             id="best3"
@@ -1606,9 +1120,7 @@ class="screen hidden">
                 3
 
                 <div class="option-small">
-
                     Primeiro a 2
-
                 </div>
 
             </div>
@@ -1622,9 +1134,7 @@ class="screen hidden">
                 5
 
                 <div class="option-small">
-
                     Primeiro a 3
-
                 </div>
 
             </div>
@@ -1638,26 +1148,20 @@ class="screen hidden">
                 7
 
                 <div class="option-small">
-
                     Primeiro a 4
-
                 </div>
 
             </div>
-
 
         </div>
 
 
         <div class="option-title">
-
             Tempo por turno:
-
         </div>
 
 
         <div class="options">
-
 
             <div
             id="time30"
@@ -1697,13 +1201,10 @@ class="screen hidden">
                 ♾️
 
                 <div class="option-small">
-
                     Sem limite
-
                 </div>
 
             </div>
-
 
         </div>
 
@@ -1734,9 +1235,7 @@ class="screen hidden">
 
         </button>
 
-
     </div>
-
 
 </div>
 
@@ -1749,7 +1248,6 @@ class="screen hidden">
 id="inviteScreen"
 class="screen hidden">
 
-
     <button
     class="back-button"
     onclick="abrirDesafioAmigo()">
@@ -1760,9 +1258,7 @@ class="screen hidden">
 
 
     <div class="page-title">
-
         🔗 Desafio criado
-
     </div>
 
 
@@ -1776,36 +1272,22 @@ class="screen hidden">
 
     <div class="card center">
 
-
-        <div
-        style="
-        font-size:55px;
-        ">
-
+        <div style="font-size:55px">
             📲
-
         </div>
 
 
         <h3>
 
-            <span
-            id="invitePlayerName">
-
+            <span id="invitePlayerName">
                 Jogador
-
             </span>
 
         </h3>
 
 
-        <p
-        style="
-        color:#9db0cf;
-        ">
-
+        <p style="color:#9db0cf">
             está te desafiando!
-
         </p>
 
 
@@ -1824,22 +1306,14 @@ class="screen hidden">
         line-height:1.7;
         ">
 
-            <span
-            id="inviteBest">
-
+            <span id="inviteBest">
                 Melhor de 3
-
             </span>
-
 
             <br>
 
-
-            <span
-            id="inviteTime">
-
+            <span id="inviteTime">
                 30 segundos
-
             </span>
 
             por turno
@@ -1867,9 +1341,7 @@ class="screen hidden">
 
         </button>
 
-
     </div>
-
 
 </div>
 
@@ -1882,7 +1354,6 @@ class="screen hidden">
 id="tournamentScreen"
 class="screen hidden">
 
-
     <button
     class="back-button"
     onclick="voltarInicio()">
@@ -1893,32 +1364,19 @@ class="screen hidden">
 
 
     <div class="page-title">
-
         🏆 Torneio
-
     </div>
 
 
-    <div
-    class="card center">
+    <div class="card center">
 
-
-        <div
-        style="
-        font-size:70px;
-        ">
-
+        <div style="font-size:70px">
             🔒
-
         </div>
 
-
         <h2>
-
             Em breve
-
         </h2>
-
 
         <p
         style="
@@ -1945,9 +1403,7 @@ class="screen hidden">
 
         </button>
 
-
     </div>
-
 
 </div>
 
@@ -1960,12 +1416,9 @@ class="screen hidden">
 id="gameScreen"
 class="screen hidden">
 
-
     <div class="card">
 
-
         <div class="scoreboard">
-
 
             <div>
 
@@ -1976,7 +1429,6 @@ class="screen hidden">
                     Você
 
                 </div>
-
 
                 <div
                 id="myScore"
@@ -1990,9 +1442,7 @@ class="screen hidden">
 
 
             <div class="vs">
-
                 VS
-
             </div>
 
 
@@ -2006,7 +1456,6 @@ class="screen hidden">
 
                 </div>
 
-
                 <div
                 id="opponentScore"
                 class="score">
@@ -2017,25 +1466,61 @@ class="screen hidden">
 
             </div>
 
+        </div>
+
+    </div>
+
+
+    <!-- CONTADOR -->
+
+    <div
+    id="attemptCounter"
+    class="attempt-counter hidden">
+
+        <div class="attempt-label">
+            Tentativas
+        </div>
+
+        <div
+        id="attemptNumber"
+        class="attempt-number">
+
+            0 / 15
 
         </div>
 
+        <div class="attempt-bar">
+
+            <div
+            id="attemptProgress"
+            class="attempt-progress">
+            </div>
+
+        </div>
+
+        <div
+        id="attemptRemaining"
+        class="attempt-remaining">
+
+            Restam 15 tentativas
+
+        </div>
+
+        <div
+        id="attemptAlert"
+        class="attempt-alert">
+        </div>
 
     </div>
 
 
     <div class="topbar">
 
-
         <div>
 
-
             <strong>
-
                 🎯 SUA VEZ
-
             </strong>
-
 
             <div
             id="turnStatus"
@@ -2044,7 +1529,6 @@ class="screen hidden">
                 Descubra a senha
 
             </div>
-
 
         </div>
 
@@ -2057,160 +1541,114 @@ class="screen hidden">
 
         </div>
 
-
     </div>
 
 
     <div class="card">
 
-
         <p class="center">
-
             Digite seu chute.
-
         </p>
 
 
         <div class="guess-display">
-
 
             <div
             class="guess-digit"
             id="g1">
             </div>
 
-
             <div
             class="guess-digit"
             id="g2">
             </div>
-
 
             <div
             class="guess-digit"
             id="g3">
             </div>
 
-
             <div
             class="guess-digit"
             id="g4">
             </div>
-
 
         </div>
 
 
         <div class="keyboard">
 
-
             <button
             class="key"
             onclick="digitarChute('1')">
-
                 1
-
             </button>
-
 
             <button
             class="key"
             onclick="digitarChute('2')">
-
                 2
-
             </button>
-
 
             <button
             class="key"
             onclick="digitarChute('3')">
-
                 3
-
             </button>
-
 
             <button
             class="key"
             onclick="digitarChute('4')">
-
                 4
-
             </button>
-
 
             <button
             class="key"
             onclick="digitarChute('5')">
-
                 5
-
             </button>
-
 
             <button
             class="key"
             onclick="digitarChute('6')">
-
                 6
-
             </button>
-
 
             <button
             class="key"
             onclick="digitarChute('7')">
-
                 7
-
             </button>
-
 
             <button
             class="key"
             onclick="digitarChute('8')">
-
                 8
-
             </button>
-
 
             <button
             class="key"
             onclick="digitarChute('9')">
-
                 9
-
             </button>
-
 
             <button
             class="key"
             onclick="apagarChute()">
-
                 ⌫
-
             </button>
-
 
             <button
             class="key"
             onclick="digitarChute('0')">
-
                 0
-
             </button>
-
 
             <button
             class="key"
             onclick="confirmarChute()">
-
                 ✓
-
             </button>
-
 
         </div>
 
@@ -2231,15 +1669,11 @@ class="screen hidden">
 
             ⏱️
 
-            <span
-            id="tempoTexto">
-
+            <span id="tempoTexto">
                 Sem limite
-
             </span>
 
         </div>
-
 
     </div>
 
@@ -2247,7 +1681,6 @@ class="screen hidden">
     <div
     id="reactionCard"
     class="card hidden">
-
 
         <div
         class="center"
@@ -2263,69 +1696,47 @@ class="screen hidden">
 
         <div class="reactions">
 
-
             <button
             class="reaction"
             onclick="enviarReacao('😂')">
-
                 😂
-
             </button>
-
 
             <button
             class="reaction"
             onclick="enviarReacao('😈')">
-
                 😈
-
             </button>
-
 
             <button
             class="reaction"
             onclick="enviarReacao('😱')">
-
                 😱
-
             </button>
-
 
             <button
             class="reaction"
             onclick="enviarReacao('😡')">
-
                 😡
-
             </button>
-
 
             <button
             class="reaction"
             onclick="enviarReacao('😭')">
-
                 😭
-
             </button>
-
 
             <button
             class="reaction"
             onclick="enviarReacao('😎')">
-
                 😎
-
             </button>
-
 
             <button
             class="reaction"
             onclick="enviarReacao('🔥')">
-
                 🔥
-
             </button>
-
 
         </div>
 
@@ -2338,25 +1749,18 @@ class="screen hidden">
         min-height:20px;
         font-size:24px;
         ">
-
         </div>
-
 
     </div>
 
 
     <div class="card">
 
-
         <div class="history-title">
-
             📋 Tentativas
-
         </div>
 
-
         <div id="historico">
-
 
             <p
             style="
@@ -2368,12 +1772,9 @@ class="screen hidden">
 
             </p>
 
-
         </div>
 
-
     </div>
-
 
 </div>
 
@@ -2386,9 +1787,7 @@ class="screen hidden">
 id="winScreen"
 class="screen hidden">
 
-
     <div class="card win">
-
 
         <div
         id="winIcon"
@@ -2398,20 +1797,12 @@ class="screen hidden">
 
         </div>
 
-
-        <h2
-        id="winTitle">
-
+        <h2 id="winTitle">
             Você venceu!
-
         </h2>
 
-
-        <p
-        id="winMessage">
-
+        <p id="winMessage">
         </p>
-
 
         <button
         class="primary"
@@ -2421,9 +1812,7 @@ class="screen hidden">
 
         </button>
 
-
     </div>
-
 
 </div>
 
@@ -2851,6 +2240,161 @@ function iniciarDesafioDiario() {
 
     atualizarChute();
 
+
+    atualizarContadorTentativas();
+
+}
+
+
+/* ==================================================
+   CONTADOR DE TENTATIVAS
+================================================== */
+
+function atualizarContadorTentativas() {
+
+    const contador =
+        document.getElementById(
+            "attemptCounter"
+        );
+
+    const numero =
+        document.getElementById(
+            "attemptNumber"
+        );
+
+    const progresso =
+        document.getElementById(
+            "attemptProgress"
+        );
+
+    const restante =
+        document.getElementById(
+            "attemptRemaining"
+        );
+
+    const alerta =
+        document.getElementById(
+            "attemptAlert"
+        );
+
+
+    if (
+        modoAtual !== "diario"
+    ) {
+
+        contador
+            .classList
+            .add("hidden");
+
+        return;
+
+    }
+
+
+    contador
+        .classList
+        .remove("hidden");
+
+
+    const usadas =
+        tentativasDiarias;
+
+    const limite =
+        15;
+
+    const faltam =
+        Math.max(
+            limite - usadas,
+            0
+        );
+
+    const percentual =
+        Math.min(
+            (usadas / limite) * 100,
+            100
+        );
+
+
+    numero.innerText =
+
+        usadas +
+        " / " +
+        limite;
+
+
+    progresso.style.width =
+        percentual + "%";
+
+
+    restante.innerText =
+
+        faltam === 1
+
+        ?
+
+        "Resta 1 tentativa"
+
+        :
+
+        "Restam " +
+        faltam +
+        " tentativas";
+
+
+    contador
+        .classList
+        .remove(
+            "warning",
+            "danger",
+            "last"
+        );
+
+
+    alerta.innerText = "";
+
+
+    if (
+        usadas >= 15
+    ) {
+
+        contador
+            .classList
+            .add("last");
+
+
+        alerta.innerText =
+            "🔴 ÚLTIMA TENTATIVA!";
+
+    }
+
+    else if (
+        usadas >= 13
+    ) {
+
+        contador
+            .classList
+            .add("danger");
+
+
+        alerta.innerText =
+            "🟠 Últimas tentativas!";
+
+    }
+
+    else if (
+        usadas >= 10
+    ) {
+
+        contador
+            .classList
+            .add("warning");
+
+
+        alerta.innerText =
+            "🟡 Atenção! Restam poucas tentativas.";
+
+    }
+
 }
 
 
@@ -3236,14 +2780,6 @@ function mostrarTorneioBloqueado() {
 
 /* ==================================================
    DIGITAR CHUTE
-
-   REPETIÇÕES SÃO PERMITIDAS.
-
-   Exemplos:
-
-   1123
-   4556
-   7788
 ================================================== */
 
 function digitarChute(
@@ -3341,9 +2877,6 @@ function calcularResultado(
     ];
 
 
-    /* PRIMEIRA PASSAGEM:
-       POSIÇÃO CORRETA */
-
     for (
         let i = 0;
         i < 4;
@@ -3368,10 +2901,6 @@ function calcularResultado(
 
     }
 
-
-    /* SEGUNDA PASSAGEM:
-       NÚMERO CERTO,
-       POSIÇÃO ERRADA */
 
     for (
         let i = 0;
@@ -3473,6 +3002,9 @@ function confirmarChute() {
 
 
     tentativas++;
+
+
+    atualizarContadorTentativas();
 
 
     const resultado =
@@ -3579,6 +3111,17 @@ function adicionarHistorico(
     item.innerHTML =
 
         '<div class="history-guess">' +
+
+        '<span class="history-number">' +
+
+        String(
+            tentativas
+        ).padStart(
+            2,
+            "0"
+        ) +
+
+        '</span>' +
 
         numero +
 
@@ -3818,9 +3361,8 @@ document
 
 </script>
 
-
 </div>
 
 </body>
 
-</html>
+               </html>
