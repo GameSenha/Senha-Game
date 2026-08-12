@@ -11,50 +11,32 @@ content="width=device-width, initial-scale=1.0">
 <meta name="theme-color"
 content="#07152d">
 
-<title>
-SENHA — Descubra • Desafie • Vença
-</title>
-
+<title>SENHA — Descubra • Desafie • Vença</title>
 
 <style>
 
 /* ==================================================
-   CONFIGURAÇÕES GERAIS
+   CONFIGURAÇÕES
 ================================================== */
 
 * {
     box-sizing: border-box;
 }
 
-
 :root {
 
     --bg: #061329;
-
     --bg2: #0b1b38;
-
     --card: rgba(18,38,72,.78);
-
     --line: rgba(91,151,255,.28);
-
     --text: #f7f9ff;
-
     --muted: #9db0cf;
-
     --blue: #168cff;
-
     --indigo: #5146f5;
-
     --cyan: #11cbd7;
-
     --dark: #15233b;
 
 }
-
-
-/* ==================================================
-   BODY
-================================================== */
 
 html,
 body {
@@ -73,7 +55,6 @@ body {
     color: var(--text);
 
 }
-
 
 body {
 
@@ -102,7 +83,6 @@ body {
 
 }
 
-
 body:before,
 body:after {
 
@@ -124,7 +104,6 @@ body:after {
 
 }
 
-
 body:before {
 
     left: -150px;
@@ -132,7 +111,6 @@ body:before {
     top: -140px;
 
 }
-
 
 body:after {
 
@@ -166,13 +144,11 @@ body:after {
 
 }
 
-
 .hidden {
 
     display: none !important;
 
 }
-
 
 .screen {
 
@@ -190,38 +166,21 @@ body:after {
     text-align: center;
 
     margin:
-        14px 0 8px;
+        8px 0 20px;
 
 }
 
-
 .logo-image {
 
-    width: 265px;
+    width: 315px;
 
-    max-width: 88%;
+    max-width: 92%;
 
     height: auto;
 
     display: block;
 
     margin: auto;
-
-}
-
-
-.subtitle {
-
-    text-align: center;
-
-    color: #dce6f8;
-
-    letter-spacing: 4px;
-
-    font-size: 11px;
-
-    margin:
-        0 0 22px;
 
 }
 
@@ -259,7 +218,6 @@ body:after {
 
 }
 
-
 .name-card {
 
     padding:
@@ -269,7 +227,7 @@ body:after {
 
 
 /* ==================================================
-   CAMPO DE NOME
+   CAMPO NOME
 ================================================== */
 
 .name-label {
@@ -283,7 +241,6 @@ body:after {
     margin-bottom: 9px;
 
 }
-
 
 .name-input {
 
@@ -308,7 +265,6 @@ body:after {
 
 }
 
-
 .name-input:focus {
 
     border-color:
@@ -319,7 +275,6 @@ body:after {
         rgba(22,140,255,.12);
 
 }
-
 
 .name-help {
 
@@ -333,7 +288,7 @@ body:after {
 
 
 /* ==================================================
-   MENU PRINCIPAL
+   MENU
 ================================================== */
 
 .menu-button {
@@ -372,7 +327,6 @@ body:after {
 
 }
 
-
 .menu-button:after {
 
     content: "›";
@@ -389,14 +343,12 @@ body:after {
 
 }
 
-
 .menu-button:active {
 
     transform:
         scale(.985);
 
 }
-
 
 .menu-daily {
 
@@ -409,7 +361,6 @@ body:after {
 
 }
 
-
 .menu-online {
 
     background:
@@ -421,7 +372,6 @@ body:after {
 
 }
 
-
 .menu-friend {
 
     background:
@@ -432,7 +382,6 @@ body:after {
         );
 
 }
-
 
 .menu-tournament {
 
@@ -446,13 +395,11 @@ body:after {
 
 }
 
-
 .menu-tournament:after {
 
     color: #657790;
 
 }
-
 
 .menu-icon {
 
@@ -466,7 +413,6 @@ body:after {
 
 }
 
-
 .menu-title {
 
     font-size: 18px;
@@ -474,7 +420,6 @@ body:after {
     font-weight: 900;
 
 }
-
 
 .menu-description {
 
@@ -488,7 +433,6 @@ body:after {
     margin-top: 4px;
 
 }
-
 
 .badge {
 
@@ -530,7 +474,6 @@ body:after {
 
 }
 
-
 .dots {
 
     display: flex;
@@ -543,7 +486,6 @@ body:after {
 
 }
 
-
 .dot {
 
     width: 8px;
@@ -555,7 +497,6 @@ body:after {
     background: #e8f0ff;
 
 }
-
 
 .dot.active {
 
@@ -580,7 +521,6 @@ body:after {
         14px 0 6px;
 
 }
-
 
 .page-description {
 
@@ -616,7 +556,6 @@ button {
 
 }
 
-
 .back-button {
 
     width: 100%;
@@ -628,7 +567,6 @@ button {
     background: #243652;
 
 }
-
 
 .primary {
 
@@ -649,7 +587,6 @@ button {
 
 }
 
-
 .secondary {
 
     width: 100%;
@@ -664,14 +601,12 @@ button {
 
 }
 
-
 .share-button {
 
     background:
         #16a34a !important;
 
 }
-
 
 .button-disabled {
 
@@ -704,7 +639,6 @@ button {
 
 }
 
-
 .options {
 
     display: grid;
@@ -715,7 +649,6 @@ button {
     gap: 7px;
 
 }
-
 
 .option {
 
@@ -738,7 +671,6 @@ button {
 
 }
 
-
 .option.selected {
 
     background: #155bc4;
@@ -747,7 +679,6 @@ button {
         #53a7ff;
 
 }
-
 
 .option-small {
 
@@ -779,7 +710,6 @@ button {
 
 }
 
-
 .status {
 
     color: #8fa4c6;
@@ -789,7 +719,6 @@ button {
     margin-top: 4px;
 
 }
-
 
 .timer {
 
@@ -805,13 +734,11 @@ button {
 
 }
 
-
 .timer.warning {
 
     color: #ffd34d;
 
 }
-
 
 .timer.danger {
 
@@ -841,7 +768,6 @@ button {
 
 }
 
-
 .player-name {
 
     font-size: 14px;
@@ -856,7 +782,6 @@ button {
 
 }
 
-
 .score {
 
     font-size: 28px;
@@ -864,7 +789,6 @@ button {
     font-weight: 900;
 
 }
-
 
 .vs {
 
@@ -876,7 +800,7 @@ button {
 
 
 /* ==================================================
-   NÚMEROS
+   PALPITE
 ================================================== */
 
 .guess-display {
@@ -891,7 +815,6 @@ button {
         18px 0;
 
 }
-
 
 .guess-digit {
 
@@ -935,7 +858,6 @@ button {
 
 }
 
-
 .key {
 
     width: 100%;
@@ -950,7 +872,6 @@ button {
     background: #263854;
 
 }
-
 
 .message {
 
@@ -979,7 +900,6 @@ button {
 
 }
 
-
 .history-item {
 
     background: #0b1a31;
@@ -996,7 +916,6 @@ button {
 
 }
 
-
 .history-guess {
 
     font-size: 20px;
@@ -1007,7 +926,6 @@ button {
 
 }
 
-
 .result {
 
     margin-top: 5px;
@@ -1016,13 +934,11 @@ button {
 
 }
 
-
 .green {
 
     color: #4ade80;
 
 }
-
 
 .yellow {
 
@@ -1045,7 +961,6 @@ button {
     gap: 5px;
 
 }
-
 
 .reaction {
 
@@ -1076,13 +991,11 @@ button {
 
 }
 
-
 .win-icon {
 
     font-size: 68px;
 
 }
-
 
 .win h2 {
 
@@ -1093,7 +1006,6 @@ button {
 
 }
 
-
 .win p {
 
     color: #c6d4e8;
@@ -1101,7 +1013,6 @@ button {
     line-height: 1.55;
 
 }
-
 
 .invite-code {
 
@@ -1124,7 +1035,6 @@ button {
 
 }
 
-
 .center {
 
     text-align: center;
@@ -1140,17 +1050,15 @@ button {
 
     .logo-image {
 
-        width: 235px;
+        width: 280px;
 
     }
-
 
     .guess-digit {
 
         width: 49px;
 
     }
-
 
     .menu-title {
 
@@ -1186,13 +1094,6 @@ class="screen">
         src="logo-senha.png"
         alt="SENHA"
         class="logo-image">
-
-    </div>
-
-
-    <div class="subtitle">
-
-        DESCUBRA • DESAFIE • VENÇA
 
     </div>
 
@@ -2049,16 +1950,16 @@ class="screen hidden">
 
 
 </div>
+
+
 <!-- ==================================================
-     JOGO
+     TELA DO JOGO
 ================================================== -->
 
 <div
 id="gameScreen"
 class="screen hidden">
 
-
-    <!-- PLACAR -->
 
     <div class="card">
 
@@ -2123,8 +2024,6 @@ class="screen hidden">
     </div>
 
 
-    <!-- TOPO DO TURNO -->
-
     <div class="topbar">
 
 
@@ -2162,13 +2061,10 @@ class="screen hidden">
     </div>
 
 
-    <!-- ÁREA DO PALPITE -->
-
     <div class="card">
 
 
-        <p
-        class="center">
+        <p class="center">
 
             Digite seu chute.
 
@@ -2204,8 +2100,6 @@ class="screen hidden">
 
         </div>
 
-
-        <!-- TECLADO -->
 
         <div class="keyboard">
 
@@ -2350,10 +2244,6 @@ class="screen hidden">
     </div>
 
 
-    <!-- ==================================================
-         REAÇÕES
-    ================================================== -->
-
     <div
     id="reactionCard"
     class="card hidden">
@@ -2455,10 +2345,6 @@ class="screen hidden">
     </div>
 
 
-    <!-- ==================================================
-         HISTÓRICO
-    ================================================== -->
-
     <div class="card">
 
 
@@ -2492,9 +2378,8 @@ class="screen hidden">
 </div>
 
 
-
 <!-- ==================================================
-     TELA DE RESULTADO
+     RESULTADO
 ================================================== -->
 
 <div
@@ -2543,11 +2428,10 @@ class="screen hidden">
 </div>
 
 
-
 <script>
 
 /* ==================================================
-   VARIÁVEIS DO JOGO
+   VARIÁVEIS
 ================================================== */
 
 let senha = "";
@@ -2574,14 +2458,12 @@ let codigoConvite = "";
 
 
 /* ==================================================
-   DATA ATUAL
+   DATA
 ================================================== */
 
 function obterDataHoje() {
 
-    const d =
-        new Date();
-
+    const d = new Date();
 
     return (
 
@@ -2591,19 +2473,13 @@ function obterDataHoje() {
 
         String(
             d.getMonth() + 1
-        ).padStart(
-            2,
-            "0"
-        ) +
+        ).padStart(2,"0") +
 
         "-" +
 
         String(
             d.getDate()
-        ).padStart(
-            2,
-            "0"
-        )
+        ).padStart(2,"0")
 
     );
 
@@ -2611,17 +2487,14 @@ function obterDataHoje() {
 
 
 /* ==================================================
-   CONTROLE DO DESAFIO DIÁRIO
+   DESAFIO DIÁRIO
 ================================================== */
 
 function chaveDiario() {
 
     return (
-
         "senha_desafio_diario_" +
-
         obterDataHoje()
-
     );
 
 }
@@ -2630,11 +2503,9 @@ function chaveDiario() {
 function desafioDiarioConcluidoHoje() {
 
     return (
-
         localStorage.getItem(
             chaveDiario()
         ) === "concluido"
-
     );
 
 }
@@ -2651,7 +2522,7 @@ function marcarDesafioDiarioConcluido() {
 
 
 /* ==================================================
-   NOME DO JOGADOR
+   NOME
 ================================================== */
 
 function carregarNome() {
@@ -2664,16 +2535,13 @@ function carregarNome() {
 
     if (nome) {
 
-        nomeJogador =
-            nome;
-
+        nomeJogador = nome;
 
         document
             .getElementById(
                 "playerName"
             )
-            .value =
-            nome;
+            .value = nome;
 
     }
 
@@ -2694,8 +2562,7 @@ function salvarNome() {
 
     if (!nome) {
 
-        nome =
-            "Jogador";
+        nome = "Jogador";
 
     }
 
@@ -2707,8 +2574,7 @@ function salvarNome() {
         );
 
 
-    nomeJogador =
-        nome;
+    nomeJogador = nome;
 
 
     localStorage.setItem(
@@ -2723,7 +2589,7 @@ function salvarNome() {
 
 
 /* ==================================================
-   CONTROLE DAS TELAS
+   TELAS
 ================================================== */
 
 function esconderTodas() {
@@ -2737,9 +2603,7 @@ function esconderTodas() {
 
                 screen
                     .classList
-                    .add(
-                        "hidden"
-                    );
+                    .add("hidden");
 
             }
         );
@@ -2762,9 +2626,7 @@ function voltarInicio() {
             "home"
         )
         .classList
-        .remove(
-            "hidden"
-        );
+        .remove("hidden");
 
 }
 
@@ -2783,9 +2645,7 @@ function abrirDesafioDiario() {
             "dailyScreen"
         )
         .classList
-        .remove(
-            "hidden"
-        );
+        .remove("hidden");
 
 
     verificarTelaDesafioDiario();
@@ -2833,10 +2693,7 @@ function gerarSenhaDiaria() {
 
         parseInt(
             obterDataHoje()
-            .replace(
-                /-/g,
-                ""
-            ),
+            .replace(/-/g,""),
             10
         );
 
@@ -2884,7 +2741,7 @@ function gerarSenhaDiaria() {
 
 
 /* ==================================================
-   INICIAR DESAFIO DIÁRIO
+   INICIAR DIÁRIO
 ================================================== */
 
 function iniciarDesafioDiario() {
@@ -2913,8 +2770,7 @@ function iniciarDesafioDiario() {
 
     tentativasDiarias = 0;
 
-    modoAtual =
-        "diario";
+    modoAtual = "diario";
 
 
     clearInterval(
@@ -2930,9 +2786,7 @@ function iniciarDesafioDiario() {
             "gameScreen"
         )
         .classList
-        .remove(
-            "hidden"
-        );
+        .remove("hidden");
 
 
     document
@@ -2972,9 +2826,7 @@ function iniciarDesafioDiario() {
             "reactionCard"
         )
         .classList
-        .add(
-            "hidden"
-        );
+        .add("hidden");
 
 
     document
@@ -2988,6 +2840,13 @@ function iniciarDesafioDiario() {
         'Nenhuma tentativa ainda.' +
 
         '</p>';
+
+
+    document
+        .getElementById(
+            "chuteMensagem"
+        )
+        .innerText = "";
 
 
     atualizarChute();
@@ -3012,9 +2871,7 @@ function abrirDueloOnline() {
             "onlineScreen"
         )
         .classList
-        .remove(
-            "hidden"
-        );
+        .remove("hidden");
 
 }
 
@@ -3036,9 +2893,7 @@ function abrirDesafioAmigo() {
             "friendScreen"
         )
         .classList
-        .remove(
-            "hidden"
-        );
+        .remove("hidden");
 
 
     document
@@ -3062,8 +2917,7 @@ function selecionarMelhorDe(
     valor
 ) {
 
-    melhorDe =
-        valor;
+    melhorDe = valor;
 
 
     [3,5,7]
@@ -3091,15 +2945,14 @@ function selecionarMelhorDe(
 
 
 /* ==================================================
-   CRONÔMETRO ESCOLHIDO
+   CRONÔMETRO
 ================================================== */
 
 function selecionarTempo(
     valor
 ) {
 
-    tempoTurno =
-        valor;
+    tempoTurno = valor;
 
 
     [
@@ -3112,13 +2965,9 @@ function selecionarTempo(
         function(id) {
 
             document
-                .getElementById(
-                    id
-                )
+                .getElementById(id)
                 .classList
-                .remove(
-                    "selected"
-                );
+                .remove("selected");
 
         }
     );
@@ -3127,16 +2976,11 @@ function selecionarTempo(
     document
         .getElementById(
             valor === 0
-                ?
-                "time0"
-                :
-                "time" +
-                valor
+                ? "time0"
+                : "time" + valor
         )
         .classList
-        .add(
-            "selected"
-        );
+        .add("selected");
 
 
     atualizarResumo();
@@ -3145,7 +2989,7 @@ function selecionarTempo(
 
 
 /* ==================================================
-   RESUMO DA PARTIDA
+   RESUMO
 ================================================== */
 
 function atualizarResumo() {
@@ -3173,7 +3017,6 @@ function atualizarResumo() {
             :
 
             tempoTurno +
-
             " segundos por turno"
 
         );
@@ -3182,7 +3025,7 @@ function atualizarResumo() {
 
 
 /* ==================================================
-   GERAR CÓDIGO DO CONVITE
+   CÓDIGO DA PARTIDA
 ================================================== */
 
 function gerarCodigoConvite() {
@@ -3218,7 +3061,7 @@ function gerarCodigoConvite() {
 
 
 /* ==================================================
-   CRIAR DESAFIO PARA AMIGO
+   CRIAR DESAFIO
 ================================================== */
 
 function criarDesafioAmigo() {
@@ -3272,7 +3115,6 @@ function criarDesafioAmigo() {
         .innerText =
 
         "Melhor de " +
-
         melhorDe;
 
 
@@ -3291,10 +3133,7 @@ function criarDesafioAmigo() {
         :
 
         "⏱️ " +
-
-        tempoTurno +
-
-        " segundos";
+        tempoTurno;
 
 
     esconderTodas();
@@ -3305,9 +3144,7 @@ function criarDesafioAmigo() {
             "inviteScreen"
         )
         .classList
-        .remove(
-            "hidden"
-        );
+        .remove("hidden");
 
 }
 
@@ -3338,7 +3175,6 @@ function compartilharWhatsApp() {
     ) {
 
         texto +=
-
             "♾️ Sem limite de tempo\n\n";
 
     }
@@ -3348,9 +3184,7 @@ function compartilharWhatsApp() {
         texto +=
 
             "⏱️ " +
-
             tempoTurno +
-
             " segundos por turno\n\n";
 
     }
@@ -3359,7 +3193,6 @@ function compartilharWhatsApp() {
     texto +=
 
         "Código da partida: " +
-
         codigoConvite +
 
         "\n\n" +
@@ -3396,32 +3229,22 @@ function mostrarTorneioBloqueado() {
             "tournamentScreen"
         )
         .classList
-        .remove(
-            "hidden"
-        );
+        .remove("hidden");
 
 }
 
 
 /* ==================================================
    DIGITAR CHUTE
-================================================== */
 
-/*
-   IMPORTANTE:
+   REPETIÇÕES SÃO PERMITIDAS.
 
-   O chute PODE ter números repetidos.
-
-   Exemplos válidos:
+   Exemplos:
 
    1123
    4556
    7788
-
-   Isso permite usar repetição
-   como estratégia para eliminar
-   possibilidades.
-*/
+================================================== */
 
 function digitarChute(
     numero
@@ -3436,8 +3259,7 @@ function digitarChute(
     }
 
 
-    chute +=
-        numero;
+    chute += numero;
 
 
     atualizarChute();
@@ -3446,7 +3268,7 @@ function digitarChute(
 
 
 /* ==================================================
-   ATUALIZAR CHUTE NA TELA
+   ATUALIZAR CHUTE
 ================================================== */
 
 function atualizarChute() {
@@ -3461,9 +3283,7 @@ function atualizarChute() {
         function(id,i) {
 
             document
-                .getElementById(
-                    id
-                )
+                .getElementById(id)
                 .innerText =
                 chute[i] || "";
 
@@ -3474,7 +3294,7 @@ function atualizarChute() {
 
 
 /* ==================================================
-   APAGAR CHUTE
+   APAGAR
 ================================================== */
 
 function apagarChute() {
@@ -3505,37 +3325,24 @@ function calcularResultado(
     let certosFora = 0;
 
 
-    /*
-       Marca quais posições
-       já foram utilizadas.
-    */
-
     let senhaUsada = [
-
         false,
         false,
         false,
         false
-
     ];
 
 
     let tentativaUsada = [
-
         false,
         false,
         false,
         false
-
     ];
 
 
-    /*
-       PRIMEIRA ETAPA:
-
-       verifica os números
-       na posição correta.
-    */
+    /* PRIMEIRA PASSAGEM:
+       POSIÇÃO CORRETA */
 
     for (
         let i = 0;
@@ -3544,8 +3351,7 @@ function calcularResultado(
     ) {
 
         if (
-            tentativa[i] ===
-            senha[i]
+            tentativa[i] === senha[i]
         ) {
 
             certosLugar++;
@@ -3563,16 +3369,9 @@ function calcularResultado(
     }
 
 
-    /*
-       SEGUNDA ETAPA:
-
-       procura números corretos
-       em posições erradas.
-
-       Cada número da senha
-       só pode ser contabilizado
-       uma única vez.
-    */
+    /* SEGUNDA PASSAGEM:
+       NÚMERO CERTO,
+       POSIÇÃO ERRADA */
 
     for (
         let i = 0;
@@ -3657,7 +3456,6 @@ function confirmarChute() {
                 "chuteMensagem"
             )
             .innerText =
-
             "Digite 4 números.";
 
         return;
@@ -3665,17 +3463,8 @@ function confirmarChute() {
     }
 
 
-    /*
-       Conta tentativa.
-
-       No Desafio Diário:
-
-       máximo = 15.
-    */
-
     if (
-        modoAtual ===
-        "diario"
+        modoAtual === "diario"
     ) {
 
         tentativasDiarias++;
@@ -3686,10 +3475,6 @@ function confirmarChute() {
     tentativas++;
 
 
-    /*
-       Calcula o resultado.
-    */
-
     const resultado =
 
         calcularResultado(
@@ -3698,28 +3483,18 @@ function confirmarChute() {
         );
 
 
-    /*
-       Adiciona ao histórico.
-    */
-
     adicionarHistorico(
         chute,
         resultado
     );
 
 
-    /*
-       SENHA DESCOBERTA
-    */
-
     if (
-        resultado.certosLugar ===
-        4
+        resultado.certosLugar === 4
     ) {
 
         if (
-            modoAtual ===
-            "diario"
+            modoAtual === "diario"
         ) {
 
             marcarDesafioDiarioConcluido();
@@ -3735,19 +3510,13 @@ function confirmarChute() {
     }
 
 
-    /*
-       LIMITE DO DESAFIO DIÁRIO
-    */
-
     if (
 
-        modoAtual ===
-        "diario"
+        modoAtual === "diario"
 
         &&
 
-        tentativasDiarias >=
-        15
+        tentativasDiarias >= 15
 
     ) {
 
@@ -3762,10 +3531,6 @@ function confirmarChute() {
     }
 
 
-    /*
-       Limpa o próximo chute.
-    */
-
     chute = "";
 
 
@@ -3775,7 +3540,7 @@ function confirmarChute() {
 
 
 /* ==================================================
-   HISTÓRICO DE TENTATIVAS
+   HISTÓRICO
 ================================================== */
 
 function adicionarHistorico(
@@ -3890,9 +3655,7 @@ function vencer() {
             "winScreen"
         )
         .classList
-        .remove(
-            "hidden"
-        );
+        .remove("hidden");
 
 
     document
@@ -3912,8 +3675,7 @@ function vencer() {
 
 
     if (
-        modoAtual ===
-        "diario"
+        modoAtual === "diario"
     ) {
 
         document
@@ -3972,7 +3734,7 @@ function vencer() {
 
 
 /* ==================================================
-   DERROTA NO DESAFIO DIÁRIO
+   DERROTA
 ================================================== */
 
 function perderDesafioDiario() {
@@ -3990,9 +3752,7 @@ function perderDesafioDiario() {
             "winScreen"
         )
         .classList
-        .remove(
-            "hidden"
-        );
+        .remove("hidden");
 
 
     document
@@ -4047,33 +3807,14 @@ document
     "DOMContentLoaded",
     function() {
 
-
-        /*
-           Recupera o nome salvo.
-        */
-
         carregarNome();
-
-
-        /*
-           Verifica se o Desafio Diário
-           já foi realizado hoje.
-        */
 
         verificarTelaDesafioDiario();
 
-
-        /*
-           Atualiza as opções
-           do Desafiar Amigo.
-        */
-
         atualizarResumo();
-
 
     }
 );
-
 
 </script>
 
