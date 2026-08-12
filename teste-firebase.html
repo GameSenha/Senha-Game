@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Teste Firebase - SENHA</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: #050b18;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.card {
+    width: 100%;
+    max-width: 500px;
+    background: #101c32;
+    border: 1px solid #243858;
+    border-radius: 24px;
+    padding: 30px 24px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.4);
+}
+
+.logo {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+}
+
+.logo span {
+    color: #1976ff;
+}
+
+.subtitle {
+    text-align: center;
+    color: #8fa4c5;
+    margin-bottom: 30px;
+}
+
+.status {
+    padding: 18px;
+    border-radius: 16px;
+    background: #18263d;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.status.loading {
+    color: #ffd166;
+}
+
+.status.success {
+    color: #4ade80;
+    border: 1px solid #245c3a;
+}
+
+.status.error {
+    color: #ff6b6b;
+    border: 1px solid #6b2525;
+}
+
+.info {
+    background: #0b1527;
+    border-radius: 16px;
+    padding: 18px;
+    margin-top: 15px;
+}
+
+.label {
+    color: #7f94b5;
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.value {
+    color: #ffffff;
+    word-break: break-all;
+    font-size: 14px;
+}
+
+button {
+    width: 100%;
+    border: 0;
+    border-radius: 14px;
+    padding: 15px;
+    margin-top: 20px;
+    background: linear-gradient(90deg, #087cff, #4c35e8);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.small {
+    text-align: center;
+    color: #637898;
+    font-size: 12px;
+    margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="logo">
+        SENH<span>A</span>
+    </div>
+
+    <div class="subtitle">
+        Teste de conexão online
+    </div>
+
+    <div id="status" class="status loading">
+        🔄 Conectando ao Firebase...
+    </div>
+
+    <div class="info">
+        <div class="label">
+            ID DO JOGADOR
+        </div>
+
+        <div id="uid" class="value">
+            Aguardando...
+        </div>
+    </div>
+
+    <div class="info">
+        <div class="label">
+            PROJETO
+        </div>
+
+        <div class="value">
+            senha-game-71a6a
+        </div>
+    </div>
+
+    <div class="info">
+        <div class="label">
+            BANCO DE DADOS
+        </div>
+
+        <div id="databaseStatus" class="value">
+            Aguardando...
+        </div>
+    </div>
+
+    <button onclick="location.reload()">
+        🔄 Testar novamente
+    </button>
+
+    <div class="small">
+        SENHA • versão de teste
+    </div>
+
+</div>
+
+
+<script type="module">
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
+
+import {
+    getAuth,
+    signInAnonymously
+}
+from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
+
+import {
+    getDatabase,
+    ref,
+    set
+}
+from "https://www.gstatic.com/firebasejs/12.16.0/firebase-database.js";
+
+
+/* ==========================================
+   CONFIGURAÇÃO FIREBASE
+========================================== */
+
+const firebaseConfig = {
+
+    apiKey: "AIzaSyAHtU6LyGcsZz_0nWa0JeYycPUX4gX2jvc",
+
+    authDomain:
+        "senha-game-71a6a.firebaseapp.com",
+
+    databaseURL:
+        "https://senha-game-71a6a-default-rtdb.firebaseio.com",
+
+    projectId:
+        "senha-game-71a6a",
+
+    storageBucket:
+        "senha-game-71a6a.firebasestorage.app",
+
+    messagingSenderId:
+        "405309556115",
+
+    appId:
+        "1:405309556115:web:7bbcf7e1438b37a711d466"
+};
+
+
+/* ==========================================
+   INICIALIZA FIREBASE
+========================================== */
+
+const app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+
+const database = getDatabase(app);
+
+
+/* ==========================================
+   ELEMENTOS DA TELA
+========================================== */
+
+const statusElement =
+    document.getElementById("status");
+
+const uidElement =
+    document.getElementById("uid");
+
+const databaseElement =
+    document.getElementById("databaseStatus");
+
+
+/* ==========================================
+   LOGIN ANÔNIMO
+========================================== */
+
+async function iniciarTeste() {
+
+    try {
+
+        statusElement.className =
+            "status loading";
+
+        statusElement.innerHTML =
+            "🔐 Identificando jogador...";
+
+
+        /* LOGIN ANÔNIMO */
+
+        const resultado =
+            await signInAnonymously(auth);
+
+
+        const user =
+            resultado.user;
+
+
+        const uid =
+            user.uid;
+
+
+        /* MOSTRA UID */
+
+        uidElement.textContent =
+            uid;
+
+
+        statusElement.innerHTML =
+            "☁️ Conectando ao banco...";
+
+
+        /* ======================================
+           TESTE DE ESCRITA
+        ====================================== */
+
+        const jogadorRef =
+            ref(
+                database,
+                "teste/jogadores/" + uid
+            );
+
+
+        await set(
+            jogadorRef,
+            {
+
+                uid: uid,
+
+                nome: "Teste",
+
+                conectado: true,
+
+                horario:
+                    new Date().toISOString()
+
+            }
+        );
+
+
+        /* ======================================
+           SUCESSO
+        ====================================== */
+
+        statusElement.className =
+            "status success";
+
+        statusElement.innerHTML =
+            "🟢 FIREBASE CONECTADO!";
+
+
+        databaseElement.textContent =
+            "Escrita realizada com sucesso";
+
+
+        console.log(
+            "Firebase conectado!"
+        );
+
+        console.log(
+            "UID:",
+            uid
+        );
+
+
+    } catch (erro) {
+
+        console.error(
+            erro
+        );
+
+
+        statusElement.className =
+            "status error";
+
+        statusElement.innerHTML =
+            "🔴 ERRO NA CONEXÃO";
+
+
+        databaseElement.textContent =
+            erro.code ||
+            erro.message;
+
+
+    }
+
+}
+
+
+/* ==========================================
+   INICIA TESTE
+========================================== */
+
+iniciarTeste();
+
+</script>
+
+</body>
+</html>
