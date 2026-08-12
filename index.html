@@ -6,15 +6,11 @@
 <meta charset="UTF-8">
 
 <meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+content="width=device-width, initial-scale=1.0">
 
 <title>SENHA</title>
 
 <style>
-
-/* =====================================================
-   BASE
-===================================================== */
 
 * {
     box-sizing: border-box;
@@ -24,22 +20,22 @@ body {
 
     margin: 0;
 
+    min-height: 100vh;
+
     font-family:
         Arial,
         Helvetica,
         sans-serif;
 
+    color: #fff;
+
     background:
         linear-gradient(
             160deg,
-            #0b1020,
+            #080d1a,
             #111827,
-            #1e1b4b
+            #171b3b
         );
-
-    color: #fff;
-
-    min-height: 100vh;
 }
 
 .app {
@@ -53,47 +49,49 @@ body {
     margin: auto;
 
     padding:
-        20px
         18px
+        16px
         40px;
 }
 
-.screen {
-
-    width: 100%;
-}
-
 .hidden {
-
     display: none !important;
 }
 
+.screen {
+    width: 100%;
+}
 
-/* =====================================================
+
+/* =========================
    LOGO
-===================================================== */
+========================= */
 
 .logo {
 
     text-align: center;
 
-    font-size: 48px;
-
-    font-weight: 900;
-
-    letter-spacing: 2px;
-
-    margin-top: 20px;
+    margin:
+        18px 0 24px;
 }
 
-.logo-icon {
+.logo-image {
+
+    width: 245px;
+
+    max-width: 86%;
+
+    height: auto;
 
     display: block;
 
-    font-size: 52px;
-
-    margin-bottom: 4px;
+    margin: auto;
 }
+
+
+/* =========================
+   TEXTOS
+========================= */
 
 .subtitle {
 
@@ -101,17 +99,42 @@ body {
 
     color: #9ca3af;
 
+    font-size: 13px;
+
+    margin:
+        -8px 0 25px;
+}
+
+.page-title {
+
+    text-align: center;
+
+    font-size: 27px;
+
+    font-weight: 900;
+
+    margin:
+        8px 0;
+}
+
+.page-description {
+
+    text-align: center;
+
+    color: #9ca3af;
+
     font-size: 14px;
 
-    margin-top: 7px;
+    line-height: 1.5;
 
-    margin-bottom: 25px;
+    margin:
+        0 0 20px;
 }
 
 
-/* =====================================================
+/* =========================
    CARDS
-===================================================== */
+========================= */
 
 .card {
 
@@ -132,44 +155,44 @@ body {
             .07
         );
 
-    border-radius: 22px;
+    border-radius: 20px;
 
-    padding: 20px;
+    padding: 18px;
 
-    margin-bottom: 15px;
+    margin-bottom: 14px;
 
     box-shadow:
-        0 14px 40px
+        0 14px 35px
         rgba(
             0,
             0,
             0,
-            .25
+            .22
         );
 }
 
 
-/* =====================================================
+/* =========================
    BOTÕES
-===================================================== */
+========================= */
 
 button {
 
     width: 100%;
 
-    border: none;
+    border: 0;
 
-    border-radius: 15px;
+    border-radius: 14px;
 
-    padding: 16px;
+    padding: 15px;
 
-    margin-top: 10px;
+    margin-top: 9px;
 
     font-size: 16px;
 
     font-weight: 800;
 
-    color: white;
+    color: #fff;
 
     background:
         linear-gradient(
@@ -183,10 +206,12 @@ button {
 
 button:active {
 
-    transform: scale(.98);
+    transform:
+        scale(.98);
 }
 
-.button-secondary {
+.button-secondary,
+.back-button {
 
     background: #374151;
 }
@@ -197,17 +222,13 @@ button:active {
 
     color: #6b7280;
 
-    border:
-        1px solid
-        #374151;
-
     cursor: not-allowed;
 }
 
 
-/* =====================================================
+/* =========================
    MENU
-===================================================== */
+========================= */
 
 .menu-button {
 
@@ -217,20 +238,20 @@ button:active {
 
     text-align: left;
 
-    gap: 15px;
+    gap: 14px;
 
-    padding: 17px;
+    padding: 16px;
 
-    margin-top: 11px;
+    margin-top: 10px;
 }
 
 .menu-icon {
 
     width: 42px;
 
-    font-size: 30px;
-
     text-align: center;
+
+    font-size: 28px;
 }
 
 .menu-text {
@@ -240,7 +261,7 @@ button:active {
 
 .menu-title {
 
-    font-size: 17px;
+    font-size: 16px;
 
     font-weight: 800;
 }
@@ -254,58 +275,28 @@ button:active {
     margin-top: 4px;
 }
 
+.badge {
 
-/* =====================================================
-   TÍTULOS
-===================================================== */
+    display: inline-block;
 
-.page-title {
+    padding:
+        4px 7px;
 
-    text-align: center;
+    border-radius: 20px;
 
-    font-size: 27px;
+    font-size: 9px;
 
-    font-weight: 900;
+    background: #292524;
 
-    margin:
-        10px 0 8px;
-}
+    color: #fbbf24;
 
-.page-description {
-
-    text-align: center;
-
-    color: #9ca3af;
-
-    font-size: 14px;
-
-    margin-bottom: 20px;
-
-    line-height: 1.5;
+    vertical-align: middle;
 }
 
 
-/* =====================================================
-   VOLTAR
-===================================================== */
-
-.back-button {
-
-    background: transparent;
-
-    color: #9ca3af;
-
-    border:
-        1px solid
-        #374151;
-
-    margin-bottom: 10px;
-}
-
-
-/* =====================================================
-   NOME
-===================================================== */
+/* =========================
+   INPUT
+========================= */
 
 .name-label {
 
@@ -324,9 +315,9 @@ button:active {
 
     width: 100%;
 
-    padding: 15px;
+    padding: 14px;
 
-    border-radius: 13px;
+    border-radius: 12px;
 
     border:
         2px solid
@@ -334,7 +325,7 @@ button:active {
 
     background: #101827;
 
-    color: white;
+    color: #fff;
 
     font-size: 17px;
 
@@ -353,13 +344,13 @@ button:active {
 
     font-size: 11px;
 
-    margin-top: 7px;
+    margin-top: 6px;
 }
 
 
-/* =====================================================
+/* =========================
    OPÇÕES
-===================================================== */
+========================= */
 
 .option-title {
 
@@ -369,9 +360,8 @@ button:active {
 
     color: #d1d5db;
 
-    margin-top: 20px;
-
-    margin-bottom: 8px;
+    margin:
+        18px 0 8px;
 }
 
 .options {
@@ -392,10 +382,10 @@ button:active {
         2px solid
         transparent;
 
-    border-radius: 12px;
+    border-radius: 11px;
 
     padding:
-        13px 4px;
+        12px 3px;
 
     text-align: center;
 
@@ -414,7 +404,7 @@ button:active {
 
 .option-small {
 
-    font-size: 10px;
+    font-size: 9px;
 
     color: #cbd5e1;
 
@@ -422,15 +412,15 @@ button:active {
 }
 
 
-/* =====================================================
+/* =========================
    CONVITE
-===================================================== */
+========================= */
 
 .invite-code {
 
     text-align: center;
 
-    font-size: 30px;
+    font-size: 29px;
 
     font-weight: 900;
 
@@ -440,7 +430,7 @@ button:active {
 
     background: #101827;
 
-    border-radius: 13px;
+    border-radius: 12px;
 
     margin: 15px 0;
 }
@@ -451,9 +441,9 @@ button:active {
 }
 
 
-/* =====================================================
+/* =========================
    JOGO
-===================================================== */
+========================= */
 
 .topbar {
 
@@ -465,29 +455,29 @@ button:active {
     align-items:
         center;
 
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .status {
 
-    color: #cbd5e1;
+    color: #9ca3af;
 
-    font-size: 13px;
+    font-size: 12px;
 
-    margin-top: 5px;
+    margin-top: 4px;
 }
 
 .timer {
 
-    font-size: 32px;
+    font-size: 31px;
 
     font-weight: 900;
 
-    color: #60a5fa;
-
-    min-width: 60px;
+    min-width: 58px;
 
     text-align: center;
+
+    color: #60a5fa;
 }
 
 .timer.warning {
@@ -501,9 +491,9 @@ button:active {
 }
 
 
-/* =====================================================
+/* =========================
    PLACAR
-===================================================== */
+========================= */
 
 .scoreboard {
 
@@ -518,12 +508,12 @@ button:active {
 
     text-align: center;
 
-    gap: 10px;
+    gap: 8px;
 }
 
 .player-name {
 
-    font-size: 15px;
+    font-size: 14px;
 
     font-weight: 800;
 
@@ -536,22 +526,22 @@ button:active {
 
 .score {
 
-    font-size: 28px;
+    font-size: 27px;
 
     font-weight: 900;
 }
 
 .vs {
 
-    color: #6b7280;
+    font-size: 11px;
 
-    font-size: 12px;
+    color: #6b7280;
 }
 
 
-/* =====================================================
+/* =========================
    PALPITE
-===================================================== */
+========================= */
 
 .guess-display {
 
@@ -559,18 +549,19 @@ button:active {
 
     justify-content: center;
 
-    gap: 9px;
+    gap: 8px;
 
-    margin: 20px 0;
+    margin:
+        18px 0;
 }
 
 .guess-digit {
 
-    width: 55px;
+    width: 54px;
 
-    height: 62px;
+    height: 60px;
 
-    border-radius: 12px;
+    border-radius: 11px;
 
     border:
         2px solid
@@ -578,21 +569,21 @@ button:active {
 
     background: #101827;
 
-    color: white;
+    color: #fff;
 
     text-align: center;
 
-    font-size: 28px;
+    font-size: 27px;
 
     font-weight: bold;
 
-    line-height: 58px;
+    line-height: 56px;
 }
 
 
-/* =====================================================
+/* =========================
    TECLADO
-===================================================== */
+========================= */
 
 .keyboard {
 
@@ -601,14 +592,15 @@ button:active {
     grid-template-columns:
         repeat(3, 1fr);
 
-    gap: 8px;
+    gap: 7px;
 }
 
 .key {
 
     margin: 0;
 
-    padding: 15px 5px;
+    padding:
+        14px 4px;
 
     background: #374151;
 
@@ -621,34 +613,34 @@ button:active {
 
     color: #cbd5e1;
 
-    margin-top: 15px;
+    margin-top: 12px;
 
-    min-height: 22px;
+    min-height: 21px;
 }
 
 
-/* =====================================================
+/* =========================
    HISTÓRICO
-===================================================== */
+========================= */
 
 .history-title {
 
-    font-size: 18px;
+    font-size: 17px;
 
     font-weight: bold;
 
-    margin-bottom: 10px;
+    margin-bottom: 9px;
 }
 
 .history-item {
 
     background: #111a29;
 
-    border-radius: 12px;
+    border-radius: 11px;
 
-    padding: 13px;
+    padding: 12px;
 
-    margin-top: 8px;
+    margin-top: 7px;
 }
 
 .history-guess {
@@ -662,9 +654,9 @@ button:active {
 
 .result {
 
-    margin-top: 6px;
+    margin-top: 5px;
 
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .green {
@@ -678,9 +670,9 @@ button:active {
 }
 
 
-/* =====================================================
+/* =========================
    REAÇÕES
-===================================================== */
+========================= */
 
 .reactions {
 
@@ -694,19 +686,20 @@ button:active {
 
 .reaction {
 
-    padding: 8px 2px;
+    padding:
+        8px 2px;
 
     margin: 0;
 
     background: #374151;
 
-    font-size: 20px;
+    font-size: 19px;
 }
 
 
-/* =====================================================
+/* =========================
    RESULTADO
-===================================================== */
+========================= */
 
 .win {
 
@@ -715,14 +708,15 @@ button:active {
 
 .win-icon {
 
-    font-size: 75px;
+    font-size: 68px;
 }
 
 .win h2 {
 
-    font-size: 30px;
+    font-size: 29px;
 
-    margin: 10px 0;
+    margin:
+        8px 0;
 }
 
 .win p {
@@ -733,73 +727,25 @@ button:active {
 }
 
 
-/* =====================================================
-   DIÁRIO
-===================================================== */
-
-.daily-locked {
-
-    text-align: center;
-}
-
-.daily-locked-icon {
-
-    font-size: 65px;
-
-    margin-bottom: 10px;
-}
-
-
-/* =====================================================
-   BADGE
-===================================================== */
-
-.badge {
-
-    display: inline-block;
-
-    padding: 5px 9px;
-
-    border-radius: 20px;
-
-    font-size: 10px;
-
-    font-weight: bold;
-
-    background: #374151;
-
-    color: #9ca3af;
-}
-
-.badge-coming {
-
-    background: #292524;
-
-    color: #fbbf24;
-}
-
-
-/* =====================================================
+/* =========================
    RESPONSIVO
-===================================================== */
+========================= */
 
-@media (
-    max-width: 360px
-) {
+@media(max-width:360px) {
 
-    .logo {
+    .logo-image {
 
-        font-size: 40px;
+        width: 220px;
+    }
+
+    .guess-digit {
+
+        width: 49px;
     }
 
     .option {
 
         font-size: 13px;
-    }
-
-    .guess-digit {
-
-        width: 50px;
     }
 
 }
@@ -808,29 +754,26 @@ button:active {
 
 </head>
 
-
 <body>
-
 
 <div class="app">
 
 
-<!-- ==================================================
+<!-- ================================================
      TELA INICIAL
-================================================== -->
+================================================ -->
 
 <div
-    id="home"
-    class="screen">
+id="home"
+class="screen">
 
 
     <div class="logo">
 
-        <span class="logo-icon">
-            🔐
-        </span>
-
-        SENHA
+        <img
+        src="logo-senha.png"
+        alt="SENHA"
+        class="logo-image">
 
     </div>
 
@@ -842,13 +785,11 @@ button:active {
     </div>
 
 
-    <!-- NOME -->
-
     <div class="card">
 
         <label
-            class="name-label"
-            for="playerName">
+        class="name-label"
+        for="playerName">
 
             👤 Seu nome
 
@@ -856,10 +797,10 @@ button:active {
 
 
         <input
-            id="playerName"
-            class="name-input"
-            maxlength="18"
-            placeholder="Digite seu nome">
+        id="playerName"
+        class="name-input"
+        maxlength="18"
+        placeholder="Digite seu nome">
 
 
         <div class="name-help">
@@ -871,116 +812,82 @@ button:active {
     </div>
 
 
-    <!-- DIÁRIO -->
-
     <button
-        class="menu-button"
-        onclick="abrirDesafioDiario()">
-
+    class="menu-button"
+    onclick="abrirDesafioDiario()">
 
         <div class="menu-icon">
             📅
         </div>
 
-
         <div class="menu-text">
 
             <div class="menu-title">
-
                 Desafio Diário
-
             </div>
 
-
             <div class="menu-description">
-
                 Uma senha para todos
-
             </div>
 
         </div>
 
-
     </button>
 
 
-    <!-- DUELO -->
-
     <button
-        class="menu-button"
-        onclick="abrirDueloOnline()">
-
+    class="menu-button"
+    onclick="abrirDueloOnline()">
 
         <div class="menu-icon">
             ⚔️
         </div>
 
-
         <div class="menu-text">
 
             <div class="menu-title">
-
                 Duelo Online
-
             </div>
 
-
             <div class="menu-description">
-
                 Encontre um adversário
-
             </div>
 
         </div>
 
-
     </button>
 
 
-    <!-- AMIGO -->
-
     <button
-        class="menu-button"
-        onclick="abrirDesafioAmigo()">
-
+    class="menu-button"
+    onclick="abrirDesafioAmigo()">
 
         <div class="menu-icon">
             👥
         </div>
 
-
         <div class="menu-text">
 
             <div class="menu-title">
-
                 Desafiar Amigo
-
             </div>
 
-
             <div class="menu-description">
-
                 Convide pelo WhatsApp
-
             </div>
 
         </div>
-
 
     </button>
 
 
-    <!-- TORNEIO -->
-
     <button
-        class="menu-button button-disabled"
-        onclick="mostrarTorneioBloqueado()">
-
+    class="menu-button button-disabled"
+    onclick="mostrarTorneioBloqueado()">
 
         <div class="menu-icon">
             🏆
         </div>
-
 
         <div class="menu-text">
 
@@ -988,43 +895,35 @@ button:active {
 
                 Torneio
 
-                <span class="badge badge-coming">
-
+                <span class="badge">
                     EM BREVE
-
                 </span>
 
             </div>
 
-
             <div class="menu-description">
-
                 Campeonatos eliminatórios
-
             </div>
 
         </div>
 
-
     </button>
-
 
 </div>
 
 
-
-<!-- ==================================================
+<!-- ================================================
      DESAFIO DIÁRIO
-================================================== -->
+================================================ -->
 
 <div
-    id="dailyScreen"
-    class="screen hidden">
+id="dailyScreen"
+class="screen hidden">
 
 
     <button
-        class="back-button"
-        onclick="voltarInicio()">
+    class="back-button"
+    onclick="voltarInicio()">
 
         ← Voltar
 
@@ -1040,21 +939,22 @@ button:active {
 
     <div class="page-description">
 
-        Todos tentam descobrir a mesma senha.
+        Todos tentam descobrir
+        a mesma senha.
 
     </div>
 
 
     <div
-        id="dailyAvailable"
-        class="card">
+    id="dailyAvailable"
+    class="card">
 
 
         <div
-            style="
-            text-align:center;
-            font-size:45px;
-            ">
+        style="
+        text-align:center;
+        font-size:45px;
+        ">
 
             🔐
 
@@ -1062,9 +962,9 @@ button:active {
 
 
         <h3
-            style="
-            text-align:center;
-            ">
+        style="
+        text-align:center;
+        ">
 
             Desafio de hoje
 
@@ -1072,10 +972,10 @@ button:active {
 
 
         <p
-            style="
-            text-align:center;
-            color:#9ca3af;
-            ">
+        style="
+        text-align:center;
+        color:#9ca3af;
+        ">
 
             Até 15 tentativas.
             <br>
@@ -1085,7 +985,7 @@ button:active {
 
 
         <button
-            onclick="iniciarDesafioDiario()">
+        onclick="iniciarDesafioDiario()">
 
             COMEÇAR DESAFIO
 
@@ -1096,11 +996,17 @@ button:active {
 
 
     <div
-        id="dailyLocked"
-        class="card daily-locked hidden">
+    id="dailyLocked"
+    class="card hidden"
+    style="
+    text-align:center;
+    ">
 
 
-        <div class="daily-locked-icon">
+        <div
+        style="
+        font-size:60px;
+        ">
 
             🔒
 
@@ -1114,40 +1020,45 @@ button:active {
         </h2>
 
 
-        <p>
+        <p
+        style="
+        color:#cbd5e1;
+        ">
 
-            Você já participou do
-            Desafio Diário de hoje.
+            Você já participou
+            do Desafio Diário de hoje.
 
         </p>
 
 
-        <p>
+        <p
+        style="
+        color:#9ca3af;
+        ">
 
-            Volte amanhã para um novo desafio.
+            Volte amanhã para
+            um novo desafio.
 
         </p>
 
 
     </div>
 
-
 </div>
 
 
-
-<!-- ==================================================
+<!-- ================================================
      DUELO ONLINE
-================================================== -->
+================================================ -->
 
 <div
-    id="onlineScreen"
-    class="screen hidden">
+id="onlineScreen"
+class="screen hidden">
 
 
     <button
-        class="back-button"
-        onclick="voltarInicio()">
+    class="back-button"
+    onclick="voltarInicio()">
 
         ← Voltar
 
@@ -1169,24 +1080,24 @@ button:active {
     </div>
 
 
-    <div class="card">
+    <div
+    class="card"
+    style="
+    text-align:center;
+    ">
 
 
         <div
-            style="
-            text-align:center;
-            font-size:55px;
-            ">
+        style="
+        font-size:55px;
+        ">
 
             ⚔️
 
         </div>
 
 
-        <h3
-            style="
-            text-align:center;
-            ">
+        <h3>
 
             Multiplayer
 
@@ -1194,11 +1105,10 @@ button:active {
 
 
         <p
-            style="
-            text-align:center;
-            color:#9ca3af;
-            line-height:1.5;
-            ">
+        style="
+        color:#9ca3af;
+        line-height:1.5;
+        ">
 
             O Duelo Online será conectado
             ao sistema de jogadores
@@ -1208,7 +1118,10 @@ button:active {
 
 
         <button
-            onclick="alert('O matchmaking será ativado na próxima etapa.')">
+        onclick="
+        alert(
+        'O matchmaking será ativado na próxima etapa.'
+        )">
 
             PROCURAR ADVERSÁRIO
 
@@ -1217,24 +1130,21 @@ button:active {
 
     </div>
 
-
 </div>
 
 
-
-<!-- ==================================================
+<!-- ================================================
      DESAFIAR AMIGO
-     TELA PRÓPRIA
-================================================== -->
+================================================ -->
 
 <div
-    id="friendScreen"
-    class="screen hidden">
+id="friendScreen"
+class="screen hidden">
 
 
     <button
-        class="back-button"
-        onclick="voltarInicio()">
+    class="back-button"
+    onclick="voltarInicio()">
 
         ← Voltar
 
@@ -1260,11 +1170,10 @@ button:active {
 
 
         <div
-            style="
-            text-align:center;
-            font-size:50px;
-            margin-bottom:8px;
-            ">
+        style="
+        text-align:center;
+        font-size:50px;
+        ">
 
             ⚔️
 
@@ -1272,12 +1181,11 @@ button:active {
 
 
         <div
-            style="
-            text-align:center;
-            color:#9ca3af;
-            font-size:13px;
-            margin-bottom:18px;
-            ">
+        style="
+        text-align:center;
+        color:#9ca3af;
+        font-size:13px;
+        ">
 
             Jogando como
 
@@ -1285,20 +1193,19 @@ button:active {
 
 
         <div
-            id="friendPlayerName"
-            style="
-            text-align:center;
-            font-size:21px;
-            font-weight:900;
-            margin-bottom:15px;
-            ">
+        id="friendPlayerName"
+        style="
+        text-align:center;
+        font-size:21px;
+        font-weight:900;
+        margin:
+        8px 0 15px;
+        ">
 
             Jogador
 
         </div>
 
-
-        <!-- MELHOR DE -->
 
         <div class="option-title">
 
@@ -1311,54 +1218,42 @@ button:active {
 
 
             <div
-                id="best3"
-                class="option selected"
-                onclick="selecionarMelhorDe(3)">
+            id="best3"
+            class="option selected"
+            onclick="selecionarMelhorDe(3)">
 
-                <div>
-                    3
-                </div>
+                3
 
                 <div class="option-small">
-
                     Primeiro a 2
-
                 </div>
 
             </div>
 
 
             <div
-                id="best5"
-                class="option"
-                onclick="selecionarMelhorDe(5)">
+            id="best5"
+            class="option"
+            onclick="selecionarMelhorDe(5)">
 
-                <div>
-                    5
-                </div>
+                5
 
                 <div class="option-small">
-
                     Primeiro a 3
-
                 </div>
 
             </div>
 
 
             <div
-                id="best7"
-                class="option"
-                onclick="selecionarMelhorDe(7)">
+            id="best7"
+            class="option"
+            onclick="selecionarMelhorDe(7)">
 
-                <div>
-                    7
-                </div>
+                7
 
                 <div class="option-small">
-
                     Primeiro a 4
-
                 </div>
 
             </div>
@@ -1366,8 +1261,6 @@ button:active {
 
         </div>
 
-
-        <!-- TEMPO -->
 
         <div class="option-title">
 
@@ -1380,9 +1273,9 @@ button:active {
 
 
             <div
-                id="time30"
-                class="option selected"
-                onclick="selecionarTempo(30)">
+            id="time30"
+            class="option selected"
+            onclick="selecionarTempo(30)">
 
                 30s
 
@@ -1390,9 +1283,9 @@ button:active {
 
 
             <div
-                id="time45"
-                class="option"
-                onclick="selecionarTempo(45)">
+            id="time45"
+            class="option"
+            onclick="selecionarTempo(45)">
 
                 45s
 
@@ -1400,9 +1293,9 @@ button:active {
 
 
             <div
-                id="time60"
-                class="option"
-                onclick="selecionarTempo(60)">
+            id="time60"
+            class="option"
+            onclick="selecionarTempo(60)">
 
                 60s
 
@@ -1410,16 +1303,14 @@ button:active {
 
 
             <div
-                id="time0"
-                class="option"
-                onclick="selecionarTempo(0)">
+            id="time0"
+            class="option"
+            onclick="selecionarTempo(0)">
 
                 ♾️
 
                 <div class="option-small">
-
                     Sem limite
-
                 </div>
 
             </div>
@@ -1429,13 +1320,13 @@ button:active {
 
 
         <div
-            id="configResumo"
-            style="
-            text-align:center;
-            color:#9ca3af;
-            margin-top:20px;
-            line-height:1.6;
-            ">
+        id="configResumo"
+        style="
+        text-align:center;
+        color:#9ca3af;
+        margin-top:18px;
+        line-height:1.6;
+        ">
 
             Melhor de 3
             <br>
@@ -1445,7 +1336,7 @@ button:active {
 
 
         <button
-            onclick="criarDesafioAmigo()">
+        onclick="criarDesafioAmigo()">
 
             CRIAR DESAFIO
 
@@ -1454,23 +1345,21 @@ button:active {
 
     </div>
 
-
 </div>
 
 
-
-<!-- ==================================================
+<!-- ================================================
      CONVITE
-================================================== -->
+================================================ -->
 
 <div
-    id="inviteScreen"
-    class="screen hidden">
+id="inviteScreen"
+class="screen hidden">
 
 
     <button
-        class="back-button"
-        onclick="abrirDesafioAmigo()">
+    class="back-button"
+    onclick="abrirDesafioAmigo()">
 
         ← Voltar
 
@@ -1486,7 +1375,8 @@ button:active {
 
     <div class="page-description">
 
-        Agora envie o convite para seu amigo.
+        Agora envie o convite
+        para seu amigo.
 
     </div>
 
@@ -1495,10 +1385,10 @@ button:active {
 
 
         <div
-            style="
-            text-align:center;
-            font-size:55px;
-            ">
+        style="
+        text-align:center;
+        font-size:55px;
+        ">
 
             📲
 
@@ -1506,22 +1396,25 @@ button:active {
 
 
         <h3
-            style="
-            text-align:center;
-            ">
+        style="
+        text-align:center;
+        ">
 
-            <span id="invitePlayerName">
+            <span
+            id="invitePlayerName">
+
                 Jogador
+
             </span>
 
         </h3>
 
 
         <p
-            style="
-            text-align:center;
-            color:#9ca3af;
-            ">
+        style="
+        text-align:center;
+        color:#9ca3af;
+        ">
 
             está te desafiando!
 
@@ -1529,8 +1422,8 @@ button:active {
 
 
         <div
-            id="inviteCode"
-            class="invite-code">
+        id="inviteCode"
+        class="invite-code">
 
             ABC123
 
@@ -1538,23 +1431,23 @@ button:active {
 
 
         <p
-            style="
-            text-align:center;
-            color:#9ca3af;
-            line-height:1.7;
-            ">
+        style="
+        text-align:center;
+        color:#9ca3af;
+        line-height:1.7;
+        ">
 
-            <span id="inviteBest">
+            <span
+            id="inviteBest">
 
                 Melhor de 3
 
             </span>
 
-
             <br>
 
-
-            <span id="inviteTime">
+            <span
+            id="inviteTime">
 
                 30 segundos
 
@@ -1566,8 +1459,8 @@ button:active {
 
 
         <button
-            class="share-button"
-            onclick="compartilharWhatsApp()">
+        class="share-button"
+        onclick="compartilharWhatsApp()">
 
             📲 ENVIAR PELO WHATSAPP
 
@@ -1575,8 +1468,11 @@ button:active {
 
 
         <button
-            class="button-secondary"
-            onclick="alert('A sala online será conectada ao servidor na próxima etapa.')">
+        class="button-secondary"
+        onclick="
+        alert(
+        'A sala online será conectada ao servidor na próxima etapa.'
+        )">
 
             AGUARDAR AMIGO
 
@@ -1585,23 +1481,21 @@ button:active {
 
     </div>
 
-
 </div>
 
 
-
-<!-- ==================================================
+<!-- ================================================
      TORNEIO
-================================================== -->
+================================================ -->
 
 <div
-    id="tournamentScreen"
-    class="screen hidden">
+id="tournamentScreen"
+class="screen hidden">
 
 
     <button
-        class="back-button"
-        onclick="voltarInicio()">
+    class="back-button"
+    onclick="voltarInicio()">
 
         ← Voltar
 
@@ -1616,16 +1510,16 @@ button:active {
 
 
     <div
-        class="card"
-        style="
-        text-align:center;
-        ">
+    class="card"
+    style="
+    text-align:center;
+    ">
 
 
         <div
-            style="
-            font-size:70px;
-            ">
+        style="
+        font-size:70px;
+        ">
 
             🔒
 
@@ -1633,17 +1527,15 @@ button:active {
 
 
         <h2>
-
             Em breve
-
         </h2>
 
 
         <p
-            style="
-            color:#9ca3af;
-            line-height:1.5;
-            ">
+        style="
+        color:#9ca3af;
+        line-height:1.5;
+        ">
 
             Os torneios serão liberados
             quando tivermos jogadores
@@ -1653,7 +1545,7 @@ button:active {
 
 
         <button
-            class="button-disabled">
+        class="button-disabled">
 
             TORNEIO INDISPONÍVEL
 
@@ -1662,23 +1554,19 @@ button:active {
 
     </div>
 
-
 </div>
-
-
-
-<!-- ==================================================
-     TELA PARA CRIAR SENHA
-================================================== -->
+<!-- ================================================
+     CRIAR SENHA
+================================================ -->
 
 <div
-    id="senhaScreen"
-    class="screen hidden">
+id="senhaScreen"
+class="screen hidden">
 
 
     <button
-        class="back-button"
-        onclick="voltarInicio()">
+    class="back-button"
+    onclick="voltarInicio()">
 
         ← Voltar
 
@@ -1704,30 +1592,25 @@ button:active {
 
         <div class="guess-display">
 
-
             <div
-                class="guess-digit"
-                id="s1">
+            class="guess-digit"
+            id="s1">
             </div>
 
-
             <div
-                class="guess-digit"
-                id="s2">
+            class="guess-digit"
+            id="s2">
             </div>
 
-
             <div
-                class="guess-digit"
-                id="s3">
+            class="guess-digit"
+            id="s3">
             </div>
 
-
             <div
-                class="guess-digit"
-                id="s4">
+            class="guess-digit"
+            id="s4">
             </div>
-
 
         </div>
 
@@ -1736,85 +1619,77 @@ button:active {
 
 
             <button
-                class="key"
-                onclick="digitarSenha('1')">
+            class="key"
+            onclick="digitarSenha('1')">
                 1
             </button>
 
-
             <button
-                class="key"
-                onclick="digitarSenha('2')">
+            class="key"
+            onclick="digitarSenha('2')">
                 2
             </button>
 
-
             <button
-                class="key"
-                onclick="digitarSenha('3')">
+            class="key"
+            onclick="digitarSenha('3')">
                 3
             </button>
 
 
             <button
-                class="key"
-                onclick="digitarSenha('4')">
+            class="key"
+            onclick="digitarSenha('4')">
                 4
             </button>
 
-
             <button
-                class="key"
-                onclick="digitarSenha('5')">
+            class="key"
+            onclick="digitarSenha('5')">
                 5
             </button>
 
-
             <button
-                class="key"
-                onclick="digitarSenha('6')">
+            class="key"
+            onclick="digitarSenha('6')">
                 6
             </button>
 
 
             <button
-                class="key"
-                onclick="digitarSenha('7')">
+            class="key"
+            onclick="digitarSenha('7')">
                 7
             </button>
 
-
             <button
-                class="key"
-                onclick="digitarSenha('8')">
+            class="key"
+            onclick="digitarSenha('8')">
                 8
             </button>
 
-
             <button
-                class="key"
-                onclick="digitarSenha('9')">
+            class="key"
+            onclick="digitarSenha('9')">
                 9
             </button>
 
 
             <button
-                class="key"
-                onclick="apagarSenha()">
+            class="key"
+            onclick="apagarSenha()">
                 ⌫
             </button>
 
-
             <button
-                class="key"
-                onclick="digitarSenha('0')">
+            class="key"
+            onclick="digitarSenha('0')">
                 0
             </button>
 
-
             <button
-                class="key"
-                onclick="confirmarSenha()">
+            class="key"
+            onclick="confirmarSenha()">
                 ✓
             </button>
 
@@ -1823,25 +1698,24 @@ button:active {
 
 
         <div
-            id="senhaMensagem"
-            class="message">
+        id="senhaMensagem"
+        class="message">
         </div>
 
 
     </div>
 
-
 </div>
 
 
 
-<!-- ==================================================
+<!-- ================================================
      JOGO
-================================================== -->
+================================================ -->
 
 <div
-    id="gameScreen"
-    class="screen hidden">
+id="gameScreen"
+class="screen hidden">
 
 
     <div class="card">
@@ -1853,8 +1727,8 @@ button:active {
             <div>
 
                 <div
-                    id="gamePlayerName"
-                    class="player-name">
+                id="gamePlayerName"
+                class="player-name">
 
                     Você
 
@@ -1862,8 +1736,8 @@ button:active {
 
 
                 <div
-                    id="myScore"
-                    class="score">
+                id="myScore"
+                class="score">
 
                     0
 
@@ -1882,8 +1756,8 @@ button:active {
             <div>
 
                 <div
-                    id="opponentName"
-                    class="player-name">
+                id="opponentName"
+                class="player-name">
 
                     Adversário
 
@@ -1891,8 +1765,8 @@ button:active {
 
 
                 <div
-                    id="opponentScore"
-                    class="score">
+                id="opponentScore"
+                class="score">
 
                     0
 
@@ -1914,7 +1788,7 @@ button:active {
 
 
             <strong
-                id="turnTitle">
+            id="turnTitle">
 
                 🎯 SUA VEZ
 
@@ -1922,8 +1796,8 @@ button:active {
 
 
             <div
-                id="turnStatus"
-                class="status">
+            id="turnStatus"
+            class="status">
 
                 Descubra a senha
 
@@ -1934,8 +1808,8 @@ button:active {
 
 
         <div
-            id="timer"
-            class="timer">
+        id="timer"
+        class="timer">
 
             30
 
@@ -1949,10 +1823,9 @@ button:active {
 
 
         <p
-            id="gameInstruction"
-            style="
-            text-align:center;
-            ">
+        style="
+        text-align:center;
+        ">
 
             Digite seu chute.
 
@@ -1963,26 +1836,26 @@ button:active {
 
 
             <div
-                class="guess-digit"
-                id="g1">
+            class="guess-digit"
+            id="g1">
             </div>
 
 
             <div
-                class="guess-digit"
-                id="g2">
+            class="guess-digit"
+            id="g2">
             </div>
 
 
             <div
-                class="guess-digit"
-                id="g3">
+            class="guess-digit"
+            id="g3">
             </div>
 
 
             <div
-                class="guess-digit"
-                id="g4">
+            class="guess-digit"
+            id="g4">
             </div>
 
 
@@ -1993,85 +1866,77 @@ button:active {
 
 
             <button
-                class="key"
-                onclick="digitarChute('1')">
+            class="key"
+            onclick="digitarChute('1')">
                 1
             </button>
 
-
             <button
-                class="key"
-                onclick="digitarChute('2')">
+            class="key"
+            onclick="digitarChute('2')">
                 2
             </button>
 
-
             <button
-                class="key"
-                onclick="digitarChute('3')">
+            class="key"
+            onclick="digitarChute('3')">
                 3
             </button>
 
 
             <button
-                class="key"
-                onclick="digitarChute('4')">
+            class="key"
+            onclick="digitarChute('4')">
                 4
             </button>
 
-
             <button
-                class="key"
-                onclick="digitarChute('5')">
+            class="key"
+            onclick="digitarChute('5')">
                 5
             </button>
 
-
             <button
-                class="key"
-                onclick="digitarChute('6')">
+            class="key"
+            onclick="digitarChute('6')">
                 6
             </button>
 
 
             <button
-                class="key"
-                onclick="digitarChute('7')">
+            class="key"
+            onclick="digitarChute('7')">
                 7
             </button>
 
-
             <button
-                class="key"
-                onclick="digitarChute('8')">
+            class="key"
+            onclick="digitarChute('8')">
                 8
             </button>
 
-
             <button
-                class="key"
-                onclick="digitarChute('9')">
+            class="key"
+            onclick="digitarChute('9')">
                 9
             </button>
 
 
             <button
-                class="key"
-                onclick="apagarChute()">
+            class="key"
+            onclick="apagarChute()">
                 ⌫
             </button>
 
-
             <button
-                class="key"
-                onclick="digitarChute('0')">
+            class="key"
+            onclick="digitarChute('0')">
                 0
             </button>
 
-
             <button
-                class="key"
-                onclick="confirmarChute()">
+            class="key"
+            onclick="confirmarChute()">
                 ✓
             </button>
 
@@ -2080,23 +1945,26 @@ button:active {
 
 
         <div
-            id="chuteMensagem"
-            class="message">
+        id="chuteMensagem"
+        class="message">
         </div>
 
 
         <div
-            class="turn-info"
-            style="
-            text-align:center;
-            color:#9ca3af;
-            font-size:13px;
-            margin-top:10px;
-            ">
+        style="
+        text-align:center;
+        color:#9ca3af;
+        font-size:12px;
+        margin-top:9px;
+        ">
 
             ⏱️
-            <span id="tempoTexto">
+
+            <span
+            id="tempoTexto">
+
                 30 segundos
+
             </span>
 
         </div>
@@ -2105,19 +1973,20 @@ button:active {
     </div>
 
 
+
     <!-- REAÇÕES -->
 
     <div
-        id="reactionCard"
-        class="card">
+    id="reactionCard"
+    class="card">
 
 
         <div
-            style="
-            text-align:center;
-            font-size:13px;
-            color:#9ca3af;
-            ">
+        style="
+        text-align:center;
+        font-size:13px;
+        color:#9ca3af;
+        ">
 
             Reações
 
@@ -2128,8 +1997,8 @@ button:active {
 
 
             <button
-                class="reaction"
-                onclick="enviarReacao('😂')">
+            class="reaction"
+            onclick="enviarReacao('😂')">
 
                 😂
 
@@ -2137,8 +2006,8 @@ button:active {
 
 
             <button
-                class="reaction"
-                onclick="enviarReacao('😈')">
+            class="reaction"
+            onclick="enviarReacao('😈')">
 
                 😈
 
@@ -2146,8 +2015,8 @@ button:active {
 
 
             <button
-                class="reaction"
-                onclick="enviarReacao('😱')">
+            class="reaction"
+            onclick="enviarReacao('😱')">
 
                 😱
 
@@ -2155,8 +2024,8 @@ button:active {
 
 
             <button
-                class="reaction"
-                onclick="enviarReacao('😡')">
+            class="reaction"
+            onclick="enviarReacao('😡')">
 
                 😡
 
@@ -2164,8 +2033,8 @@ button:active {
 
 
             <button
-                class="reaction"
-                onclick="enviarReacao('😭')">
+            class="reaction"
+            onclick="enviarReacao('😭')">
 
                 😭
 
@@ -2173,8 +2042,8 @@ button:active {
 
 
             <button
-                class="reaction"
-                onclick="enviarReacao('😎')">
+            class="reaction"
+            onclick="enviarReacao('😎')">
 
                 😎
 
@@ -2182,8 +2051,8 @@ button:active {
 
 
             <button
-                class="reaction"
-                onclick="enviarReacao('🔥')">
+            class="reaction"
+            onclick="enviarReacao('🔥')">
 
                 🔥
 
@@ -2194,18 +2063,19 @@ button:active {
 
 
         <div
-            id="reactionMessage"
-            style="
-            text-align:center;
-            margin-top:8px;
-            min-height:20px;
-            font-size:25px;
-            ">
+        id="reactionMessage"
+        style="
+        text-align:center;
+        margin-top:7px;
+        min-height:20px;
+        font-size:24px;
+        ">
 
         </div>
 
 
     </div>
+
 
 
     <!-- HISTÓRICO -->
@@ -2224,10 +2094,10 @@ button:active {
 
 
             <p
-                style="
-                color:#9ca3af;
-                text-align:center;
-                ">
+            style="
+            color:#9ca3af;
+            text-align:center;
+            ">
 
                 Nenhuma tentativa ainda.
 
@@ -2244,21 +2114,21 @@ button:active {
 
 
 
-<!-- ==================================================
+<!-- ================================================
      RESULTADO
-================================================== -->
+================================================ -->
 
 <div
-    id="winScreen"
-    class="screen hidden">
+id="winScreen"
+class="screen hidden">
 
 
     <div class="card win">
 
 
         <div
-            id="winIcon"
-            class="win-icon">
+        id="winIcon"
+        class="win-icon">
 
             🏆
 
@@ -2266,7 +2136,7 @@ button:active {
 
 
         <h2
-            id="winTitle">
+        id="winTitle">
 
             Você venceu!
 
@@ -2274,13 +2144,13 @@ button:active {
 
 
         <p
-            id="winMessage">
+        id="winMessage">
 
         </p>
 
 
         <button
-            onclick="voltarInicio()">
+        onclick="voltarInicio()">
 
             VOLTAR AO INÍCIO
 
@@ -2299,9 +2169,10 @@ button:active {
 
 <script>
 
-/* =====================================================
+
+/* ==================================================
    VARIÁVEIS
-===================================================== */
+================================================== */
 
 let senha = "";
 
@@ -2328,16 +2199,17 @@ let modoAtual = "normal";
 let codigoConvite = "";
 
 
-/* =====================================================
+/* ==================================================
    NOME
-===================================================== */
+================================================== */
 
 function carregarNome() {
 
-    let nome =
+    const nome =
         localStorage.getItem(
             "senha_nome_jogador"
         );
+
 
     if (nome) {
 
@@ -2356,14 +2228,14 @@ function carregarNome() {
 
 function salvarNome() {
 
-    let campo =
+    let nome =
         document
         .getElementById(
             "playerName"
-        );
+        )
+        .value
+        .trim();
 
-    let nome =
-        campo.value.trim();
 
     if (!nome) {
 
@@ -2371,72 +2243,77 @@ function salvarNome() {
 
     }
 
+
     nome =
         nome.substring(
             0,
             18
         );
 
+
     nomeJogador = nome;
+
 
     localStorage.setItem(
         "senha_nome_jogador",
         nome
     );
 
+
     return nome;
 
 }
 
 
-/* =====================================================
+/* ==================================================
    DATA
-===================================================== */
+================================================== */
 
 function obterDataHoje() {
 
-    let agora =
+    const d =
         new Date();
 
-    let ano =
-        agora.getFullYear();
-
-    let mes =
-        String(
-            agora.getMonth() + 1
-        ).padStart(
-            2,
-            "0"
-        );
-
-    let dia =
-        String(
-            agora.getDate()
-        ).padStart(
-            2,
-            "0"
-        );
 
     return (
-        ano +
+
+        d.getFullYear() +
+
         "-" +
-        mes +
+
+        String(
+            d.getMonth() + 1
+        ).padStart(
+            2,
+            "0"
+        ) +
+
         "-" +
-        dia
+
+        String(
+            d.getDate()
+        ).padStart(
+            2,
+            "0"
+        )
+
     );
 
 }
 
 
-/* =====================================================
-   DIÁRIO
-===================================================== */
+/* ==================================================
+   DESAFIO DIÁRIO
+================================================== */
 
-function obterChaveDesafioDiario() {
+function chaveDiario() {
 
     return (
+
         "senha_desafio_diario_" +
+
         obterDataHoje()
+
     );
 
 }
@@ -2445,10 +2322,12 @@ function obterChaveDesafioDiario() {
 function desafioDiarioConcluidoHoje() {
 
     return (
+
         localStorage.getItem(
-            obterChaveDesafioDiario()
+            chaveDiario()
         ) ===
         "concluido"
+
     );
 
 }
@@ -2457,16 +2336,16 @@ function desafioDiarioConcluidoHoje() {
 function marcarDesafioDiarioConcluido() {
 
     localStorage.setItem(
-        obterChaveDesafioDiario(),
+        chaveDiario(),
         "concluido"
     );
 
 }
 
 
-/* =====================================================
+/* ==================================================
    TELAS
-===================================================== */
+================================================== */
 
 function esconderTodas() {
 
@@ -2495,7 +2374,9 @@ function voltarInicio() {
         intervalo
     );
 
+
     esconderTodas();
+
 
     document
         .getElementById(
@@ -2509,13 +2390,14 @@ function voltarInicio() {
 }
 
 
-/* =====================================================
+/* ==================================================
    DESAFIO DIÁRIO
-===================================================== */
+================================================== */
 
 function abrirDesafioDiario() {
 
     esconderTodas();
+
 
     document
         .getElementById(
@@ -2526,6 +2408,7 @@ function abrirDesafioDiario() {
             "hidden"
         );
 
+
     verificarTelaDesafioDiario();
 
 }
@@ -2533,69 +2416,57 @@ function abrirDesafioDiario() {
 
 function verificarTelaDesafioDiario() {
 
-    let disponivel =
+    const disponivel =
         document
         .getElementById(
             "dailyAvailable"
         );
 
-    let bloqueado =
+
+    const bloqueado =
         document
         .getElementById(
             "dailyLocked"
         );
 
-    if (
-        desafioDiarioConcluidoHoje()
-    ) {
 
-        disponivel
-            .classList
-            .add(
-                "hidden"
-            );
+    const concluido =
+        desafioDiarioConcluidoHoje();
 
-        bloqueado
-            .classList
-            .remove(
-                "hidden"
-            );
 
-    } else {
+    disponivel
+        .classList
+        .toggle(
+            "hidden",
+            concluido
+        );
 
-        disponivel
-            .classList
-            .remove(
-                "hidden"
-            );
 
-        bloqueado
-            .classList
-            .add(
-                "hidden"
-            );
-
-    }
+    bloqueado
+        .classList
+        .toggle(
+            "hidden",
+            !concluido
+        );
 
 }
 
 
 function gerarSenhaDiaria() {
 
-    let data =
-        obterDataHoje()
-        .replace(
-            /-/g,
-            ""
-        );
-
     let numero =
         parseInt(
-            data,
+            obterDataHoje()
+                .replace(
+                    /-/g,
+                    ""
+                ),
             10
         );
 
-    let numeros = [];
+
+    const numeros = [];
+
 
     while (
         numeros.length < 4
@@ -2609,8 +2480,10 @@ function gerarSenhaDiaria() {
             ) %
             233280;
 
-        let digito =
+
+        const digito =
             numero % 10;
+
 
         if (
             !numeros.includes(
@@ -2625,6 +2498,7 @@ function gerarSenhaDiaria() {
         }
 
     }
+
 
     return numeros.join("");
 
@@ -2643,13 +2517,17 @@ function iniciarDesafioDiario() {
 
     }
 
+
     salvarNome();
 
-    senhaDiaria =
-        gerarSenhaDiaria();
 
     senha =
-        senhaDiaria;
+        gerarSenhaDiaria();
+
+
+    senhaDiaria =
+        senha;
+
 
     chute = "";
 
@@ -2660,11 +2538,14 @@ function iniciarDesafioDiario() {
     modoAtual =
         "diario";
 
+
     clearInterval(
         intervalo
     );
 
+
     esconderTodas();
+
 
     document
         .getElementById(
@@ -2675,12 +2556,14 @@ function iniciarDesafioDiario() {
             "hidden"
         );
 
+
     document
         .getElementById(
             "gamePlayerName"
         )
         .innerText =
         nomeJogador;
+
 
     document
         .getElementById(
@@ -2689,6 +2572,7 @@ function iniciarDesafioDiario() {
         .innerText =
         "Desafio Diário";
 
+
     document
         .getElementById(
             "timer"
@@ -2696,12 +2580,14 @@ function iniciarDesafioDiario() {
         .innerText =
         "∞";
 
+
     document
         .getElementById(
             "tempoTexto"
         )
         .innerText =
         "Sem limite";
+
 
     document
         .getElementById(
@@ -2712,27 +2598,34 @@ function iniciarDesafioDiario() {
             "hidden"
         );
 
+
     document
         .getElementById(
             "historico"
         )
         .innerHTML =
-        '<p style="color:#9ca3af;text-align:center;">Nenhuma tentativa ainda.</p>';
+
+        '<p style="color:#9ca3af;text-align:center">' +
+        'Nenhuma tentativa ainda.' +
+        '</p>';
+
 
     atualizarChute();
 
 }
 
 
-/* =====================================================
+/* ==================================================
    DUELO ONLINE
-===================================================== */
+================================================== */
 
 function abrirDueloOnline() {
 
     salvarNome();
 
+
     esconderTodas();
+
 
     document
         .getElementById(
@@ -2746,15 +2639,17 @@ function abrirDueloOnline() {
 }
 
 
-/* =====================================================
+/* ==================================================
    DESAFIAR AMIGO
-===================================================== */
+================================================== */
 
 function abrirDesafioAmigo() {
 
     salvarNome();
 
+
     esconderTodas();
+
 
     document
         .getElementById(
@@ -2765,6 +2660,7 @@ function abrirDesafioAmigo() {
             "hidden"
         );
 
+
     document
         .getElementById(
             "friendPlayerName"
@@ -2772,14 +2668,15 @@ function abrirDesafioAmigo() {
         .innerText =
         nomeJogador;
 
+
     atualizarResumo();
 
 }
 
 
-/* =====================================================
+/* ==================================================
    MELHOR DE
-===================================================== */
+================================================== */
 
 function selecionarMelhorDe(
     valor
@@ -2788,50 +2685,34 @@ function selecionarMelhorDe(
     melhorDe =
         valor;
 
-    document
-        .querySelectorAll(
-            "#friendScreen .option"
-        )
+
+    [3,5,7]
         .forEach(
-            function(item) {
+            function(numero) {
 
-                if (
-                    item.id ===
-                    "best" + valor
-                ) {
-
-                    item.classList
-                        .add(
-                            "selected"
-                        );
-
-                }
-
-                else if (
-                    item.id
-                    .startsWith(
-                        "best"
+                document
+                    .getElementById(
+                        "best" +
+                        numero
                     )
-                ) {
-
-                    item.classList
-                        .remove(
-                            "selected"
-                        );
-
-                }
+                    .classList
+                    .toggle(
+                        "selected",
+                        numero === valor
+                    );
 
             }
         );
+
 
     atualizarResumo();
 
 }
 
 
-/* =====================================================
+/* ==================================================
    TEMPO
-===================================================== */
+================================================== */
 
 function selecionarTempo(
     valor
@@ -2840,14 +2721,14 @@ function selecionarTempo(
     tempoTurno =
         valor;
 
-    let ids = [
+
+    [
         "time30",
         "time45",
         "time60",
         "time0"
-    ];
-
-    ids.forEach(
+    ]
+    .forEach(
         function(id) {
 
             document
@@ -2862,36 +2743,29 @@ function selecionarTempo(
         }
     );
 
-    let selecionado =
-        valor === 0
-        ? "time0"
-        : "time" + valor;
 
     document
         .getElementById(
-            selecionado
+            valor === 0
+                ? "time0"
+                : "time" + valor
         )
         .classList
         .add(
             "selected"
         );
 
+
     atualizarResumo();
 
 }
 
 
-/* =====================================================
+/* ==================================================
    RESUMO
-===================================================== */
+================================================== */
 
 function atualizarResumo() {
-
-    let tempoTexto =
-        tempoTurno === 0
-        ? "♾️ Sem limite de tempo"
-        : tempoTurno +
-          " segundos por turno";
 
     document
         .getElementById(
@@ -2902,19 +2776,64 @@ function atualizarResumo() {
         "Melhor de " +
         melhorDe +
         "<br>" +
-        tempoTexto;
+
+        (
+            tempoTurno === 0
+            ?
+            "♾️ Sem limite de tempo"
+            :
+            tempoTurno +
+            " segundos por turno"
+        );
 
 }
 
 
-/* =====================================================
+/* ==================================================
+   CÓDIGO DO CONVITE
+================================================== */
+
+function gerarCodigoConvite() {
+
+    const caracteres =
+        "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+
+
+    let codigo = "";
+
+
+    for (
+        let i = 0;
+        i < 6;
+        i++
+    ) {
+
+        codigo +=
+
+            caracteres[
+                Math.floor(
+                    Math.random() *
+                    caracteres.length
+                )
+            ];
+
+    }
+
+
+    return codigo;
+
+}
+
+
+/* ==================================================
    CRIAR DESAFIO AMIGO
-===================================================== */
+================================================== */
 
 function criarDesafioAmigo() {
 
-    let nome =
+    const nome =
         salvarNome();
+
 
     if (
         !nome ||
@@ -2925,27 +2844,18 @@ function criarDesafioAmigo() {
             "Digite seu nome na tela inicial antes de criar o desafio."
         );
 
+
         voltarInicio();
 
-        setTimeout(
-            function() {
-
-                document
-                    .getElementById(
-                        "playerName"
-                    )
-                    .focus();
-
-            },
-            100
-        );
 
         return;
 
     }
 
+
     codigoConvite =
         gerarCodigoConvite();
+
 
     document
         .getElementById(
@@ -2954,6 +2864,7 @@ function criarDesafioAmigo() {
         .innerText =
         nome;
 
+
     document
         .getElementById(
             "inviteCode"
@@ -2961,13 +2872,16 @@ function criarDesafioAmigo() {
         .innerText =
         codigoConvite;
 
+
     document
         .getElementById(
             "inviteBest"
         )
         .innerText =
+
         "Melhor de " +
         melhorDe;
+
 
     document
         .getElementById(
@@ -2976,12 +2890,20 @@ function criarDesafioAmigo() {
         .innerText =
 
         tempoTurno === 0
-        ? "♾️ Sem limite de tempo"
-        : "⏱️ " +
-          tempoTurno +
-          " segundos";
+
+        ?
+
+        "♾️ Sem limite de tempo"
+
+        :
+
+        "⏱️ " +
+        tempoTurno +
+        " segundos";
+
 
     esconderTodas();
+
 
     document
         .getElementById(
@@ -2995,41 +2917,9 @@ function criarDesafioAmigo() {
 }
 
 
-/* =====================================================
-   CÓDIGO
-===================================================== */
-
-function gerarCodigoConvite() {
-
-    let caracteres =
-        "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-
-    let codigo = "";
-
-    for (
-        let i = 0;
-        i < 6;
-        i++
-    ) {
-
-        codigo +=
-            caracteres[
-                Math.floor(
-                    Math.random() *
-                    caracteres.length
-                )
-            ];
-
-    }
-
-    return codigo;
-
-}
-
-
-/* =====================================================
+/* ==================================================
    WHATSAPP
-===================================================== */
+================================================== */
 
 function compartilharWhatsApp() {
 
@@ -3038,11 +2928,15 @@ function compartilharWhatsApp() {
         "🔐 SENHA\n\n" +
 
         nomeJogador +
+
         " te desafiou para uma partida!\n\n" +
 
         "🏆 Melhor de " +
+
         melhorDe +
+
         "\n";
+
 
     if (
         tempoTurno === 0
@@ -3051,44 +2945,55 @@ function compartilharWhatsApp() {
         texto +=
             "♾️ Sem limite de tempo\n\n";
 
-    } else {
+    }
+
+    else {
 
         texto +=
+
             "⏱️ " +
+
             tempoTurno +
+
             " segundos por turno\n\n";
 
     }
 
+
     texto +=
 
         "Código da partida: " +
+
         codigoConvite +
+
         "\n\n" +
 
         "Entre no SENHA para jogar!";
 
-    let url =
-        "https://wa.me/?text=" +
-        encodeURIComponent(
-            texto
-        );
 
     window.open(
-        url,
+
+        "https://wa.me/?text=" +
+
+        encodeURIComponent(
+            texto
+        ),
+
         "_blank"
+
     );
 
 }
 
 
-/* =====================================================
+/* ==================================================
    TORNEIO
-===================================================== */
+================================================== */
 
 function mostrarTorneioBloqueado() {
 
     esconderTodas();
+
 
     document
         .getElementById(
@@ -3102,15 +3007,11 @@ function mostrarTorneioBloqueado() {
 }
 
 
-/* =====================================================
-   JOGO LOCAL
-===================================================== */
+/* ==================================================
+   CRIAÇÃO DA SENHA
+================================================== */
 
 function iniciarCriacaoSenha() {
-
-    clearInterval(
-        intervalo
-    );
 
     senha = "";
 
@@ -3121,7 +3022,9 @@ function iniciarCriacaoSenha() {
     modoAtual =
         "normal";
 
+
     esconderTodas();
+
 
     document
         .getElementById(
@@ -3131,6 +3034,7 @@ function iniciarCriacaoSenha() {
         .remove(
             "hidden"
         );
+
 
     atualizarSenha();
 
@@ -3149,6 +3053,7 @@ function digitarSenha(
 
     }
 
+
     if (
         senha.includes(
             numero
@@ -3160,14 +3065,17 @@ function digitarSenha(
                 "senhaMensagem"
             )
             .innerText =
+
             "⚠️ Os 4 números precisam ser diferentes.";
 
         return;
 
     }
 
+
     senha +=
         numero;
+
 
     atualizarSenha();
 
@@ -3176,33 +3084,24 @@ function digitarSenha(
 
 function atualizarSenha() {
 
-    document
-        .getElementById(
-            "s1"
-        )
-        .innerText =
-        senha[0] || "";
+    [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+    ]
+    .forEach(
+        function(id,i) {
 
-    document
-        .getElementById(
-            "s2"
-        )
-        .innerText =
-        senha[1] || "";
+            document
+                .getElementById(
+                    id
+                )
+                .innerText =
+                senha[i] || "";
 
-    document
-        .getElementById(
-            "s3"
-        )
-        .innerText =
-        senha[2] || "";
-
-    document
-        .getElementById(
-            "s4"
-        )
-        .innerText =
-        senha[3] || "";
+        }
+    );
 
 }
 
@@ -3214,6 +3113,7 @@ function apagarSenha() {
             0,
             -1
         );
+
 
     atualizarSenha();
 
@@ -3231,28 +3131,32 @@ function confirmarSenha() {
                 "senhaMensagem"
             )
             .innerText =
+
             "Escolha exatamente 4 números.";
 
         return;
 
     }
 
+
     iniciarJogo();
 
 }
 
 
-/* =====================================================
-   JOGO
-===================================================== */
+/* ==================================================
+   INICIAR JOGO
+================================================== */
 
 function iniciarJogo() {
 
     salvarNome();
 
+
     clearInterval(
         intervalo
     );
+
 
     chute = "";
 
@@ -3261,7 +3165,9 @@ function iniciarJogo() {
     modoAtual =
         "normal";
 
+
     esconderTodas();
+
 
     document
         .getElementById(
@@ -3272,12 +3178,14 @@ function iniciarJogo() {
             "hidden"
         );
 
+
     document
         .getElementById(
             "gamePlayerName"
         )
         .innerText =
         nomeJogador;
+
 
     document
         .getElementById(
@@ -3286,12 +3194,14 @@ function iniciarJogo() {
         .innerText =
         "Adversário";
 
+
     document
         .getElementById(
             "myScore"
         )
         .innerText =
         "0";
+
 
     document
         .getElementById(
@@ -3300,12 +3210,17 @@ function iniciarJogo() {
         .innerText =
         "0";
 
+
     document
         .getElementById(
             "historico"
         )
         .innerHTML =
-        '<p style="color:#9ca3af;text-align:center;">Nenhuma tentativa ainda.</p>';
+
+        '<p style="color:#9ca3af;text-align:center">' +
+        'Nenhuma tentativa ainda.' +
+        '</p>';
+
 
     document
         .getElementById(
@@ -3316,7 +3231,9 @@ function iniciarJogo() {
             "hidden"
         );
 
+
     atualizarChute();
+
 
     if (
         tempoTurno > 0
@@ -3324,7 +3241,9 @@ function iniciarJogo() {
 
         iniciarCronometro();
 
-    } else {
+    }
+
+    else {
 
         document
             .getElementById(
@@ -3332,6 +3251,7 @@ function iniciarJogo() {
             )
             .innerText =
             "∞";
+
 
         document
             .getElementById(
@@ -3345,17 +3265,13 @@ function iniciarJogo() {
 }
 
 
-/* =====================================================
+/* ==================================================
    CHUTE
-===================================================== */
+================================================== */
 
 function digitarChute(
     numero
 ) {
-
-    /*
-     * Pode repetir números.
-     */
 
     if (
         chute.length >= 4
@@ -3365,8 +3281,20 @@ function digitarChute(
 
     }
 
+
+    /*
+       REPETIÇÃO É PERMITIDA.
+
+       Exemplo:
+
+       1123
+
+       pode ser utilizado como estratégia.
+    */
+
     chute +=
         numero;
+
 
     atualizarChute();
 
@@ -3375,33 +3303,24 @@ function digitarChute(
 
 function atualizarChute() {
 
-    document
-        .getElementById(
-            "g1"
-        )
-        .innerText =
-        chute[0] || "";
+    [
+        "g1",
+        "g2",
+        "g3",
+        "g4"
+    ]
+    .forEach(
+        function(id,i) {
 
-    document
-        .getElementById(
-            "g2"
-        )
-        .innerText =
-        chute[1] || "";
+            document
+                .getElementById(
+                    id
+                )
+                .innerText =
+                chute[i] || "";
 
-    document
-        .getElementById(
-            "g3"
-        )
-        .innerText =
-        chute[2] || "";
-
-    document
-        .getElementById(
-            "g4"
-        )
-        .innerText =
-        chute[3] || "";
+        }
+    );
 
 }
 
@@ -3414,14 +3333,15 @@ function apagarChute() {
             -1
         );
 
+
     atualizarChute();
 
 }
 
 
-/* =====================================================
-   FÓRMULA
-===================================================== */
+/* ==================================================
+   FÓRMULA DO JOGO
+================================================== */
 
 function calcularResultado(
     senha,
@@ -3432,12 +3352,14 @@ function calcularResultado(
 
     let certosFora = 0;
 
+
     let senhaUsada = [
         false,
         false,
         false,
         false
     ];
+
 
     let tentativaUsada = [
         false,
@@ -3446,6 +3368,13 @@ function calcularResultado(
         false
     ];
 
+
+    /*
+       PRIMEIRO:
+
+       verifica números
+       na posição correta.
+    */
 
     for (
         let i = 0;
@@ -3460,8 +3389,10 @@ function calcularResultado(
 
             certosLugar++;
 
+
             senhaUsada[i] =
                 true;
+
 
             tentativaUsada[i] =
                 true;
@@ -3470,6 +3401,16 @@ function calcularResultado(
 
     }
 
+
+    /*
+       SEGUNDO:
+
+       verifica números certos
+       em posição errada.
+
+       O mesmo número da senha
+       nunca é contado duas vezes.
+    */
 
     for (
         let i = 0;
@@ -3508,11 +3449,14 @@ function calcularResultado(
 
                 certosFora++;
 
+
                 senhaUsada[j] =
                     true;
 
+
                 tentativaUsada[i] =
                     true;
+
 
                 break;
 
@@ -3536,9 +3480,9 @@ function calcularResultado(
 }
 
 
-/* =====================================================
+/* ==================================================
    CONFIRMAR CHUTE
-===================================================== */
+================================================== */
 
 function confirmarChute() {
 
@@ -3571,7 +3515,7 @@ function confirmarChute() {
     tentativas++;
 
 
-    let resultado =
+    const resultado =
         calcularResultado(
             senha,
             chute
@@ -3583,6 +3527,10 @@ function confirmarChute() {
         resultado
     );
 
+
+    /*
+       SENHA DESCOBERTA
+    */
 
     if (
         resultado.certosLugar ===
@@ -3598,22 +3546,32 @@ function confirmarChute() {
 
         }
 
+
         vencer();
+
 
         return;
 
     }
 
 
+    /*
+       LIMITE DO DESAFIO DIÁRIO
+    */
+
     if (
         modoAtual ===
         "diario" &&
-        tentativasDiarias >= 15
+
+        tentativasDiarias >=
+        15
     ) {
 
         marcarDesafioDiarioConcluido();
 
+
         perderDesafioDiario();
+
 
         return;
 
@@ -3622,12 +3580,19 @@ function confirmarChute() {
 
     chute = "";
 
+
     atualizarChute();
 
+
+    /*
+       O cronômetro é por tentativa,
+       não acumulado entre tentativas.
+    */
 
     if (
         modoAtual !==
         "diario" &&
+
         tempoTurno > 0
     ) {
 
@@ -3638,16 +3603,16 @@ function confirmarChute() {
 }
 
 
-/* =====================================================
+/* ==================================================
    HISTÓRICO
-===================================================== */
+================================================== */
 
 function adicionarHistorico(
     numero,
     resultado
 ) {
 
-    let historico =
+    const historico =
         document
         .getElementById(
             "historico"
@@ -3664,7 +3629,7 @@ function adicionarHistorico(
     }
 
 
-    let item =
+    const item =
         document
         .createElement(
             "div"
@@ -3675,37 +3640,39 @@ function adicionarHistorico(
         "history-item";
 
 
-    item.innerHTML = `
+    item.innerHTML =
 
-        <div class="history-guess">
+        '<div class="history-guess">' +
 
-            ${numero}
+        numero +
 
-        </div>
+        '</div>' +
 
-        <div class="result">
+        '<div class="result">' +
 
-            <span class="green">
+        '<span class="green">' +
 
-                🟢
-                ${resultado.certosLugar}
-                certo(s) no lugar
+        '🟢 ' +
 
-            </span>
+        resultado.certosLugar +
 
-            <br>
+        ' certo(s) no lugar' +
 
-            <span class="yellow">
+        '</span>' +
 
-                🟡
-                ${resultado.certosFora}
-                certo(s) fora do lugar
+        '<br>' +
 
-            </span>
+        '<span class="yellow">' +
 
-        </div>
+        '🟡 ' +
 
-    `;
+        resultado.certosFora +
+
+        ' certo(s) fora do lugar' +
+
+        '</span>' +
+
+        '</div>';
 
 
     historico.prepend(
@@ -3715,9 +3682,9 @@ function adicionarHistorico(
 }
 
 
-/* =====================================================
+/* ==================================================
    CRONÔMETRO
-===================================================== */
+================================================== */
 
 function iniciarCronometro() {
 
@@ -3737,13 +3704,6 @@ function iniciarCronometro() {
             .innerText =
             "∞";
 
-        document
-            .getElementById(
-                "tempoTexto"
-            )
-            .innerText =
-            "Sem limite";
-
         return;
 
     }
@@ -3762,6 +3722,7 @@ function iniciarCronometro() {
 
                 tempo--;
 
+
                 atualizarTimer();
 
 
@@ -3774,8 +3735,8 @@ function iniciarCronometro() {
                     );
 
 
-                    chute =
-                        "";
+                    chute = "";
+
 
                     atualizarChute();
 
@@ -3798,6 +3759,7 @@ function iniciarCronometro() {
                                 .innerText =
                                 "Nova tentativa!";
 
+
                             iniciarCronometro();
 
                         },
@@ -3815,7 +3777,7 @@ function iniciarCronometro() {
 
 function atualizarTimer() {
 
-    let timer =
+    const timer =
         document
         .getElementById(
             "timer"
@@ -3858,9 +3820,9 @@ function atualizarTimer() {
 }
 
 
-/* =====================================================
-   REAÇÃO
-===================================================== */
+/* ==================================================
+   REAÇÕES
+================================================== */
 
 function enviarReacao(
     emoji
@@ -3876,9 +3838,9 @@ function enviarReacao(
 }
 
 
-/* =====================================================
+/* ==================================================
    VITÓRIA
-===================================================== */
+================================================== */
 
 function vencer() {
 
@@ -3886,7 +3848,9 @@ function vencer() {
         intervalo
     );
 
+
     esconderTodas();
+
 
     document
         .getElementById(
@@ -3897,12 +3861,14 @@ function vencer() {
             "hidden"
         );
 
+
     document
         .getElementById(
             "winIcon"
         )
         .innerText =
         "🏆";
+
 
     document
         .getElementById(
@@ -3924,15 +3890,22 @@ function vencer() {
             .innerHTML =
 
             "Parabéns, " +
+
             nomeJogador +
+
             "!<br><br>" +
 
-            "Você descobriu a senha do dia " +
-            "em " +
+            "Você descobriu a senha " +
+
+            "do dia em " +
+
             tentativasDiarias +
+
             " tentativa(s).<br><br>" +
 
-            "Volte amanhã para um novo desafio.";
+            "Volte amanhã para um " +
+
+            "novo desafio.";
 
     }
 
@@ -3945,11 +3918,17 @@ function vencer() {
             .innerHTML =
 
             "Parabéns, " +
+
             nomeJogador +
+
             "!<br><br>" +
 
-            "Você descobriu a senha em " +
+            "Você descobriu a senha " +
+
+            "em " +
+
             tentativas +
+
             " tentativa(s).";
 
     }
@@ -3957,9 +3936,9 @@ function vencer() {
 }
 
 
-/* =====================================================
-   DERROTA DIÁRIA
-===================================================== */
+/* ==================================================
+   DERROTA DO DESAFIO DIÁRIO
+================================================== */
 
 function perderDesafioDiario() {
 
@@ -3967,7 +3946,9 @@ function perderDesafioDiario() {
         intervalo
     );
 
+
     esconderTodas();
+
 
     document
         .getElementById(
@@ -3978,12 +3959,14 @@ function perderDesafioDiario() {
             "hidden"
         );
 
+
     document
         .getElementById(
             "winIcon"
         )
         .innerText =
         "😔";
+
 
     document
         .getElementById(
@@ -3992,6 +3975,7 @@ function perderDesafioDiario() {
         .innerText =
         "Desafio encerrado";
 
+
     document
         .getElementById(
             "winMessage"
@@ -3999,21 +3983,32 @@ function perderDesafioDiario() {
         .innerHTML =
 
         nomeJogador +
-        ", você não descobriu a senha " +
-        "em 15 tentativas.<br><br>" +
 
-        "Sua participação de hoje foi registrada.<br><br>" +
+        ", você não descobriu " +
 
-        "Volte amanhã para um novo desafio.";
+        "a senha em 15 tentativas." +
+
+        "<br><br>" +
+
+        "Sua participação de hoje " +
+
+        "foi registrada." +
+
+        "<br><br>" +
+
+        "Volte amanhã para um " +
+
+        "novo desafio.";
 
 }
 
 
-/* =====================================================
+/* ==================================================
    INICIALIZAÇÃO
-===================================================== */
+================================================== */
 
-document.addEventListener(
+document
+.addEventListener(
     "DOMContentLoaded",
     function() {
 
@@ -4028,7 +4023,6 @@ document.addEventListener(
 
 </script>
 
-
 </body>
 
-    </html>
+      </html>
