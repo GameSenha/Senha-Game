@@ -1,197 +1,127 @@
-*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:Arial,sans-serif;color:#f7f9ff;background:radial-gradient(circle at 8% 0%,#168cff2e,transparent 28%),radial-gradient(circle at 100% 100%,#5146f52b,transparent 30%),linear-gradient(145deg,#061329,#091936 55%,#07142b)}.app{max-width:460px;min-height:100vh;margin:auto;padding:18px 16px 42px}.hidden{display:none!important}.logo{text-align:center;margin:8px 0 20px}.logo img{width:315px;max-width:92%;display:block;margin:auto}.card{background:linear-gradient(145deg,#193158c7,#0c1c38d1);border:1px solid #82adf033;border-radius:22px;padding:18px;margin-bottom:14px;box-shadow:0 16px 38px #00000038}.center{text-align:center}.muted{color:#9db0cf;font-size:13px;line-height:1.5}button{border:0;color:#fff;font-size:15px;font-weight:900;cursor:pointer}button:disabled{opacity:.5;cursor:not-allowed}.name-label{display:block;font-weight:800;margin-bottom:9px}.name-input,.code-input{width:100%;padding:15px;border-radius:16px;border:2px solid #3262aa;background:#030e1fbb;color:#fff;font-size:18px;outline:0}.name-help{color:#8fa4c6;font-size:12px;margin-top:8px}.menu-button{width:100%;display:flex;align-items:center;text-align:left;gap:15px;padding:16px 17px;margin:10px 0 0;border:1px solid #ffffff1a;border-radius:20px;color:#fff;position:relative}.menu-button:after{content:"›";font-size:35px;margin-left:auto}.menu-daily{background:linear-gradient(110deg,#087ff1,#3f35ef)}.menu-online{background:linear-gradient(110deg,#2056e9,#7131ee)}.menu-friend{background:linear-gradient(110deg,#04aeb8,#0794a5)}.menu-tournament{background:#1b2a42dc;color:#8192ad}.menu-icon{width:48px;min-width:48px;text-align:center;font-size:31px}.menu-title{font-size:18px;font-weight:900}.menu-description{font-size:13px;color:#ffffffb8;font-weight:700;margin-top:4px}.badge{padding:5px 8px;border-radius:20px;font-size:9px;background:#ffbf18;color:#19223a}.footer{text-align:center;color:#8295b5;font-size:11px;letter-spacing:3px;margin-top:24px}.dots{display:flex;justify-content:center;gap:9px;margin-top:12px}.dot{width:8px;height:8px;border-radius:50%;background:#e8f0ff}.dot.active{background:#168cff}.page-title{text-align:center;font-size:27px;font-weight:900;margin:14px 0 6px}.page-description{text-align:center;color:#9db0cf;font-size:14px;line-height:1.5;margin:0 0 20px}.back-button,.secondary{width:100%;padding:13px;border-radius:13px;background:#243652}.primary{width:100%;padding:15px;border-radius:14px;background:linear-gradient(110deg,#168cff,#5146f5);margin-top:10px}.share{background:#16a34a!important}.options{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.option,.mode{background:#233653;border:2px solid transparent;border-radius:13px;padding:12px 5px;text-align:center;font-weight:900;cursor:pointer}.option.sel,.mode.sel{background:#155bc4;border-color:#53a7ff}.small{font-size:10px;color:#b8c9df;margin-top:3px}.modegrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.mode{padding:13px 7px}.mode b{display:block;font-size:12px}.mode span{font-size:10px;font-weight:normal;color:#b8c9df}.connection{text-align:center;font-size:12px;margin:8px}.online{color:#4ade80}.offline{color:#ff7b86}.scoreboard{display:grid;grid-template-columns:1fr auto 1fr;text-align:center;align-items:center;gap:8px}.pname{font-size:14px;font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.score{font-size:28px;font-weight:900}.vs{font-size:10px;color:#6f84a3}.round{text-align:center;color:#9db0cf;font-size:12px;font-weight:900;margin-top:10px}.duelstatus{text-align:center;padding:13px;border-radius:14px;background:#0b1a31;margin-bottom:14px;font-weight:900}.your{color:#4ade80}.their{color:#ffd34d}.timer{font-size:38px;font-weight:900;text-align:center;color:#53b0ff}.timer.warn{color:#ffd34d}.timer.danger{color:#ff5d6c}.topbar{display:flex;justify-content:space-between;align-items:center;margin:10px 0 12px}.status{color:#8fa4c6;font-size:12px;margin-top:4px}.attempt{text-align:center;margin:10px 0 18px}.attempt-label{font-size:11px;font-weight:900;letter-spacing:2px;color:#8fa4c6}.attempt-num{font-size:30px;font-weight:900;color:#53b0ff}.bar{height:8px;background:#142641;border-radius:20px;overflow:hidden;margin-top:8px}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#168cff,#5146f5)}.attempt-msg{font-size:12px;color:#9db0cf;margin-top:7px}.guess{display:flex;justify-content:center;gap:8px;margin:18px 0}.digit{width:54px;height:60px;border-radius:13px;border:2px solid #385173;background:#08152b;text-align:center;font-size:27px;font-weight:900;line-height:56px}.keys{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.key{padding:14px 4px;border-radius:12px;background:#263854}.message{text-align:center;min-height:21px;margin-top:12px;color:#c8d6e9}.history-title{font-size:16px;font-weight:900}.history-item{background:#0b1a31;border:1px solid #ffffff0d;border-radius:12px;padding:12px;margin-top:7px}.history-guess{font-size:20px;font-weight:900;letter-spacing:5px}.hn{display:inline-block;color:#6f84a3;font-size:12px;letter-spacing:0;margin-right:8px}.green{color:#4ade80}.yellow{color:#facc15}.invite{font-size:29px;font-weight:900;letter-spacing:5px;padding:15px;background:#07162d;border-radius:13px;margin:15px 0}.secret{font-size:35px;font-weight:900;letter-spacing:7px;padding:15px;background:#07162d;border-radius:13px;margin:14px 0}.win{text-align:center;padding:28px 20px}.winicon{font-size:68px}.win h2{font-size:29px}.result{display:inline-block;padding:8px 12px;border-radius:20px;background:#162a47;color:#9db0cf;font-size:12px;font-weight:900}.note{font-size:11px;color:#8295b5;line-height:1.5;margin-top:10px} 
-
-￼
-
-👤 Seu nome
-
-Seu nome será exibido nas partidas.
-
-📅
-
-Desafio Diário
-
-Uma senha para todos
-
-⚔️
-
-Duelo Online
-
-Entre pelo código da partida
-
-👥
-
-Desafiar Amigo
-
-Crie e envie pelo WhatsApp
-
-🏆
-
-Torneio EM BREVE
-
-Campeonatos eliminatórios
-
-SENHA • VERSÃO BETA
-
-← Voltar
-
-📅 Desafio Diário
-
-Todos tentam descobrir a mesma senha.
-
-🔐
-
-Desafio de hoje
-
-🎯 Até 15 tentativas
-♾️ Sem cronômetro.
-
-COMEÇAR DESAFIO
-
-🔒
-
-Desafio concluído
-
-Você já participou do Desafio Diário de hoje.
-
-Volte amanhã para um novo desafio.
-
-← Voltar
-
-⚔️ Duelo Online
-
-Crie uma sala ou entre usando o código recebido.
-
-Conectando...
-
-🔑 Entrar em uma partida
-
-Digite o código de 6 caracteres.
-
-ENTRAR NA PARTIDA
-
-⚔️
-
-Criar desafio
-
-Crie uma sala e envie o link pelo WhatsApp.
-
-CRIAR DESAFIO
-
-← Voltar
-
-👥 Desafiar Amigo
-
-Configure a partida e crie uma sala.
-
-⚔️
-
-Jogando como
-
-Melhor de:
-
-3
-
-Primeiro a 2
-
-5
-
-Primeiro a 3
-
-7
-
-Primeiro a 4
-
-Modo de jogo:
-
-🔐Senha CompartilhadaOs dois descobrem a mesma senha.
-
-🎯Senha IndividualCada um tenta descobrir a senha do adversário.
-
-Tempo por turno:
-
-30s
-
-45s
-
-60s
-
-CRIAR DESAFIO
-
-← Voltar
-
-🔗 Desafio criado
-
-Envie o convite e aguarde.
-
-📲
-
-ABC123
-
-⏳ Aguardando seu amigo...
-
-📲 ENVIAR PELO WHATSAPPCANCELAR SALA
-
-← Voltar
-
-🏆 Torneio
-
-🔒
-
-Em breve
-
-Os torneios serão liberados futuramente.
-
-Você
-
-0
-
-VS
-
-Adversário
-
-0
-
-TENTATIVAS
-
-0 / 15
-
-🎯 SUA VEZ
-
-Descubra a senha
-
-∞
-
-Digite seu chute.
-
-123456789⌫0✓
-
-⏱️ Sem limite
-
-📋 Tentativas
-
-Nenhuma tentativa ainda.
-
-🏆
-
-RODADA ENCERRADA
-
-Você venceu!
-
-A senha era:
-
-0000
-
-PRÓXIMA RODADA
-
-🏆
-
-PARTIDA ENCERRADA
-
-Senha da última rodada:
-
-0000
-
-VOLTAR AO INÍCIO
-
-import{initializeApp}from"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js"; import{getDatabase,ref,set,get,update,remove,onValue,runTransaction,serverTimestamp}from"https://www.gstatic.com/firebasejs/12.1.0/firebase-database.js"; const cfg={apiKey:"AIzaSyAHtU6LyGcsZz_0nWa0JeYycPUX4gX2jvc",authDomain:"senha-game-71a6a.firebaseapp.com",databaseURL:"https://senha-game-71a6a-default-rtdb.firebaseio.com",projectId:"senha-game-71a6a",storageBucket:"senha-game-71a6a.firebasestorage.app",messagingSenderId:"405309556115",appId:"1:405309556115:web:7bbcf7e1438b37a711d466"}; const app=initializeApp(cfg),db=getDatabase(app); window.FB={db,ref,set,get,update,remove,onValue,runTransaction,serverTimestamp}; onValue(ref(db,".info/connected"),s=>{let e=document.getElementById("conn");if(!e)return;e.textContent=s.val()?"● Conectado ao servidor":"● Sem conexão com o servidor";e.className="connection "+(s.val()?"online":"offline")}); onValue(ref(db,".info/serverTimeOffset"),s=>window.offset=Number(s.val()||0)); window.addEventListener("load",()=>{let r=new URLSearchParams(location.search).get("room");if(r){document.getElementById("join").value=r.toUpperCase();setTimeout(()=>joinRoom(true),800)}}) let secret="",guessing="",attempts=0,dailyAttempts=0,mode="normal",player="",bestOf=3,turnTime=30,playMode="shared",room="",role="",roomOff=null,state=null,timerId=null,timeoutLock=false,lastRound=0,lastStatus="",resultShown=false; const now=()=>Date.now()+Number(window.offset||0); const show=id=>{["home","daily","online","friend","invite","tournament","game","roundResult","result"].forEach(x=>document.getElementById(x).classList.toggle("hidden",x!==id))}; const home=()=>{if(roomOff){roomOff();roomOff=null}clearInterval(timerId);room="";role="";state=null;show("home")}; const saveName=()=>{let n=document.getElementById("playerName").value.trim()||"Jogador";player=n.substring(0,18);localStorage.setItem("senha_nome_jogador",player);return player}; const loadName=()=>{let n=localStorage.getItem("senha_nome_jogador");if(n){player=n;document.getElementById("playerName").value=n}}; const randSecret=()=>{let a=[];while(a.length<4){let n=Math.floor(Math.random()*10);if(!a.includes(n))a.push(n)}return a.join("")}; const today=()=>{let d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}; const dailyKey=()=>"senha_desafio_diario_"+today(); const dailyDone=()=>localStorage.getItem(dailyKey())==="done"; const markDaily=()=>localStorage.setItem(dailyKey(),"done"); function dailyPage(){show("daily");let d=dailyDone();document.getElementById("dailyOpen").classList.toggle("hidden",d);document.getElementById("dailyDone").classList.toggle("hidden",!d)} function onlinePage(){saveName();show("online")} function friendPage(){saveName();show("friend");document.getElementById("friendName").textContent=player;summary()} function best(v){bestOf=v;[3,5,7].forEach(n=>document.getElementById("b"+n).classList.toggle("sel",n===v));summary()} function time(v){turnTime=v;[30,45,60].forEach(n=>document.getElementById("t"+n).classList.toggle("sel",n===v));summary()} function gameMode(v){playMode=v;document.getElementById("shared").classList.toggle("sel",v==="shared");document.getElementById("individual").classList.toggle("sel",v==="individual");summary()} function summary(){document.getElementById("summary").innerHTML=`Melhor de ${bestOf}<br>${playMode==="shared"?"🔐 Senha Compartilhada":"🎯 Senha Individual"}<br>⏱️ ${turnTime}s por turno`} function code(){let c="ABCDEFGHJKLMNPQRSTUVWXYZ23456789",s="";for(let i=0;i<6;i++)s+=c[Math.floor(Math.random()*c.length)];return s} function dailySecret(){let n=parseInt(today().replaceAll("-",""));let a=[];while(a.length<4){n=(n*9301+49297)%233280;let d=n%10;if(!a.includes(d))a.push(d)}return a.join("")} function startDaily(){saveName();secret=dailySecret();guessing="";attempts=0;dailyAttempts=0;mode="daily";document.getElementById("me").textContent=player;document.getElementById("opp").textContent="Desafio Diário";document.getElementById("myScore").textContent="0";document.getElementById("opScore").textContent="—";document.getElementById("round").textContent="DESAFIO DIÁRIO";document.getElementById("duelStatus").classList.add("hidden");document.getElementById("timer").textContent="∞";document.getElementById("timeText").textContent="Sem limite";document.getElementById("history").innerHTML='<p class="muted center">Nenhuma tentativa ainda.</p>';document.getElementById("msg").textContent="";document.getElementById("attemptBox").classList.remove("hidden");keys(true);renderGuess();updateAttempts();show("game")} function updateAttempts(){let used=dailyAttempts,left=15-used;document.getElementById("attemptNum").textContent=used+" / 15";document.getElementById("attemptBar").style.width=(used/15*100)+"%";document.getElementById("attemptMsg").textContent=left===1?"Resta 1 tentativa":"Restam "+left+" tentativas"} function keys(ok){document.querySelectorAll(".key").forEach(k=>{k.disabled=!ok;k.style.opacity=ok?"1":".5"})} function digit(n){if(mode==="duel"&&(!state||state.currentTurn!==role))return;if(guessing.length<4){guessing+=n;renderGuess()}} function backspace(){guessing=guessing.slice(0,-1);renderGuess()} function renderGuess(){["d1","d2","d3","d4"].forEach((x,i)=>document.getElementById(x).textContent=guessing[i]||"")} function result(s,t){let a=0,b=0,su=[0,0,0,0],tu=[0,0,0,0];for(let i=0;i<4;i++)if(s[i]===t[i]){a++;su[i]=1;tu[i]=1}for(let i=0;i<4;i++){if(tu[i])continue;for(let j=0;j<4;j++)if(!su[j]&&t[i]===s[j]){b++;su[j]=1;tu[i]=1;break}}return{place:a,out:b}} function addHistory(n,r,num){let e=document.getElementById("history");if(num===1)e.innerHTML="";let d=document.createElement("div");d.className="history-item";d.innerHTML=`<div class="history-guess"><span class="hn">${String(num).padStart(2,"0")}</span>${n}</div><div style="margin-top:5px;font-size:13px"><span class="green">🟢 ${r.place} certo(s) no lugar</span><br><span class="yellow">🟡 ${r.out} certo(s) fora do lugar</span></div>`;e.prepend(d)} async function guess(){if(guessing.length!==4){document.getElementById("msg").textContent="Digite 4 números.";return}if(mode==="duel"){await duelGuess();return}dailyAttempts++;attempts++;updateAttempts();let r=result(secret,guessing);addHistory(guessing,r,attempts);if(r.place===4){markDaily();dailyResult(true);return}if(dailyAttempts>=15){markDaily();dailyResult(false);return}guessing="";renderGuess()} function dailyResult(win){keys(false);show("result");document.getElementById("resIcon").textContent=win?"🏆":"😔";document.getElementById("resTitle").textContent=win?"Você venceu!":"Desafio encerrado";document.getElementById("resText").innerHTML=win?`Parabéns, ${player}!<br><br>Você descobriu a senha em <b>${dailyAttempts}</b> tentativa(s).`:`Você não descobriu a senha em 15 tentativas.<br><br>Sua participação foi registrada.`;document.getElementById("resSecret").textContent=secret} async function createRoom(){let n=saveName();if(n==="Jogador"){alert("Digite seu nome.");home();return}let id=code();room=id;role="host";let r=window.FB.ref(window.FB.db,"rooms/"+id),s=randSecret();try{await window.FB.set(r,{hostName:n,guestName:"",bestOf,turnTime,mode:playMode,round:1,hostScore:0,guestScore:0,status:"waiting",currentTurn:"host",turnStartedAt:null,sharedSecret:playMode==="shared"?s:"",hostSecret:playMode==="individual"?s:"",guestSecret:"",history:{},nextReadyHost:false,nextReadyGuest:false,createdAt:window.FB.serverTimestamp()});document.getElementById("inviteName").textContent=n;document.getElementById("inviteCode").textContent=id;document.getElementById("inviteInfo").innerHTML=`Melhor de ${bestOf}<br>${playMode==="shared"?"🔐 Senha Compartilhada":"🎯 Senha Individual"}<br>⏱️ ${turnTime}s por turno`;show("invite");listen(id)}catch(e){console.error(e);alert("Erro ao criar sala. Verifique as regras do Firebase.")}} function whatsapp(){let link="https://gamesenha.github.io/Senha-Game/?room="+encodeURIComponent(room);let txt=`🔐 SENHA ${player} te desafiou para uma partida! 🏆 Melhor de ${bestOf} ${playMode==="shared"?"🔐 Senha Compartilhada":"🎯 Senha Individual"} ⏱️ ${turnTime}s por turno 🎮 ENTRE PARA JOGAR: ${link} 🔑 Código: ${room}`;window.open("https://wa.me/?text="+encodeURIComponent(txt),"_blank")} async function joinRoom(auto=false){let n=saveName();if(n==="Jogador"){if(!auto)alert("Digite seu nome.");return}let id=document.getElementById("join").value.trim().toUpperCase();if(id.length!==6){if(!auto)alert("Código inválido.");return}room=id;role="guest";let r=window.FB.ref(window.FB.db,"rooms/"+id);try{let s=await window.FB.get(r);if(!s.exists()){if(!auto)alert("Partida não encontrada.");return}let x=s.val();if(x.guestName&&x.guestName!==n){alert("Partida já está cheia.");return}await window.FB.update(r,{guestName:n,status:"active",turnStartedAt:x.turnStartedAt||now()});listen(id)}catch(e){console.error(e);if(!auto)alert("Não foi possível entrar.")}} function listen(id){if(roomOff)roomOff();roomOff=window.FB.onValue(window.FB.ref(window.FB.db,"rooms/"+id),s=>{if(!s.exists()){alert("Sala encerrada.");home();return}state=s.val();sync()})} function target(x){if(x.mode==="shared")return x.sharedSecret||"";return role==="host"?x.guestSecret||"":x.hostSecret||""} function sync(){let x=state;if(x.status==="waiting"){if(role==="host")document.getElementById("inviteStatus").textContent=x.guestName?"🟢 "+x.guestName+" entrou!":"⏳ Aguardando seu amigo...";return}if(x.status==="active"){if(lastStatus!=="active"||lastRound!==Number(x.round)){prepareRound(x)}else updateGame(x);clock();return}if(x.status==="roundFinished"){clearInterval(timerId);roundFinished(x);return}if(x.status==="matchFinished"){clearInterval(timerId);matchFinished(x)}lastStatus=x.status} function prepareRound(x){lastRound=Number(x.round);resultShown=false;timeoutLock=false;guessing="";document.getElementById("me").textContent=role==="host"?x.hostName:x.guestName;document.getElementById("opp").textContent=role==="host"?x.guestName:x.hostName;document.getElementById("myScore").textContent=role==="host"?x.hostScore||0:x.guestScore||0;document.getElementById("opScore").textContent=role==="host"?x.guestScore||0:x.hostScore||0;document.getElementById("round").textContent=`RODADA ${x.round} • MELHOR DE ${x.bestOf}`;document.getElementById("history").innerHTML='<p class="muted center">Nenhuma tentativa ainda.</p>';document.getElementById("attemptBox").classList.add("hidden");document.getElementById("msg").textContent="";renderGuess();show("game");updateGame(x);clock()} function updateGame(x){let my=x.currentTurn===role,d=document.getElementById("duelStatus");d.classList.remove("hidden","your","their");d.classList.add(my?"your":"their");d.textContent=my?"🎯 É SUA VEZ — descubra a senha!":"⏳ VEZ DO ADVERSÁRIO";document.getElementById("turnTitle").textContent=my?"🎯 SUA VEZ":"⏳ AGUARDE";document.getElementById("turnStatus").textContent=my?"Seu turno":"Aguarde o adversário";document.getElementById("myScore").textContent=role==="host"?x.hostScore||0:x.guestScore||0;document.getElementById("opScore").textContent=role==="host"?x.guestScore||0:x.hostScore||0;document.getElementById("timeText").textContent=x.turnTime+"s por turno";keys(my);renderRoomHistory(x)} function renderRoomHistory(x){let h=x.history||{},a=Object.keys(h).map(k=>h[k]).sort((a,b)=>(b.order||0)-(a.order||0));let e=document.getElementById("history");if(!a.length){e.innerHTML='<p class="muted center">Nenhuma tentativa ainda.</p>';return}e.innerHTML=a.map(v=>{let who=v.player===role?"Você":(role==="host"?x.guestName:x.hostName);return `<div class="history-item"><div class="history-guess"><span class="hn">${String(v.order).padStart(2,"0")}</span>${v.guess}</div><div class="muted">${who}</div><div style="font-size:13px;margin-top:5px"><span class="green">🟢 ${v.place} certo(s) no lugar</span><br><span class="yellow">🟡 ${v.out} certo(s) fora do lugar</span></div></div>`}).join("")} function clock(){clearInterval(timerId);timerId=setInterval(()=>tick(),200);tick()} function tick(){if(!state||state.status!=="active")return;let start=Number(state.turnStartedAt||0),dur=Number(state.turnTime||30);if(!start){document.getElementById("timer").textContent=dur;return}let left=Math.max(0,dur-Math.floor((now()-start)/1000)),e=document.getElementById("timer");e.textContent=String(left).padStart(2,"0");e.classList.toggle("danger",left<=5);e.classList.toggle("warn",left>5&&left<=10);if(left===0&&state.currentTurn===role)claimTimeout()} async function claimTimeout(){if(timeoutLock)return;timeoutLock=true;try{await window.FB.runTransaction(window.FB.ref(window.FB.db,"rooms/"+room),x=>{if(!x||x.status!=="active"||x.currentTurn!==role)return x;let start=Number(x.turnStartedAt||0);if(now()-start<Number(x.turnTime)*1000)return x;x.currentTurn=role==="host"?"guest":"host";x.turnStartedAt=now();x.lastTimeoutBy=role;return x})}catch(e){console.error(e)}setTimeout(()=>timeoutLock=false,1000)} async function duelGuess(){if(!state||state.status!=="active"||state.currentTurn!==role)return;let r=result(target(state),guessing),h=state.history||{},order=Object.keys(h).length+1,key="h"+Date.now(),u={};u["history/"+key]={player:role,guess:guessing,place:r.place,out:r.out,order};if(r.place===4){let score=(role==="host"?+state.hostScore||0:+state.guestScore||0)+1,max=Math.ceil(Number(state.bestOf)/2);u[role==="host"?"hostScore":"guestScore"]=score;u.roundWinner=role;u.revealedSecret=target(state);u.status=score>=max?"matchFinished":"roundFinished";u.turnStartedAt=null;u.nextReadyHost=false;u.nextReadyGuest=false;await window.FB.update(window.FB.ref(window.FB.db,"rooms/"+room),u);guessing="";renderGuess();return}u.currentTurn=role==="host"?"guest":"host";u.turnStartedAt=now();await window.FB.update(window.FB.ref(window.FB.db,"rooms/"+room),u);guessing="";renderGuess()} function roundFinished(x){if(!resultShown){resultShown=true;show("roundResult")}let win=x.roundWinner===role,my=x[role==="host"?"hostScore":"guestScore"]||0,op=x[role==="host"?"guestScore":"hostScore"]||0;document.getElementById("rrIcon").textContent=win?"🏆":"😔";document.getElementById("rrTitle").textContent=win?"Você venceu a rodada!":"Você perdeu a rodada";document.getElementById("rrText").textContent=win?"Você descobriu a senha antes do adversário.":"O adversário descobriu a senha primeiro.";document.getElementById("rrSecret").textContent=x.revealedSecret||"----";document.getElementById("rrScore").textContent=`Placar: ${my} × ${op}`;let me=role==="host"?x.nextReadyHost:x.nextReadyGuest;document.getElementById("nextBtn").disabled=me;document.getElementById("nextStatus").textContent=me?"⏳ Aguardando o outro jogador...":"Clique para confirmar a próxima rodada."} async function nextRound(){if(!state||state.status!=="roundFinished")return;let base=window.FB.ref(window.FB.db,"rooms/"+room);let u={};u[role==="host"?"nextReadyHost":"nextReadyGuest"]=true;await window.FB.update(base,u);let s=await window.FB.get(base),x=s.val();if(x.nextReadyHost&&x.nextReadyGuest){await window.FB.runTransaction(base,x=>{if(!x||x.status!=="roundFinished"||!x.nextReadyHost||!x.nextReadyGuest)return x;let sh=randSecret();x.round=Number(x.round)+1;x.status="active";x.currentTurn="host";x.turnStartedAt=now();x.history={};x.nextReadyHost=false;x.nextReadyGuest=false;x.roundWinner=null;x.revealedSecret=null;if(x.mode==="shared"){x.sharedSecret=sh;x.hostSecret="";x.guestSecret=""}else{x.sharedSecret="";x.hostSecret=randSecret();x.guestSecret=randSecret()}return x})}} function matchFinished(x){let win=x.roundWinner===role,my=role==="host"?+x.hostScore||0:+x.guestScore||0,op=role==="host"?+x.guestScore||0:+x.hostScore||0;show("result");document.getElementById("resIcon").textContent=win?"🏆":"😔";document.getElementById("resTitle").textContent=win?"Você venceu o duelo!":"Você perdeu o duelo";document.getElementById("resText").innerHTML=win?`Parabéns, ${player}!<br><br>Placar final: <b>${my} × ${op}</b>`:`O adversário venceu.<br><br>Placar final: <b>${op} × ${my}</b>`;document.getElementById("resSecret").textContent=x.revealedSecret||"----"} async function cancelRoom(){try{if(room&&role==="host")await window.FB.remove(window.FB.ref(window.FB.db,"rooms/"+room))}catch(e){}home()} loadName();summary();dailyPage();home(); 
-
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#061329">
+<title>SENHA — Descubra • Desafie • Vença</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:Arial,sans-serif;color:#f7f9ff;background:radial-gradient(circle at 8% 0%,#168cff2e,transparent 28%),radial-gradient(circle at 100% 100%,#5146f52b,transparent 30%),linear-gradient(145deg,#061329,#091936 55%,#07142b)}.app{max-width:460px;min-height:100vh;margin:auto;padding:18px 16px 42px}.hidden{display:none!important}.logo{text-align:center;margin:8px 0 20px}.logo img{width:315px;max-width:92%;display:block;margin:auto}.card{background:linear-gradient(145deg,#193158c7,#0c1c38d1);border:1px solid #82adf033;border-radius:22px;padding:18px;margin-bottom:14px;box-shadow:0 16px 38px #00000038}.center{text-align:center}.muted{color:#9db0cf;font-size:13px;line-height:1.5}button{border:0;color:#fff;font-size:15px;font-weight:900;cursor:pointer}button:disabled{opacity:.5;cursor:not-allowed}.name-label{display:block;font-weight:800;margin-bottom:9px}.name-input,.code-input{width:100%;padding:15px;border-radius:16px;border:2px solid #3262aa;background:#030e1fbb;color:#fff;font-size:18px;outline:0}.name-help{color:#8fa4c6;font-size:12px;margin-top:8px}.menu-button{width:100%;display:flex;align-items:center;text-align:left;gap:15px;padding:16px 17px;margin:10px 0 0;border:1px solid #ffffff1a;border-radius:20px;color:#fff;position:relative}.menu-button:after{content:"›";font-size:35px;margin-left:auto}.menu-daily{background:linear-gradient(110deg,#087ff1,#3f35ef)}.menu-online{background:linear-gradient(110deg,#2056e9,#7131ee)}.menu-friend{background:linear-gradient(110deg,#04aeb8,#0794a5)}.menu-tournament{background:#1b2a42dc;color:#8192ad}.menu-icon{width:48px;min-width:48px;text-align:center;font-size:31px}.menu-title{font-size:18px;font-weight:900}.menu-description{font-size:13px;color:#ffffffb8;font-weight:700;margin-top:4px}.badge{padding:5px 8px;border-radius:20px;font-size:9px;background:#ffbf18;color:#19223a}.footer{text-align:center;color:#8295b5;font-size:11px;letter-spacing:3px;margin-top:24px}.dots{display:flex;justify-content:center;gap:9px;margin-top:12px}.dot{width:8px;height:8px;border-radius:50%;background:#e8f0ff}.dot.active{background:#168cff}.page-title{text-align:center;font-size:27px;font-weight:900;margin:14px 0 6px}.page-description{text-align:center;color:#9db0cf;font-size:14px;line-height:1.5;margin:0 0 20px}.back-button,.secondary{width:100%;padding:13px;border-radius:13px;background:#243652}.primary{width:100%;padding:15px;border-radius:14px;background:linear-gradient(110deg,#168cff,#5146f5);margin-top:10px}.share{background:#16a34a!important}.options{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.option,.mode{background:#233653;border:2px solid transparent;border-radius:13px;padding:12px 5px;text-align:center;font-weight:900;cursor:pointer}.option.sel,.mode.sel{background:#155bc4;border-color:#53a7ff}.small{font-size:10px;color:#b8c9df;margin-top:3px}.modegrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.mode{padding:13px 7px}.mode b{display:block;font-size:12px}.mode span{font-size:10px;font-weight:normal;color:#b8c9df}.connection{text-align:center;font-size:12px;margin:8px}.online{color:#4ade80}.offline{color:#ff7b86}.scoreboard{display:grid;grid-template-columns:1fr auto 1fr;text-align:center;align-items:center;gap:8px}.pname{font-size:14px;font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.score{font-size:28px;font-weight:900}.vs{font-size:10px;color:#6f84a3}.round{text-align:center;color:#9db0cf;font-size:12px;font-weight:900;margin-top:10px}.duelstatus{text-align:center;padding:13px;border-radius:14px;background:#0b1a31;margin-bottom:14px;font-weight:900}.your{color:#4ade80}.their{color:#ffd34d}.timer{font-size:38px;font-weight:900;text-align:center;color:#53b0ff}.timer.warn{color:#ffd34d}.timer.danger{color:#ff5d6c}.topbar{display:flex;justify-content:space-between;align-items:center;margin:10px 0 12px}.status{color:#8fa4c6;font-size:12px;margin-top:4px}.attempt{text-align:center;margin:10px 0 18px}.attempt-label{font-size:11px;font-weight:900;letter-spacing:2px;color:#8fa4c6}.attempt-num{font-size:30px;font-weight:900;color:#53b0ff}.bar{height:8px;background:#142641;border-radius:20px;overflow:hidden;margin-top:8px}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#168cff,#5146f5)}.attempt-msg{font-size:12px;color:#9db0cf;margin-top:7px}.guess{display:flex;justify-content:center;gap:8px;margin:18px 0}.digit{width:54px;height:60px;border-radius:13px;border:2px solid #385173;background:#08152b;text-align:center;font-size:27px;font-weight:900;line-height:56px}.keys{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.key{padding:14px 4px;border-radius:12px;background:#263854}.message{text-align:center;min-height:21px;margin-top:12px;color:#c8d6e9}.history-title{font-size:16px;font-weight:900}.history-item{background:#0b1a31;border:1px solid #ffffff0d;border-radius:12px;padding:12px;margin-top:7px}.history-guess{font-size:20px;font-weight:900;letter-spacing:5px}.hn{display:inline-block;color:#6f84a3;font-size:12px;letter-spacing:0;margin-right:8px}.green{color:#4ade80}.yellow{color:#facc15}.invite{font-size:29px;font-weight:900;letter-spacing:5px;padding:15px;background:#07162d;border-radius:13px;margin:15px 0}.secret{font-size:35px;font-weight:900;letter-spacing:7px;padding:15px;background:#07162d;border-radius:13px;margin:14px 0}.win{text-align:center;padding:28px 20px}.winicon{font-size:68px}.win h2{font-size:29px}.result{display:inline-block;padding:8px 12px;border-radius:20px;background:#162a47;color:#9db0cf;font-size:12px;font-weight:900}.note{font-size:11px;color:#8295b5;line-height:1.5;margin-top:10px}
+</style>
+</head>
+<body><div class="app">
+
+<div id="home">
+<div class="logo"><img src="logo-senha.png" alt="SENHA"></div>
+<div class="card"><label class="name-label">👤 Seu nome</label><input id="playerName" class="name-input" maxlength="18" placeholder="Digite seu nome"><div class="name-help">Seu nome será exibido nas partidas.</div></div>
+<button class="menu-button menu-daily" onclick="dailyPage()"><div class="menu-icon">📅</div><div><div class="menu-title">Desafio Diário</div><div class="menu-description">Uma senha para todos</div></div></button>
+<button class="menu-button menu-online" onclick="onlinePage()"><div class="menu-icon">⚔️</div><div><div class="menu-title">Duelo Online</div><div class="menu-description">Entre pelo código da partida</div></div></button>
+<button class="menu-button menu-friend" onclick="friendPage()"><div class="menu-icon">👥</div><div><div class="menu-title">Desafiar Amigo</div><div class="menu-description">Crie e envie pelo WhatsApp</div></div></button>
+<button class="menu-button menu-tournament" onclick="show('tournament')"><div class="menu-icon">🏆</div><div><div class="menu-title">Torneio <span class="badge">EM BREVE</span></div><div class="menu-description">Campeonatos eliminatórios</div></div></button>
+<div class="footer">SENHA • VERSÃO BETA</div><div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot active"></span></div>
+</div>
+
+<div id="daily" class="hidden"><button class="back-button" onclick="home()">← Voltar</button><div class="page-title">📅 Desafio Diário</div><div class="page-description">Todos tentam descobrir a mesma senha.</div>
+<div id="dailyOpen" class="card center"><div style="font-size:50px">🔐</div><h3>Desafio de hoje</h3><p class="muted">🎯 Até <b>15 tentativas</b><br>♾️ Sem cronômetro.</p><button class="primary" onclick="startDaily()">COMEÇAR DESAFIO</button></div>
+<div id="dailyDone" class="card center hidden"><div style="font-size:60px">🔒</div><h2>Desafio concluído</h2><p class="muted">Você já participou do Desafio Diário de hoje.</p><p class="muted">Volte amanhã para um novo desafio.</p></div></div>
+
+<div id="online" class="hidden"><button class="back-button" onclick="home()">← Voltar</button><div class="page-title">⚔️ Duelo Online</div><div class="page-description">Crie uma sala ou entre usando o código recebido.</div><div id="conn" class="connection offline">Conectando...</div>
+<div class="card"><h3 class="center">🔑 Entrar em uma partida</h3><p class="muted center">Digite o código de 6 caracteres.</p><input id="join" class="code-input" maxlength="6" placeholder="ABC123" style="text-align:center;text-transform:uppercase;letter-spacing:5px"><button class="primary" onclick="joinRoom()">ENTRAR NA PARTIDA</button></div>
+<div class="card center"><div style="font-size:50px">⚔️</div><h3>Criar desafio</h3><p class="muted">Crie uma sala e envie o link pelo WhatsApp.</p><button class="secondary" onclick="friendPage()">CRIAR DESAFIO</button></div></div>
+
+<div id="friend" class="hidden"><button class="back-button" onclick="home()">← Voltar</button><div class="page-title">👥 Desafiar Amigo</div><div class="page-description">Configure a partida e crie uma sala.</div>
+<div class="card"><div class="center" style="font-size:45px">⚔️</div><div class="center muted">Jogando como</div><div id="friendName" class="center" style="font-size:21px;font-weight:900;margin:8px 0 15px"></div>
+<div class="option-title">Melhor de:</div><div class="options"><div id="b3" class="option sel" onclick="best(3)">3<div class="small">Primeiro a 2</div></div><div id="b5" class="option" onclick="best(5)">5<div class="small">Primeiro a 3</div></div><div id="b7" class="option" onclick="best(7)">7<div class="small">Primeiro a 4</div></div></div>
+<div class="option-title">Modo de jogo:</div><div class="modegrid"><div id="shared" class="mode sel" onclick="gameMode('shared')">🔐<b>Senha Compartilhada</b><span>Os dois descobrem a mesma senha.</span></div><div id="individual" class="mode" onclick="gameMode('individual')">🎯<b>Senha Individual</b><span>Cada um tenta descobrir a senha do adversário.</span></div></div>
+<div class="option-title">Tempo por turno:</div><div class="options"><div id="t30" class="option sel" onclick="time(30)">30s</div><div id="t45" class="option" onclick="time(45)">45s</div><div id="t60" class="option" onclick="time(60)">60s</div></div>
+<div id="summary" class="center muted" style="margin-top:18px"></div><button class="primary" onclick="createRoom()">CRIAR DESAFIO</button></div></div>
+
+<div id="invite" class="hidden"><button class="back-button" onclick="friendPage()">← Voltar</button><div class="page-title">🔗 Desafio criado</div><div class="page-description">Envie o convite e aguarde.</div><div class="card center"><div style="font-size:50px">📲</div><h3 id="inviteName"></h3><div id="inviteCode" class="invite">ABC123</div><p id="inviteInfo" class="muted"></p><div id="inviteStatus" class="muted">⏳ Aguardando seu amigo...</div><button class="primary share" onclick="whatsapp()">📲 ENVIAR PELO WHATSAPP</button><button class="secondary" onclick="cancelRoom()">CANCELAR SALA</button></div></div>
+
+<div id="tournament" class="hidden"><button class="back-button" onclick="home()">← Voltar</button><div class="page-title">🏆 Torneio</div><div class="card center"><div style="font-size:70px">🔒</div><h2>Em breve</h2><p class="muted">Os torneios serão liberados futuramente.</p></div></div>
+
+<div id="game" class="hidden"><div class="card"><div class="scoreboard"><div><div id="me" class="pname">Você</div><div id="myScore" class="score">0</div></div><div class="vs">VS</div><div><div id="opp" class="pname">Adversário</div><div id="opScore" class="score">0</div></div></div><div id="round" class="round"></div></div>
+<div id="duelStatus" class="duelstatus hidden"></div>
+<div id="attemptBox" class="attempt hidden"><div class="attempt-label">TENTATIVAS</div><div id="attemptNum" class="attempt-num">0 / 15</div><div class="bar"><i id="attemptBar"></i></div><div id="attemptMsg" class="attempt-msg"></div></div>
+<div class="topbar"><div><b id="turnTitle">🎯 SUA VEZ</b><div id="turnStatus" class="status">Descubra a senha</div></div><div id="timer" class="timer">∞</div></div>
+<div class="card"><p class="center">Digite seu chute.</p><div class="guess"><div id="d1" class="digit"></div><div id="d2" class="digit"></div><div id="d3" class="digit"></div><div id="d4" class="digit"></div></div>
+<div class="keys"><button class="key" onclick="digit('1')">1</button><button class="key" onclick="digit('2')">2</button><button class="key" onclick="digit('3')">3</button><button class="key" onclick="digit('4')">4</button><button class="key" onclick="digit('5')">5</button><button class="key" onclick="digit('6')">6</button><button class="key" onclick="digit('7')">7</button><button class="key" onclick="digit('8')">8</button><button class="key" onclick="digit('9')">9</button><button class="key" onclick="backspace()">⌫</button><button class="key" onclick="digit('0')">0</button><button class="key" onclick="guess()">✓</button></div><div id="msg" class="message"></div><div class="center muted">⏱️ <span id="timeText">Sem limite</span></div></div>
+<div class="card"><div class="history-title">📋 Tentativas</div><div id="history"><p class="muted center">Nenhuma tentativa ainda.</p></div></div></div>
+
+<div id="roundResult" class="hidden"><div class="card win"><div id="rrIcon" class="winicon">🏆</div><div class="result">RODADA ENCERRADA</div><h2 id="rrTitle">Você venceu!</h2><p id="rrText" class="muted"></p><div class="muted">A senha era:</div><div id="rrSecret" class="secret">0000</div><p id="rrScore" class="muted"></p><button id="nextBtn" class="primary" onclick="nextRound()">PRÓXIMA RODADA</button><div id="nextStatus" class="note"></div></div></div>
+
+<div id="result" class="hidden"><div class="card win"><div id="resIcon" class="winicon">🏆</div><div class="result">PARTIDA ENCERRADA</div><h2 id="resTitle"></h2><p id="resText" class="muted"></p><div class="muted">Senha da última rodada:</div><div id="resSecret" class="secret">0000</div><button class="primary" onclick="home()">VOLTAR AO INÍCIO</button></div></div>
+
+<script type="module">
+import{initializeApp}from"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+import{getDatabase,ref,set,get,update,remove,onValue,runTransaction,serverTimestamp}from"https://www.gstatic.com/firebasejs/12.1.0/firebase-database.js";
+const cfg={apiKey:"AIzaSyAHtU6LyGcsZz_0nWa0JeYycPUX4gX2jvc",authDomain:"senha-game-71a6a.firebaseapp.com",databaseURL:"https://senha-game-71a6a-default-rtdb.firebaseio.com",projectId:"senha-game-71a6a",storageBucket:"senha-game-71a6a.firebasestorage.app",messagingSenderId:"405309556115",appId:"1:405309556115:web:7bbcf7e1438b37a711d466"};
+const app=initializeApp(cfg),db=getDatabase(app);
+window.FB={db,ref,set,get,update,remove,onValue,runTransaction,serverTimestamp};
+onValue(ref(db,".info/connected"),s=>{let e=document.getElementById("conn");if(!e)return;e.textContent=s.val()?"● Conectado ao servidor":"● Sem conexão com o servidor";e.className="connection "+(s.val()?"online":"offline")});
+onValue(ref(db,".info/serverTimeOffset"),s=>window.offset=Number(s.val()||0));
+window.addEventListener("load",()=>{let r=new URLSearchParams(location.search).get("room");if(r){document.getElementById("join").value=r.toUpperCase();setTimeout(()=>joinRoom(true),800)}})
+</script>
+
+<script>
+let secret="",guessing="",attempts=0,dailyAttempts=0,mode="normal",player="",bestOf=3,turnTime=30,playMode="shared",room="",role="",roomOff=null,state=null,timerId=null,timeoutLock=false,lastRound=0,lastStatus="",resultShown=false;
+const now=()=>Date.now()+Number(window.offset||0);
+const show=id=>{["home","daily","online","friend","invite","tournament","game","roundResult","result"].forEach(x=>document.getElementById(x).classList.toggle("hidden",x!==id))};
+const home=()=>{if(roomOff){roomOff();roomOff=null}clearInterval(timerId);room="";role="";state=null;show("home")};
+const saveName=()=>{let n=document.getElementById("playerName").value.trim()||"Jogador";player=n.substring(0,18);localStorage.setItem("senha_nome_jogador",player);return player};
+const loadName=()=>{let n=localStorage.getItem("senha_nome_jogador");if(n){player=n;document.getElementById("playerName").value=n}};
+const randSecret=()=>{let a=[];while(a.length<4){let n=Math.floor(Math.random()*10);if(!a.includes(n))a.push(n)}return a.join("")};
+const today=()=>{let d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")};
+const dailyKey=()=>"senha_desafio_diario_"+today();
+const dailyDone=()=>localStorage.getItem(dailyKey())==="done";
+const markDaily=()=>localStorage.setItem(dailyKey(),"done");
+function dailyPage(){show("daily");let d=dailyDone();document.getElementById("dailyOpen").classList.toggle("hidden",d);document.getElementById("dailyDone").classList.toggle("hidden",!d)}
+function onlinePage(){saveName();show("online")}
+function friendPage(){saveName();show("friend");document.getElementById("friendName").textContent=player;summary()}
+function best(v){bestOf=v;[3,5,7].forEach(n=>document.getElementById("b"+n).classList.toggle("sel",n===v));summary()}
+function time(v){turnTime=v;[30,45,60].forEach(n=>document.getElementById("t"+n).classList.toggle("sel",n===v));summary()}
+function gameMode(v){playMode=v;document.getElementById("shared").classList.toggle("sel",v==="shared");document.getElementById("individual").classList.toggle("sel",v==="individual");summary()}
+function summary(){document.getElementById("summary").innerHTML=`Melhor de ${bestOf}<br>${playMode==="shared"?"🔐 Senha Compartilhada":"🎯 Senha Individual"}<br>⏱️ ${turnTime}s por turno`}
+function code(){let c="ABCDEFGHJKLMNPQRSTUVWXYZ23456789",s="";for(let i=0;i<6;i++)s+=c[Math.floor(Math.random()*c.length)];return s}
+function dailySecret(){let n=parseInt(today().replaceAll("-",""));let a=[];while(a.length<4){n=(n*9301+49297)%233280;let d=n%10;if(!a.includes(d))a.push(d)}return a.join("")}
+function startDaily(){saveName();secret=dailySecret();guessing="";attempts=0;dailyAttempts=0;mode="daily";document.getElementById("me").textContent=player;document.getElementById("opp").textContent="Desafio Diário";document.getElementById("myScore").textContent="0";document.getElementById("opScore").textContent="—";document.getElementById("round").textContent="DESAFIO DIÁRIO";document.getElementById("duelStatus").classList.add("hidden");document.getElementById("timer").textContent="∞";document.getElementById("timeText").textContent="Sem limite";document.getElementById("history").innerHTML='<p class="muted center">Nenhuma tentativa ainda.</p>';document.getElementById("msg").textContent="";document.getElementById("attemptBox").classList.remove("hidden");keys(true);renderGuess();updateAttempts();show("game")}
+function updateAttempts(){let used=dailyAttempts,left=15-used;document.getElementById("attemptNum").textContent=used+" / 15";document.getElementById("attemptBar").style.width=(used/15*100)+"%";document.getElementById("attemptMsg").textContent=left===1?"Resta 1 tentativa":"Restam "+left+" tentativas"}
+function keys(ok){document.querySelectorAll(".key").forEach(k=>{k.disabled=!ok;k.style.opacity=ok?"1":".5"})}
+function digit(n){if(mode==="duel"&&(!state||state.currentTurn!==role))return;if(guessing.length<4){guessing+=n;renderGuess()}}
+function backspace(){guessing=guessing.slice(0,-1);renderGuess()}
+function renderGuess(){["d1","d2","d3","d4"].forEach((x,i)=>document.getElementById(x).textContent=guessing[i]||"")}
+function result(s,t){let a=0,b=0,su=[0,0,0,0],tu=[0,0,0,0];for(let i=0;i<4;i++)if(s[i]===t[i]){a++;su[i]=1;tu[i]=1}for(let i=0;i<4;i++){if(tu[i])continue;for(let j=0;j<4;j++)if(!su[j]&&t[i]===s[j]){b++;su[j]=1;tu[i]=1;break}}return{place:a,out:b}}
+function addHistory(n,r,num){let e=document.getElementById("history");if(num===1)e.innerHTML="";let d=document.createElement("div");d.className="history-item";d.innerHTML=`<div class="history-guess"><span class="hn">${String(num).padStart(2,"0")}</span>${n}</div><div style="margin-top:5px;font-size:13px"><span class="green">🟢 ${r.place} certo(s) no lugar</span><br><span class="yellow">🟡 ${r.out} certo(s) fora do lugar</span></div>`;e.prepend(d)}
+async function guess(){if(guessing.length!==4){document.getElementById("msg").textContent="Digite 4 números.";return}if(mode==="duel"){await duelGuess();return}dailyAttempts++;attempts++;updateAttempts();let r=result(secret,guessing);addHistory(guessing,r,attempts);if(r.place===4){markDaily();dailyResult(true);return}if(dailyAttempts>=15){markDaily();dailyResult(false);return}guessing="";renderGuess()}
+function dailyResult(win){keys(false);show("result");document.getElementById("resIcon").textContent=win?"🏆":"😔";document.getElementById("resTitle").textContent=win?"Você venceu!":"Desafio encerrado";document.getElementById("resText").innerHTML=win?`Parabéns, ${player}!<br><br>Você descobriu a senha em <b>${dailyAttempts}</b> tentativa(s).`:`Você não descobriu a senha em 15 tentativas.<br><br>Sua participação foi registrada.`;document.getElementById("resSecret").textContent=secret}
+async function createRoom(){let n=saveName();if(n==="Jogador"){alert("Digite seu nome.");home();return}let id=code();room=id;role="host";let r=window.FB.ref(window.FB.db,"rooms/"+id),s=randSecret();try{await window.FB.set(r,{hostName:n,guestName:"",bestOf,turnTime,mode:playMode,round:1,hostScore:0,guestScore:0,status:"waiting",currentTurn:"host",turnStartedAt:null,sharedSecret:playMode==="shared"?s:"",hostSecret:playMode==="individual"?s:"",guestSecret:"",history:{},nextReadyHost:false,nextReadyGuest:false,createdAt:window.FB.serverTimestamp()});document.getElementById("inviteName").textContent=n;document.getElementById("inviteCode").textContent=id;document.getElementById("inviteInfo").innerHTML=`Melhor de ${bestOf}<br>${playMode==="shared"?"🔐 Senha Compartilhada":"🎯 Senha Individual"}<br>⏱️ ${turnTime}s por turno`;show("invite");listen(id)}catch(e){console.error(e);alert("Erro ao criar sala. Verifique as regras do Firebase.")}}
+function whatsapp(){let link="https://gamesenha.github.io/Senha-Game/?room="+encodeURIComponent(room);let txt=`🔐 SENHA
+
+${player} te desafiou para uma partida!
+
+🏆 Melhor de ${bestOf}
+${playMode==="shared"?"🔐 Senha Compartilhada":"🎯 Senha Individual"}
+⏱️ ${turnTime}s por turno
+
+🎮 ENTRE PARA JOGAR:
+${link}
+
+🔑 Código: ${room}`;window.open("https://wa.me/?text="+encodeURIComponent(txt),"_blank")}
+async function joinRoom(auto=false){let n=saveName();if(n==="Jogador"){if(!auto)alert("Digite seu nome.");return}let id=document.getElementById("join").value.trim().toUpperCase();if(id.length!==6){if(!auto)alert("Código inválido.");return}room=id;role="guest";let r=window.FB.ref(window.FB.db,"rooms/"+id);try{let s=await window.FB.get(r);if(!s.exists()){if(!auto)alert("Partida não encontrada.");return}let x=s.val();if(x.guestName&&x.guestName!==n){alert("Partida já está cheia.");return}await window.FB.update(r,{guestName:n,status:"active",turnStartedAt:x.turnStartedAt||now()});listen(id)}catch(e){console.error(e);if(!auto)alert("Não foi possível entrar.")}}
+function listen(id){if(roomOff)roomOff();roomOff=window.FB.onValue(window.FB.ref(window.FB.db,"rooms/"+id),s=>{if(!s.exists()){alert("Sala encerrada.");home();return}state=s.val();sync()})}
+function target(x){if(x.mode==="shared")return x.sharedSecret||"";return role==="host"?x.guestSecret||"":x.hostSecret||""}
+function sync(){let x=state;if(x.status==="waiting"){if(role==="host")document.getElementById("inviteStatus").textContent=x.guestName?"🟢 "+x.guestName+" entrou!":"⏳ Aguardando seu amigo...";return}if(x.status==="active"){if(lastStatus!=="active"||lastRound!==Number(x.round)){prepareRound(x)}else updateGame(x);clock();return}if(x.status==="roundFinished"){clearInterval(timerId);roundFinished(x);return}if(x.status==="matchFinished"){clearInterval(timerId);matchFinished(x)}lastStatus=x.status}
+function prepareRound(x){lastRound=Number(x.round);resultShown=false;timeoutLock=false;guessing="";document.getElementById("me").textContent=role==="host"?x.hostName:x.guestName;document.getElementById("opp").textContent=role==="host"?x.guestName:x.hostName;document.getElementById("myScore").textContent=role==="host"?x.hostScore||0:x.guestScore||0;document.getElementById("opScore").textContent=role==="host"?x.guestScore||0:x.hostScore||0;document.getElementById("round").textContent=`RODADA ${x.round} • MELHOR DE ${x.bestOf}`;document.getElementById("history").innerHTML='<p class="muted center">Nenhuma tentativa ainda.</p>';document.getElementById("attemptBox").classList.add("hidden");document.getElementById("msg").textContent="";renderGuess();show("game");updateGame(x);clock()}
+function updateGame(x){let my=x.currentTurn===role,d=document.getElementById("duelStatus");d.classList.remove("hidden","your","their");d.classList.add(my?"your":"their");d.textContent=my?"🎯 É SUA VEZ — descubra a senha!":"⏳ VEZ DO ADVERSÁRIO";document.getElementById("turnTitle").textContent=my?"🎯 SUA VEZ":"⏳ AGUARDE";document.getElementById("turnStatus").textContent=my?"Seu turno":"Aguarde o adversário";document.getElementById("myScore").textContent=role==="host"?x.hostScore||0:x.guestScore||0;document.getElementById("opScore").textContent=role==="host"?x.guestScore||0:x.hostScore||0;document.getElementById("timeText").textContent=x.turnTime+"s por turno";keys(my);renderRoomHistory(x)}
+function renderRoomHistory(x){let h=x.history||{},a=Object.keys(h).map(k=>h[k]).sort((a,b)=>(b.order||0)-(a.order||0));let e=document.getElementById("history");if(!a.length){e.innerHTML='<p class="muted center">Nenhuma tentativa ainda.</p>';return}e.innerHTML=a.map(v=>{let who=v.player===role?"Você":(role==="host"?x.guestName:x.hostName);return `<div class="history-item"><div class="history-guess"><span class="hn">${String(v.order).padStart(2,"0")}</span>${v.guess}</div><div class="muted">${who}</div><div style="font-size:13px;margin-top:5px"><span class="green">🟢 ${v.place} certo(s) no lugar</span><br><span class="yellow">🟡 ${v.out} certo(s) fora do lugar</span></div></div>`}).join("")}
+function clock(){clearInterval(timerId);timerId=setInterval(()=>tick(),200);tick()}
+function tick(){if(!state||state.status!=="active")return;let start=Number(state.turnStartedAt||0),dur=Number(state.turnTime||30);if(!start){document.getElementById("timer").textContent=dur;return}let left=Math.max(0,dur-Math.floor((now()-start)/1000)),e=document.getElementById("timer");e.textContent=String(left).padStart(2,"0");e.classList.toggle("danger",left<=5);e.classList.toggle("warn",left>5&&left<=10);if(left===0&&state.currentTurn===role)claimTimeout()}
+async function claimTimeout(){if(timeoutLock)return;timeoutLock=true;try{await window.FB.runTransaction(window.FB.ref(window.FB.db,"rooms/"+room),x=>{if(!x||x.status!=="active"||x.currentTurn!==role)return x;let start=Number(x.turnStartedAt||0);if(now()-start<Number(x.turnTime)*1000)return x;x.currentTurn=role==="host"?"guest":"host";x.turnStartedAt=now();x.lastTimeoutBy=role;return x})}catch(e){console.error(e)}setTimeout(()=>timeoutLock=false,1000)}
+async function duelGuess(){if(!state||state.status!=="active"||state.currentTurn!==role)return;let r=result(target(state),guessing),h=state.history||{},order=Object.keys(h).length+1,key="h"+Date.now(),u={};u["history/"+key]={player:role,guess:guessing,place:r.place,out:r.out,order};if(r.place===4){let score=(role==="host"?+state.hostScore||0:+state.guestScore||0)+1,max=Math.ceil(Number(state.bestOf)/2);u[role==="host"?"hostScore":"guestScore"]=score;u.roundWinner=role;u.revealedSecret=target(state);u.status=score>=max?"matchFinished":"roundFinished";u.turnStartedAt=null;u.nextReadyHost=false;u.nextReadyGuest=false;await window.FB.update(window.FB.ref(window.FB.db,"rooms/"+room),u);guessing="";renderGuess();return}u.currentTurn=role==="host"?"guest":"host";u.turnStartedAt=now();await window.FB.update(window.FB.ref(window.FB.db,"rooms/"+room),u);guessing="";renderGuess()}
+function roundFinished(x){if(!resultShown){resultShown=true;show("roundResult")}let win=x.roundWinner===role,my=x[role==="host"?"hostScore":"guestScore"]||0,op=x[role==="host"?"guestScore":"hostScore"]||0;document.getElementById("rrIcon").textContent=win?"🏆":"😔";document.getElementById("rrTitle").textContent=win?"Você venceu a rodada!":"Você perdeu a rodada";document.getElementById("rrText").textContent=win?"Você descobriu a senha antes do adversário.":"O adversário descobriu a senha primeiro.";document.getElementById("rrSecret").textContent=x.revealedSecret||"----";document.getElementById("rrScore").textContent=`Placar: ${my} × ${op}`;let me=role==="host"?x.nextReadyHost:x.nextReadyGuest;document.getElementById("nextBtn").disabled=me;document.getElementById("nextStatus").textContent=me?"⏳ Aguardando o outro jogador...":"Clique para confirmar a próxima rodada."}
+async function nextRound(){if(!state||state.status!=="roundFinished")return;let base=window.FB.ref(window.FB.db,"rooms/"+room);let u={};u[role==="host"?"nextReadyHost":"nextReadyGuest"]=true;await window.FB.update(base,u);let s=await window.FB.get(base),x=s.val();if(x.nextReadyHost&&x.nextReadyGuest){await window.FB.runTransaction(base,x=>{if(!x||x.status!=="roundFinished"||!x.nextReadyHost||!x.nextReadyGuest)return x;let sh=randSecret();x.round=Number(x.round)+1;x.status="active";x.currentTurn="host";x.turnStartedAt=now();x.history={};x.nextReadyHost=false;x.nextReadyGuest=false;x.roundWinner=null;x.revealedSecret=null;if(x.mode==="shared"){x.sharedSecret=sh;x.hostSecret="";x.guestSecret=""}else{x.sharedSecret="";x.hostSecret=randSecret();x.guestSecret=randSecret()}return x})}}
+function matchFinished(x){let win=x.roundWinner===role,my=role==="host"?+x.hostScore||0:+x.guestScore||0,op=role==="host"?+x.guestScore||0:+x.hostScore||0;show("result");document.getElementById("resIcon").textContent=win?"🏆":"😔";document.getElementById("resTitle").textContent=win?"Você venceu o duelo!":"Você perdeu o duelo";document.getElementById("resText").innerHTML=win?`Parabéns, ${player}!<br><br>Placar final: <b>${my} × ${op}</b>`:`O adversário venceu.<br><br>Placar final: <b>${op} × ${my}</b>`;document.getElementById("resSecret").textContent=x.revealedSecret||"----"}
+async function cancelRoom(){try{if(room&&role==="host")await window.FB.remove(window.FB.ref(window.FB.db,"rooms/"+room))}catch(e){}home()}
+loadName();summary();dailyPage();home();
+</script>
+</div></body></html>
