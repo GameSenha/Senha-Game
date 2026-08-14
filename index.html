@@ -10,555 +10,668 @@
 *{box-sizing:border-box}
 
 html,body{
-    margin:0;
-    min-height:100%;
-    font-family:Arial,Helvetica,sans-serif;
-    color:#fff;
+margin:0;
+min-height:100%;
+font-family:Arial,Helvetica,sans-serif;
+color:#fff;
 }
 
 body{
-    min-height:100vh;
-    background:
-    radial-gradient(circle at 10% 0%,rgba(22,140,255,.18),transparent 28%),
-    radial-gradient(circle at 100% 100%,rgba(81,70,245,.16),transparent 30%),
-    linear-gradient(145deg,#061329,#091936 55%,#07142b);
+min-height:100vh;
+background:
+radial-gradient(circle at 10% 0%,rgba(22,140,255,.18),transparent 28%),
+radial-gradient(circle at 100% 100%,rgba(81,70,245,.16),transparent 30%),
+linear-gradient(145deg,#061329,#091936 55%,#07142b);
 }
 
 button{
-    border:0;
-    color:#fff;
-    font-family:inherit;
-    font-weight:900;
-    cursor:pointer;
+border:0;
+color:#fff;
+font-family:inherit;
+font-weight:900;
+cursor:pointer;
 }
 
 button:disabled{
-    opacity:.45;
-    cursor:not-allowed;
+opacity:.45;
+cursor:not-allowed;
 }
 
 input{
-    font-family:inherit;
+font-family:inherit;
 }
 
 .app{
-    width:100%;
-    max-width:460px;
-    min-height:100vh;
-    margin:auto;
-    padding:18px 16px 40px;
+width:100%;
+max-width:460px;
+min-height:100vh;
+margin:auto;
+padding:18px 16px 40px;
 }
 
 .hidden{
-    display:none!important;
+display:none!important;
 }
 
 .center{
-    text-align:center;
+text-align:center;
 }
 
 .logo{
-    text-align:center;
-    margin:10px 0 22px;
+text-align:center;
+margin:10px 0 22px;
 }
 
 .logo img{
-    width:315px;
-    max-width:92%;
-    display:block;
-    margin:auto;
+width:315px;
+max-width:92%;
+display:block;
+margin:auto;
 }
 
 .card{
-    background:linear-gradient(145deg,rgba(25,49,88,.78),rgba(12,28,56,.88));
-    border:1px solid rgba(130,173,240,.2);
-    border-radius:22px;
-    padding:18px;
-    margin-bottom:14px;
-    box-shadow:0 16px 38px rgba(0,0,0,.22);
+background:linear-gradient(145deg,rgba(25,49,88,.78),rgba(12,28,56,.88));
+border:1px solid rgba(130,173,240,.2);
+border-radius:22px;
+padding:18px;
+margin-bottom:14px;
+box-shadow:0 16px 38px rgba(0,0,0,.22);
 }
 
 .name-label{
-    display:block;
-    font-weight:800;
-    margin-bottom:9px;
+display:block;
+font-weight:800;
+margin-bottom:9px;
 }
 
 .name-input,
 .code-input{
-    width:100%;
-    padding:15px;
-    border-radius:16px;
-    border:2px solid #3262aa;
-    background:rgba(3,14,31,.72);
-    color:#fff;
-    outline:none;
-    font-size:18px;
+width:100%;
+padding:15px;
+border-radius:16px;
+border:2px solid #3262aa;
+background:rgba(3,14,31,.72);
+color:#fff;
+outline:none;
+font-size:18px;
 }
 
 .muted{
-    color:#9db0cf;
-    font-size:13px;
-    line-height:1.5;
+color:#9db0cf;
+font-size:13px;
+line-height:1.5;
 }
 
 .help{
-    color:#8295b5;
-    font-size:11px;
-    margin-top:7px;
+color:#8295b5;
+font-size:11px;
+margin-top:7px;
 }
 
 .menu-button{
-    width:100%;
-    display:flex;
-    align-items:center;
-    text-align:left;
-    gap:15px;
-    padding:17px;
-    margin:10px 0 0;
-    border-radius:20px;
-    border:1px solid rgba(255,255,255,.1);
+width:100%;
+display:flex;
+align-items:center;
+text-align:left;
+gap:15px;
+padding:17px;
+margin:10px 0 0;
+border-radius:20px;
+border:1px solid rgba(255,255,255,.1);
 }
 
 .menu-button:after{
-    content:"›";
-    font-size:34px;
-    font-weight:300;
-    margin-left:auto;
+content:"›";
+font-size:34px;
+font-weight:300;
+margin-left:auto;
 }
 
 .menu-daily{
-    background:linear-gradient(110deg,#087ff1,#3f35ef);
+background:linear-gradient(110deg,#087ff1,#3f35ef);
 }
 
 .menu-online{
-    background:linear-gradient(110deg,#2056e9,#7131ee);
+background:linear-gradient(110deg,#2056e9,#7131ee);
 }
 
 .menu-friend{
-    background:linear-gradient(110deg,#04aeb8,#0794a5);
+background:linear-gradient(110deg,#04aeb8,#0794a5);
 }
 
 .menu-tournament{
-    background:#1b2a42;
-    color:#8192ad;
+background:#1b2a42;
+color:#8192ad;
 }
 
 .menu-icon{
-    width:48px;
-    min-width:48px;
-    text-align:center;
-    font-size:30px;
+width:48px;
+min-width:48px;
+text-align:center;
+font-size:30px;
 }
 
 .menu-title{
-    font-size:18px;
-    font-weight:900;
+font-size:18px;
+font-weight:900;
 }
 
 .menu-description{
-    font-size:13px;
-    color:rgba(255,255,255,.72);
-    margin-top:4px;
+font-size:13px;
+color:rgba(255,255,255,.72);
+margin-top:4px;
 }
 
 .badge{
-    display:inline-block;
-    padding:5px 8px;
-    border-radius:20px;
-    font-size:9px;
-    background:#ffbf18;
-    color:#19223a;
+display:inline-block;
+padding:5px 8px;
+border-radius:20px;
+font-size:9px;
+background:#ffbf18;
+color:#19223a;
 }
 
 .footer{
-    text-align:center;
-    color:#8295b5;
-    font-size:11px;
-    letter-spacing:3px;
-    margin-top:25px;
+text-align:center;
+color:#8295b5;
+font-size:11px;
+letter-spacing:3px;
+margin-top:25px;
 }
 
 .page-title{
-    text-align:center;
-    font-size:27px;
-    font-weight:900;
-    margin:15px 0 6px;
+text-align:center;
+font-size:27px;
+font-weight:900;
+margin:15px 0 6px;
 }
 
 .page-description{
-    text-align:center;
-    color:#9db0cf;
-    font-size:14px;
-    line-height:1.5;
-    margin:0 0 18px;
+text-align:center;
+color:#9db0cf;
+font-size:14px;
+line-height:1.5;
+margin:0 0 18px;
 }
 
 .back-button,
 .secondary{
-    width:100%;
-    padding:14px;
-    border-radius:14px;
-    background:#243652;
+width:100%;
+padding:14px;
+border-radius:14px;
+background:#243652;
 }
 
 .primary{
-    width:100%;
-    padding:15px;
-    border-radius:14px;
-    background:linear-gradient(110deg,#168cff,#5146f5);
-    margin-top:10px;
+width:100%;
+padding:15px;
+border-radius:14px;
+background:linear-gradient(110deg,#168cff,#5146f5);
+margin-top:10px;
 }
 
 .share{
-    background:#16a34a!important;
+background:#16a34a!important;
 }
 
 .connection{
-    text-align:center;
-    font-size:12px;
-    margin:8px;
+text-align:center;
+font-size:12px;
+margin:8px;
 }
 
 .online{
-    color:#4ade80;
+color:#4ade80;
 }
 
 .offline{
-    color:#ff7b86;
+color:#ff7b86;
 }
 
 /* DIÁRIO */
 
 .daily-tools{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:9px;
-    margin-bottom:14px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:9px;
+margin-bottom:14px;
 }
 
 .tool{
-    width:100%;
-    padding:14px 8px;
-    border-radius:15px;
-    background:#182d4c;
-    border:1px solid rgba(120,170,240,.2);
-    text-align:center;
+width:100%;
+padding:14px 8px;
+border-radius:15px;
+background:#182d4c;
+border:1px solid rgba(120,170,240,.2);
+text-align:center;
 }
 
 .tool-icon{
-    font-size:23px;
+font-size:23px;
 }
 
 .tool-title{
-    font-size:12px;
-    margin-top:5px;
+font-size:12px;
+margin-top:5px;
 }
 
 /* PROGRESSO */
 
 .stats{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:8px;
-    margin-top:15px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:8px;
+margin-top:15px;
 }
 
 .stat{
-    background:#0b1a31;
-    border-radius:15px;
-    padding:14px 7px;
-    text-align:center;
+background:#0b1a31;
+border-radius:15px;
+padding:14px 7px;
+text-align:center;
 }
 
 .stat-number{
-    font-size:24px;
-    font-weight:900;
+font-size:24px;
+font-weight:900;
 }
 
 .stat-label{
-    font-size:10px;
-    color:#8295b5;
-    margin-top:4px;
+font-size:10px;
+color:#8295b5;
+margin-top:4px;
 }
 
 .blue{
-    color:#53b0ff;
+color:#53b0ff;
 }
 
 .green{
-    color:#4ade80;
+color:#4ade80;
 }
 
 .yellow{
-    color:#ffd34d;
+color:#ffd34d;
 }
 
 /* RANKING */
 
 .rank-item{
-    display:grid;
-    grid-template-columns:42px 1fr auto;
-    align-items:center;
-    gap:8px;
-    background:#0b1a31;
-    border-radius:13px;
-    padding:12px;
-    margin-top:7px;
+display:grid;
+grid-template-columns:42px 1fr auto;
+align-items:center;
+gap:8px;
+background:#0b1a31;
+border-radius:13px;
+padding:12px;
+margin-top:7px;
 }
 
 .rank-pos{
-    font-size:18px;
-    font-weight:900;
-    text-align:center;
+font-size:18px;
+font-weight:900;
+text-align:center;
 }
 
 .rank-name{
-    font-weight:900;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
+font-weight:900;
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
 }
 
 .rank-score{
-    color:#53b0ff;
-    font-weight:900;
+color:#53b0ff;
+font-weight:900;
 }
 
 .rank-me{
-    border:1px solid #168cff;
+border:1px solid #168cff;
 }
 
 /* JOGO */
 
 .scoreboard{
-    display:grid;
-    grid-template-columns:1fr auto 1fr;
-    text-align:center;
-    align-items:center;
-    gap:8px;
+display:grid;
+grid-template-columns:1fr auto 1fr;
+text-align:center;
+align-items:center;
+gap:8px;
 }
 
 .pname{
-    font-size:14px;
-    font-weight:900;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
+font-size:14px;
+font-weight:900;
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
 }
 
 .score{
-    font-size:28px;
-    font-weight:900;
+font-size:28px;
+font-weight:900;
 }
 
 .vs{
-    font-size:10px;
-    color:#6f84a3;
+font-size:10px;
+color:#6f84a3;
 }
 
 .round{
-    text-align:center;
-    color:#9db0cf;
-    font-size:12px;
-    font-weight:900;
-    margin-top:9px;
+text-align:center;
+color:#9db0cf;
+font-size:12px;
+font-weight:900;
+margin-top:9px;
 }
 
 .topbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin:10px 0 12px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin:10px 0 12px;
 }
 
 .status{
-    color:#8fa4c6;
-    font-size:12px;
-    margin-top:4px;
+color:#8fa4c6;
+font-size:12px;
+margin-top:4px;
 }
 
 .timer{
-    font-size:38px;
-    font-weight:900;
-    color:#53b0ff;
-    min-width:70px;
-    text-align:center;
+font-size:38px;
+font-weight:900;
+color:#53b0ff;
+min-width:70px;
+text-align:center;
 }
 
 .timer.warn{
-    color:#ffd34d;
+color:#ffd34d;
 }
 
 .timer.danger{
-    color:#ff5d6c;
+color:#ff5d6c;
 }
 
 .duel-status{
-    text-align:center;
-    padding:13px;
-    border-radius:14px;
-    background:#0b1a31;
-    margin-bottom:14px;
-    font-weight:900;
+text-align:center;
+padding:13px;
+border-radius:14px;
+background:#0b1a31;
+margin-bottom:14px;
+font-weight:900;
 }
 
 .your{
-    color:#4ade80;
+color:#4ade80;
 }
 
 .their{
-    color:#ffd34d;
+color:#ffd34d;
 }
 
 .attempt{
-    text-align:center;
-    margin:10px 0 18px;
+text-align:center;
+margin:10px 0 18px;
 }
 
 .attempt-label{
-    font-size:11px;
-    font-weight:900;
-    letter-spacing:2px;
-    color:#8fa4c6;
+font-size:11px;
+font-weight:900;
+letter-spacing:2px;
+color:#8fa4c6;
 }
 
 .attempt-num{
-    font-size:30px;
-    font-weight:900;
-    color:#53b0ff;
+font-size:30px;
+font-weight:900;
+color:#53b0ff;
 }
 
 .bar{
-    height:8px;
-    background:#142641;
-    border-radius:20px;
-    overflow:hidden;
-    margin-top:8px;
+height:8px;
+background:#142641;
+border-radius:20px;
+overflow:hidden;
+margin-top:8px;
 }
 
 .bar i{
-    display:block;
-    height:100%;
-    width:0;
-    background:linear-gradient(90deg,#168cff,#5146f5);
+display:block;
+height:100%;
+width:0;
+background:linear-gradient(90deg,#168cff,#5146f5);
 }
 
 .attempt-msg{
-    font-size:12px;
-    color:#9db0cf;
-    margin-top:7px;
+font-size:12px;
+color:#9db0cf;
+margin-top:7px;
+}
+
+/* SENHA DO JOGADOR */
+
+.my-secret-box{
+background:linear-gradient(
+145deg,
+rgba(12,54,91,.9),
+rgba(8,29,57,.94)
+);
+border:1px solid rgba(83,176,255,.35);
+border-radius:18px;
+padding:13px;
+margin-bottom:14px;
+text-align:center;
+}
+
+.my-secret-title{
+font-size:10px;
+font-weight:900;
+letter-spacing:2px;
+color:#8fbde8;
+}
+
+.my-secret-value{
+font-size:25px;
+font-weight:900;
+letter-spacing:8px;
+margin-top:6px;
 }
 
 /* PALPITE */
 
 .guess{
-    display:flex;
-    justify-content:center;
-    gap:8px;
-    margin:18px 0;
+display:flex;
+justify-content:center;
+gap:8px;
+margin:18px 0;
 }
 
 .digit{
-    width:54px;
-    height:60px;
-    border-radius:13px;
-    border:2px solid #385173;
-    background:#08152b;
-    text-align:center;
-    font-size:27px;
-    font-weight:900;
-    line-height:56px;
-    cursor:pointer;
+width:54px;
+height:60px;
+border-radius:13px;
+border:2px solid #385173;
+background:#08152b;
+text-align:center;
+font-size:27px;
+font-weight:900;
+line-height:56px;
+cursor:pointer;
 }
 
 .digit.selected{
-    border-color:#53a7ff;
-    box-shadow:0 0 0 3px rgba(22,140,255,.15);
+border-color:#53a7ff;
+box-shadow:0 0 0 3px rgba(22,140,255,.15);
 }
 
 .keys{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:7px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:7px;
 }
 
 .key{
-    padding:14px 4px;
-    border-radius:12px;
-    background:#263854;
+padding:14px 4px;
+border-radius:12px;
+background:#263854;
 }
 
 .message{
-    text-align:center;
-    min-height:22px;
-    margin-top:12px;
-    color:#c8d6e9;
+text-align:center;
+min-height:22px;
+margin-top:12px;
+color:#c8d6e9;
+}
+
+/* PALPITES DO ADVERSÁRIO */
+
+.opponent-box{
+background:#0a192f;
+border:1px solid rgba(255,255,255,.07);
+border-radius:18px;
+padding:14px;
+margin-bottom:14px;
+}
+
+.opponent-title{
+font-size:14px;
+font-weight:900;
+margin-bottom:4px;
+}
+
+.opponent-subtitle{
+font-size:11px;
+color:#8295b5;
+margin-bottom:10px;
+}
+
+.opponent-history{
+max-height:260px;
+overflow-y:auto;
+}
+
+.opponent-empty{
+text-align:center;
+color:#6f84a3;
+font-size:12px;
+padding:12px 0;
+}
+
+/* EMOJIS */
+
+.reaction-box{
+background:#0b1a31;
+border:1px solid rgba(255,255,255,.06);
+border-radius:18px;
+padding:12px;
+margin-bottom:14px;
+}
+
+.reaction-title{
+text-align:center;
+font-size:10px;
+font-weight:900;
+letter-spacing:1px;
+color:#8295b5;
+margin-bottom:9px;
+}
+
+.reactions{
+display:grid;
+grid-template-columns:repeat(8,1fr);
+gap:4px;
+}
+
+.reaction-button{
+background:#182d4c;
+border-radius:10px;
+padding:9px 2px;
+font-size:20px;
+line-height:1;
+}
+
+.reaction-button:active{
+transform:scale(.92);
+}
+
+.reaction-display{
+text-align:center;
+min-height:30px;
+font-size:25px;
+margin-top:8px;
 }
 
 /* HISTÓRICO */
 
 .history-title{
-    font-size:16px;
-    font-weight:900;
+font-size:16px;
+font-weight:900;
 }
 
 .history-item{
-    background:#0b1a31;
-    border:1px solid rgba(255,255,255,.05);
-    border-radius:12px;
-    padding:12px;
-    margin-top:7px;
+background:#0b1a31;
+border:1px solid rgba(255,255,255,.05);
+border-radius:12px;
+padding:12px;
+margin-top:7px;
 }
 
 .history-guess{
-    font-size:20px;
-    font-weight:900;
-    letter-spacing:5px;
+font-size:20px;
+font-weight:900;
+letter-spacing:5px;
 }
 
 .hn{
-    color:#6f84a3;
-    font-size:12px;
-    letter-spacing:0;
-    margin-right:8px;
+color:#6f84a3;
+font-size:12px;
+letter-spacing:0;
+margin-right:8px;
 }
 
 /* RESULTADO */
 
 .result-card{
-    text-align:center;
-    padding:25px 18px;
+text-align:center;
+padding:25px 18px;
 }
 
 .result-icon{
-    font-size:65px;
+font-size:65px;
 }
 
 .result-badge{
-    display:inline-block;
-    padding:8px 12px;
-    border-radius:20px;
-    background:#162a47;
-    color:#9db0cf;
-    font-size:12px;
-    font-weight:900;
+display:inline-block;
+padding:8px 12px;
+border-radius:20px;
+background:#162a47;
+color:#9db0cf;
+font-size:12px;
+font-weight:900;
 }
 
 .secret{
-    font-size:35px;
-    letter-spacing:8px;
-    font-weight:900;
-    padding:15px;
-    background:#07162d;
-    border-radius:13px;
-    margin:15px 0;
+font-size:35px;
+letter-spacing:8px;
+font-weight:900;
+padding:15px;
+background:#07162d;
+border-radius:13px;
+margin:15px 0;
 }
 
 @media(max-width:360px){
-    .digit{
-        width:49px;
-    }
+
+.digit{
+width:49px;
+}
+
+.reactions{
+grid-template-columns:repeat(4,1fr);
+}
+
 }
 </style>
 </head>
@@ -567,9 +680,9 @@ input{
 
 <div class="app">
 
-<!-- =====================================================
-     HOME
-===================================================== -->
+<!-- =========================
+HOME
+========================= -->
 
 <section id="home">
 
@@ -603,8 +716,13 @@ onclick="dailyPage()">
 <div class="menu-icon">📅</div>
 
 <div>
-<div class="menu-title">Desafio Diário</div>
-<div class="menu-description">Uma senha para todos</div>
+<div class="menu-title">
+Desafio Diário
+</div>
+
+<div class="menu-description">
+Uma senha para todos
+</div>
 </div>
 
 </button>
@@ -617,8 +735,13 @@ onclick="onlinePage()">
 <div class="menu-icon">⚔️</div>
 
 <div>
-<div class="menu-title">Duelo Online</div>
-<div class="menu-description">Entre pelo código da partida</div>
+<div class="menu-title">
+Duelo Online
+</div>
+
+<div class="menu-description">
+Entre pelo código da partida
+</div>
 </div>
 
 </button>
@@ -631,8 +754,13 @@ onclick="friendPage()">
 <div class="menu-icon">👥</div>
 
 <div>
-<div class="menu-title">Desafiar Amigo</div>
-<div class="menu-description">Crie uma partida e envie o convite</div>
+<div class="menu-title">
+Desafiar Amigo
+</div>
+
+<div class="menu-description">
+Crie uma partida e envie o convite
+</div>
 </div>
 
 </button>
@@ -665,9 +793,9 @@ SENHA • VERSÃO BETA
 </section>
 
 
-<!-- =====================================================
-     DESAFIO DIÁRIO
-===================================================== -->
+<!-- =========================
+DIÁRIO
+========================= -->
 
 <section id="daily" class="hidden">
 
@@ -714,12 +842,17 @@ onclick="showRanking()">
 id="dailyOpen"
 class="card center">
 
-<div style="font-size:50px">🔐</div>
+<div style="font-size:50px">
+🔐
+</div>
 
-<h3>Desafio de hoje</h3>
+<h3>
+Desafio de hoje
+</h3>
 
 <p class="muted">
-🎯 Até <b>15 tentativas</b><br>
+🎯 Até <b>15 tentativas</b>
+<br>
 ♾️ Sem cronômetro.
 </p>
 
@@ -736,9 +869,13 @@ COMEÇAR DESAFIO
 id="dailyDone"
 class="card center hidden">
 
-<div style="font-size:60px">🔒</div>
+<div style="font-size:60px">
+🔒
+</div>
 
-<h2>Desafio concluído</h2>
+<h2>
+Desafio concluído
+</h2>
 
 <p class="muted">
 Você já participou do Desafio Diário de hoje.
@@ -763,9 +900,9 @@ onclick="showRanking()">
 </section>
 
 
-<!-- =====================================================
-     PROGRESSO
-===================================================== -->
+<!-- =========================
+PROGRESSO
+========================= -->
 
 <section id="progress" class="hidden">
 
@@ -858,9 +995,9 @@ onclick="showRanking()">
 </section>
 
 
-<!-- =====================================================
-     RANKING
-===================================================== -->
+<!-- =========================
+RANKING
+========================= -->
 
 <section id="ranking" class="hidden">
 
@@ -912,9 +1049,9 @@ Carregando...
 </section>
 
 
-<!-- =====================================================
-     ONLINE
-===================================================== -->
+<!-- =========================
+ONLINE
+========================= -->
 
 <section id="online" class="hidden">
 
@@ -987,9 +1124,9 @@ CRIAR DESAFIO
 </section>
 
 
-<!-- =====================================================
-     AMIGO
-===================================================== -->
+<!-- =========================
+AMIGO
+========================= -->
 
 <section id="friend" class="hidden">
 
@@ -1068,10 +1205,8 @@ type="button"
 id="modeCreator"
 class="tool"
 onclick="setMode('creator')">
-
 🔐<br>
 Eu escolho a senha
-
 </button>
 
 <button
@@ -1079,16 +1214,13 @@ type="button"
 id="modeShared"
 class="tool"
 onclick="setMode('shared')">
-
 🤝<br>
 Senha compartilhada
-
 </button>
 
 </div>
 
-<div
-id="creatorConfig">
+<div id="creatorConfig">
 
 <div class="muted">
 <b>Senha que seu amigo deverá descobrir:</b>
@@ -1164,9 +1296,9 @@ CRIAR DESAFIO
 </section>
 
 
-<!-- =====================================================
-     ESCOLHER SENHA DO CONVIDADO
-===================================================== -->
+<!-- =========================
+SENHA DO CONVIDADO
+========================= -->
 
 <section id="guestSecret" class="hidden">
 
@@ -1175,7 +1307,7 @@ CRIAR DESAFIO
 </div>
 
 <div class="page-description">
-Agora escolha a senha que seu adversário deverá descobrir.
+Escolha a senha que seu adversário deverá descobrir.
 </div>
 
 <div class="card">
@@ -1212,9 +1344,9 @@ CONFIRMAR SENHA
 </section>
 
 
-<!-- =====================================================
-     CONVITE
-===================================================== -->
+<!-- =========================
+CONVITE
+========================= -->
 
 <section id="invite" class="hidden">
 
@@ -1287,9 +1419,9 @@ CANCELAR SALA
 </section>
 
 
-<!-- =====================================================
-     TORNEIO
-===================================================== -->
+<!-- =========================
+TORNEIO
+========================= -->
 
 <section id="tournament" class="hidden">
 
@@ -1323,9 +1455,9 @@ Os torneios serão liberados futuramente.
 </section>
 
 
-<!-- =====================================================
-     JOGO
-===================================================== -->
+<!-- =========================
+JOGO
+========================= -->
 
 <section id="game" class="hidden">
 
@@ -1338,25 +1470,132 @@ Os torneios serão liberados futuramente.
 <div id="myScore" class="score"></div>
 </div>
 
-<div class="vs">VS</div>
+<div class="vs">
+VS
+</div>
 
 <div>
-<div id="opp" class="pname">Desafio</div>
+<div id="opp" class="pname">Adversário</div>
 <div id="opScore" class="score"></div>
 </div>
 
 </div>
 
 <div id="round" class="round">
-DESAFIO DIÁRIO
 </div>
 
 </div>
+
+
+<!-- SENHA QUE EU ESCOLHI -->
+
+<div
+id="mySecretBox"
+class="my-secret-box hidden">
+
+<div class="my-secret-title">
+🔐 MINHA SENHA
+</div>
+
+<div
+id="mySecretValue"
+class="my-secret-value">
+----</div>
+
+<div class="help">
+Esta é a senha que seu adversário precisa descobrir.
+</div>
+
+</div>
+
+
+<!-- STATUS -->
 
 <div
 id="duelStatus"
 class="duel-status hidden">
 </div>
+
+
+<!-- REAÇÃO -->
+
+<div
+id="reactionBox"
+class="reaction-box hidden">
+
+<div class="reaction-title">
+💬 REAÇÕES RÁPIDAS
+</div>
+
+<div class="reactions">
+
+<button
+type="button"
+class="reaction-button"
+onclick="sendReaction('😈')">
+😈
+</button>
+
+<button
+type="button"
+class="reaction-button"
+onclick="sendReaction('😂')">
+😂
+</button>
+
+<button
+type="button"
+class="reaction-button"
+onclick="sendReaction('👀')">
+👀
+</button>
+
+<button
+type="button"
+class="reaction-button"
+onclick="sendReaction('🔥')">
+🔥
+</button>
+
+<button
+type="button"
+class="reaction-button"
+onclick="sendReaction('😱')">
+😱
+</button>
+
+<button
+type="button"
+class="reaction-button"
+onclick="sendReaction('🤔')">
+🤔
+</button>
+
+<button
+type="button"
+class="reaction-button"
+onclick="sendReaction('🧠')">
+🧠
+</button>
+
+<button
+type="button"
+class="reaction-button"
+onclick="sendReaction('🏆')">
+🏆
+</button>
+
+</div>
+
+<div
+id="reactionDisplay"
+class="reaction-display">
+</div>
+
+</div>
+
+
+<!-- TENTATIVAS DIÁRIAS -->
 
 <div
 id="attemptBox"
@@ -1379,14 +1618,15 @@ class="attempt-num">
 <div
 id="attemptMsg"
 class="attempt-msg">
-Restam 15 tentativas
 </div>
 
 </div>
+
 
 <div class="topbar">
 
 <div>
+
 <b id="turnTitle">
 🎯 SUA VEZ
 </b>
@@ -1396,6 +1636,7 @@ id="turnStatus"
 class="status">
 Descubra a senha
 </div>
+
 </div>
 
 <div
@@ -1405,6 +1646,36 @@ class="timer">
 </div>
 
 </div>
+
+
+<!-- PALPITES DO ADVERSÁRIO -->
+
+<div
+id="opponentBox"
+class="opponent-box hidden">
+
+<div class="opponent-title">
+👀 Palpites do adversário
+</div>
+
+<div
+id="opponentSubtitle"
+class="opponent-subtitle">
+Veja como ele está chegando perto da sua senha.
+</div>
+
+<div
+id="opponentHistory"
+class="opponent-history">
+
+<div class="opponent-empty">
+Nenhum palpite ainda.
+</div>
+
+</div>
+
+</div>
+
 
 <div class="card">
 
@@ -1440,6 +1711,7 @@ onclick="selectPosition(3)">
 
 </div>
 
+
 <div class="keys">
 
 <button type="button" class="key" onclick="addDigit('1')">1</button>
@@ -1471,16 +1743,21 @@ class="message">
 
 </div>
 
+
+<!-- MEUS PALPITES -->
+
 <div class="card">
 
 <div class="history-title">
-📋 Histórico de tentativas
+📋 Meus palpites
 </div>
 
 <div id="gameHistory">
+
 <p class="muted center">
 Nenhuma tentativa ainda.
 </p>
+
 </div>
 
 </div>
@@ -1488,9 +1765,9 @@ Nenhuma tentativa ainda.
 </section>
 
 
-<!-- =====================================================
-     RESULTADO
-===================================================== -->
+<!-- =========================
+RESULTADO
+========================= -->
 
 <section id="result" class="hidden">
 
@@ -1587,9 +1864,9 @@ onclick="dailyPage()">
 </div>
 
 
-<!-- =====================================================
-     FIREBASE
-===================================================== -->
+<!-- =========================
+FIREBASE
+========================= -->
 
 <script type="module">
 
@@ -1641,6 +1918,7 @@ const db =
 getDatabase(app);
 
 window.FB = {
+
 db:db,
 ref:ref,
 set:set,
@@ -1649,6 +1927,7 @@ update:update,
 remove:remove,
 onValue:onValue,
 runTransaction:runTransaction
+
 };
 
 
@@ -1693,6 +1972,7 @@ window.serverOffset =
 Number(snapshot.val() || 0);
 
 }
+
 );
 
 }catch(error){
@@ -1707,9 +1987,9 @@ error
 </script>
 
 
-<!-- =====================================================
-     JAVASCRIPT DO JOGO
-===================================================== -->
+<!-- =========================
+JAVASCRIPT
+========================= -->
 
 <script>
 
@@ -1752,9 +2032,9 @@ let lastRoomStatus = "";
 let resultAlreadyShown = false;
 
 
-/* =====================================================
-   NAVEGAÇÃO
-===================================================== */
+/* =========================
+NAVEGAÇÃO
+========================= */
 
 function showScreen(id){
 
@@ -1885,9 +2165,9 @@ showScreen("ranking");
 }
 
 
-/* =====================================================
-   NOME
-===================================================== */
+/* =========================
+NOME
+========================= */
 
 function loadPlayer(){
 
@@ -1923,11 +2203,6 @@ player =
 (input.value.trim() || "Jogador")
 .substring(0,18);
 
-}else{
-
-player =
-player || "Jogador";
-
 }
 
 localStorage.setItem(
@@ -1940,9 +2215,9 @@ return player;
 }
 
 
-/* =====================================================
-   DATA
-===================================================== */
+/* =========================
+DATA
+========================= */
 
 function today(){
 
@@ -1976,9 +2251,9 @@ parts[0]
 }
 
 
-/* =====================================================
-   DESAFIO DIÁRIO
-===================================================== */
+/* =========================
+DESAFIO DIÁRIO
+========================= */
 
 function createDailySecret(){
 
@@ -2067,6 +2342,21 @@ document
 .add("hidden");
 
 document
+.getElementById("mySecretBox")
+.classList
+.add("hidden");
+
+document
+.getElementById("opponentBox")
+.classList
+.add("hidden");
+
+document
+.getElementById("reactionBox")
+.classList
+.add("hidden");
+
+document
 .getElementById("attemptBox")
 .classList
 .remove("hidden");
@@ -2133,9 +2423,9 @@ remaining === 1
 }
 
 
-/* =====================================================
-   PALPITE
-===================================================== */
+/* =========================
+PALPITE
+========================= */
 
 function selectPosition(position){
 
@@ -2174,20 +2464,27 @@ if(
 guess[position] !== ""
 ){
 
+let next =
+position;
+
 while(
-position < 4 &&
-guess[position] !== ""
+next < 4 &&
+guess[next] !== ""
 ){
 
-position++;
+next++;
 
 }
 
-}
+if(next < 4){
 
-if(position >= 4){
+position = next;
+
+}else{
 
 return;
+
+}
 
 }
 
@@ -2243,8 +2540,8 @@ renderGuess();
 function renderGuess(){
 
 for(
-let i = 0;
-i < 4;
+let i=0;
+i<4;
 i++
 ){
 
@@ -2287,11 +2584,14 @@ return guess.join("");
 }
 
 
-/* =====================================================
-   CÁLCULO DA SENHA
-===================================================== */
+/* =========================
+CÁLCULO
+========================= */
 
-function calculateResult(secretNumber,guessNumber){
+function calculateResult(
+secretNumber,
+guessNumber
+){
 
 let correctPlace = 0;
 
@@ -2375,9 +2675,68 @@ outside:correctOutside
 }
 
 
-/* =====================================================
-   TENTATIVA
-===================================================== */
+/* =========================
+HISTÓRICO
+========================= */
+
+function addGameHistory(
+number,
+result,
+attemptNumber
+){
+
+const container =
+document.getElementById(
+"gameHistory"
+);
+
+if(attemptNumber === 1){
+
+container.innerHTML = "";
+
+}
+
+const item =
+document.createElement("div");
+
+item.className =
+"history-item";
+
+item.innerHTML =
+'<div class="history-guess">' +
+
+'<span class="hn">' +
+String(attemptNumber).padStart(2,"0") +
+'</span>' +
+
+number +
+
+'</div>' +
+
+'<div style="font-size:13px;margin-top:5px">' +
+
+'<span class="green">' +
+"🟢 " +
+result.place +
+" certo(s) no lugar" +
+"</span><br>" +
+
+'<span style="color:#facc15">' +
+"🟡 " +
+result.outside +
+" certo(s) fora do lugar" +
+"</span>" +
+
+"</div>";
+
+container.prepend(item);
+
+}
+
+
+/* =========================
+ENVIO DO PALPITE
+========================= */
 
 function submitGuess(){
 
@@ -2463,65 +2822,9 @@ renderGuess();
 }
 
 
-/* =====================================================
-   HISTÓRICO DO JOGO
-===================================================== */
-
-function addGameHistory(
-number,
-result,
-attemptNumber
-){
-
-const container =
-document.getElementById(
-"gameHistory"
-);
-
-if(attemptNumber === 1){
-
-container.innerHTML = "";
-
-}
-
-const item =
-document.createElement("div");
-
-item.className =
-"history-item";
-
-item.innerHTML =
-'<div class="history-guess">' +
-'<span class="hn">' +
-String(attemptNumber).padStart(2,"0") +
-'</span>' +
-number +
-'</div>' +
-
-'<div style="font-size:13px;margin-top:5px">' +
-
-'<span class="green">' +
-"🟢 " +
-result.place +
-" certo(s) no lugar" +
-"</span><br>" +
-
-'<span style="color:#facc15">' +
-"🟡 " +
-result.outside +
-" certo(s) fora do lugar" +
-"</span>" +
-
-"</div>";
-
-container.prepend(item);
-
-}
-
-
-/* =====================================================
-   PROGRESSO
-===================================================== */
+/* =========================
+PROGRESSO
+========================= */
 
 function progressStorageKey(){
 
@@ -2582,10 +2885,6 @@ JSON.stringify(data)
 
 }
 
-
-/* =====================================================
-   SALVAR RESULTADO
-===================================================== */
 
 function saveDailyResult(
 won,
@@ -2655,9 +2954,9 @@ saveRankingData(data);
 }
 
 
-/* =====================================================
-   RESULTADO DIÁRIO
-===================================================== */
+/* =========================
+RESULTADO DIÁRIO
+========================= */
 
 function finishDaily(won){
 
@@ -2668,7 +2967,11 @@ clearInterval(timerInterval);
 document
 .getElementById("resultIcon")
 .textContent =
-won ? "🏆" : "😔";
+won
+?
+"🏆"
+:
+"😔";
 
 document
 .getElementById("resultTitle")
@@ -2703,9 +3006,9 @@ showScreen("result");
 }
 
 
-/* =====================================================
-   RENDER PROGRESSO
-===================================================== */
+/* =========================
+PROGRESSO
+========================= */
 
 function renderProgress(){
 
@@ -2821,9 +3124,9 @@ ${item.won ? item.attempts + "x" : "—"}
 }
 
 
-/* =====================================================
-   PROGRESSO NO RESULTADO
-===================================================== */
+/* =========================
+RESULTADO + PROGRESSO
+========================= */
 
 function renderResultProgress(){
 
@@ -2874,23 +3177,14 @@ data.streak === 1
 }
 
 
-/* =====================================================
-   RANKING
-===================================================== */
-
-function rankingKey(){
-
-return "senha_ranking_local";
-
-}
-
+/* =========================
+RANKING
+========================= */
 
 async function saveRankingData(data){
 
 if(!window.FB){
-
 return;
-
 }
 
 try{
@@ -2948,7 +3242,7 @@ list.innerHTML =
 if(!window.FB){
 
 list.innerHTML =
-'<div class="muted center">Ranking indisponível no momento.</div>';
+'<div class="muted center">Ranking indisponível.</div>';
 
 return;
 
@@ -3088,21 +3382,9 @@ list.innerHTML =
 }
 
 
-function escapeHtml(text){
-
-return String(text)
-.replaceAll("&","&amp;")
-.replaceAll("<","&lt;")
-.replaceAll(">","&gt;")
-.replaceAll('"',"&quot;")
-.replaceAll("'","&#039;");
-
-}
-
-
-/* =====================================================
-   CONFIGURAÇÃO DO AMIGO
-===================================================== */
+/* =========================
+CONFIGURAÇÃO AMIGO
+========================= */
 
 function setBest(value){
 
@@ -3221,7 +3503,7 @@ bestOf +
 (
 playMode === "creator"
 ?
-"🔐 Você define a senha inicial"
+"🔐 Cada jogador escolherá sua própria senha"
 :
 "🤝 Senha compartilhada"
 ) +
@@ -3233,9 +3515,9 @@ turnTime +
 }
 
 
-/* =====================================================
-   VALIDAÇÃO DE SENHA
-===================================================== */
+/* =========================
+VALIDAÇÃO SENHA
+========================= */
 
 function validUniquePassword(value){
 
@@ -3277,14 +3559,16 @@ temp;
 
 }
 
-return numbers.slice(0,4).join("");
+return numbers
+.slice(0,4)
+.join("");
 
 }
 
 
-/* =====================================================
-   SALA
-===================================================== */
+/* =========================
+SALA
+========================= */
 
 function generateRoomCode(){
 
@@ -3324,9 +3608,9 @@ window.serverOffset || 0
 }
 
 
-/* =====================================================
-   CRIAR SALA
-===================================================== */
+/* =========================
+CRIAR SALA
+========================= */
 
 async function createRoom(){
 
@@ -3357,7 +3641,7 @@ if(
 ){
 
 alert(
-"A senha precisa ter exatamente 4 números diferentes.\n\nExemplo: 1234"
+"A senha precisa ter exatamente 4 números diferentes."
 );
 
 return;
@@ -3369,7 +3653,7 @@ return;
 if(!window.FB){
 
 alert(
-"O servidor ainda está conectando. Aguarde alguns segundos e tente novamente."
+"O servidor ainda está conectando."
 );
 
 return;
@@ -3417,7 +3701,11 @@ currentTurn:"guest",
 
 turnStartedAt:0,
 
-history:{}
+history:{},
+
+reaction:"",
+reactionBy:"",
+reactionAt:0
 
 };
 
@@ -3452,7 +3740,7 @@ bestOf +
 (
 playMode === "creator"
 ?
-"🔐 Você escolheu a senha."
+"🔐 Cada jogador escolherá a senha do adversário."
 :
 "🤝 Senha compartilhada."
 ) +
@@ -3478,9 +3766,9 @@ alert(
 }
 
 
-/* =====================================================
-   WHATSAPP
-===================================================== */
+/* =========================
+WHATSAPP
+========================= */
 
 function sendWhatsApp(){
 
@@ -3507,9 +3795,7 @@ playMode === "creator"
 "🤝 Os dois descobrirão a mesma senha."
 ) +
 
-"\n\n" +
-
-"⏱️ " +
+"\n\n⏱️ " +
 turnTime +
 "s por turno" +
 
@@ -3528,9 +3814,9 @@ encodeURIComponent(message),
 }
 
 
-/* =====================================================
-   ENTRAR NA SALA
-===================================================== */
+/* =========================
+ENTRAR
+========================= */
 
 async function joinRoom(auto){
 
@@ -3658,9 +3944,9 @@ alert(
 }
 
 
-/* =====================================================
-   SENHA DO CONVIDADO
-===================================================== */
+/* =========================
+SENHA DO CONVIDADO
+========================= */
 
 async function confirmGuestSecret(){
 
@@ -3702,11 +3988,17 @@ window.FB.db,
 "rooms/" + room
 ),
 {
+
 guestSecret:value,
+
 guestName:player,
+
 status:"active",
+
 currentTurn:"guest",
+
 turnStartedAt:serverNow()
+
 }
 );
 
@@ -3725,9 +4017,9 @@ alert(
 }
 
 
-/* =====================================================
-   ENTRAR EFETIVAMENTE
-===================================================== */
+/* =========================
+ENTRAR NA SALA
+========================= */
 
 async function enterRoom(){
 
@@ -3759,10 +4051,15 @@ window.FB.db,
 "rooms/" + room
 ),
 {
+
 guestName:player,
+
 status:"active",
+
 currentTurn:"guest",
+
 turnStartedAt:serverNow()
+
 }
 );
 
@@ -3773,9 +4070,9 @@ listenRoom();
 }
 
 
-/* =====================================================
-   ESCUTAR SALA
-===================================================== */
+/* =========================
+OUVIR SALA
+========================= */
 
 function listenRoom(){
 
@@ -3816,9 +4113,9 @@ syncRoom();
 }
 
 
-/* =====================================================
-   SINCRONIZAÇÃO
-===================================================== */
+/* =========================
+SINCRONIZAÇÃO
+========================= */
 
 function syncRoom(){
 
@@ -3869,6 +4166,8 @@ updateRoomGame();
 
 }
 
+showLatestReaction();
+
 startRoomClock();
 
 lastRoomStatus =
@@ -3909,9 +4208,9 @@ lastRoomStatus =
 }
 
 
-/* =====================================================
-   PREPARAR JOGO ONLINE
-===================================================== */
+/* =========================
+PREPARAR JOGO
+========================= */
 
 function prepareRoomGame(){
 
@@ -3937,6 +4236,21 @@ document
 .getElementById("attemptBox")
 .classList
 .add("hidden");
+
+document
+.getElementById("mySecretBox")
+.classList
+.remove("hidden");
+
+document
+.getElementById("opponentBox")
+.classList
+.remove("hidden");
+
+document
+.getElementById("reactionBox")
+.classList
+.remove("hidden");
 
 document
 .getElementById("me")
@@ -3982,14 +4296,36 @@ roomState.round +
 " • MELHOR DE " +
 roomState.bestOf;
 
+
+/* Mostra somente a senha que o próprio jogador escolheu */
+
+const ownSecret =
+getOwnSecret();
+
+document
+.getElementById("mySecretValue")
+.textContent =
+ownSecret || "----";
+
+
 document
 .getElementById("gameHistory")
 .innerHTML =
 '<p class="muted center">Nenhuma tentativa ainda.</p>';
 
 document
+.getElementById("opponentHistory")
+.innerHTML =
+'<div class="opponent-empty">Nenhum palpite ainda.</div>';
+
+document
 .getElementById("gameMessage")
 .textContent =
+"";
+
+document
+.getElementById("reactionDisplay")
+textContent =
 "";
 
 showScreen("game");
@@ -4001,9 +4337,69 @@ renderGuess();
 }
 
 
-/* =====================================================
-   ATUALIZAR JOGO
-===================================================== */
+/* =========================
+MINHA SENHA
+========================= */
+
+function getOwnSecret(){
+
+if(!roomState){
+
+return "";
+
+}
+
+if(
+roomState.mode === "shared"
+){
+
+return "";
+
+}
+
+return role === "host"
+?
+roomState.hostSecret
+:
+roomState.guestSecret;
+
+}
+
+
+/* =========================
+SENHA DO ADVERSÁRIO
+========================= */
+
+function getTargetSecret(){
+
+if(!roomState){
+
+return "";
+
+}
+
+if(
+roomState.mode === "shared"
+){
+
+return roomState.sharedSecret;
+
+}
+
+if(role === "host"){
+
+return roomState.guestSecret;
+
+}
+
+return roomState.hostSecret;
+
+}
+
+
+/* =========================
+ATUALIZAR JOGO
+========================= */
 
 function updateRoomGame(){
 
@@ -4065,41 +4461,18 @@ roomState.turnTime +
 
 setKeys(myTurn);
 
-renderRoomHistory();
+renderMyHistory();
+
+renderOpponentHistory();
 
 }
 
 
-/* =====================================================
-   SEGREDO QUE O JOGADOR DEVE DESCOBRIR
-===================================================== */
+/* =========================
+HISTÓRICO DOS MEUS PALPITES
+========================= */
 
-function getTargetSecret(){
-
-if(
-roomState.mode === "shared"
-){
-
-return roomState.sharedSecret;
-
-}
-
-if(role === "host"){
-
-return roomState.guestSecret;
-
-}
-
-return roomState.hostSecret;
-
-}
-
-
-/* =====================================================
-   HISTÓRICO ONLINE
-===================================================== */
-
-function renderRoomHistory(){
+function renderMyHistory(){
 
 const container =
 document.getElementById(
@@ -4110,14 +4483,18 @@ const history =
 roomState.history || {};
 
 const items =
-Object.values(history).sort(
-function(a,b){
+Object.values(history)
+.filter(function(item){
+
+return item.player === role;
+
+})
+.sort(function(a,b){
 
 return Number(a.order || 0) -
 Number(b.order || 0);
 
-}
-);
+});
 
 if(!items.length){
 
@@ -4131,19 +4508,6 @@ return;
 container.innerHTML =
 items.map(function(item){
 
-const who =
-item.player === role
-?
-"Você"
-:
-(
-role === "host"
-?
-roomState.guestName
-:
-roomState.hostName
-);
-
 return `
 <div class="history-item">
 
@@ -4155,10 +4519,6 @@ ${String(item.order).padStart(2,"0")}
 
 ${item.guess}
 
-</div>
-
-<div class="muted">
-${escapeHtml(who)}
 </div>
 
 <div style="font-size:13px;margin-top:5px">
@@ -4183,9 +4543,206 @@ ${escapeHtml(who)}
 }
 
 
-/* =====================================================
-   CRONÔMETRO
-===================================================== */
+/* =========================
+HISTÓRICO DO ADVERSÁRIO
+========================= */
+
+function renderOpponentHistory(){
+
+const container =
+document.getElementById(
+"opponentHistory"
+);
+
+const history =
+roomState.history || {};
+
+const opponentRole =
+role === "host"
+?
+"guest"
+:
+"host";
+
+const items =
+Object.values(history)
+.filter(function(item){
+
+return item.player === opponentRole;
+
+})
+.sort(function(a,b){
+
+return Number(a.order || 0) -
+Number(b.order || 0);
+
+});
+
+if(!items.length){
+
+container.innerHTML =
+'<div class="opponent-empty">Nenhum palpite ainda.</div>';
+
+return;
+
+}
+
+const opponentName =
+role === "host"
+?
+roomState.guestName
+:
+roomState.hostName;
+
+document
+.getElementById("opponentSubtitle")
+textContent =
+opponentName +
+" está tentando descobrir sua senha.";
+
+container.innerHTML =
+items.map(function(item){
+
+return `
+<div class="history-item">
+
+<div class="history-guess">
+
+<span class="hn">
+${String(item.order).padStart(2,"0")}
+</span>
+
+${item.guess}
+
+</div>
+
+<div class="muted">
+${escapeHtml(opponentName)}
+</div>
+
+<div style="font-size:13px;margin-top:5px">
+
+<span class="green">
+🟢 ${item.place} certo(s) no lugar
+</span>
+
+<br>
+
+<span style="color:#facc15">
+🟡 ${item.outside} certo(s) fora do lugar
+</span>
+
+</div>
+
+</div>
+`;
+
+}).join("");
+
+}
+
+
+/* =========================
+REAÇÕES
+========================= */
+
+async function sendReaction(emoji){
+
+if(
+!room ||
+!window.FB ||
+!roomState ||
+roomState.status !== "active"
+){
+
+return;
+
+}
+
+try{
+
+await window.FB.update(
+window.FB.ref(
+window.FB.db,
+"rooms/" + room
+),
+{
+
+reaction:emoji,
+
+reactionBy:role,
+
+reactionAt:serverNow()
+
+}
+);
+
+}catch(error){
+
+console.error(
+"Reação:",
+error
+);
+
+}
+
+}
+
+
+let lastReactionAt = 0;
+
+function showLatestReaction(){
+
+if(
+!roomState ||
+!roomState.reaction ||
+!roomState.reactionAt
+){
+
+return;
+
+}
+
+if(
+Number(roomState.reactionAt) <=
+lastReactionAt
+){
+
+return;
+
+}
+
+lastReactionAt =
+Number(roomState.reactionAt);
+
+const display =
+document.getElementById(
+"reactionDisplay"
+);
+
+display.textContent =
+roomState.reaction;
+
+setTimeout(function(){
+
+if(
+display.textContent ===
+roomState.reaction
+){
+
+display.textContent =
+"";
+
+}
+
+},2500);
+
+}
+
+
+/* =========================
+CRONÔMETRO
+========================= */
 
 function startRoomClock(){
 
@@ -4214,7 +4771,9 @@ return;
 }
 
 const element =
-document.getElementById("timer");
+document.getElementById(
+"timer"
+);
 
 const started =
 Number(
@@ -4274,9 +4833,9 @@ timeoutRoomTurn();
 }
 
 
-/* =====================================================
-   TIMEOUT ONLINE
-===================================================== */
+/* =========================
+TIMEOUT
+========================= */
 
 async function timeoutRoomTurn(){
 
@@ -4361,9 +4920,9 @@ busy = false;
 }
 
 
-/* =====================================================
-   PALPITE ONLINE
-===================================================== */
+/* =========================
+PALPITE ONLINE
+========================= */
 
 async function submitDuelGuess(){
 
@@ -4585,9 +5144,9 @@ busy = false;
 }
 
 
-/* =====================================================
-   RESULTADO DA RODADA
-===================================================== */
+/* =========================
+RESULTADO RODADA
+========================= */
 
 function showRoundResult(){
 
@@ -4605,7 +5164,11 @@ roomState.roundWinner === role;
 document
 .getElementById("resultIcon")
 .textContent =
-won ? "🏆" : "😔";
+won
+?
+"🏆"
+:
+"😔";
 
 document
 .getElementById("resultTitle")
@@ -4618,7 +5181,7 @@ won
 
 document
 .getElementById("resultText")
-.textContent =
+textContent =
 won
 ?
 "Você descobriu a senha primeiro."
@@ -4635,9 +5198,9 @@ showScreen("result");
 }
 
 
-/* =====================================================
-   RESULTADO DA PARTIDA
-===================================================== */
+/* =========================
+RESULTADO PARTIDA
+========================= */
 
 function showMatchResult(){
 
@@ -4661,7 +5224,11 @@ roomState.hostScore;
 document
 .getElementById("resultIcon")
 .textContent =
-won ? "🏆" : "😔";
+won
+?
+"🏆"
+:
+"😔";
 
 document
 .getElementById("resultTitle")
@@ -4699,9 +5266,9 @@ showScreen("result");
 }
 
 
-/* =====================================================
-   CANCELAR SALA
-===================================================== */
+/* =========================
+CANCELAR
+========================= */
 
 async function cancelRoom(){
 
@@ -4733,9 +5300,9 @@ home();
 }
 
 
-/* =====================================================
-   SEGURANÇA DO TEXTO
-===================================================== */
+/* =========================
+ESCAPE HTML
+========================= */
 
 function escapeHtml(text){
 
@@ -4749,9 +5316,9 @@ return String(text)
 }
 
 
-/* =====================================================
-   INICIALIZAÇÃO
-===================================================== */
+/* =========================
+INICIALIZAÇÃO
+========================= */
 
 loadPlayer();
 
@@ -4764,10 +5331,9 @@ setMode("creator");
 showScreen("home");
 
 
-/*
-   Se o usuário entrou pelo link do WhatsApp,
-   tenta preencher automaticamente o código.
-*/
+/* =========================
+LINK DO WHATSAPP
+========================= */
 
 const params =
 new URLSearchParams(
@@ -4807,4 +5373,4 @@ onlinePage();
 </script>
 
 </body>
-     </html>
+    </html>
