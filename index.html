@@ -1,46 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#061329">
 <title>SENHA — Descubra • Desafie • Vença</title>
 
 <style>
-*{
-box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 html,body{
 margin:0;
 min-height:100%;
 font-family:Arial,Helvetica,sans-serif;
-color:#fff;
+color:#f7f9ff
 }
 
 body{
 min-height:100vh;
 background:
-radial-gradient(circle at 10% 0%,rgba(22,140,255,.18),transparent 28%),
+radial-gradient(circle at 8% 0%,rgba(22,140,255,.18),transparent 28%),
 radial-gradient(circle at 100% 100%,rgba(81,70,245,.16),transparent 30%),
-linear-gradient(145deg,#061329,#091936 55%,#07142b);
+linear-gradient(145deg,#061329,#091936 55%,#07142b)
 }
 
 button{
 border:0;
 color:#fff;
-font-family:inherit;
 font-weight:900;
 cursor:pointer;
+font-family:inherit
 }
 
 button:disabled{
 opacity:.45;
-cursor:not-allowed;
-}
-
-input{
-font-family:inherit;
+cursor:not-allowed
 }
 
 .app{
@@ -48,70 +42,83 @@ width:100%;
 max-width:460px;
 min-height:100vh;
 margin:auto;
-padding:18px 16px 40px;
+padding:18px 16px 42px
 }
 
 .hidden{
-display:none!important;
+display:none!important
 }
 
 .center{
-text-align:center;
+text-align:center
 }
 
 .logo{
 text-align:center;
-margin:10px 0 22px;
+margin:8px 0 20px
 }
 
 .logo img{
 width:315px;
 max-width:92%;
 display:block;
-margin:auto;
+margin:auto
 }
 
 .card{
-background:linear-gradient(
+background:
+linear-gradient(
 145deg,
 rgba(25,49,88,.78),
-rgba(12,28,56,.88)
+rgba(12,28,56,.84)
 );
 border:1px solid rgba(130,173,240,.2);
 border-radius:22px;
 padding:18px;
 margin-bottom:14px;
-box-shadow:0 16px 38px rgba(0,0,0,.22);
+box-shadow:0 16px 38px rgba(0,0,0,.22)
+}
+
+.muted{
+color:#9db0cf;
+font-size:13px;
+line-height:1.5
 }
 
 .name-label{
 display:block;
 font-weight:800;
-margin-bottom:9px;
+margin-bottom:9px
 }
 
 .name-input,
-.code-input{
+.code-input,
+.secret-input{
 width:100%;
 padding:15px;
 border-radius:16px;
 border:2px solid #3262aa;
 background:rgba(3,14,31,.72);
 color:#fff;
-outline:none;
-font-size:18px;
+outline:0
 }
 
-.muted{
-color:#9db0cf;
-font-size:13px;
-line-height:1.5;
+.name-input,
+.code-input{
+font-size:18px
 }
 
-.help{
+.secret-input{
+font-size:28px;
+letter-spacing:8px;
+text-align:center
+}
+
+.name-help,
+.secret-help{
 color:#8295b5;
 font-size:11px;
-margin-top:7px;
+margin-top:8px
 }
 
 .menu-button{
@@ -120,52 +127,55 @@ display:flex;
 align-items:center;
 text-align:left;
 gap:15px;
-padding:17px;
+padding:16px 17px;
 margin:10px 0 0;
-border-radius:20px;
 border:1px solid rgba(255,255,255,.1);
+border-radius:20px;
+position:relative;
+overflow:hidden
 }
 
 .menu-button:after{
 content:"›";
-font-size:34px;
+font-size:35px;
 font-weight:300;
-margin-left:auto;
+margin-left:auto
 }
 
 .menu-daily{
-background:linear-gradient(110deg,#087ff1,#3f35ef);
+background:linear-gradient(110deg,#087ff1,#3f35ef)
 }
 
 .menu-online{
-background:linear-gradient(110deg,#2056e9,#7131ee);
+background:linear-gradient(110deg,#2056e9,#7131ee)
 }
 
 .menu-friend{
-background:linear-gradient(110deg,#04aeb8,#0794a5);
+background:linear-gradient(110deg,#04aeb8,#0794a5)
 }
 
 .menu-tournament{
-background:#1b2a42;
-color:#8192ad;
+background:rgba(27,42,66,.86);
+color:#8192ad
 }
 
 .menu-icon{
 width:48px;
 min-width:48px;
 text-align:center;
-font-size:30px;
+font-size:31px
 }
 
 .menu-title{
 font-size:18px;
-font-weight:900;
+font-weight:900
 }
 
 .menu-description{
 font-size:13px;
 color:rgba(255,255,255,.72);
-margin-top:4px;
+font-weight:700;
+margin-top:4px
 }
 
 .badge{
@@ -174,7 +184,7 @@ padding:5px 8px;
 border-radius:20px;
 font-size:9px;
 background:#ffbf18;
-color:#19223a;
+color:#19223a
 }
 
 .footer{
@@ -182,14 +192,32 @@ text-align:center;
 color:#8295b5;
 font-size:11px;
 letter-spacing:3px;
-margin-top:25px;
+margin-top:24px
+}
+
+.dots{
+display:flex;
+justify-content:center;
+gap:9px;
+margin-top:12px
+}
+
+.dot{
+width:8px;
+height:8px;
+border-radius:50%;
+background:#e8f0ff
+}
+
+.dot.active{
+background:#168cff
 }
 
 .page-title{
 text-align:center;
 font-size:27px;
 font-weight:900;
-margin:15px 0 6px;
+margin:14px 0 6px
 }
 
 .page-description{
@@ -197,15 +225,15 @@ text-align:center;
 color:#9db0cf;
 font-size:14px;
 line-height:1.5;
-margin:0 0 18px;
+margin:0 0 20px
 }
 
 .back-button,
 .secondary{
 width:100%;
-padding:14px;
-border-radius:14px;
-background:#243652;
+padding:13px;
+border-radius:13px;
+background:#243652
 }
 
 .primary{
@@ -213,144 +241,95 @@ width:100%;
 padding:15px;
 border-radius:14px;
 background:linear-gradient(110deg,#168cff,#5146f5);
-margin-top:10px;
+margin-top:10px
 }
 
 .share{
-background:#16a34a!important;
+background:#16a34a!important
+}
+
+.options{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:7px
+}
+
+.option,
+.mode{
+background:#233653;
+border:2px solid transparent;
+border-radius:13px;
+padding:12px 5px;
+text-align:center;
+font-weight:900;
+cursor:pointer
+}
+
+.option.sel,
+.mode.sel{
+background:#155bc4;
+border-color:#53a7ff
+}
+
+.small{
+font-size:10px;
+color:#b8c9df;
+margin-top:3px
+}
+
+.modegrid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:8px
+}
+
+.mode b{
+display:block;
+font-size:12px
+}
+
+.mode span{
+font-size:10px;
+font-weight:normal;
+color:#b8c9df
 }
 
 .connection{
 text-align:center;
 font-size:12px;
-margin:8px;
+margin:8px
 }
 
 .online{
-color:#4ade80;
+color:#4ade80
 }
 
 .offline{
-color:#ff7b86;
+color:#ff7b86
 }
 
-/* =========================
-DIÁRIO
-========================= */
-
-.daily-tools{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:9px;
-margin-bottom:14px;
-}
-
-.tool{
-width:100%;
-padding:14px 8px;
-border-radius:15px;
-background:#182d4c;
-border:1px solid rgba(120,170,240,.2);
-text-align:center;
-}
-
-.tool-icon{
-font-size:23px;
-}
-
-.tool-title{
-font-size:12px;
-margin-top:5px;
-}
-
-/* =========================
-PROGRESSO
-========================= */
-
-.stats{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:8px;
-margin-top:15px;
-}
-
-.stat{
-background:#0b1a31;
-border-radius:15px;
-padding:14px 7px;
-text-align:center;
-}
-
-.stat-number{
-font-size:24px;
+.invite,
+.secret{
+font-size:30px;
+letter-spacing:6px;
 font-weight:900;
-}
-
-.stat-label{
-font-size:10px;
-color:#8295b5;
-margin-top:4px;
-}
-
-.blue{
-color:#53b0ff;
-}
-
-.green{
-color:#4ade80;
-}
-
-.yellow{
-color:#ffd34d;
-}
-
-/* =========================
-RANKING
-========================= */
-
-.rank-item{
-display:grid;
-grid-template-columns:42px 1fr auto;
-align-items:center;
-gap:8px;
-background:#0b1a31;
+padding:15px;
+background:#07162d;
 border-radius:13px;
-padding:12px;
-margin-top:7px;
+margin:15px 0;
+text-align:center
 }
 
-.rank-pos{
-font-size:18px;
-font-weight:900;
-text-align:center;
+.secret{
+font-size:35px
 }
-
-.rank-name{
-font-weight:900;
-white-space:nowrap;
-overflow:hidden;
-text-overflow:ellipsis;
-}
-
-.rank-score{
-color:#53b0ff;
-font-weight:900;
-}
-
-.rank-me{
-border:1px solid #168cff;
-}
-
-/* =========================
-JOGO
-========================= */
 
 .scoreboard{
 display:grid;
 grid-template-columns:1fr auto 1fr;
 text-align:center;
 align-items:center;
-gap:8px;
+gap:8px
 }
 
 .pname{
@@ -358,17 +337,17 @@ font-size:14px;
 font-weight:900;
 white-space:nowrap;
 overflow:hidden;
-text-overflow:ellipsis;
+text-overflow:ellipsis
 }
 
 .score{
 font-size:28px;
-font-weight:900;
+font-weight:900
 }
 
 .vs{
 font-size:10px;
-color:#6f84a3;
+color:#6f84a3
 }
 
 .round{
@@ -376,71 +355,71 @@ text-align:center;
 color:#9db0cf;
 font-size:12px;
 font-weight:900;
-margin-top:9px;
+margin-top:10px
+}
+
+.duelstatus{
+text-align:center;
+padding:13px;
+border-radius:14px;
+background:#0b1a31;
+margin-bottom:14px;
+font-weight:900
+}
+
+.your{
+color:#4ade80
+}
+
+.their{
+color:#ffd34d
+}
+
+.timer{
+font-size:38px;
+font-weight:900;
+text-align:center;
+color:#53b0ff;
+min-width:70px
+}
+
+.timer.warn{
+color:#ffd34d
+}
+
+.timer.danger{
+color:#ff5d6c
 }
 
 .topbar{
 display:flex;
 justify-content:space-between;
 align-items:center;
-margin:10px 0 12px;
+margin:10px 0 12px
 }
 
 .status{
 color:#8fa4c6;
 font-size:12px;
-margin-top:4px;
-}
-
-.timer{
-font-size:38px;
-font-weight:900;
-color:#53b0ff;
-min-width:70px;
-text-align:center;
-}
-
-.timer.warn{
-color:#ffd34d;
-}
-
-.timer.danger{
-color:#ff5d6c;
-}
-
-.duel-status{
-text-align:center;
-padding:13px;
-border-radius:14px;
-background:#0b1a31;
-margin-bottom:14px;
-font-weight:900;
-}
-
-.your{
-color:#4ade80;
-}
-
-.their{
-color:#ffd34d;
+margin-top:4px
 }
 
 .attempt{
 text-align:center;
-margin:10px 0 18px;
+margin:10px 0 18px
 }
 
 .attempt-label{
 font-size:11px;
 font-weight:900;
 letter-spacing:2px;
-color:#8fa4c6;
+color:#8fa4c6
 }
 
 .attempt-num{
 font-size:30px;
 font-weight:900;
-color:#53b0ff;
+color:#53b0ff
 }
 
 .bar{
@@ -448,62 +427,29 @@ height:8px;
 background:#142641;
 border-radius:20px;
 overflow:hidden;
-margin-top:8px;
+margin-top:8px
 }
 
 .bar i{
 display:block;
 height:100%;
 width:0;
-background:linear-gradient(90deg,#168cff,#5146f5);
+background:linear-gradient(90deg,#168cff,#5146f5)
 }
 
 .attempt-msg{
 font-size:12px;
 color:#9db0cf;
-margin-top:7px;
+margin-top:7px
 }
 
-/* =========================
-MINHA SENHA
-========================= */
-
-.my-secret-box{
-background:linear-gradient(
-145deg,
-rgba(12,54,91,.9),
-rgba(8,29,57,.94)
-);
-border:1px solid rgba(83,176,255,.35);
-border-radius:18px;
-padding:13px;
-margin-bottom:14px;
-text-align:center;
-}
-
-.my-secret-title{
-font-size:10px;
-font-weight:900;
-letter-spacing:2px;
-color:#8fbde8;
-}
-
-.my-secret-value{
-font-size:25px;
-font-weight:900;
-letter-spacing:8px;
-margin-top:6px;
-}
-
-/* =========================
-PALPITE
-========================= */
+/* PALPITE */
 
 .guess{
 display:flex;
 justify-content:center;
 gap:8px;
-margin:18px 0;
+margin:18px 0
 }
 
 .digit{
@@ -516,186 +462,249 @@ text-align:center;
 font-size:27px;
 font-weight:900;
 line-height:56px;
-cursor:pointer;
+cursor:pointer
 }
 
 .digit.selected{
 border-color:#53a7ff;
-box-shadow:0 0 0 3px rgba(22,140,255,.15);
+box-shadow:0 0 0 3px rgba(22,140,255,.15)
 }
 
 .keys{
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:7px;
+gap:7px
 }
 
 .key{
 padding:14px 4px;
 border-radius:12px;
 background:#263854;
+transition:.15s
+}
+
+.key.turn-ready{
+border:2px solid #53a7ff;
+background:#29466e
 }
 
 .message{
 text-align:center;
-min-height:22px;
+min-height:21px;
 margin-top:12px;
-color:#c8d6e9;
+color:#c8d6e9
 }
 
-/* =========================
-PALPITES DO ADVERSÁRIO
-========================= */
+/* DUEL - TECLADO + EMOJIS */
 
-.opponent-box{
-background:#0a192f;
-border:1px solid rgba(255,255,255,.07);
-border-radius:18px;
-padding:14px;
-margin-bottom:14px;
-}
-
-.opponent-title{
-font-size:14px;
-font-weight:900;
-margin-bottom:4px;
-}
-
-.opponent-subtitle{
-font-size:11px;
-color:#8295b5;
-margin-bottom:10px;
-}
-
-.opponent-history{
-max-height:260px;
-overflow-y:auto;
-}
-
-.opponent-empty{
-text-align:center;
-color:#6f84a3;
-font-size:12px;
-padding:12px 0;
-}
-
-/* =========================
-REAÇÕES
-========================= */
-
-.reaction-box{
-background:#0b1a31;
-border:1px solid rgba(255,255,255,.06);
-border-radius:18px;
-padding:12px;
-margin-bottom:14px;
-}
-
-.reaction-title{
-text-align:center;
-font-size:10px;
-font-weight:900;
-letter-spacing:1px;
-color:#8295b5;
-margin-bottom:9px;
-}
-
-.reactions{
+.duel-input-wrap{
 display:grid;
-grid-template-columns:repeat(8,1fr);
-gap:4px;
+grid-template-columns:minmax(0,1fr) 76px;
+gap:9px;
+align-items:stretch
 }
 
-.reaction-button{
-background:#182d4c;
-border-radius:10px;
-padding:9px 2px;
-font-size:20px;
-line-height:1;
+.reaction-side{
+display:flex;
+flex-direction:column;
+gap:5px;
+padding:6px;
+background:rgba(5,17,35,.75);
+border:1px solid rgba(83,176,255,.22);
+border-radius:14px
 }
 
-.reaction-button:active{
-transform:scale(.92);
-}
-
-.reaction-display{
+.reaction-side-title{
 text-align:center;
-min-height:30px;
-font-size:25px;
-margin-top:8px;
+font-size:8px;
+font-weight:900;
+letter-spacing:.7px;
+color:#8fa4c6;
+margin-bottom:2px
 }
 
-/* =========================
-HISTÓRICO
-========================= */
+.reaction{
+flex:1;
+min-height:36px;
+padding:3px;
+border-radius:9px;
+background:#263854;
+font-size:21px;
+line-height:1
+}
+
+.reaction:active{
+transform:scale(.9)
+}
+
+.reaction-message{
+text-align:center;
+font-size:42px;
+min-height:50px;
+margin:0 0 3px;
+animation:reactionPop .2s ease
+}
+
+@keyframes reactionPop{
+from{transform:scale(.6);opacity:.2}
+to{transform:scale(1);opacity:1}
+}
+
+/* HISTÓRICO */
 
 .history-title{
 font-size:16px;
-font-weight:900;
+font-weight:900
+}
+
+.history-list{
+display:flex;
+flex-direction:column;
+gap:7px;
+margin-top:9px
 }
 
 .history-item{
-background:#0b1a31;
-border:1px solid rgba(255,255,255,.05);
-border-radius:12px;
-padding:12px;
-margin-top:7px;
+border:1px solid rgba(255,255,255,.08);
+border-radius:13px;
+padding:11px 12px;
+margin:0;
+box-shadow:0 7px 16px rgba(0,0,0,.12)
+}
+
+.history-item:nth-child(1){
+background:linear-gradient(
+110deg,
+rgba(22,140,255,.32),
+rgba(35,72,124,.72)
+)
+}
+
+.history-item:nth-child(2){
+background:linear-gradient(
+110deg,
+rgba(81,70,245,.30),
+rgba(39,50,100,.72)
+)
+}
+
+.history-item:nth-child(3){
+background:linear-gradient(
+110deg,
+rgba(0,180,170,.27),
+rgba(24,61,75,.72)
+)
+}
+
+.history-item:nth-child(4){
+background:linear-gradient(
+110deg,
+rgba(245,158,11,.25),
+rgba(71,55,35,.72)
+)
+}
+
+.history-item:nth-child(5){
+background:linear-gradient(
+110deg,
+rgba(236,72,153,.24),
+rgba(70,36,61,.72)
+)
+}
+
+.history-item:nth-child(6){
+background:linear-gradient(
+110deg,
+rgba(139,92,246,.25),
+rgba(53,42,83,.72)
+)
+}
+
+.history-item:nth-child(7){
+background:linear-gradient(
+110deg,
+rgba(34,197,94,.23),
+rgba(29,64,48,.72)
+)
+}
+
+.history-item:nth-child(n+8){
+background:linear-gradient(
+110deg,
+rgba(100,116,139,.24),
+rgba(28,43,64,.72)
+)
 }
 
 .history-guess{
 font-size:20px;
 font-weight:900;
-letter-spacing:5px;
+letter-spacing:5px
 }
 
 .hn{
-color:#6f84a3;
-font-size:12px;
+display:inline-block;
+color:#d7e5f8;
+font-size:11px;
 letter-spacing:0;
 margin-right:8px;
+opacity:.85
 }
 
-/* =========================
-RESULTADO
-========================= */
+.green{
+color:#4ade80
+}
 
-.result-card{
+.yellow{
+color:#facc15
+}
+
+.win{
 text-align:center;
-padding:25px 18px;
+padding:28px 20px
 }
 
-.result-icon{
-font-size:65px;
+.winicon{
+font-size:68px
 }
 
-.result-badge{
+.result{
 display:inline-block;
 padding:8px 12px;
 border-radius:20px;
 background:#162a47;
 color:#9db0cf;
 font-size:12px;
-font-weight:900;
+font-weight:900
 }
 
-.secret{
-font-size:35px;
-letter-spacing:8px;
-font-weight:900;
-padding:15px;
-background:#07162d;
-border-radius:13px;
-margin:15px 0;
+.note{
+font-size:11px;
+color:#8295b5;
+line-height:1.5;
+margin-top:10px
 }
 
 @media(max-width:360px){
 
-.digit{
-width:49px;
+.logo img{
+width:280px
 }
 
-.reactions{
-grid-template-columns:repeat(4,1fr);
+.digit{
+width:49px
+}
+
+.menu-title{
+font-size:16px
+}
+
+.duel-input-wrap{
+grid-template-columns:minmax(0,1fr) 66px
+}
+
+.reaction{
+font-size:18px
 }
 
 }
@@ -706,10 +715,6 @@ grid-template-columns:repeat(4,1fr);
 
 <div class="app">
 
-<!-- =========================
-HOME
-========================= -->
-
 <section id="home">
 
 <div class="logo">
@@ -718,7 +723,7 @@ HOME
 
 <div class="card">
 
-<label class="name-label">
+<label class="name-label" for="playerName">
 👤 Seu nome
 </label>
 
@@ -728,14 +733,13 @@ class="name-input"
 maxlength="18"
 placeholder="Digite seu nome">
 
-<div class="help">
-Seu nome será usado no progresso e no ranking.
+<div class="name-help">
+Seu nome será exibido nas partidas.
 </div>
 
 </div>
 
 <button
-type="button"
 class="menu-button menu-daily"
 onclick="dailyPage()">
 
@@ -754,7 +758,6 @@ Uma senha para todos
 </button>
 
 <button
-type="button"
 class="menu-button menu-online"
 onclick="onlinePage()">
 
@@ -773,7 +776,6 @@ Entre pelo código da partida
 </button>
 
 <button
-type="button"
 class="menu-button menu-friend"
 onclick="friendPage()">
 
@@ -785,14 +787,13 @@ Desafiar Amigo
 </div>
 
 <div class="menu-description">
-Crie uma partida e envie o convite
+Escolha a dinâmica e envie pelo WhatsApp
 </div>
 </div>
 
 </button>
 
 <button
-type="button"
 class="menu-button menu-tournament"
 onclick="showScreen('tournament')">
 
@@ -815,17 +816,19 @@ Campeonatos eliminatórios
 SENHA • VERSÃO BETA
 </div>
 
+<div class="dots">
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot active"></span>
+</div>
+
 </section>
 
-
-<!-- =========================
-DIÁRIO
-========================= -->
 
 <section id="daily" class="hidden">
 
 <button
-type="button"
 class="back-button"
 onclick="home()">
 ← Voltar
@@ -837,30 +840,6 @@ onclick="home()">
 
 <div class="page-description">
 Todos tentam descobrir a mesma senha.
-</div>
-
-<div class="daily-tools">
-
-<button
-type="button"
-class="tool"
-onclick="showProgress()">
-
-<div class="tool-icon">📊</div>
-<div class="tool-title">MEU PROGRESSO</div>
-
-</button>
-
-<button
-type="button"
-class="tool"
-onclick="showRanking()">
-
-<div class="tool-icon">🏆</div>
-<div class="tool-title">RANKING</div>
-
-</button>
-
 </div>
 
 <div
@@ -882,7 +861,6 @@ Desafio de hoje
 </p>
 
 <button
-type="button"
 class="primary"
 onclick="startDaily()">
 COMEÇAR DESAFIO
@@ -906,182 +884,18 @@ Desafio concluído
 Você já participou do Desafio Diário de hoje.
 </p>
 
-<button
-type="button"
-class="primary"
-onclick="showProgress()">
-📊 MEU PROGRESSO
-</button>
-
-<button
-type="button"
-class="secondary"
-onclick="showRanking()">
-🏆 RANKING
-</button>
+<p class="muted">
+Volte amanhã para um novo desafio.
+</p>
 
 </div>
 
 </section>
 
-
-<!-- =========================
-PROGRESSO
-========================= -->
-
-<section id="progress" class="hidden">
-
-<button
-type="button"
-class="back-button"
-onclick="dailyPage()">
-← Voltar
-</button>
-
-<div class="page-title">
-📊 Meu Progresso
-</div>
-
-<div class="page-description">
-Seu desempenho no Desafio Diário.
-</div>
-
-<div class="card center">
-
-<div
-id="progressName"
-style="font-size:21px;font-weight:900;">
-Jogador
-</div>
-
-<div
-id="progressText"
-class="muted"
-style="margin-top:6px;">
-Continue jogando diariamente.
-</div>
-
-<div class="stats">
-
-<div class="stat">
-<div id="statPlayed" class="stat-number blue">0</div>
-<div class="stat-label">DESAFIOS</div>
-</div>
-
-<div class="stat">
-<div id="statWins" class="stat-number green">0</div>
-<div class="stat-label">VITÓRIAS</div>
-</div>
-
-<div class="stat">
-<div id="statLosses" class="stat-number">0</div>
-<div class="stat-label">DERROTAS</div>
-</div>
-
-<div class="stat">
-<div id="statAverage" class="stat-number blue">—</div>
-<div class="stat-label">MÉDIA</div>
-</div>
-
-<div class="stat">
-<div id="statStreak" class="stat-number yellow">0</div>
-<div class="stat-label">SEQUÊNCIA</div>
-</div>
-
-<div class="stat">
-<div id="statBest" class="stat-number yellow">0</div>
-<div class="stat-label">MELHOR SEQUÊNCIA</div>
-</div>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<div class="history-title">
-📅 Histórico
-</div>
-
-<div
-id="progressHistory"
-style="margin-top:10px;">
-</div>
-
-</div>
-
-<button
-type="button"
-class="primary"
-onclick="showRanking()">
-🏆 VER RANKING
-</button>
-
-</section>
-
-
-<!-- =========================
-RANKING
-========================= -->
-
-<section id="ranking" class="hidden">
-
-<button
-type="button"
-class="back-button"
-onclick="dailyPage()">
-← Voltar
-</button>
-
-<div class="page-title">
-🏆 Ranking
-</div>
-
-<div class="page-description">
-Ranking dos jogadores identificados.
-</div>
-
-<div class="card center">
-
-<div
-id="myRank"
-style="font-size:42px;font-weight:900;">
-—
-</div>
-
-<div class="muted">
-Sua posição
-</div>
-
-</div>
-
-<div class="card">
-
-<div class="history-title">
-🏆 Classificação
-</div>
-
-<div
-id="rankingList"
-style="margin-top:10px;">
-<div class="muted center">
-Carregando...
-</div>
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-ONLINE
-========================= -->
 
 <section id="online" class="hidden">
 
 <button
-type="button"
 class="back-button"
 onclick="home()">
 ← Voltar
@@ -1092,11 +906,11 @@ onclick="home()">
 </div>
 
 <div class="page-description">
-Entre em uma partida usando o código.
+Entre em uma sala existente ou crie uma nova.
 </div>
 
 <div
-id="connection"
+id="conn"
 class="connection offline">
 Conectando...
 </div>
@@ -1107,15 +921,18 @@ Conectando...
 🔑 Entrar em uma partida
 </h3>
 
+<p class="muted center">
+Digite o código de 6 caracteres.
+</p>
+
 <input
-id="joinCode"
+id="join"
 class="code-input"
 maxlength="6"
 placeholder="ABC123"
-style="text-align:center;text-transform:uppercase;letter-spacing:5px;">
+style="text-align:center;text-transform:uppercase;letter-spacing:5px">
 
 <button
-type="button"
 class="primary"
 onclick="joinRoom()">
 ENTRAR NA PARTIDA
@@ -1134,11 +951,10 @@ Criar desafio
 </h3>
 
 <p class="muted">
-Crie uma partida e envie o convite.
+Você poderá escolher a senha e a dinâmica.
 </p>
 
 <button
-type="button"
 class="secondary"
 onclick="friendPage()">
 CRIAR DESAFIO
@@ -1149,14 +965,9 @@ CRIAR DESAFIO
 </section>
 
 
-<!-- =========================
-AMIGO
-========================= -->
-
 <section id="friend" class="hidden">
 
 <button
-type="button"
 class="back-button"
 onclick="home()">
 ← Voltar
@@ -1167,12 +978,14 @@ onclick="home()">
 </div>
 
 <div class="page-description">
-Configure a partida.
+Configure a partida antes de criar a sala.
 </div>
 
 <div class="card">
 
-<div class="center" style="font-size:45px">
+<div
+class="center"
+style="font-size:45px">
 ⚔️
 </div>
 
@@ -1183,134 +996,152 @@ Jogando como
 <div
 id="friendName"
 class="center"
-style="font-size:21px;font-weight:900;margin:8px 0 18px;">
-Jogador
+style="font-size:21px;font-weight:900;margin:8px 0 15px">
 </div>
 
-<div class="muted">
-<b>Melhor de:</b>
+<div
+class="muted"
+style="font-weight:900;margin:15px 0 8px">
+Melhor de:
 </div>
 
-<div class="daily-tools">
+<div class="options">
 
-<button
-type="button"
-id="best3"
-class="tool"
-onclick="setBest(3)">
+<div
+id="b3"
+class="option sel"
+onclick="best(3)">
 3
-</button>
+<div class="small">
+Primeiro a 2
+</div>
+</div>
 
-<button
-type="button"
-id="best5"
-class="tool"
-onclick="setBest(5)">
+<div
+id="b5"
+class="option"
+onclick="best(5)">
 5
-</button>
+<div class="small">
+Primeiro a 3
+</div>
+</div>
 
-<button
-type="button"
-id="best7"
-class="tool"
-onclick="setBest(7)">
+<div
+id="b7"
+class="option"
+onclick="best(7)">
 7
-</button>
+<div class="small">
+Primeiro a 4
+</div>
+</div>
 
 </div>
 
-<div class="muted">
-<b>Dinâmica:</b>
+<div
+class="muted"
+style="font-weight:900;margin:15px 0 8px">
+Dinâmica:
 </div>
 
-<div class="daily-tools">
+<div class="modegrid">
 
-<button
-type="button"
-id="modeCreator"
-class="tool"
-onclick="setMode('creator')">
-🔐<br>
+<div
+id="creatorSecret"
+class="mode sel"
+onclick="gameMode('creator')">
+
+🔐
+
+<b>
 Eu escolho a senha
-</button>
+</b>
 
-<button
-type="button"
-id="modeShared"
-class="tool"
-onclick="setMode('shared')">
-🤝<br>
-Senha compartilhada
-</button>
+<span>
+Seu amigo tenta descobrir.
+</span>
 
 </div>
 
-<div id="creatorConfig">
+<div
+id="shared"
+class="mode"
+onclick="gameMode('shared')">
 
-<div class="muted">
-<b>Senha que seu amigo deverá descobrir:</b>
+🤝
+
+<b>
+Senha compartilhada
+</b>
+
+<span>
+Os dois descobrem a mesma senha.
+</span>
+
+</div>
+
+</div>
+
+<div id="secretConfig">
+
+<div
+class="muted"
+style="font-weight:900;margin:15px 0 8px">
+Senha para o amigo:
 </div>
 
 <input
-id="creatorSecret"
-class="code-input"
+id="chosenSecret"
+class="secret-input"
 maxlength="4"
 inputmode="numeric"
-placeholder="1234"
-style="text-align:center;font-size:28px;letter-spacing:8px;margin-top:8px;">
+placeholder="1234">
 
-<div class="help">
-Obrigatoriamente 4 números diferentes.
+<div class="secret-help">
+Use 4 números diferentes. Números não podem se repetir.
 </div>
 
 </div>
 
 <div
-id="timeConfig"
-style="margin-top:15px;">
-
-<div class="muted">
-<b>Tempo por turno:</b>
+class="muted"
+style="font-weight:900;margin:15px 0 8px">
+Tempo por turno:
 </div>
 
-<div class="daily-tools">
+<div class="options">
 
-<button
-type="button"
-id="time30"
-class="tool"
-onclick="setTurnTime(30)">
+<div
+id="t30"
+class="option sel"
+onclick="setTime(30)">
 30s
-</button>
+</div>
 
-<button
-type="button"
-id="time45"
-class="tool"
-onclick="setTurnTime(45)">
+<div
+id="t45"
+class="option"
+onclick="setTime(45)">
 45s
-</button>
+</div>
 
-<button
-type="button"
-id="time60"
-class="tool"
-onclick="setTurnTime(60)">
+<div
+id="t60"
+class="option"
+onclick="setTime(60)">
 60s
-</button>
-
 </div>
 
 </div>
 
 <div
-id="friendSummary"
-class="muted center"
-style="margin-top:15px;">
+id="summary"
+class="center muted"
+style="margin-top:18px">
 </div>
 
 <button
-type="button"
 class="primary"
 onclick="createRoom()">
 CRIAR DESAFIO
@@ -1321,62 +1152,9 @@ CRIAR DESAFIO
 </section>
 
 
-<!-- =========================
-SENHA DO CONVIDADO
-========================= -->
-
-<section id="guestSecret" class="hidden">
-
-<div class="page-title">
-🔐 Sua senha
-</div>
-
-<div class="page-description">
-Escolha a senha que seu adversário deverá descobrir.
-</div>
-
-<div class="card">
-
-<div class="center" style="font-size:50px">
-🔐
-</div>
-
-<p class="muted center">
-Sua senha ficará escondida do adversário.
-</p>
-
-<input
-id="guestSecretInput"
-class="code-input"
-maxlength="4"
-inputmode="numeric"
-placeholder="1234"
-style="text-align:center;font-size:30px;letter-spacing:8px;">
-
-<div class="help">
-Use exatamente 4 números diferentes.
-</div>
-
-<button
-type="button"
-class="primary"
-onclick="confirmGuestSecret()">
-CONFIRMAR SENHA
-</button>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-CONVITE
-========================= -->
-
 <section id="invite" class="hidden">
 
 <button
-type="button"
 class="back-button"
 onclick="friendPage()">
 ← Voltar
@@ -1397,20 +1175,11 @@ Envie o convite para seu amigo.
 </div>
 
 <h3 id="inviteName">
-Jogador
 </h3>
 
 <div
 id="inviteCode"
-style="
-font-size:30px;
-letter-spacing:6px;
-font-weight:900;
-padding:15px;
-background:#07162d;
-border-radius:13px;
-margin:15px 0;
-">
+class="invite">
 ABC123
 </div>
 
@@ -1426,14 +1195,12 @@ class="muted">
 </div>
 
 <button
-type="button"
 class="primary share"
-onclick="sendWhatsApp()">
+onclick="whatsapp()">
 📲 ENVIAR PELO WHATSAPP
 </button>
 
 <button
-type="button"
 class="secondary"
 onclick="cancelRoom()">
 CANCELAR SALA
@@ -1444,14 +1211,9 @@ CANCELAR SALA
 </section>
 
 
-<!-- =========================
-TORNEIO
-========================= -->
-
 <section id="tournament" class="hidden">
 
 <button
-type="button"
 class="back-button"
 onclick="home()">
 ← Voltar
@@ -1480,26 +1242,26 @@ Os torneios serão liberados futuramente.
 </section>
 
 
-<!-- =========================
-JOGO
-========================= -->
-
 <section id="game" class="hidden">
 
-<!--
-Este bloco recebe um ID próprio para que o placar
-possa ser ocultado no Desafio Diário.
--->
-
-<div
-id="scoreboardCard"
-class="card">
+<div class="card">
 
 <div class="scoreboard">
 
 <div>
-<div id="me" class="pname">Você</div>
-<div id="myScore" class="score"></div>
+
+<div
+id="me"
+class="pname">
+Você
+</div>
+
+<div
+id="myScore"
+class="score">
+0
+</div>
+
 </div>
 
 <div class="vs">
@@ -1507,128 +1269,36 @@ VS
 </div>
 
 <div>
-<div id="opp" class="pname">Adversário</div>
-<div id="opScore" class="score"></div>
-</div>
-
-</div>
-
-<div id="round" class="round">
-</div>
-
-</div>
-
-
-<!-- SENHA QUE EU ESCOLHI -->
 
 <div
-id="mySecretBox"
-class="my-secret-box hidden">
-
-<div class="my-secret-title">
-🔐 MINHA SENHA
+id="opp"
+class="pname">
+Adversário
 </div>
 
 <div
-id="mySecretValue"
-class="my-secret-value">
-----
-</div>
-
-<div class="help">
-Esta é a senha que seu adversário precisa descobrir.
+id="opScore"
+class="score">
+0
 </div>
 
 </div>
 
+</div>
 
-<!-- STATUS -->
+<div
+id="round"
+class="round">
+</div>
+
+</div>
+
 
 <div
 id="duelStatus"
-class="duel-status hidden">
+class="duelstatus hidden">
 </div>
 
-
-<!-- REAÇÕES -->
-
-<div
-id="reactionBox"
-class="reaction-box hidden">
-
-<div class="reaction-title">
-💬 REAÇÕES RÁPIDAS
-</div>
-
-<div class="reactions">
-
-<button
-type="button"
-class="reaction-button"
-onclick="sendReaction('😈')">
-😈
-</button>
-
-<button
-type="button"
-class="reaction-button"
-onclick="sendReaction('😂')">
-😂
-</button>
-
-<button
-type="button"
-class="reaction-button"
-onclick="sendReaction('👀')">
-👀
-</button>
-
-<button
-type="button"
-class="reaction-button"
-onclick="sendReaction('🔥')">
-🔥
-</button>
-
-<button
-type="button"
-class="reaction-button"
-onclick="sendReaction('😱')">
-😱
-</button>
-
-<button
-type="button"
-class="reaction-button"
-onclick="sendReaction('🤔')">
-🤔
-</button>
-
-<button
-type="button"
-class="reaction-button"
-onclick="sendReaction('🧠')">
-🧠
-</button>
-
-<button
-type="button"
-class="reaction-button"
-onclick="sendReaction('🏆')">
-🏆
-</button>
-
-</div>
-
-<div
-id="reactionDisplay"
-class="reaction-display">
-</div>
-
-</div>
-
-
-<!-- TENTATIVAS DIÁRIAS -->
 
 <div
 id="attemptBox"
@@ -1653,6 +1323,12 @@ id="attemptMsg"
 class="attempt-msg">
 </div>
 
+</div>
+
+
+<div
+id="reactionMessage"
+class="reaction-message">
 </div>
 
 
@@ -1681,111 +1357,210 @@ class="timer">
 </div>
 
 
-<!-- PALPITES DO ADVERSÁRIO -->
-
-<div
-id="opponentBox"
-class="opponent-box hidden">
-
-<div class="opponent-title">
-👀 Palpites do adversário
-</div>
-
-<div
-id="opponentSubtitle"
-class="opponent-subtitle">
-Veja como ele está chegando perto da sua senha.
-</div>
-
-<div
-id="opponentHistory"
-class="opponent-history">
-
-<div class="opponent-empty">
-Nenhum palpite ainda.
-</div>
-
-</div>
-
-</div>
-
-
 <div class="card">
 
 <p class="center">
-Monte seu chute.
+Digite seu chute.
 </p>
 
 <div class="guess">
 
 <div
-id="digit0"
-class="digit selected"
-onclick="selectPosition(0)">
+id="d1"
+class="digit">
 </div>
 
 <div
-id="digit1"
-class="digit"
-onclick="selectPosition(1)">
+id="d2"
+class="digit">
 </div>
 
 <div
-id="digit2"
-class="digit"
-onclick="selectPosition(2)">
+id="d3"
+class="digit">
 </div>
 
 <div
-id="digit3"
-class="digit"
-onclick="selectPosition(3)">
+id="d4"
+class="digit">
 </div>
 
 </div>
 
+
+<div class="duel-input-wrap">
+
+<div>
 
 <div class="keys">
 
-<button type="button" class="key" onclick="addDigit('1')">1</button>
-<button type="button" class="key" onclick="addDigit('2')">2</button>
-<button type="button" class="key" onclick="addDigit('3')">3</button>
+<button
+class="key"
+onclick="digit('1')">
+1
+</button>
 
-<button type="button" class="key" onclick="addDigit('4')">4</button>
-<button type="button" class="key" onclick="addDigit('5')">5</button>
-<button type="button" class="key" onclick="addDigit('6')">6</button>
+<button
+class="key"
+onclick="digit('2')">
+2
+</button>
 
-<button type="button" class="key" onclick="addDigit('7')">7</button>
-<button type="button" class="key" onclick="addDigit('8')">8</button>
-<button type="button" class="key" onclick="addDigit('9')">9</button>
+<button
+class="key"
+onclick="digit('3')">
+3
+</button>
 
-<button type="button" class="key" onclick="deleteDigit()">⌫</button>
-<button type="button" class="key" onclick="addDigit('0')">0</button>
-<button type="button" class="key" onclick="submitGuess()">✓</button>
+<button
+class="key"
+onclick="digit('4')">
+4
+</button>
+
+<button
+class="key"
+onclick="digit('5')">
+5
+</button>
+
+<button
+class="key"
+onclick="digit('6')">
+6
+</button>
+
+<button
+class="key"
+onclick="digit('7')">
+7
+</button>
+
+<button
+class="key"
+onclick="digit('8')">
+8
+</button>
+
+<button
+class="key"
+onclick="digit('9')">
+9
+</button>
+
+<button
+class="key"
+onclick="backspace()">
+⌫
+</button>
+
+<button
+class="key"
+onclick="digit('0')">
+0
+</button>
+
+<button
+class="key"
+onclick="guess()">
+✓
+</button>
 
 </div>
 
+</div>
+
+
 <div
-id="gameMessage"
+id="reactionSide"
+class="reaction-side hidden">
+
+<div class="reaction-side-title">
+REAÇÕES
+</div>
+
+<button
+class="reaction"
+onclick="sendReaction('😂')">
+😂
+</button>
+
+<button
+class="reaction"
+onclick="sendReaction('😈')">
+😈
+</button>
+
+<button
+class="reaction"
+onclick="sendReaction('😱')">
+😱
+</button>
+
+<button
+class="reaction"
+onclick="sendReaction('😎')">
+😎
+</button>
+
+<button
+class="reaction"
+onclick="sendReaction('🔥')">
+🔥
+</button>
+
+<button
+class="reaction"
+onclick="sendReaction('👀')">
+👀
+</button>
+
+<button
+class="reaction"
+onclick="sendReaction('🤔')">
+🤔
+</button>
+
+<button
+class="reaction"
+onclick="sendReaction('🏆')">
+🏆
+</button>
+
+</div>
+
+</div>
+
+
+<div
+id="msg"
 class="message">
 </div>
 
 <div class="center muted">
-⏱️ <span id="timeText">Sem limite</span>
+⏱️
+<span id="timeText">
+Sem limite
+</span>
 </div>
 
 </div>
 
-
-<!-- MEUS PALPITES -->
 
 <div class="card">
 
 <div class="history-title">
-📋 Meus palpites
+📋 Histórico de tentativas
+<span
+class="muted"
+style="font-size:10px;font-weight:normal">
+(mais recentes primeiro)
+</span>
 </div>
 
-<div id="gameHistory">
+<div
+id="history"
+class="history-list">
 
 <p class="muted center">
 Nenhuma tentativa ainda.
@@ -1798,30 +1573,26 @@ Nenhuma tentativa ainda.
 </section>
 
 
-<!-- =========================
-RESULTADO
-========================= -->
+<section id="roundResult" class="hidden">
 
-<section id="result" class="hidden">
-
-<div class="card result-card">
+<div class="card win">
 
 <div
-id="resultIcon"
-class="result-icon">
+id="rrIcon"
+class="winicon">
 🏆
 </div>
 
-<div class="result-badge">
-DESAFIO ENCERRADO
+<div class="result">
+RODADA ENCERRADA
 </div>
 
-<h2 id="resultTitle">
+<h2 id="rrTitle">
 Você venceu!
 </h2>
 
 <p
-id="resultText"
+id="rrText"
 class="muted">
 </p>
 
@@ -1830,76 +1601,75 @@ A senha era:
 </div>
 
 <div
-id="resultSecret"
+id="rrSecret"
 class="secret">
 0000
 </div>
 
-<div
-id="resultProgress"
-class="card"
-style="text-align:left;margin-top:20px;">
-
-<div class="center" style="font-size:19px;font-weight:900;">
-📊 Seu Progresso
-</div>
-
-<div
-id="resultProgressText"
-class="muted center"
-style="margin-top:6px;">
-</div>
-
-<div class="stats">
-
-<div class="stat">
-<div id="resultPlayed" class="stat-number blue">0</div>
-<div class="stat-label">DESAFIOS</div>
-</div>
-
-<div class="stat">
-<div id="resultWins" class="stat-number green">0</div>
-<div class="stat-label">VITÓRIAS</div>
-</div>
-
-<div class="stat">
-<div id="resultAverage" class="stat-number blue">—</div>
-<div class="stat-label">MÉDIA</div>
-</div>
-
-<div class="stat">
-<div id="resultStreak" class="stat-number yellow">0</div>
-<div class="stat-label">SEQUÊNCIA</div>
-</div>
-
-</div>
+<p
+id="rrScore"
+class="muted">
+</p>
 
 <button
-type="button"
+id="nextBtn"
 class="primary"
-onclick="showRanking()">
-🏆 VER RANKING
+onclick="nextRound()">
+PRÓXIMA RODADA
 </button>
 
+<div
+id="nextStatus"
+class="note">
+</div>
+
+</div>
+
+</section>
+
+
+<section id="result" class="hidden">
+
+<div class="card win">
+
+<div
+id="resIcon"
+class="winicon">
+🏆
+</div>
+
+<div class="result">
+PARTIDA ENCERRADA
+</div>
+
+<h2 id="resTitle">
+</h2>
+
+<p
+id="resText"
+class="muted">
+</p>
+
+<div class="muted">
+Senha revelada:
+</div>
+
+<div
+id="resSecret"
+class="secret">
+0000
 </div>
 
 <button
-type="button"
-class="secondary"
-onclick="dailyPage()">
-← VOLTAR AO DESAFIO DIÁRIO
+class="primary"
+onclick="home()">
+VOLTAR AO INÍCIO
 </button>
 
 </div>
 
 </section>
 
-</div>
-
-
-<!-- =========================
-FIREBASE
-========================= -->
 
 <script type="module">
 
@@ -1925,24 +1695,28 @@ from
 
 const firebaseConfig = {
 
-apiKey:"AIzaSyAHtU6LyGcsZz_0nWa0JeYycPUX4gX2jvc",
+apiKey:
+"AIzaSyAHtU6LyGcsZz_0nWa0JeYycPUX4gX2jvc",
 
-authDomain:"senha-game-71a6a.firebaseapp.com",
+authDomain:
+"senha-game-71a6a.firebaseapp.com",
 
-databaseURL:"https://senha-game-71a6a-default-rtdb.firebaseio.com",
+databaseURL:
+"https://senha-game-71a6a-default-rtdb.firebaseio.com",
 
-projectId:"senha-game-71a6a",
+projectId:
+"senha-game-71a6a",
 
-storageBucket:"senha-game-71a6a.firebasestorage.app",
+storageBucket:
+"senha-game-71a6a.firebasestorage.app",
 
-messagingSenderId:"405309556115",
+messagingSenderId:
+"405309556115",
 
-appId:"1:405309556115:web:7bbcf7e1438b37a711d466"
+appId:
+"1:405309556115:web:7bbcf7e1438b37a711d466"
 
 };
-
-
-try{
 
 const app =
 initializeApp(firebaseConfig);
@@ -1951,45 +1725,42 @@ const db =
 getDatabase(app);
 
 window.FB = {
-
-db:db,
-ref:ref,
-set:set,
-get:get,
-update:update,
-remove:remove,
-onValue:onValue,
-runTransaction:runTransaction
-
+db,
+ref,
+set,
+get,
+update,
+remove,
+onValue,
+runTransaction
 };
 
 
 onValue(
 ref(db,".info/connected"),
-function(snapshot){
+s => {
 
-const element =
-document.getElementById("connection");
+const e =
+document.getElementById("conn");
 
-if(!element){
-return;
-}
+if(e){
 
-if(snapshot.val()){
-
-element.textContent =
-"● Conectado ao servidor";
-
-element.className =
-"connection online";
-
-}else{
-
-element.textContent =
+e.textContent =
+s.val()
+?
+"● Conectado ao servidor"
+:
 "● Sem conexão com o servidor";
 
-element.className =
-"connection offline";
+e.className =
+"connection " +
+(
+s.val()
+?
+"online"
+:
+"offline"
+);
 
 }
 
@@ -1999,20 +1770,36 @@ element.className =
 
 onValue(
 ref(db,".info/serverTimeOffset"),
-function(snapshot){
+s => {
 
 window.serverOffset =
-Number(snapshot.val() || 0);
+Number(s.val() || 0);
 
 }
-
 );
 
-}catch(error){
 
-console.error(
-"Firebase:",
-error
+const params =
+new URLSearchParams(location.search);
+
+const roomParam =
+params.get("room");
+
+if(roomParam){
+
+window.addEventListener(
+"load",
+() => {
+
+document.getElementById("join").value =
+roomParam.toUpperCase();
+
+setTimeout(
+() => joinRoom(true),
+700
+);
+
+}
 );
 
 }
@@ -2020,23 +1807,17 @@ error
 </script>
 
 
-<!-- =========================
-JAVASCRIPT
-========================= -->
-
 <script>
 
-let player = "Jogador";
+let player = "";
 
-let mode = "normal";
+let room = "";
 
-let secret = "";
+let role = "";
 
-let guess = ["","","",""];
+let state = null;
 
-let selectedPosition = 0;
-
-let dailyAttempts = 0;
+let unsubscribe = null;
 
 let bestOf = 3;
 
@@ -2044,201 +1825,108 @@ let turnTime = 30;
 
 let playMode = "creator";
 
-let room = "";
+let secret = "";
 
-let role = "";
+let guessing = "";
 
-let roomState = null;
+let mode = "normal";
 
-let roomListener = null;
+let dailyAttempts = 0;
 
-let timerInterval = null;
+let attempts = 0;
 
-let busy = false;
+let timerId = null;
 
 let turnLocked = false;
 
-let lastRoomRound = 0;
+let lastRound = 0;
 
-let lastRoomStatus = "";
+let lastStatus = "";
 
-let resultAlreadyShown = false;
+let resultShown = false;
+
+let busy = false;
+
+let lastTurn = "";
 
 let lastReactionAt = 0;
 
 
-/* =========================
-NAVEGAÇÃO
-========================= */
+const serverNow =
+() =>
+Date.now() +
+Number(
+window.serverOffset || 0
+);
 
-function showScreen(id){
 
-const screens = [
+const screenIds = [
 "home",
 "daily",
-"progress",
-"ranking",
 "online",
 "friend",
-"guestSecret",
 "invite",
 "tournament",
 "game",
+"roundResult",
 "result"
 ];
 
-screens.forEach(function(name){
 
-const element =
-document.getElementById(name);
+function showScreen(id){
 
-if(element){
+screenIds.forEach(
+x => {
 
-element.classList.toggle(
+document
+.getElementById(x)
+.classList
+.toggle(
 "hidden",
-name !== id
+x !== id
+);
+
+}
 );
 
 }
 
-});
 
-}
+function loadName(){
 
-
-function home(){
-
-clearInterval(timerInterval);
-
-if(roomListener){
-
-roomListener();
-
-roomListener = null;
-
-}
-
-room = "";
-
-role = "";
-
-roomState = null;
-
-showScreen("home");
-
-}
-
-
-function dailyPage(){
-
-clearInterval(timerInterval);
-
-const done =
-localStorage.getItem(
-"senha_diario_" + today()
-) === "done";
-
-document
-.getElementById("dailyOpen")
-.classList
-.toggle("hidden",done);
-
-document
-.getElementById("dailyDone")
-.classList
-.toggle("hidden",!done);
-
-showScreen("daily");
-
-}
-
-
-function onlinePage(){
-
-savePlayer();
-
-showScreen("online");
-
-}
-
-
-function friendPage(){
-
-savePlayer();
-
-document
-.getElementById("friendName")
-.textContent =
-player;
-
-updateFriendSummary();
-
-showScreen("friend");
-
-}
-
-
-function showProgress(){
-
-savePlayer();
-
-renderProgress();
-
-showScreen("progress");
-
-}
-
-
-function showRanking(){
-
-savePlayer();
-
-renderRanking();
-
-showScreen("ranking");
-
-}
-
-
-/* =========================
-NOME
-========================= */
-
-function loadPlayer(){
-
-const saved =
+const n =
 localStorage.getItem(
 "senha_nome_jogador"
 );
 
-if(saved){
+if(n){
 
-player = saved;
+player = n;
 
-const input =
-document.getElementById("playerName");
-
-if(input){
-input.value = saved;
-}
+document
+.getElementById("playerName")
+.value = n;
 
 }
 
 }
 
 
-function savePlayer(){
-
-const input =
-document.getElementById("playerName");
-
-if(input){
+function saveName(){
 
 player =
-(input.value.trim() || "Jogador")
-.substring(0,18);
-
-}
+(
+document
+.getElementById("playerName")
+.value
+.trim()
+||
+"Jogador"
+)
+.substring(
+0,
+18
+);
 
 localStorage.setItem(
 "senha_nome_jogador",
@@ -2250,1371 +1938,203 @@ return player;
 }
 
 
-/* =========================
-DATA
-========================= */
+function home(){
 
-function today(){
+if(unsubscribe){
 
-const date =
-new Date();
+unsubscribe();
 
-return (
-date.getFullYear() +
-"-" +
-String(date.getMonth()+1).padStart(2,"0") +
-"-" +
-String(date.getDate()).padStart(2,"0")
-);
+unsubscribe =
+null;
+
+}
+
+clearInterval(timerId);
+
+room = "";
+
+role = "";
+
+state = null;
+
+showScreen("home");
 
 }
 
 
-function formatDate(value){
+function dailyPage(){
 
-const parts =
-value.split("-");
+showScreen("daily");
 
-return (
-parts[2] +
-"/" +
-parts[1] +
-"/" +
-parts[0]
-);
-
-}
-
-
-/* =========================
-DESAFIO DIÁRIO
-========================= */
-
-function createDailySecret(){
-
-let number =
-parseInt(
-today().replaceAll("-",""),
-10
-);
-
-const result = [];
-
-while(result.length < 4){
-
-number =
-(
-number * 9301 +
-49297
-) % 233280;
-
-const digit =
-number % 10;
-
-if(!result.includes(digit)){
-
-result.push(digit);
-
-}
-
-}
-
-return result.join("");
-
-}
-
-
-/*
-====================================================
-TRAVA 1
-====================================================
-
-Esta função é usada sempre que o jogador entra
-na página do Desafio Diário.
-
-Se o desafio daquele dia já foi concluído,
-o botão de iniciar fica escondido.
-*/
-
-function hasPlayedDailyToday(){
-
-return (
+const done =
 localStorage.getItem(
-"senha_diario_" + today()
-) === "done"
-);
-
-}
-
-
-function startDaily(){
-
-savePlayer();
-
-
-/*
-====================================================
-TRAVA 2
-====================================================
-
-Mesmo que alguém tente chamar startDaily()
-novamente depois de já ter jogado, a função
-não inicia um novo desafio.
-
-Esta segunda verificação é propositalmente
-independente da trava visual da página.
-====================================================
-*/
-
-if(hasPlayedDailyToday()){
-
-dailyPage();
-
-return;
-
-}
-
-
-secret =
-createDailySecret();
-
-mode =
-"daily";
-
-dailyAttempts =
-0;
-
-guess =
-["","","",""];
-
-selectedPosition =
-0;
-
-turnLocked =
-false;
-
-
-/*
-====================================================
-IMPORTANTE:
-
-No Desafio Diário NÃO existe placar.
-
-O mesmo componente de jogo é reutilizado pelo duelo,
-por isso ocultamos o card do placar explicitamente.
-====================================================
-*/
+"senha_desafio_diario_" +
+today()
+) === "done";
 
 document
-.getElementById("scoreboardCard")
-.classList
-.add("hidden");
-
-
-document
-.getElementById("me")
-.textContent =
-player;
-
-document
-.getElementById("opp")
-.textContent =
-"Desafio Diário";
-
-document
-.getElementById("myScore")
-.textContent =
-"";
-
-document
-.getElementById("opScore")
-.textContent =
-"";
-
-document
-.getElementById("round")
-.textContent =
-"DESAFIO DIÁRIO";
-
-document
-.getElementById("duelStatus")
-.classList
-.add("hidden");
-
-document
-.getElementById("mySecretBox")
-.classList
-.add("hidden");
-
-document
-.getElementById("opponentBox")
-.classList
-.add("hidden");
-
-document
-.getElementById("reactionBox")
-.classList
-.add("hidden");
-
-document
-.getElementById("attemptBox")
-.classList
-.remove("hidden");
-
-document
-.getElementById("timer")
-.textContent =
-"∞";
-
-document
-.getElementById("timeText")
-.textContent =
-"Sem limite";
-
-document
-.getElementById("gameMessage")
-.textContent =
-"";
-
-document
-.getElementById("gameHistory")
-.innerHTML =
-'<p class="muted center">Nenhuma tentativa ainda.</p>';
-
-updateDailyAttempts();
-
-renderGuess();
-
-setKeys(true);
-
-showScreen("game");
-
-}
-
-
-function updateDailyAttempts(){
-
-document
-.getElementById("attemptNum")
-.textContent =
-dailyAttempts + " / 15";
-
-document
-.getElementById("attemptBar")
-.style
-.width =
-(
-dailyAttempts / 15 * 100
-) + "%";
-
-const remaining =
-15 - dailyAttempts;
-
-document
-.getElementById("attemptMsg")
-.textContent =
-
-remaining === 1
-?
-"Resta 1 tentativa"
-:
-"Restam " + remaining + " tentativas";
-
-}
-
-
-/* =========================
-PALPITE
-========================= */
-
-function selectPosition(position){
-
-if(
-mode === "duel" &&
-turnLocked
-){
-
-return;
-
-}
-
-selectedPosition =
-position;
-
-renderGuess();
-
-}
-
-
-function addDigit(number){
-
-if(
-mode === "duel" &&
-turnLocked
-){
-
-return;
-
-}
-
-let position =
-selectedPosition;
-
-if(
-guess[position] !== ""
-){
-
-let next =
-position;
-
-while(
-next < 4 &&
-guess[next] !== ""
-){
-
-next++;
-
-}
-
-if(next < 4){
-
-position = next;
-
-}else{
-
-return;
-
-}
-
-}
-
-guess[position] =
-number;
-
-if(position < 3){
-
-selectedPosition =
-position + 1;
-
-}
-
-renderGuess();
-
-}
-
-
-function deleteDigit(){
-
-if(
-mode === "duel" &&
-turnLocked
-){
-
-return;
-
-}
-
-let position =
-selectedPosition;
-
-if(
-guess[position] === "" &&
-position > 0
-){
-
-position--;
-
-}
-
-guess[position] =
-"";
-
-selectedPosition =
-position;
-
-renderGuess();
-
-}
-
-
-function renderGuess(){
-
-for(
-let i=0;
-i<4;
-i++
-){
-
-const element =
-document.getElementById(
-"digit" + i
-);
-
-element.textContent =
-guess[i] || "";
-
-element.classList.toggle(
-"selected",
-i === selectedPosition
-);
-
-}
-
-}
-
-
-function setKeys(enabled){
-
-document
-.querySelectorAll(".key")
-.forEach(function(button){
-
-button.disabled =
-!enabled;
-
-});
-
-}
-
-
-function getGuess(){
-
-return guess.join("");
-
-}
-
-
-/* =========================
-CÁLCULO
-========================= */
-
-function calculateResult(
-secretNumber,
-guessNumber
-){
-
-let correctPlace = 0;
-
-let correctOutside = 0;
-
-const usedSecret =
-[false,false,false,false];
-
-const usedGuess =
-[false,false,false,false];
-
-
-for(
-let i=0;
-i<4;
-i++
-){
-
-if(
-secretNumber[i] ===
-guessNumber[i]
-){
-
-correctPlace++;
-
-usedSecret[i] =
-true;
-
-usedGuess[i] =
-true;
-
-}
-
-}
-
-
-for(
-let i=0;
-i<4;
-i++
-){
-
-if(usedGuess[i]){
-continue;
-}
-
-for(
-let j=0;
-j<4;
-j++
-){
-
-if(
-!usedSecret[j] &&
-guessNumber[i] ===
-secretNumber[j]
-){
-
-correctOutside++;
-
-usedSecret[j] =
-true;
-
-usedGuess[i] =
-true;
-
-break;
-
-}
-
-}
-
-}
-
-
-return {
-place:correctPlace,
-outside:correctOutside
-};
-
-}
-
-
-/* =========================
-HISTÓRICO
-========================= */
-
-function addGameHistory(
-number,
-result,
-attemptNumber
-){
-
-const container =
-document.getElementById(
-"gameHistory"
-);
-
-if(attemptNumber === 1){
-
-container.innerHTML = "";
-
-}
-
-const item =
-document.createElement("div");
-
-item.className =
-"history-item";
-
-item.innerHTML =
-'<div class="history-guess">' +
-
-'<span class="hn">' +
-String(attemptNumber).padStart(2,"0") +
-'</span>' +
-
-number +
-
-'</div>' +
-
-'<div style="font-size:13px;margin-top:5px">' +
-
-'<span class="green">' +
-"🟢 " +
-result.place +
-" certo(s) no lugar" +
-"</span><br>" +
-
-'<span style="color:#facc15">' +
-"🟡 " +
-result.outside +
-" certo(s) fora do lugar" +
-"</span>" +
-
-"</div>";
-
-container.prepend(item);
-
-}
-
-
-/* =========================
-ENVIO DO PALPITE
-========================= */
-
-function submitGuess(){
-
-const currentGuess =
-getGuess();
-
-if(
-currentGuess.length !== 4 ||
-guess.includes("")
-){
-
-document
-.getElementById("gameMessage")
-.textContent =
-"Preencha os 4 números antes de enviar.";
-
-return;
-
-}
-
-if(mode === "duel"){
-
-submitDuelGuess();
-
-return;
-
-}
-
-dailyAttempts++;
-
-const result =
-calculateResult(
-secret,
-currentGuess
-);
-
-addGameHistory(
-currentGuess,
-result,
-dailyAttempts
-);
-
-updateDailyAttempts();
-
-if(
-result.place === 4
-){
-
-saveDailyResult(
-true,
-dailyAttempts
-);
-
-finishDaily(true);
-
-return;
-
-}
-
-if(
-dailyAttempts >= 15
-){
-
-saveDailyResult(
-false,
-dailyAttempts
-);
-
-finishDaily(false);
-
-return;
-
-}
-
-guess =
-["","","",""];
-
-selectedPosition =
-0;
-
-renderGuess();
-
-}
-
-
-/* =========================
-PROGRESSO
-========================= */
-
-function progressStorageKey(){
-
-return "senha_progresso_" +
-player;
-
-}
-
-
-function getProgress(){
-
-const value =
-localStorage.getItem(
-progressStorageKey()
-);
-
-if(!value){
-
-return {
-played:0,
-wins:0,
-losses:0,
-totalAttempts:0,
-streak:0,
-bestStreak:0,
-history:{}
-};
-
-}
-
-try{
-
-return JSON.parse(value);
-
-}catch(error){
-
-return {
-played:0,
-wins:0,
-losses:0,
-totalAttempts:0,
-streak:0,
-bestStreak:0,
-history:{}
-};
-
-}
-
-}
-
-
-function saveProgress(data){
-
-localStorage.setItem(
-progressStorageKey(),
-JSON.stringify(data)
-);
-
-}
-
-
-function saveDailyResult(
-won,
-attempts
-){
-
-const data =
-getProgress();
-
-const day =
-today();
-
-if(
-data.history &&
-data.history[day]
-){
-
-return;
-
-}
-
-if(!data.history){
-
-data.history = {};
-
-}
-
-data.played++;
-
-if(won){
-
-data.wins++;
-
-data.totalAttempts +=
-attempts;
-
-data.streak++;
-
-if(
-data.streak >
-data.bestStreak
-){
-
-data.bestStreak =
-data.streak;
-
-}
-
-}else{
-
-data.losses++;
-
-data.streak =
-0;
-
-}
-
-data.history[day] = {
-won:won,
-attempts:attempts
-};
-
-saveProgress(data);
-
-saveRankingData(data);
-
-}
-
-
-/* =========================
-RESULTADO DIÁRIO
-========================= */
-
-function finishDaily(won){
-
-setKeys(false);
-
-clearInterval(timerInterval);
-
-
-/*
-Mantém o registro do dia concluído.
-*/
-
-localStorage.setItem(
-"senha_diario_" + today(),
-"done"
-);
-
-
-document
-.getElementById("resultIcon")
-.textContent =
-won
-?
-"🏆"
-:
-"😔";
-
-document
-.getElementById("resultTitle")
-.textContent =
-won
-?
-"Você venceu!"
-:
-"Desafio encerrado";
-
-document
-.getElementById("resultText")
-.innerHTML =
-
-won
-?
-"Parabéns! Você descobriu a senha em <b>" +
-dailyAttempts +
-"</b> tentativa(s)."
-:
-"Você não descobriu a senha nas 15 tentativas.";
-
-document
-.getElementById("resultSecret")
-.textContent =
-secret;
-
-renderResultProgress();
-
-showScreen("result");
-
-}
-
-
-/* =========================
-PROGRESSO
-========================= */
-
-function renderProgress(){
-
-const data =
-getProgress();
-
-document
-.getElementById("progressName")
-.textContent =
-player;
-
-document
-.getElementById("statPlayed")
-.textContent =
-data.played;
-
-document
-.getElementById("statWins")
-.textContent =
-data.wins;
-
-document
-.getElementById("statLosses")
-.textContent =
-data.losses;
-
-document
-.getElementById("statStreak")
-.textContent =
-data.streak;
-
-document
-.getElementById("statBest")
-.textContent =
-data.bestStreak;
-
-document
-.getElementById("statAverage")
-.textContent =
-data.wins
-?
-(
-data.totalAttempts /
-data.wins
-).toFixed(1)
-:
-"—";
-
-document
-.getElementById("progressText")
-.textContent =
-data.streak > 1
-?
-"🔥 Você está em uma sequência de " +
-data.streak +
-" dias!"
-:
-"Continue jogando diariamente.";
-
-const history =
-document.getElementById(
-"progressHistory"
-);
-
-const days =
-Object.keys(
-data.history || {}
-).sort().reverse();
-
-if(!days.length){
-
-history.innerHTML =
-'<div class="muted center">Nenhum desafio realizado ainda.</div>';
-
-return;
-
-}
-
-history.innerHTML =
-days.map(function(day){
-
-const item =
-data.history[day];
-
-return `
-<div class="rank-item">
-
-<div class="rank-pos">
-${item.won ? "🏆" : "😔"}
-</div>
-
-<div>
-<div class="rank-name">
-${formatDate(day)}
-</div>
-
-<div class="muted">
-${item.won
-? "Desafio concluído"
-: "Não descobriu a senha"}
-</div>
-</div>
-
-<div class="rank-score">
-${item.won ? item.attempts + "x" : "—"}
-</div>
-
-</div>
-`;
-
-}).join("");
-
-}
-
-
-/* =========================
-RESULTADO + PROGRESSO
-========================= */
-
-function renderResultProgress(){
-
-const data =
-getProgress();
-
-document
-.getElementById("resultPlayed")
-.textContent =
-data.played;
-
-document
-.getElementById("resultWins")
-.textContent =
-data.wins;
-
-document
-.getElementById("resultAverage")
-.textContent =
-data.wins
-?
-(
-data.totalAttempts /
-data.wins
-).toFixed(1)
-:
-"—";
-
-document
-.getElementById("resultStreak")
-.textContent =
-data.streak;
-
-document
-.getElementById("resultProgressText")
-.textContent =
-
-data.streak > 1
-?
-"🔥 Sequência atual: " + data.streak + " dias"
-:
-data.streak === 1
-?
-"🔥 Você iniciou uma sequência!"
-:
-"Continue amanhã.";
-
-}
-
-
-/* =========================
-RANKING
-========================= */
-
-async function saveRankingData(data){
-
-if(!window.FB){
-return;
-}
-
-try{
-
-const safe =
-player.replace(/[.#$[\]/]/g,"_");
-
-await window.FB.set(
-window.FB.ref(
-window.FB.db,
-"ranking/" + safe
-),
-{
-name:player,
-played:data.played,
-wins:data.wins,
-losses:data.losses,
-streak:data.streak,
-bestStreak:data.bestStreak,
-average:data.wins
-?
-Number(
-(
-data.totalAttempts /
-data.wins
-).toFixed(2)
-)
-:
-9999
-}
-);
-
-}catch(error){
-
-console.log(
-"Ranking não atualizado:",
-error
-);
-
-}
-
-}
-
-
-async function renderRanking(){
-
-const list =
-document.getElementById(
-"rankingList"
-);
-
-list.innerHTML =
-'<div class="muted center">Carregando ranking...</div>';
-
-if(!window.FB){
-
-list.innerHTML =
-'<div class="muted center">Ranking indisponível.</div>';
-
-return;
-
-}
-
-try{
-
-const snapshot =
-await window.FB.get(
-window.FB.ref(
-window.FB.db,
-"ranking"
-)
-);
-
-if(!snapshot.exists()){
-
-list.innerHTML =
-'<div class="muted center">Ainda não existem jogadores no ranking.</div>';
-
-document
-.getElementById("myRank")
-.textContent =
-"—";
-
-return;
-
-}
-
-const players =
-Object.values(
-snapshot.val()
-);
-
-players.sort(function(a,b){
-
-if(
-Number(b.wins || 0) !==
-Number(a.wins || 0)
-){
-
-return Number(b.wins || 0) -
-Number(a.wins || 0);
-
-}
-
-if(
-Number(b.streak || 0) !==
-Number(a.streak || 0)
-){
-
-return Number(b.streak || 0) -
-Number(a.streak || 0);
-
-}
-
-return Number(a.average || 9999) -
-Number(b.average || 9999);
-
-});
-
-const position =
-players.findIndex(function(item){
-
-return item.name === player;
-
-});
-
-document
-.getElementById("myRank")
-.textContent =
-position >= 0
-?
-(position + 1) + "º"
-:
-"—";
-
-list.innerHTML =
-players.slice(0,50).map(function(item,index){
-
-const isMe =
-item.name === player;
-
-let medal =
-index + 1;
-
-if(index === 0){
-medal = "🥇";
-}
-
-if(index === 1){
-medal = "🥈";
-}
-
-if(index === 2){
-medal = "🥉";
-}
-
-return `
-<div class="rank-item ${isMe ? "rank-me" : ""}">
-
-<div class="rank-pos">
-${medal}
-</div>
-
-<div>
-<div class="rank-name">
-${escapeHtml(item.name)}
-</div>
-
-<div class="muted">
-${item.wins || 0} vitórias •
-${item.streak || 0} 🔥
-</div>
-</div>
-
-<div class="rank-score">
-${item.average
-? Number(item.average).toFixed(1)
-: "—"}
-</div>
-
-</div>
-`;
-
-}).join("");
-
-}catch(error){
-
-console.error(error);
-
-list.innerHTML =
-'<div class="muted center">Não foi possível carregar o ranking.</div>';
-
-}
-
-}
-
-
-/* =========================
-CONFIGURAÇÃO AMIGO
-========================= */
-
-function setBest(value){
-
-bestOf =
-value;
-
-[3,5,7].forEach(function(number){
-
-const button =
-document.getElementById(
-"best" + number
-);
-
-button.style.background =
-number === value
-?
-"#155bc4"
-:
-"#182d4c";
-
-button.style.borderColor =
-number === value
-?
-"#53a7ff"
-:
-"transparent";
-
-});
-
-updateFriendSummary();
-
-}
-
-
-function setTurnTime(value){
-
-turnTime =
-value;
-
-[30,45,60].forEach(function(number){
-
-const button =
-document.getElementById(
-"time" + number
-);
-
-button.style.background =
-number === value
-?
-"#155bc4"
-:
-"#182d4c";
-
-button.style.borderColor =
-number === value
-?
-"#53a7ff"
-:
-"transparent";
-
-});
-
-updateFriendSummary();
-
-}
-
-
-function setMode(value){
-
-playMode =
-value;
-
-document
-.getElementById("modeCreator")
-.style
-.background =
-value === "creator"
-?
-"#155bc4"
-:
-"#182d4c";
-
-document
-.getElementById("modeShared")
-.style
-.background =
-value === "shared"
-?
-"#155bc4"
-:
-"#182d4c";
-
-document
-.getElementById("creatorConfig")
+.getElementById("dailyOpen")
 .classList
 .toggle(
 "hidden",
-value !== "creator"
+done
 );
 
-updateFriendSummary();
+document
+.getElementById("dailyDone")
+.classList
+.toggle(
+"hidden",
+!done
+);
 
 }
 
 
-function updateFriendSummary(){
+function onlinePage(){
+
+saveName();
+
+showScreen("online");
+
+}
+
+
+function friendPage(){
+
+saveName();
+
+showScreen("friend");
 
 document
-.getElementById("friendSummary")
+.getElementById("friendName")
+.textContent =
+player;
+
+summary();
+
+}
+
+
+function today(){
+
+const d =
+new Date();
+
+return (
+
+d.getFullYear() +
+"-" +
+String(
+d.getMonth() + 1
+).padStart(
+2,
+"0"
+) +
+"-" +
+String(
+d.getDate()
+).padStart(
+2,
+"0"
+)
+
+);
+
+}
+
+
+function best(v){
+
+bestOf = v;
+
+[3,5,7].forEach(
+n => {
+
+document
+.getElementById("b" + n)
+.classList
+.toggle(
+"sel",
+n === v
+);
+
+}
+);
+
+summary();
+
+}
+
+
+function setTime(v){
+
+turnTime = v;
+
+[30,45,60].forEach(
+n => {
+
+document
+.getElementById("t" + n)
+.classList
+.toggle(
+"sel",
+n === v
+);
+
+}
+);
+
+summary();
+
+}
+
+
+function gameMode(v){
+
+playMode = v;
+
+document
+.getElementById("creatorSecret")
+.classList
+.toggle(
+"sel",
+v === "creator"
+);
+
+document
+.getElementById("shared")
+.classList
+.toggle(
+"sel",
+v === "shared"
+);
+
+document
+.getElementById("secretConfig")
+.classList
+.toggle(
+"hidden",
+v !== "creator"
+);
+
+summary();
+
+}
+
+
+function summary(){
+
+document
+.getElementById("summary")
 .innerHTML =
 
-"Melhor de " +
-bestOf +
-"<br>" +
+`Melhor de ${bestOf}<br>` +
 
 (
 playMode === "creator"
 ?
-"🔐 Cada jogador escolherá sua própria senha"
+"🔐 Eu escolho a senha"
 :
 "🤝 Senha compartilhada"
 ) +
@@ -3626,47 +2146,60 @@ turnTime +
 }
 
 
-/* =========================
-VALIDAÇÃO SENHA
-========================= */
+function roomCode(){
 
-function validUniquePassword(value){
+const c =
+"ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 
-if(!/^\d{4}$/.test(value)){
+let s = "";
 
-return false;
+for(
+let i=0;
+i<6;
+i++
+){
+
+s +=
+c[
+Math.floor(
+Math.random() *
+c.length
+)
+];
 
 }
 
-return new Set(value).size === 4;
+return s;
 
 }
 
 
-function randomUniquePassword(){
+function randomSecret(){
+
+let s = "";
 
 const numbers =
 [0,1,2,3,4,5,6,7,8,9];
 
 for(
-let i=numbers.length-1;
+let i=numbers.length - 1;
 i>0;
 i--
 ){
 
 const j =
 Math.floor(
-Math.random() * (i + 1)
+Math.random() *
+(i + 1)
 );
 
-const temp =
-numbers[i];
-
-numbers[i] =
-numbers[j];
-
-numbers[j] =
-temp;
+[
+numbers[i],
+numbers[j]
+] = [
+numbers[j],
+numbers[i]
+];
 
 }
 
@@ -3677,78 +2210,599 @@ return numbers
 }
 
 
-/* =========================
-SALA
-========================= */
+function dailySecret(){
 
-function generateRoomCode(){
+let n =
+parseInt(
+today().replaceAll("-",""),
+10
+);
 
-const chars =
-"ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+let a = [];
 
-let code = "";
-
-for(
-let i=0;
-i<6;
-i++
+while(
+a.length < 4
 ){
 
-code +=
-chars[
-Math.floor(
-Math.random() *
-chars.length
+n =
+(
+n * 9301 +
+49297
 )
-];
+%
+233280;
+
+const d =
+n % 10;
+
+if(
+!a.includes(d)
+){
+
+a.push(d);
 
 }
 
-return code;
+}
+
+return a.join("");
 
 }
 
 
-function serverNow(){
+function validSecret(s){
 
-return Date.now() +
-Number(
-window.serverOffset || 0
+return /^\d{4}$/.test(s);
+
+}
+
+
+function validUniqueSecret(s){
+
+return (
+/^\d{4}$/.test(s) &&
+new Set(s).size === 4
 );
 
 }
 
 
 /* =========================
-CRIAR SALA
+DIÁRIO
+========================= */
+
+function startDaily(){
+
+saveName();
+
+if(
+localStorage.getItem(
+"senha_desafio_diario_" +
+today()
+) === "done"
+){
+
+dailyPage();
+
+return;
+
+}
+
+secret =
+dailySecret();
+
+guessing = "";
+
+attempts = 0;
+
+dailyAttempts = 0;
+
+mode = "daily";
+
+turnLocked = false;
+
+document.getElementById("me").textContent = player;
+document.getElementById("opp").textContent = "Desafio Diário";
+document.getElementById("myScore").textContent = "";
+document.getElementById("opScore").textContent = "";
+document.getElementById("round").textContent = "DESAFIO DIÁRIO";
+
+document
+.getElementById("duelStatus")
+.classList
+.add("hidden");
+
+document
+.getElementById("reactionSide")
+.classList
+.add("hidden");
+
+document
+.getElementById("reactionMessage")
+.textContent = "";
+
+document
+.getElementById("timer")
+.textContent = "∞";
+
+document
+.getElementById("timeText")
+.textContent = "Sem limite";
+
+document
+.getElementById("history")
+.innerHTML =
+'<p class="muted center">Nenhuma tentativa ainda.</p>';
+
+document
+.getElementById("msg")
+.textContent = "";
+
+document
+.getElementById("attemptBox")
+.classList
+.remove("hidden");
+
+keys(true);
+
+renderGuess();
+
+updateAttempts();
+
+showScreen("game");
+
+}
+
+
+function updateAttempts(){
+
+const left =
+Math.max(
+0,
+15 - dailyAttempts
+);
+
+document
+.getElementById("attemptNum")
+.textContent =
+dailyAttempts +
+" / 15";
+
+document
+.getElementById("attemptBar")
+.style
+.width =
+(
+dailyAttempts /
+15 *
+100
+) +
+"%";
+
+document
+.getElementById("attemptMsg")
+.textContent =
+
+left === 0
+?
+"Limite atingido"
+:
+left === 1
+?
+"Resta 1 tentativa"
+:
+"Restam " +
+left +
+" tentativas";
+
+}
+
+
+/* =========================
+PALPITE
+========================= */
+
+function keys(ok){
+
+document
+.querySelectorAll(".key")
+.forEach(
+k => {
+
+k.disabled =
+!ok;
+
+k.classList.toggle(
+"turn-ready",
+ok
+);
+
+}
+);
+
+}
+
+
+function renderGuess(){
+
+[
+"d1",
+"d2",
+"d3",
+"d4"
+]
+.forEach(
+(x,i) => {
+
+document
+.getElementById(x)
+.textContent =
+guessing[i] ||
+"";
+
+}
+);
+
+}
+
+
+function digit(n){
+
+if(
+mode === "duel" &&
+(
+turnLocked ||
+!state ||
+state.status !== "active" ||
+state.currentTurn !== role
+)
+){
+
+return;
+
+}
+
+if(
+guessing.length < 4
+){
+
+guessing += n;
+
+renderGuess();
+
+}
+
+}
+
+
+function backspace(){
+
+if(
+mode === "duel" &&
+turnLocked
+){
+
+return;
+
+}
+
+guessing =
+guessing.slice(
+0,
+-1
+);
+
+renderGuess();
+
+}
+
+
+function calcResult(
+s,
+t
+){
+
+let place = 0;
+
+let out = 0;
+
+let su =
+[0,0,0,0];
+
+let tu =
+[0,0,0,0];
+
+
+for(
+let i=0;
+i<4;
+i++
+){
+
+if(
+t[i] === s[i]
+){
+
+place++;
+
+su[i] = 1;
+
+tu[i] = 1;
+
+}
+
+}
+
+
+for(
+let i=0;
+i<4;
+i++
+){
+
+if(tu[i]){
+continue;
+}
+
+for(
+let j=0;
+j<4;
+j++
+){
+
+if(
+!su[j] &&
+t[i] === s[j]
+){
+
+out++;
+
+su[j] = 1;
+
+tu[i] = 1;
+
+break;
+
+}
+
+}
+
+}
+
+return {
+place,
+out
+};
+
+}
+
+
+function addHistory(
+n,
+r,
+num,
+who="Você"
+){
+
+const e =
+document.getElementById(
+"history"
+);
+
+if(num === 1){
+
+e.innerHTML = "";
+
+}
+
+const d =
+document.createElement("div");
+
+d.className =
+"history-item";
+
+d.innerHTML =
+
+`<div class="history-guess">
+<span class="hn">
+#${String(num).padStart(2,"0")}
+</span>
+${n}
+</div>
+
+<div class="muted">
+${who}
+</div>
+
+<div style="font-size:13px;margin-top:5px">
+
+<span class="green">
+🟢 ${r.place} certo(s) no lugar
+</span>
+
+<br>
+
+<span class="yellow">
+🟡 ${r.out} certo(s) fora do lugar
+</span>
+
+</div>`;
+
+e.prepend(d);
+
+}
+
+
+async function guess(){
+
+if(
+guessing.length !== 4
+){
+
+document
+.getElementById("msg")
+.textContent =
+"Digite 4 números.";
+
+return;
+
+}
+
+if(
+mode === "duel"
+){
+
+await duelGuess();
+
+return;
+
+}
+
+dailyAttempts++;
+
+attempts++;
+
+updateAttempts();
+
+const r =
+calcResult(
+secret,
+guessing
+);
+
+addHistory(
+guessing,
+r,
+attempts
+);
+
+
+if(
+r.place === 4
+){
+
+localStorage.setItem(
+"senha_desafio_diario_" +
+today(),
+"done"
+);
+
+dailyResult(true);
+
+return;
+
+}
+
+
+if(
+dailyAttempts >= 15
+){
+
+localStorage.setItem(
+"senha_desafio_diario_" +
+today(),
+"done"
+);
+
+dailyResult(false);
+
+return;
+
+}
+
+guessing = "";
+
+renderGuess();
+
+}
+
+
+function dailyResult(win){
+
+keys(false);
+
+showScreen("result");
+
+document
+.getElementById("resIcon")
+.textContent =
+win
+?
+"🏆"
+:
+"😔";
+
+document
+.getElementById("resTitle")
+.textContent =
+win
+?
+"Você venceu!"
+:
+"Desafio encerrado";
+
+document
+.getElementById("resText")
+.innerHTML =
+
+win
+
+?
+
+`Parabéns, ${player}!<br><br>
+Você descobriu a senha em
+<b>${dailyAttempts}</b>
+tentativa(s).`
+
+:
+
+`Você não descobriu a senha em
+15 tentativas.<br><br>
+Sua participação foi registrada.`;
+
+document
+.getElementById("resSecret")
+.textContent =
+secret;
+
+}
+
+
+/* =========================
+SALA
 ========================= */
 
 async function createRoom(){
 
-savePlayer();
+const n =
+saveName();
 
-if(player === "Jogador"){
+if(
+n === "Jogador"
+){
 
 alert(
-"Digite seu nome antes de criar a partida."
+"Digite seu nome."
 );
 
 return;
 
 }
 
-let hostSecret = "";
+let chosen = "";
 
-if(playMode === "creator"){
+if(
+playMode === "creator"
+){
 
-hostSecret =
+chosen =
 document
-.getElementById("creatorSecret")
+.getElementById("chosenSecret")
 .value
 .trim();
 
 if(
-!validUniquePassword(hostSecret)
+!validUniqueSecret(chosen)
 ){
 
 alert(
@@ -3761,42 +2815,24 @@ return;
 
 }
 
-if(!window.FB){
-
-alert(
-"O servidor ainda está conectando."
-);
-
-return;
-
-}
-
 room =
-generateRoomCode();
+roomCode();
 
 role =
 "host";
 
-const roomData = {
+turnLocked =
+true;
 
-hostName:player,
+const base = {
+
+hostName:n,
 
 guestName:"",
 
-hostSecret:hostSecret,
+bestOf,
 
-guestSecret:"",
-
-sharedSecret:
-playMode === "shared"
-?
-randomUniquePassword()
-:
-"",
-
-bestOf:bestOf,
-
-turnTime:turnTime,
+turnTime,
 
 mode:playMode,
 
@@ -3808,17 +2844,58 @@ guestScore:0,
 
 status:"waiting",
 
-currentTurn:"guest",
+/*
+Na senha compartilhada,
+o criador começa.
+No modo em que cada jogador possui
+sua própria senha, o convidado começa.
+*/
+
+currentTurn:
+playMode === "shared"
+?
+"host"
+:
+"guest",
 
 turnStartedAt:0,
 
 history:{},
 
+nextReadyHost:false,
+
+nextReadyGuest:false,
+
 reaction:"",
+
 reactionBy:"",
+
 reactionAt:0
 
 };
+
+if(
+playMode === "creator"
+){
+
+base.hostSecret =
+chosen;
+
+base.guestSecret =
+"";
+
+}else{
+
+base.sharedSecret =
+randomSecret();
+
+base.hostSecret =
+"";
+
+base.guestSecret =
+"";
+
+}
 
 try{
 
@@ -3827,13 +2904,13 @@ window.FB.ref(
 window.FB.db,
 "rooms/" + room
 ),
-roomData
+base
 );
 
 document
 .getElementById("inviteName")
 .textContent =
-player;
+n;
 
 document
 .getElementById("inviteCode")
@@ -3844,32 +2921,28 @@ document
 .getElementById("inviteInfo")
 .innerHTML =
 
-"Melhor de " +
-bestOf +
-"<br>" +
+`Melhor de ${bestOf}<br>` +
 
 (
 playMode === "creator"
 ?
-"🔐 Cada jogador escolherá a senha que o adversário deverá descobrir."
+"🔐 Você escolheu a senha"
 :
-"🤝 Senha compartilhada."
+"🤝 Senha compartilhada"
 ) +
 
-"<br>⏱️ " +
-turnTime +
-"s por turno";
+`<br>⏱️ ${turnTime}s por turno`;
 
 showScreen("invite");
 
-listenRoom();
+listen(room);
 
-}catch(error){
+}catch(e){
 
-console.error(error);
+console.error(e);
 
 alert(
-"Não foi possível criar a partida."
+"Erro ao criar a sala."
 );
 
 }
@@ -3877,48 +2950,38 @@ alert(
 }
 
 
-/* =========================
-WHATSAPP
-========================= */
-
-function sendWhatsApp(){
+function whatsapp(){
 
 const link =
 "https://gamesenha.github.io/Senha-Game/?room=" +
 encodeURIComponent(room);
 
-const message =
+const text =
 
-"🔐 SENHA\n\n" +
+`🔐 SENHA
 
-player +
-" te desafiou para uma partida!\n\n" +
+${player} te desafiou para uma partida!
 
-"🏆 Melhor de " +
-bestOf +
-"\n\n" +
+🏆 Melhor de ${bestOf}
 
-(
+${
 playMode === "creator"
 ?
-"🔐 Cada jogador escolherá a senha que o adversário deverá descobrir."
+"🔐 Você deverá descobrir a senha escolhida pelo criador"
 :
-"🤝 Os dois descobrirão a mesma senha."
-) +
+"🤝 Os dois descobrem a mesma senha"
+}
 
-"\n\n⏱️ " +
-turnTime +
-"s por turno" +
+⏱️ ${turnTime}s por turno
 
-"\n\n🎮 ENTRE PARA JOGAR:\n" +
-link +
+🎮 ENTRE PARA JOGAR:
+${link}
 
-"\n\n🔑 Código: " +
-room;
+🔑 Código: ${room}`;
 
 window.open(
 "https://wa.me/?text=" +
-encodeURIComponent(message),
+encodeURIComponent(text),
 "_blank"
 );
 
@@ -3929,20 +2992,19 @@ encodeURIComponent(message),
 ENTRAR
 ========================= */
 
-async function joinRoom(auto){
+async function joinRoom(auto=false){
 
-if(typeof auto !== "boolean"){
-auto = false;
-}
+const n =
+saveName();
 
-savePlayer();
-
-if(player === "Jogador"){
+if(
+n === "Jogador"
+){
 
 if(!auto){
 
 alert(
-"Digite seu nome antes de entrar."
+"Digite seu nome."
 );
 
 }
@@ -3951,18 +3013,16 @@ return;
 
 }
 
-const input =
-document.getElementById(
-"joinCode"
-);
-
-const code =
-input
+const id =
+document
+.getElementById("join")
 .value
 .trim()
 .toUpperCase();
 
-if(code.length !== 6){
+if(
+id.length !== 6
+){
 
 if(!auto){
 
@@ -3976,27 +3036,19 @@ return;
 
 }
 
-if(!window.FB){
-
-alert(
-"O servidor ainda está conectando."
-);
-
-return;
-
-}
-
 try{
 
-const snapshot =
+const snap =
 await window.FB.get(
 window.FB.ref(
 window.FB.db,
-"rooms/" + code
+"rooms/" + id
 )
 );
 
-if(!snapshot.exists()){
+if(
+!snap.exists()
+){
 
 if(!auto){
 
@@ -4010,45 +3062,72 @@ return;
 
 }
 
-const data =
-snapshot.val();
+const x =
+snap.val();
 
 if(
-data.guestName &&
-data.guestName !== player
+x.guestName &&
+x.guestName !== n
 ){
 
+if(!auto){
+
 alert(
-"Essa partida já está cheia."
+"Partida já está cheia."
 );
+
+}
 
 return;
 
 }
 
-room =
-code;
+room = id;
 
-role =
-"guest";
+role = "guest";
 
-if(data.mode === "creator"){
+/*
+Na senha compartilhada, o host continua sendo
+o primeiro jogador.
 
-showScreen("guestSecret");
+No modo creator, o convidado precisa primeiro
+definir a própria senha.
+*/
 
-}else{
+if(
+x.mode === "creator" &&
+!x.guestSecret
+){
 
-await enterRoom();
+await window.FB.update(
+window.FB.ref(
+window.FB.db,
+"rooms/" + id
+),
+{
+guestName:n
+}
+);
+
+showGuestSecret();
+
+return;
 
 }
 
-}catch(error){
+await enterRoom();
 
-console.error(error);
+}catch(e){
+
+console.error(e);
+
+if(!auto){
 
 alert(
 "Erro ao entrar na partida."
 );
+
+}
 
 }
 
@@ -4059,37 +3138,43 @@ alert(
 SENHA DO CONVIDADO
 ========================= */
 
-async function confirmGuestSecret(){
-
-const input =
-document.getElementById(
-"guestSecretInput"
-);
+function showGuestSecret(){
 
 const value =
-input.value.trim();
+prompt(
+"Escolha a senha de 4 números diferentes que seu adversário deverá descobrir:"
+);
+
+if(value === null){
+
+home();
+
+return;
+
+}
 
 if(
-!validUniquePassword(value)
+!validUniqueSecret(value.trim())
 ){
 
 alert(
 "A senha precisa ter exatamente 4 números diferentes."
 );
 
+showGuestSecret();
+
 return;
 
 }
 
-if(!window.FB){
-
-alert(
-"Servidor não conectado."
+confirmGuestSecret(
+value.trim()
 );
 
-return;
-
 }
+
+
+async function confirmGuestSecret(value){
 
 try{
 
@@ -4100,27 +3185,21 @@ window.FB.db,
 ),
 {
 
-guestSecret:value,
-
 guestName:player,
 
-status:"active",
-
-currentTurn:"guest",
-
-turnStartedAt:serverNow()
+guestSecret:value
 
 }
 );
 
 await enterRoom();
 
-}catch(error){
+}catch(e){
 
-console.error(error);
+console.error(e);
 
 alert(
-"Não foi possível confirmar a senha."
+"Não foi possível salvar sua senha."
 );
 
 }
@@ -4134,13 +3213,7 @@ ENTRAR NA SALA
 
 async function enterRoom(){
 
-if(!window.FB){
-
-return;
-
-}
-
-const snapshot =
+const snap =
 await window.FB.get(
 window.FB.ref(
 window.FB.db,
@@ -4148,35 +3221,46 @@ window.FB.db,
 )
 );
 
-const data =
-snapshot.val();
+const x =
+snap.val();
 
-if(
-role === "guest" &&
-data.mode === "shared"
-){
+const updates = {
+
+guestName:player,
+
+status:"active",
+
+/*
+O primeiro turno da partida:
+shared = host
+creator = guest
+*/
+
+currentTurn:
+x.mode === "shared"
+?
+"host"
+:
+"guest",
+
+turnStartedAt:
+serverNow(),
+
+nextReadyHost:false,
+
+nextReadyGuest:false
+
+};
 
 await window.FB.update(
 window.FB.ref(
 window.FB.db,
 "rooms/" + room
 ),
-{
-
-guestName:player,
-
-status:"active",
-
-currentTurn:"guest",
-
-turnStartedAt:serverNow()
-
-}
+updates
 );
 
-}
-
-listenRoom();
+listen(room);
 
 }
 
@@ -4185,26 +3269,28 @@ listenRoom();
 OUVIR SALA
 ========================= */
 
-function listenRoom(){
+function listen(id){
 
-if(roomListener){
+if(unsubscribe){
 
-roomListener();
+unsubscribe();
 
 }
 
-roomListener =
+unsubscribe =
 window.FB.onValue(
 window.FB.ref(
 window.FB.db,
-"rooms/" + room
+"rooms/" + id
 ),
-function(snapshot){
+s => {
 
-if(!snapshot.exists()){
+if(
+!s.exists()
+){
 
 alert(
-"A sala foi encerrada."
+"Sala encerrada."
 );
 
 home();
@@ -4213,10 +3299,10 @@ return;
 
 }
 
-roomState =
-snapshot.val();
+state =
+s.val();
 
-syncRoom();
+sync();
 
 }
 );
@@ -4228,28 +3314,30 @@ syncRoom();
 SINCRONIZAÇÃO
 ========================= */
 
-function syncRoom(){
+function sync(){
 
-if(!roomState){
-
+if(!state){
 return;
-
 }
 
+
 if(
-roomState.status === "waiting"
+state.status === "waiting"
 ){
 
-if(role === "host"){
+if(
+role === "host"
+){
 
 document
 .getElementById("inviteStatus")
 .textContent =
-roomState.guestName
+
+state.guestName
 ?
 "🟢 " +
-roomState.guestName +
-" entrou. Aguardando início..."
+state.guestName +
+" entrou!"
 :
 "⏳ Aguardando seu amigo...";
 
@@ -4259,59 +3347,59 @@ return;
 
 }
 
+
 if(
-roomState.status === "active"
+state.status === "active"
 ){
 
 if(
-lastRoomStatus !== "active" ||
-lastRoomRound !==
-Number(roomState.round)
+lastStatus !== "active" ||
+lastRound !== Number(state.round)
 ){
 
-prepareRoomGame();
+prepareRound(state);
 
 }else{
 
-updateRoomGame();
+updateGame(state);
 
 }
 
-showLatestReaction();
+clock();
 
-startRoomClock();
-
-lastRoomStatus =
+lastStatus =
 "active";
 
 return;
 
 }
 
+
 if(
-roomState.status === "roundFinished"
+state.status === "roundFinished"
 ){
 
-clearInterval(timerInterval);
+clearInterval(timerId);
 
-showRoundResult();
+roundFinished(state);
 
-lastRoomStatus =
+lastStatus =
 "roundFinished";
 
 return;
 
 }
 
+
 if(
-roomState.status === "matchFinished"
+state.status === "matchFinished"
 ){
 
-clearInterval(timerInterval);
+clearInterval(timerId);
 
-showMatchResult();
+matchFinished(state);
 
-lastRoomStatus =
+lastStatus =
 "matchFinished";
 
 }
@@ -4320,39 +3408,85 @@ lastRoomStatus =
 
 
 /* =========================
-PREPARAR JOGO
+PREPARAR RODADA
 ========================= */
 
-function prepareRoomGame(){
+function prepareRound(x){
 
-lastRoomRound =
-Number(roomState.round);
+lastRound =
+Number(x.round);
 
-resultAlreadyShown =
+resultShown =
 false;
 
-mode =
-"duel";
-
-guess =
-["","","",""];
-
-selectedPosition =
-0;
+guessing = "";
 
 turnLocked =
 false;
 
+busy =
+false;
 
-/*
-No duelo o placar volta a aparecer.
-*/
+lastTurn =
+x.currentTurn || "";
+
+lastReactionAt =
+0;
+
+mode =
+"duel";
+
 
 document
-.getElementById("scoreboardCard")
-.classList
-.remove("hidden");
+.getElementById("me")
+.textContent =
 
+role === "host"
+?
+x.hostName
+:
+x.guestName;
+
+document
+.getElementById("opp")
+.textContent =
+
+role === "host"
+?
+x.guestName
+:
+x.hostName;
+
+document
+.getElementById("myScore")
+.textContent =
+
+role === "host"
+?
+x.hostScore || 0
+:
+x.guestScore || 0;
+
+document
+.getElementById("opScore")
+.textContent =
+
+role === "host"
+?
+x.guestScore || 0
+:
+x.hostScore || 0;
+
+document
+.getElementById("round")
+.textContent =
+
+`RODADA ${x.round} • MELHOR DE ${x.bestOf}`;
+
+document
+.getElementById("history")
+.innerHTML =
+'<p class="muted center">Nenhuma tentativa ainda.</p>';
 
 document
 .getElementById("attemptBox")
@@ -4360,165 +3494,25 @@ document
 .add("hidden");
 
 document
-.getElementById("mySecretBox")
+.getElementById("reactionSide")
 .classList
 .remove("hidden");
 
 document
-.getElementById("opponentBox")
-.classList
-.remove("hidden");
-
-document
-.getElementById("reactionBox")
-.classList
-.remove("hidden");
-
-document
-.getElementById("me")
-.textContent =
-role === "host"
-?
-roomState.hostName
-:
-roomState.guestName;
-
-document
-.getElementById("opp")
-.textContent =
-role === "host"
-?
-roomState.guestName
-:
-roomState.hostName;
-
-document
-.getElementById("myScore")
-.textContent =
-role === "host"
-?
-roomState.hostScore
-:
-roomState.guestScore;
-
-document
-.getElementById("opScore")
-.textContent =
-role === "host"
-?
-roomState.guestScore
-:
-roomState.hostScore;
-
-document
-.getElementById("round")
-.textContent =
-"RODADA " +
-roomState.round +
-" • MELHOR DE " +
-roomState.bestOf;
-
-
-/*
-Mostra somente a senha que o próprio jogador escolheu.
-*/
-
-const ownSecret =
-getOwnSecret();
-
-document
-.getElementById("mySecretValue")
-.textContent =
-ownSecret || "----";
-
-
-document
-.getElementById("gameHistory")
-.innerHTML =
-'<p class="muted center">Nenhuma tentativa ainda.</p>';
-
-document
-.getElementById("opponentHistory")
-.innerHTML =
-'<div class="opponent-empty">Nenhum palpite ainda.</div>';
-
-document
-.getElementById("gameMessage")
+.getElementById("reactionMessage")
 .textContent =
 "";
 
 document
-.getElementById("reactionDisplay")
+.getElementById("msg")
 .textContent =
 "";
-
-lastReactionAt = 0;
-
-showScreen("game");
-
-updateRoomGame();
 
 renderGuess();
 
-}
+showScreen("game");
 
-
-/* =========================
-MINHA SENHA
-========================= */
-
-function getOwnSecret(){
-
-if(!roomState){
-
-return "";
-
-}
-
-if(
-roomState.mode === "shared"
-){
-
-return "";
-
-}
-
-return role === "host"
-?
-roomState.hostSecret
-:
-roomState.guestSecret;
-
-}
-
-
-/* =========================
-SENHA DO ADVERSÁRIO
-========================= */
-
-function getTargetSecret(){
-
-if(!roomState){
-
-return "";
-
-}
-
-if(
-roomState.mode === "shared"
-){
-
-return roomState.sharedSecret;
-
-}
-
-if(role === "host"){
-
-return roomState.guestSecret;
-
-}
-
-return roomState.hostSecret;
+updateGame(x);
 
 }
 
@@ -4527,43 +3521,71 @@ return roomState.hostSecret;
 ATUALIZAR JOGO
 ========================= */
 
-function updateRoomGame(){
+function updateGame(x){
 
 const myTurn =
-roomState.currentTurn === role;
+x.currentTurn === role;
+
+const changed =
+x.currentTurn !== lastTurn;
+
+if(changed){
+
+/*
+Quando a vez muda,
+o jogador começa um novo chute.
+*/
+
+guessing = "";
+
+busy = false;
+
+lastTurn =
+x.currentTurn || "";
+
+document
+.getElementById("msg")
+.textContent =
+"";
+
+renderGuess();
+
+}
 
 turnLocked =
 !myTurn;
 
-const status =
+const d =
 document.getElementById(
 "duelStatus"
 );
 
-status.classList.remove(
-"hidden"
-);
-
-status.classList.toggle(
+d.classList.remove(
+"hidden",
 "your",
-myTurn
+"their"
 );
 
-status.classList.toggle(
-"their",
-!myTurn
-);
-
-status.textContent =
+d.classList.add(
 myTurn
 ?
-"🎯 É SUA VEZ"
+"your"
 :
-"⏳ VEZ DO ADVERSÁRIO";
+"their"
+);
+
+d.textContent =
+
+myTurn
+?
+"🎯 É SUA VEZ — digite seu chute"
+:
+"⏳ VEZ DO ADVERSÁRIO — aguarde";
 
 document
 .getElementById("turnTitle")
 .textContent =
+
 myTurn
 ?
 "🎯 SUA VEZ"
@@ -4573,197 +3595,118 @@ myTurn
 document
 .getElementById("turnStatus")
 .textContent =
+
 myTurn
 ?
-"Descubra a senha"
+"Seu teclado está liberado"
 :
-"Aguarde o adversário";
+"O adversário está jogando";
 
 document
 .getElementById("timeText")
 .textContent =
-roomState.turnTime +
+x.turnTime +
 "s por turno";
 
-setKeys(myTurn);
+keys(myTurn);
 
-renderMyHistory();
+renderRoomHistory(x);
 
-renderOpponentHistory();
+showLatestReaction(x);
 
 }
 
 
 /* =========================
-HISTÓRICO DOS MEUS PALPITES
+HISTÓRICO
 ========================= */
 
-function renderMyHistory(){
+function renderRoomHistory(x){
 
-const container =
-document.getElementById(
-"gameHistory"
+const h =
+x.history || {};
+
+const a =
+Object
+.values(h)
+.sort(
+(aa,bb) =>
+Number(bb.order || 0) -
+Number(aa.order || 0)
 );
 
-const history =
-roomState.history || {};
+const e =
+document.getElementById(
+"history"
+);
 
-const items =
-Object.values(history)
-.filter(function(item){
+if(
+!a.length
+){
 
-return item.player === role;
-
-})
-.sort(function(a,b){
-
-return Number(a.order || 0) -
-Number(b.order || 0);
-
-});
-
-if(!items.length){
-
-container.innerHTML =
+e.innerHTML =
 '<p class="muted center">Nenhuma tentativa ainda.</p>';
 
 return;
 
 }
 
-container.innerHTML =
-items.map(function(item){
+e.innerHTML =
+a.map(
+v => {
 
-return `
-<div class="history-item">
-
-<div class="history-guess">
-
-<span class="hn">
-${String(item.order).padStart(2,"0")}
-</span>
-
-${item.guess}
-
-</div>
-
-<div style="font-size:13px;margin-top:5px">
-
-<span class="green">
-🟢 ${item.place} certo(s) no lugar
-</span>
-
-<br>
-
-<span style="color:#facc15">
-🟡 ${item.outside} certo(s) fora do lugar
-</span>
-
-</div>
-
-</div>
-`;
-
-}).join("");
-
-}
-
-
-/* =========================
-HISTÓRICO DO ADVERSÁRIO
-========================= */
-
-function renderOpponentHistory(){
-
-const container =
-document.getElementById(
-"opponentHistory"
+const who =
+v.player === role
+?
+"Você"
+:
+(
+role === "host"
+?
+x.guestName
+:
+x.hostName
 );
 
-const history =
-roomState.history || {};
-
-const opponentRole =
-role === "host"
-?
-"guest"
-:
-"host";
-
-const items =
-Object.values(history)
-.filter(function(item){
-
-return item.player === opponentRole;
-
-})
-.sort(function(a,b){
-
-return Number(a.order || 0) -
-Number(b.order || 0);
-
-});
-
-if(!items.length){
-
-container.innerHTML =
-'<div class="opponent-empty">Nenhum palpite ainda.</div>';
-
-return;
-
-}
-
-const opponentName =
-role === "host"
-?
-roomState.guestName
-:
-roomState.hostName;
-
-document
-.getElementById("opponentSubtitle")
-.textContent =
-opponentName +
-" está tentando descobrir sua senha.";
-
-container.innerHTML =
-items.map(function(item){
-
 return `
+
 <div class="history-item">
 
 <div class="history-guess">
 
 <span class="hn">
-${String(item.order).padStart(2,"0")}
+#${String(v.order).padStart(2,"0")}
 </span>
 
-${item.guess}
+${v.guess}
 
 </div>
 
 <div class="muted">
-${escapeHtml(opponentName)}
+${who}
 </div>
 
 <div style="font-size:13px;margin-top:5px">
 
 <span class="green">
-🟢 ${item.place} certo(s) no lugar
+🟢 ${v.place} certo(s) no lugar
 </span>
 
 <br>
 
-<span style="color:#facc15">
-🟡 ${item.outside} certo(s) fora do lugar
+<span class="yellow">
+🟡 ${v.out} certo(s) fora do lugar
 </span>
 
 </div>
 
 </div>
+
 `;
 
-}).join("");
+}
+)
+.join("");
 
 }
 
@@ -4772,22 +3715,20 @@ ${escapeHtml(opponentName)}
 REAÇÕES
 ========================= */
 
-async function sendReaction(emoji){
+function sendReaction(emoji){
 
 if(
 !room ||
 !window.FB ||
-!roomState ||
-roomState.status !== "active"
+!state ||
+state.status !== "active"
 ){
 
 return;
 
 }
 
-try{
-
-await window.FB.update(
+window.FB.update(
 window.FB.ref(
 window.FB.db,
 "rooms/" + room
@@ -4798,38 +3739,41 @@ reaction:emoji,
 
 reactionBy:role,
 
-reactionAt:serverNow()
+reactionAt:
+serverNow()
 
 }
-);
-
-}catch(error){
-
+)
+.catch(
+e =>
 console.error(
 "Reação:",
-error
+e
+)
 );
 
 }
 
-}
 
-
-function showLatestReaction(){
+function showLatestReaction(x){
 
 if(
-!roomState ||
-!roomState.reaction ||
-!roomState.reactionAt
+!x ||
+!x.reaction ||
+!x.reactionAt
 ){
 
 return;
 
 }
 
+const at =
+Number(
+x.reactionAt
+);
+
 if(
-Number(roomState.reactionAt) <=
-lastReactionAt
+at <= lastReactionAt
 ){
 
 return;
@@ -4837,29 +3781,30 @@ return;
 }
 
 lastReactionAt =
-Number(roomState.reactionAt);
+at;
 
-const display =
+const e =
 document.getElementById(
-"reactionDisplay"
+"reactionMessage"
 );
 
-display.textContent =
-roomState.reaction;
+e.textContent =
+x.reaction;
 
-setTimeout(function(){
+clearTimeout(
+window.reactionTimer
+);
 
-if(
-display.textContent ===
-roomState.reaction
-){
+window.reactionTimer =
+setTimeout(
+() => {
 
-display.textContent =
+e.textContent =
 "";
 
-}
-
-},2500);
+},
+2200
+);
 
 }
 
@@ -4868,89 +3813,94 @@ display.textContent =
 CRONÔMETRO
 ========================= */
 
-function startRoomClock(){
+function clock(){
 
-clearInterval(timerInterval);
+clearInterval(timerId);
 
-timerInterval =
+timerId =
 setInterval(
-updateClock,
+tick,
 250
 );
 
-updateClock();
+tick();
 
 }
 
 
-function updateClock(){
+function tick(){
 
 if(
-!roomState ||
-roomState.status !== "active"
+!state ||
+state.status !== "active"
 ){
 
 return;
 
 }
 
-const element =
+const e =
 document.getElementById(
 "timer"
 );
 
-const started =
+const start =
 Number(
-roomState.turnStartedAt || 0
+state.turnStartedAt || 0
 );
 
-const duration =
+const dur =
 Number(
-roomState.turnTime || 30
+state.turnTime || 30
 );
 
-if(!started){
+if(!start){
 
-element.textContent =
-String(duration);
+e.textContent =
+String(dur);
 
 return;
 
 }
 
-const remaining =
+const left =
 Math.max(
 0,
-duration -
+dur -
 Math.floor(
 (
 serverNow() -
-started
-) / 1000
+start
+) /
+1000
 )
 );
 
-element.textContent =
-String(remaining).padStart(2,"0");
-
-element.classList.toggle(
-"danger",
-remaining <= 5
+e.textContent =
+String(left)
+.padStart(
+2,
+"0"
 );
 
-element.classList.toggle(
+e.classList.toggle(
+"danger",
+left <= 5
+);
+
+e.classList.toggle(
 "warn",
-remaining > 5 &&
-remaining <= 10
+left > 5 &&
+left <= 10
 );
 
 if(
-remaining <= 0 &&
-roomState.currentTurn === role &&
+left <= 0 &&
+state.currentTurn === role &&
 !turnLocked
 ){
 
-timeoutRoomTurn();
+timeoutTurn();
 
 }
 
@@ -4958,26 +3908,28 @@ timeoutRoomTurn();
 
 
 /* =========================
-TIMEOUT
+PASSAGEM AUTOMÁTICA DE VEZ
 ========================= */
 
-async function timeoutRoomTurn(){
+async function timeoutTurn(){
 
 if(
 busy ||
-!roomState ||
-roomState.currentTurn !== role
+!state ||
+state.currentTurn !== role
 ){
 
 return;
 
 }
 
-busy = true;
+busy =
+true;
 
-turnLocked = true;
+turnLocked =
+true;
 
-setKeys(false);
+keys(false);
 
 try{
 
@@ -4986,56 +3938,60 @@ window.FB.ref(
 window.FB.db,
 "rooms/" + room
 ),
-function(data){
+x => {
 
 if(
-!data ||
-data.status !== "active" ||
-data.currentTurn !== role
+!x ||
+x.status !== "active" ||
+x.currentTurn !== role
 ){
 
-return data;
+return x;
 
 }
 
 const elapsed =
 serverNow() -
-Number(data.turnStartedAt || 0);
+Number(
+x.turnStartedAt || 0
+);
 
 if(
 elapsed <
-Number(data.turnTime) * 1000
+Number(x.turnTime) *
+1000
 ){
 
-return data;
+return x;
 
 }
 
-data.currentTurn =
+x.currentTurn =
 role === "host"
 ?
 "guest"
 :
 "host";
 
-data.turnStartedAt =
+x.turnStartedAt =
 serverNow();
 
-return data;
+return x;
 
 }
 );
 
-}catch(error){
+}catch(e){
 
-console.error(error);
+console.error(e);
 
 }
 
 setTimeout(
-function(){
+() => {
 
-busy = false;
+busy =
+false;
 
 },
 500
@@ -5045,42 +4001,61 @@ busy = false;
 
 
 /* =========================
-PALPITE ONLINE
+PALPITE DO DUELO
 ========================= */
 
-async function submitDuelGuess(){
+async function duelGuess(){
 
 if(
 busy ||
 turnLocked ||
-!roomState ||
-roomState.status !== "active" ||
-roomState.currentTurn !== role
+!state ||
+state.status !== "active" ||
+state.currentTurn !== role
 ){
 
 return;
 
 }
 
-const currentGuess =
-getGuess();
-
 if(
-currentGuess.length !== 4 ||
-guess.includes("")
+guessing.length !== 4
 ){
 
 document
-.getElementById("gameMessage")
+.getElementById("msg")
 .textContent =
-"Preencha os 4 números.";
+"Digite 4 números.";
 
 return;
 
 }
 
+
+/*
+No modo shared:
+ambos usam a mesma senha.
+
+No modo creator:
+host tenta a senha do guest
+e guest tenta a senha do host.
+*/
+
 const target =
-getTargetSecret();
+
+state.mode === "shared"
+
+?
+state.sharedSecret
+
+:
+
+role === "host"
+?
+state.guestSecret
+:
+state.hostSecret;
+
 
 if(
 !target ||
@@ -5088,24 +4063,29 @@ target.length !== 4
 ){
 
 document
-.getElementById("gameMessage")
+.getElementById("msg")
 .textContent =
-"A senha do adversário ainda não foi definida.";
+"A senha do adversário ainda não está disponível.";
 
 return;
 
 }
 
-busy = true;
+busy =
+true;
 
-turnLocked = true;
+turnLocked =
+true;
 
-setKeys(false);
+keys(false);
 
-const result =
-calculateResult(
+const myGuess =
+guessing;
+
+const r =
+calcResult(
 target,
-currentGuess
+myGuess
 );
 
 try{
@@ -5115,39 +4095,42 @@ window.FB.ref(
 window.FB.db,
 "rooms/" + room
 ),
-function(data){
+x => {
 
 if(
-!data ||
-data.status !== "active" ||
-data.currentTurn !== role
+!x ||
+x.status !== "active" ||
+x.currentTurn !== role
 ){
 
-return data;
+return x;
 
 }
 
 const elapsed =
 serverNow() -
-Number(data.turnStartedAt || 0);
+Number(
+x.turnStartedAt || 0
+);
 
 if(
 elapsed >
-Number(data.turnTime) * 1000
+Number(x.turnTime) *
+1000
 ){
 
-return data;
+return x;
 
 }
 
-data.history =
-data.history || {};
+x.history =
+x.history || {};
 
 const order =
-Object.keys(data.history).length + 1;
+Object.keys(x.history).length + 1;
 
-data.history[
-"try_" +
+x.history[
+"h" +
 Date.now() +
 "_" +
 role
@@ -5155,243 +4138,434 @@ role
 
 player:role,
 
-guess:currentGuess,
+guess:myGuess,
 
-place:result.place,
+place:r.place,
 
-outside:result.outside,
+out:r.out,
 
-order:order
+order
 
 };
 
+
 if(
-result.place === 4
+r.place === 4
 ){
 
-if(role === "host"){
+const score =
 
-data.hostScore =
-Number(data.hostScore || 0) + 1;
+(
+role === "host"
+?
+Number(
+x.hostScore || 0
+)
+:
+Number(
+x.guestScore || 0
+)
+) + 1;
+
+
+if(
+role === "host"
+){
+
+x.hostScore =
+score;
 
 }else{
 
-data.guestScore =
-Number(data.guestScore || 0) + 1;
+x.guestScore =
+score;
 
 }
 
-data.roundWinner =
+x.roundWinner =
 role;
 
-data.revealedSecret =
+x.revealedSecret =
 target;
 
-data.turnStartedAt =
+x.turnStartedAt =
 0;
 
-const myScore =
-role === "host"
-?
-Number(data.hostScore)
-:
-Number(data.guestScore);
+x.nextReadyHost =
+false;
+
+x.nextReadyGuest =
+false;
+
 
 if(
-myScore >=
+score >=
 Math.ceil(
-Number(data.bestOf) / 2
+Number(x.bestOf) /
+2
 )
 ){
 
-data.status =
+x.status =
 "matchFinished";
 
 }else{
 
-data.status =
+x.status =
 "roundFinished";
 
 }
 
 }else{
 
-data.currentTurn =
+/*
+Palpite errado:
+passa a vez imediatamente.
+*/
+
+x.currentTurn =
 role === "host"
 ?
 "guest"
 :
 "host";
 
-data.turnStartedAt =
+x.turnStartedAt =
 serverNow();
 
 }
 
-return data;
+return x;
 
 }
 );
 
-guess =
-["","","",""];
-
-selectedPosition =
-0;
+guessing = "";
 
 renderGuess();
 
-}catch(error){
+}catch(e){
 
-console.error(error);
+console.error(e);
 
 document
-.getElementById("gameMessage")
+.getElementById("msg")
 .textContent =
-"Não foi possível registrar o palpite.";
+"Não foi possível registrar o chute.";
 
-turnLocked = false;
+turnLocked =
+false;
 
-setKeys(true);
+keys(true);
 
 }
 
 setTimeout(
-function(){
+() => {
 
-busy = false;
+busy =
+false;
 
 },
-400
+350
 );
 
 }
 
 
 /* =========================
-RESULTADO RODADA
+RESULTADO DA RODADA
 ========================= */
 
-function showRoundResult(){
+function roundFinished(x){
 
-if(resultAlreadyShown){
+if(
+!resultShown
+){
 
-return;
+resultShown =
+true;
+
+showScreen(
+"roundResult"
+);
 
 }
 
-resultAlreadyShown = true;
+const win =
+x.roundWinner === role;
 
-const won =
-roomState.roundWinner === role;
+const my =
+
+role === "host"
+?
+Number(x.hostScore || 0)
+:
+Number(x.guestScore || 0);
+
+const op =
+
+role === "host"
+?
+Number(x.guestScore || 0)
+:
+Number(x.hostScore || 0);
 
 document
-.getElementById("resultIcon")
+.getElementById("rrIcon")
 .textContent =
-won
+win
 ?
 "🏆"
 :
 "😔";
 
 document
-.getElementById("resultTitle")
+.getElementById("rrTitle")
 .textContent =
-won
+win
 ?
 "Você venceu a rodada!"
 :
 "Você perdeu a rodada";
 
-
-/*
-Correção de sintaxe:
-.textContent
-*/
-
 document
-.getElementById("resultText")
+.getElementById("rrText")
 .textContent =
-won
+win
 ?
 "Você descobriu a senha primeiro."
 :
 "O adversário descobriu a senha primeiro.";
 
 document
-.getElementById("resultSecret")
+.getElementById("rrSecret")
 .textContent =
-roomState.revealedSecret || "----";
+x.revealedSecret ||
+"----";
 
-showScreen("result");
+document
+.getElementById("rrScore")
+.textContent =
+`Placar: ${my} × ${op}`;
+
+const ready =
+
+role === "host"
+?
+x.nextReadyHost
+:
+x.nextReadyGuest;
+
+document
+.getElementById("nextBtn")
+.disabled =
+!!ready;
+
+document
+.getElementById("nextStatus")
+.textContent =
+
+ready
+?
+"⏳ Aguardando o outro jogador..."
+:
+"Clique para confirmar a próxima rodada.";
 
 }
 
 
 /* =========================
-RESULTADO PARTIDA
+PRÓXIMA RODADA
 ========================= */
 
-function showMatchResult(){
+async function nextRound(){
 
-const won =
-roomState.roundWinner === role;
+if(
+!state ||
+state.status !== "roundFinished"
+){
 
-const myScore =
+return;
+
+}
+
+const base =
+window.FB.ref(
+window.FB.db,
+"rooms/" + room
+);
+
+const field =
 role === "host"
 ?
-roomState.hostScore
+"nextReadyHost"
 :
-roomState.guestScore;
+"nextReadyGuest";
 
-const opponentScore =
+await window.FB.update(
+base,
+{
+[field]:true
+}
+);
+
+const snap =
+await window.FB.get(
+base
+);
+
+const x =
+snap.val();
+
+if(
+x.nextReadyHost &&
+x.nextReadyGuest
+){
+
+await window.FB.runTransaction(
+base,
+y => {
+
+if(
+!y ||
+y.status !== "roundFinished" ||
+!y.nextReadyHost ||
+!y.nextReadyGuest
+){
+
+return y;
+
+}
+
+y.round =
+Number(y.round) + 1;
+
+y.status =
+"active";
+
+/*
+Em todas as rodadas da senha compartilhada,
+o host começa.
+
+No modo creator também mantemos a alternância
+começando pelo guest, que é quem tenta primeiro.
+*/
+
+y.currentTurn =
+y.mode === "shared"
+?
+"host"
+:
+"guest";
+
+y.turnStartedAt =
+serverNow();
+
+y.history = {};
+
+y.nextReadyHost =
+false;
+
+y.nextReadyGuest =
+false;
+
+y.roundWinner =
+null;
+
+y.revealedSecret =
+null;
+
+
+if(
+y.mode === "shared"
+){
+
+y.sharedSecret =
+randomSecret();
+
+}
+
+return y;
+
+}
+);
+
+}
+
+}
+
+
+/* =========================
+RESULTADO FINAL
+========================= */
+
+function matchFinished(x){
+
+const win =
+x.roundWinner === role;
+
+const my =
+
 role === "host"
 ?
-roomState.guestScore
+Number(x.hostScore || 0)
 :
-roomState.hostScore;
+Number(x.guestScore || 0);
+
+const op =
+
+role === "host"
+?
+Number(x.guestScore || 0)
+:
+Number(x.hostScore || 0);
+
+showScreen(
+"result"
+);
 
 document
-.getElementById("resultIcon")
+.getElementById("resIcon")
 .textContent =
-won
+win
 ?
 "🏆"
 :
 "😔";
 
 document
-.getElementById("resultTitle")
+.getElementById("resTitle")
 .textContent =
-won
+win
 ?
 "Você venceu o duelo!"
 :
 "Você perdeu o duelo";
 
 document
-.getElementById("resultText")
+.getElementById("resText")
 .innerHTML =
-won
+
+win
+
 ?
-"Parabéns!<br><br>Placar final: <b>" +
-myScore +
-" × " +
-opponentScore +
-"</b>"
+
+`Parabéns, ${player}!<br><br>
+Placar final:
+<b>${my} × ${op}</b>`
+
 :
-"O adversário venceu.<br><br>Placar final: <b>" +
-opponentScore +
-" × " +
-myScore +
-"</b>";
+
+`O adversário venceu.<br><br>
+Placar final:
+<b>${op} × ${my}</b>`;
 
 document
-.getElementById("resultSecret")
+.getElementById("resSecret")
 .textContent =
-roomState.revealedSecret || "----";
-
-showScreen("result");
+x.revealedSecret ||
+"----";
 
 }
 
@@ -5406,8 +4580,7 @@ try{
 
 if(
 room &&
-role === "host" &&
-window.FB
+role === "host"
 ){
 
 await window.FB.remove(
@@ -5419,29 +4592,9 @@ window.FB.db,
 
 }
 
-}catch(error){
-
-console.error(error);
-
-}
+}catch(e){}
 
 home();
-
-}
-
-
-/* =========================
-ESCAPE HTML
-========================= */
-
-function escapeHtml(text){
-
-return String(text)
-.replaceAll("&","&amp;")
-.replaceAll("<","&lt;")
-.replaceAll(">","&gt;")
-.replaceAll('"',"&quot;")
-.replaceAll("'","&#039;");
 
 }
 
@@ -5450,57 +4603,19 @@ return String(text)
 INICIALIZAÇÃO
 ========================= */
 
-loadPlayer();
+loadName();
 
-setBest(3);
+gameMode("creator");
 
-setTurnTime(30);
+best(3);
 
-setMode("creator");
+setTime(30);
 
 showScreen("home");
 
-
-/* =========================
-LINK DO WHATSAPP
-========================= */
-
-const params =
-new URLSearchParams(
-window.location.search
-);
-
-const roomFromUrl =
-params.get("room");
-
-if(roomFromUrl){
-
-window.addEventListener(
-"load",
-function(){
-
-const input =
-document.getElementById(
-"joinCode"
-);
-
-input.value =
-roomFromUrl.toUpperCase();
-
-setTimeout(
-function(){
-
-onlinePage();
-
-},
-500
-);
-
-});
-
-}
-
 </script>
 
+</div>
+
 </body>
-    </html>
+</html>
