@@ -90,9 +90,7 @@ font-weight:800;
 margin-bottom:9px
 }
 
-.name-input,
-.code-input,
-.secret-input{
+input{
 width:100%;
 padding:15px;
 border-radius:16px;
@@ -571,7 +569,7 @@ font-size:16px
 
 <div class="card">
 
-<label class="name-label" for="playerName">
+<label class="name-label">
 👤 Seu nome
 </label>
 
@@ -856,7 +854,6 @@ id="friendName"
 class="center"
 style="font-size:21px;font-weight:900;margin:8px 0 15px">
 </div>
-
 
 <div
 class="muted"
@@ -1247,77 +1244,18 @@ class="digit">
 
 <div class="keys">
 
-<button
-class="key"
-onclick="digit('1')">
-1
-</button>
-
-<button
-class="key"
-onclick="digit('2')">
-2
-</button>
-
-<button
-class="key"
-onclick="digit('3')">
-3
-</button>
-
-<button
-class="key"
-onclick="digit('4')">
-4
-</button>
-
-<button
-class="key"
-onclick="digit('5')">
-5
-</button>
-
-<button
-class="key"
-onclick="digit('6')">
-6
-</button>
-
-<button
-class="key"
-onclick="digit('7')">
-7
-</button>
-
-<button
-class="key"
-onclick="digit('8')">
-8
-</button>
-
-<button
-class="key"
-onclick="digit('9')">
-9
-</button>
-
-<button
-class="key"
-onclick="backspace()">
-⌫
-</button>
-
-<button
-class="key"
-onclick="digit('0')">
-0
-</button>
-
-<button
-class="key"
-onclick="guess()">
-✓
-</button>
+<button class="key" onclick="digit('1')">1</button>
+<button class="key" onclick="digit('2')">2</button>
+<button class="key" onclick="digit('3')">3</button>
+<button class="key" onclick="digit('4')">4</button>
+<button class="key" onclick="digit('5')">5</button>
+<button class="key" onclick="digit('6')">6</button>
+<button class="key" onclick="digit('7')">7</button>
+<button class="key" onclick="digit('8')">8</button>
+<button class="key" onclick="digit('9')">9</button>
+<button class="key" onclick="backspace()">⌫</button>
+<button class="key" onclick="digit('0')">0</button>
+<button class="key" onclick="guess()">✓</button>
 
 </div>
 
@@ -1507,163 +1445,43 @@ firebaseConfig
 );
 
 const db =
-getDatabase(app);
-
-
-window.FB = {
-
-db,
-ref,
-set,
-get,
-update,
-remove,
-onValue,
-runTransaction
-
-};
-
-
-onValue(
-ref(
-db,
-".info/connected"
-),
-s => {
-
-const e =
-document.getElementById(
-"conn"
+getDatabase(
+app
 );
 
-if(e){
-
-e.textContent =
-s.val()
-?
-"● Conectado ao servidor"
-:
-"● Sem conexão com o servidor";
-
-e.className =
-"connection " +
-(
-s.val()
-?
-"online"
-:
-"offline"
-);
-
-}
-
-}
-);
-
-
-onValue(
-ref(
-db,
-".info/serverTimeOffset"
-),
-s => {
-
-window.serverOffset =
-Number(
-s.val() || 0
-);
-
-}
-);
-
-
-const params =
-new URLSearchParams(
-location.search
-);
-
-const roomParam =
-params.get("room");
-
-
-if(roomParam){
-
-window.addEventListener(
-"load",
-() => {
-
-const joinInput =
-document.getElementById("join");
-
-if(joinInput){
-
-joinInput.value =
-roomParam.toUpperCase();
-
-}
-
-setTimeout(
-() => {
-
-if(
-typeof joinRoom === "function"
-){
-
-joinRoom(true);
-
-}
-
-},
-700
-);
-
-}
-);
-
-}
-
-</script>
-
-
-<script>
 
 let player = "";
 let room = "";
 let role = "";
 let state = null;
 let unsubscribe = null;
-
 let bestOf = 3;
 let turnTime = 30;
 let playMode = "creator";
-
 let secret = "";
 let guessing = "";
-
-let mode = "normal";
-
+let currentMode = "normal";
 let dailyAttempts = 0;
 let attempts = 0;
-
 let timerId = null;
 let turnLocked = false;
-
 let lastRound = 0;
 let lastStatus = "";
-
 let resultShown = false;
 let busy = false;
+let serverOffset = 0;
 
 
-const serverNow =
-() =>
+const $ = id =>
+document.getElementById(id);
+
+
+const serverNow = () =>
 Date.now() +
-Number(
-window.serverOffset || 0
-);
+serverOffset;
 
 
-const screenIds = [
+const screens = [
 "home",
 "daily",
 "online",
@@ -1678,20 +1496,15 @@ const screenIds = [
 
 function showScreen(id){
 
-screenIds.forEach(
+screens.forEach(
 x => {
 
-const element =
-document.getElementById(x);
-
-if(element){
-
-element.classList.toggle(
+$(x)
+.classList
+.toggle(
 "hidden",
 x !== id
 );
-
-}
 
 }
 );
@@ -1710,16 +1523,8 @@ if(n){
 
 player = n;
 
-const input =
-document.getElementById(
-"playerName"
-);
-
-if(input){
-
-input.value = n;
-
-}
+$("playerName")
+.value = n;
 
 }
 
@@ -1728,30 +1533,14 @@ input.value = n;
 
 function saveName(){
 
-const input =
-document.getElementById(
-"playerName"
-);
-
 player =
 (
-input
-?
-input.value.trim()
-:
-""
-||
-""
-);
-
-if(!player){
-
-player = "Jogador";
-
-}
-
-player =
-player.substring(
+$("playerName")
+.value
+.trim() ||
+"Jogador"
+)
+.substring(
 0,
 18
 );
@@ -1772,8 +1561,7 @@ if(unsubscribe){
 
 unsubscribe();
 
-unsubscribe =
-null;
+unsubscribe = null;
 
 }
 
@@ -1784,10 +1572,40 @@ timerId
 room = "";
 role = "";
 state = null;
-mode = "normal";
+lastStatus = "";
 
 showScreen(
 "home"
+);
+
+}
+
+
+function today(){
+
+const d =
+new Date();
+
+return (
+
+d.getFullYear() +
+"-" +
+String(
+d.getMonth() + 1
+)
+.padStart(
+2,
+"0"
+) +
+"-" +
+String(
+d.getDate()
+)
+.padStart(
+2,
+"0"
+)
+
 );
 
 }
@@ -1805,20 +1623,14 @@ localStorage.getItem(
 today()
 ) === "done";
 
-document
-.getElementById(
-"dailyOpen"
-)
+$("dailyOpen")
 .classList
 .toggle(
 "hidden",
 done
 );
 
-document
-.getElementById(
-"dailyDone"
-)
+$("dailyDone")
 .classList
 .toggle(
 "hidden",
@@ -1847,46 +1659,11 @@ showScreen(
 "friend"
 );
 
-document
-.getElementById(
-"friendName"
-)
+$("friendName")
 .textContent =
 player;
 
 summary();
-
-}
-
-
-function today(){
-
-const d =
-new Date();
-
-return (
-
-d.getFullYear() +
-
-"-" +
-
-String(
-d.getMonth() + 1
-).padStart(
-2,
-"0"
-) +
-
-"-" +
-
-String(
-d.getDate()
-).padStart(
-2,
-"0"
-)
-
-);
 
 }
 
@@ -1898,10 +1675,7 @@ bestOf = v;
 [3,5,7].forEach(
 n => {
 
-document
-.getElementById(
-"b" + n
-)
+$("b"+n)
 .classList
 .toggle(
 "sel",
@@ -1923,10 +1697,7 @@ turnTime = v;
 [30,45,60].forEach(
 n => {
 
-document
-.getElementById(
-"t" + n
-)
+$("t"+n)
 .classList
 .toggle(
 "sel",
@@ -1945,30 +1716,21 @@ function gameMode(v){
 
 playMode = v;
 
-document
-.getElementById(
-"creatorSecret"
-)
+$("creatorSecret")
 .classList
 .toggle(
 "sel",
 v === "creator"
 );
 
-document
-.getElementById(
-"shared"
-)
+$("shared")
 .classList
 .toggle(
 "sel",
 v === "shared"
 );
 
-document
-.getElementById(
-"secretConfig"
-)
+$("secretConfig")
 .classList
 .toggle(
 "hidden",
@@ -1982,47 +1744,27 @@ summary();
 
 function summary(){
 
-const e =
-document.getElementById(
-"summary"
-);
-
-if(!e){
-
-return;
-
-}
-
-e.innerHTML =
+$("summary")
+.innerHTML =
 
 `Melhor de ${bestOf}<br>` +
 
 (
-
 playMode === "creator"
-
 ?
-
 "🔐 Eu escolho a senha"
-
 :
-
 "🤝 Senha compartilhada"
-
 ) +
 
-"<br>⏱️ " +
-
-turnTime +
-
-"s por turno";
+`<br>⏱️ ${turnTime}s por turno`;
 
 }
 
 
 function roomCode(){
 
-const c =
+const chars =
 "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 
 let s = "";
@@ -2034,10 +1776,10 @@ i++
 ){
 
 s +=
-c[
+chars[
 Math.floor(
 Math.random() *
-c.length
+chars.length
 )
 ];
 
@@ -2060,7 +1802,8 @@ i++
 
 s +=
 Math.floor(
-Math.random() * 10
+Math.random() *
+10
 );
 
 }
@@ -2082,7 +1825,7 @@ today()
 10
 );
 
-let a = [];
+const a = [];
 
 while(
 a.length < 4
@@ -2090,10 +1833,10 @@ a.length < 4
 
 n =
 (
-n * 9301 +
+n *
+9301 +
 49297
-)
-%
+) %
 233280;
 
 const d =
@@ -2117,173 +1860,6 @@ return a.join("");
 function validSecret(s){
 
 return /^\d{4}$/.test(s);
-
-}
-
-
-function startDaily(){
-
-saveName();
-
-secret =
-dailySecret();
-
-guessing = "";
-
-attempts = 0;
-dailyAttempts = 0;
-
-mode = "daily";
-turnLocked = false;
-
-document
-.getElementById(
-"me"
-)
-.textContent =
-player;
-
-document
-.getElementById(
-"opp"
-)
-.textContent =
-"Desafio Diário";
-
-document
-.getElementById(
-"myScore"
-)
-.textContent =
-"0";
-
-document
-.getElementById(
-"opScore"
-)
-.textContent =
-"—";
-
-document
-.getElementById(
-"round"
-)
-.textContent =
-"DESAFIO DIÁRIO";
-
-document
-.getElementById(
-"duelStatus"
-)
-.classList
-.add(
-"hidden"
-);
-
-document
-.getElementById(
-"timer"
-)
-.textContent =
-"∞";
-
-document
-.getElementById(
-"timeText"
-)
-.textContent =
-"Sem limite";
-
-document
-.getElementById(
-"history"
-)
-.innerHTML =
-'<p class="muted center">Nenhuma tentativa ainda.</p>';
-
-document
-.getElementById(
-"msg"
-)
-.textContent =
-"";
-
-document
-.getElementById(
-"attemptBox"
-)
-.classList
-.remove(
-"hidden"
-);
-
-keys(true);
-
-renderGuess();
-
-updateAttempts();
-
-showScreen(
-"game"
-);
-
-}
-
-
-function updateAttempts(){
-
-const left =
-Math.max(
-0,
-15 - dailyAttempts
-);
-
-document
-.getElementById(
-"attemptNum"
-)
-.textContent =
-dailyAttempts +
-" / 15";
-
-document
-.getElementById(
-"attemptBar"
-)
-.style
-.width =
-(
-dailyAttempts /
-15 *
-100
-) +
-"%";
-
-document
-.getElementById(
-"attemptMsg"
-)
-.textContent =
-
-left === 0
-
-?
-
-"Limite atingido"
-
-:
-
-left === 1
-
-?
-
-"Resta 1 tentativa"
-
-:
-
-"Restam " +
-left +
-" tentativas";
 
 }
 
@@ -2316,10 +1892,7 @@ function renderGuess(){
 .forEach(
 (x,i) => {
 
-document
-.getElementById(
-x
-)
+$(x)
 .textContent =
 guessing[i] || "";
 
@@ -2329,10 +1902,138 @@ guessing[i] || "";
 }
 
 
+function updateAttempts(){
+
+const left =
+Math.max(
+0,
+15 - dailyAttempts
+);
+
+$("attemptNum")
+.textContent =
+dailyAttempts +
+" / 15";
+
+$("attemptBar")
+.style
+.width =
+(
+dailyAttempts /
+15 *
+100
+) +
+"%";
+
+$("attemptMsg")
+.textContent =
+
+left === 0
+
+?
+
+"Limite atingido"
+
+:
+
+left === 1
+
+?
+
+"Resta 1 tentativa"
+
+:
+
+"Restam " +
+left +
+" tentativas";
+
+}
+
+
+function startDaily(){
+
+saveName();
+
+secret =
+dailySecret();
+
+guessing = "";
+
+attempts = 0;
+
+dailyAttempts = 0;
+
+currentMode =
+"daily";
+
+turnLocked = false;
+
+$("me")
+.textContent =
+player;
+
+$("opp")
+.textContent =
+"Desafio Diário";
+
+$("myScore")
+.textContent =
+"0";
+
+$("opScore")
+.textContent =
+"—";
+
+$("round")
+.textContent =
+"DESAFIO DIÁRIO";
+
+$("duelStatus")
+.classList
+.add(
+"hidden"
+);
+
+$("timer")
+.textContent =
+"∞";
+
+$("timeText")
+.textContent =
+"Sem limite";
+
+$("history")
+.innerHTML =
+'<p class="muted center">Nenhuma tentativa ainda.</p>';
+
+$("msg")
+.textContent =
+"";
+
+$("attemptBox")
+.classList
+.remove(
+"hidden"
+);
+
+keys(true);
+
+renderGuess();
+
+updateAttempts();
+
+showScreen(
+"game"
+);
+
+}
+
+
 function digit(n){
 
 if(
-mode === "duel" &&
+currentMode === "duel" &&
 (
 turnLocked ||
 !state ||
@@ -2361,7 +2062,7 @@ renderGuess();
 function backspace(){
 
 if(
-mode === "duel" &&
+currentMode === "duel" &&
 turnLocked
 ){
 
@@ -2388,8 +2089,11 @@ t
 let place = 0;
 let out = 0;
 
-let su = [0,0,0,0];
-let tu = [0,0,0,0];
+const su =
+[0,0,0,0];
+
+const tu =
+[0,0,0,0];
 
 
 for(
@@ -2405,6 +2109,7 @@ t[i] === s[i]
 place++;
 
 su[i] = 1;
+
 tu[i] = 1;
 
 }
@@ -2418,12 +2123,8 @@ i < 4;
 i++
 ){
 
-if(
-tu[i]
-){
-
+if(tu[i]){
 continue;
-
 }
 
 for(
@@ -2440,11 +2141,10 @@ t[i] === s[j]
 out++;
 
 su[j] = 1;
+
 tu[i] = 1;
 
 break;
-
-}
 
 }
 
@@ -2462,22 +2162,21 @@ out
 
 
 function addHistory(
-n,
-r,
-num,
+number,
+result,
+numberAttempt,
 who = "Você"
 ){
 
 const e =
-document.getElementById(
-"history"
-);
+$("history");
 
 if(
-num === 1
+numberAttempt === 1
 ){
 
-e.innerHTML = "";
+e.innerHTML =
+"";
 
 }
 
@@ -2492,31 +2191,55 @@ d.className =
 d.innerHTML =
 
 `<div class="history-guess">
+
 <span class="hn">
-${String(num).padStart(2,"0")}
+
+${String(
+numberAttempt
+).padStart(
+2,
+"0"
+)}
+
 </span>
-${n}
+
+${number}
+
 </div>
 
 <div class="muted">
+
 ${who}
+
 </div>
 
-<div style="font-size:13px;margin-top:5px">
+<div
+style="
+font-size:13px;
+margin-top:5px
+">
 
 <span class="green">
-🟢 ${r.place} certo(s) no lugar
+
+🟢 ${result.place}
+certo(s) no lugar
+
 </span>
 
 <br>
 
 <span class="yellow">
-🟡 ${r.out} certo(s) fora do lugar
+
+🟡 ${result.out}
+certo(s) fora do lugar
+
 </span>
 
 </div>`;
 
-e.prepend(d);
+e.prepend(
+d
+);
 
 }
 
@@ -2527,10 +2250,7 @@ if(
 guessing.length !== 4
 ){
 
-document
-.getElementById(
-"msg"
-)
+$("msg")
 .textContent =
 "Digite 4 números.";
 
@@ -2540,7 +2260,7 @@ return;
 
 
 if(
-mode === "duel"
+currentMode === "duel"
 ){
 
 await duelGuess();
@@ -2555,7 +2275,7 @@ attempts++;
 
 updateAttempts();
 
-const r =
+const result =
 calcResult(
 secret,
 guessing
@@ -2563,13 +2283,13 @@ guessing
 
 addHistory(
 guessing,
-r,
+result,
 attempts
 );
 
 
 if(
-r.place === 4
+result.place === 4
 ){
 
 localStorage.setItem(
@@ -2578,7 +2298,9 @@ today(),
 "done"
 );
 
-dailyResult(true);
+dailyResult(
+true
+);
 
 return;
 
@@ -2595,7 +2317,9 @@ today(),
 "done"
 );
 
-dailyResult(false);
+dailyResult(
+false
+);
 
 return;
 
@@ -2617,10 +2341,7 @@ showScreen(
 "result"
 );
 
-document
-.getElementById(
-"resIcon"
-)
+$("resIcon")
 .textContent =
 win
 ?
@@ -2628,10 +2349,7 @@ win
 :
 "😔";
 
-document
-.getElementById(
-"resTitle"
-)
+$("resTitle")
 .textContent =
 win
 ?
@@ -2639,10 +2357,7 @@ win
 :
 "Desafio encerrado";
 
-document
-.getElementById(
-"resText"
-)
+$("resText")
 .innerHTML =
 
 win
@@ -2656,14 +2371,11 @@ tentativa(s).`
 
 :
 
-`Você não descobriu a senha em
-15 tentativas.<br><br>
+`Você não descobriu a senha
+em 15 tentativas.<br><br>
 Sua participação foi registrada.`;
 
-document
-.getElementById(
-"resSecret"
-)
+$("resSecret")
 .textContent =
 secret;
 
@@ -2687,6 +2399,7 @@ return;
 
 }
 
+
 let chosen = "";
 
 if(
@@ -2694,10 +2407,7 @@ playMode === "creator"
 ){
 
 chosen =
-document
-.getElementById(
-"chosenSecret"
-)
+$("chosenSecret")
 .value
 .trim();
 
@@ -2715,26 +2425,33 @@ return;
 
 }
 
+
 room =
 roomCode();
 
 role =
 "host";
 
-turnLocked = true;
+turnLocked =
+true;
+
 
 const base = {
 
 hostName:n,
+
 guestName:"",
 
 bestOf,
+
 turnTime,
+
 mode:playMode,
 
 round:1,
 
 hostScore:0,
+
 guestScore:0,
 
 status:"waiting",
@@ -2746,6 +2463,7 @@ turnStartedAt:0,
 history:{},
 
 nextReadyHost:false,
+
 nextReadyGuest:false
 
 };
@@ -2779,38 +2497,30 @@ base.guestSecret =
 
 try{
 
-await window.FB.set(
-window.FB.ref(
-window.FB.db,
-"rooms/" + room
+await set(
+ref(
+db,
+"rooms/" +
+room
 ),
 base
 );
 
-document
-.getElementById(
-"inviteName"
-)
+
+$("inviteName")
 .textContent =
 n;
 
-document
-.getElementById(
-"inviteCode"
-)
+$("inviteCode")
 .textContent =
 room;
 
-document
-.getElementById(
-"inviteInfo"
-)
+$("inviteInfo")
 .innerHTML =
 
 `Melhor de ${bestOf}<br>` +
 
 (
-
 playMode === "creator"
 
 ?
@@ -2825,11 +2535,14 @@ playMode === "creator"
 
 `<br>⏱️ ${turnTime}s por turno`;
 
+
 showScreen(
 "invite"
 );
 
-listen(room);
+listen(
+room
+);
 
 }
 
@@ -2849,10 +2562,13 @@ alert(
 function whatsapp(){
 
 const link =
+
 "https://gamesenha.github.io/Senha-Game/?room=" +
+
 encodeURIComponent(
 room
 );
+
 
 const text =
 
@@ -2864,31 +2580,40 @@ ${player} te desafiou para uma partida!
 
 ${
 playMode === "creator"
+
 ?
+
 "🔐 Você deverá descobrir a senha escolhida pelo criador"
+
 :
+
 "🤝 Os dois descobrem a mesma senha"
+
 }
 
 ⏱️ ${turnTime}s por turno
 
 🎮 ENTRE PARA JOGAR:
+
 ${link}
 
 🔑 Código: ${room}`;
 
-window.open(
+
+window.location.href =
+
 "https://wa.me/?text=" +
+
 encodeURIComponent(
 text
-),
-"_blank"
 );
 
 }
 
 
-async function joinRoom(auto=false){
+async function joinRoom(
+auto = false
+){
 
 const n =
 saveName();
@@ -2909,19 +2634,13 @@ return;
 
 }
 
-const input =
-document.getElementById(
-"join"
-);
 
 const id =
-input
-?
-input.value
+$("join")
+.value
 .trim()
-.toUpperCase()
-:
-"";
+.toUpperCase();
+
 
 if(
 id.length !== 6
@@ -2943,12 +2662,14 @@ return;
 try{
 
 const snap =
-await window.FB.get(
-window.FB.ref(
-window.FB.db,
-"rooms/" + id
+await get(
+ref(
+db,
+"rooms/" +
+id
 )
 );
+
 
 if(
 !snap.exists()
@@ -2970,6 +2691,7 @@ return;
 const x =
 snap.val();
 
+
 if(
 x.guestName &&
 x.guestName !== n
@@ -2988,13 +2710,18 @@ return;
 }
 
 
-room = id;
-role = "guest";
+room =
+id;
 
-await window.FB.update(
-window.FB.ref(
-window.FB.db,
-"rooms/" + id
+role =
+"guest";
+
+
+await update(
+ref(
+db,
+"rooms/" +
+id
 ),
 {
 
@@ -3008,12 +2735,16 @@ turnStartedAt:
 serverNow(),
 
 nextReadyHost:false,
+
 nextReadyGuest:false
 
 }
 );
 
-listen(id);
+
+listen(
+id
+);
 
 }
 
@@ -3044,16 +2775,18 @@ unsubscribe();
 
 }
 
+
 unsubscribe =
-window.FB.onValue(
-window.FB.ref(
-window.FB.db,
-"rooms/" + id
+onValue(
+ref(
+db,
+"rooms/" +
+id
 ),
-s => {
+snapshot => {
 
 if(
-!s.exists()
+!snapshot.exists()
 ){
 
 alert(
@@ -3066,8 +2799,9 @@ return;
 
 }
 
+
 state =
-s.val();
+snapshot.val();
 
 sync();
 
@@ -3097,7 +2831,6 @@ x.hostSecret
 :
 
 x.sharedSecret
-
 );
 
 }
@@ -3106,9 +2839,7 @@ x.sharedSecret
 function sync(){
 
 if(!state){
-
 return;
-
 }
 
 
@@ -3120,10 +2851,7 @@ if(
 role === "host"
 ){
 
-document
-.getElementById(
-"inviteStatus"
-)
+$("inviteStatus")
 .textContent =
 
 state.guestName
@@ -3151,16 +2879,22 @@ state.status === "active"
 
 if(
 lastStatus !== "active" ||
-lastRound !== Number(state.round)
+lastRound !== Number(
+state.round
+)
 ){
 
-prepareRound(state);
+prepareRound(
+state
+);
 
 }
 
 else{
 
-updateGame(state);
+updateGame(
+state
+);
 
 }
 
@@ -3182,7 +2916,9 @@ clearInterval(
 timerId
 );
 
-roundFinished(state);
+roundFinished(
+state
+);
 
 lastStatus =
 "roundFinished";
@@ -3200,7 +2936,9 @@ clearInterval(
 timerId
 );
 
-matchFinished(state);
+matchFinished(
+state
+);
 
 lastStatus =
 "matchFinished";
@@ -3213,22 +2951,23 @@ lastStatus =
 function prepareRound(x){
 
 lastRound =
-Number(x.round);
+Number(
+x.round
+);
 
 resultShown =
 false;
 
 guessing = "";
 
-turnLocked = false;
+turnLocked =
+false;
 
-mode =
+currentMode =
 "duel";
 
-document
-.getElementById(
-"me"
-)
+
+$("me")
 .textContent =
 
 role === "host"
@@ -3241,10 +2980,8 @@ x.hostName
 
 x.guestName;
 
-document
-.getElementById(
-"opp"
-)
+
+$("opp")
 .textContent =
 
 role === "host"
@@ -3257,10 +2994,8 @@ x.guestName
 
 x.hostName;
 
-document
-.getElementById(
-"myScore"
-)
+
+$("myScore")
 .textContent =
 
 role === "host"
@@ -3273,10 +3008,8 @@ x.hostScore || 0
 
 x.guestScore || 0;
 
-document
-.getElementById(
-"opScore"
-)
+
+$("opScore")
 .textContent =
 
 role === "host"
@@ -3289,36 +3022,23 @@ x.guestScore || 0
 
 x.hostScore || 0;
 
-document
-.getElementById(
-"round"
-)
+
+$("round")
 .textContent =
 
 `RODADA ${x.round} • MELHOR DE ${x.bestOf}`;
 
-document
-.getElementById(
-"history"
-)
+
+$("history")
 .innerHTML =
 
 '<p class="muted center">Nenhuma tentativa ainda.</p>';
 
-document
-.getElementById(
-"msg"
-)
-.textContent = "";
 
-document
-.getElementById(
-"attemptBox"
-)
-.classList
-.add(
-"hidden"
-);
+$("msg")
+.textContent =
+"";
+
 
 renderGuess();
 
@@ -3326,7 +3046,9 @@ showScreen(
 "game"
 );
 
-updateGame(x);
+updateGame(
+x
+);
 
 }
 
@@ -3339,10 +3061,9 @@ x.currentTurn === role;
 turnLocked =
 !my;
 
+
 const d =
-document.getElementById(
-"duelStatus"
-);
+$("duelStatus");
 
 d.classList.remove(
 "hidden",
@@ -3358,6 +3079,7 @@ my
 "their"
 );
 
+
 d.textContent =
 
 my
@@ -3370,10 +3092,8 @@ my
 
 "⏳ VEZ DO ADVERSÁRIO";
 
-document
-.getElementById(
-"turnTitle"
-)
+
+$("turnTitle")
 .textContent =
 
 my
@@ -3382,10 +3102,8 @@ my
 :
 "⏳ AGUARDE";
 
-document
-.getElementById(
-"turnStatus"
-)
+
+$("turnStatus")
 .textContent =
 
 my
@@ -3394,48 +3112,52 @@ my
 :
 "Aguarde o adversário";
 
-document
-.getElementById(
-"timeText"
-)
+
+$("timeText")
 .textContent =
 
 x.turnTime +
 "s por turno";
 
-keys(my);
 
-renderRoomHistory(x);
+keys(
+my
+);
+
+renderRoomHistory(
+x
+);
 
 }
 
 
 function renderRoomHistory(x){
 
-const h =
+const history =
 x.history || {};
 
 const a =
 Object
-.values(h)
+.values(
+history
+)
 .sort(
 (
 aa,
 bb
 ) =>
 (
-aa.order || 0
+bb.order || 0
 ) -
 (
-bb.order || 0
+aa.order || 0
 )
 );
 
+
 const e =
-document
-.getElementById(
-"history"
-);
+$("history");
+
 
 if(
 !a.length
@@ -3448,11 +3170,14 @@ return;
 
 }
 
+
 e.innerHTML =
+
 a.map(
 v => {
 
 const who =
+
 v.player === role
 
 ?
@@ -3473,6 +3198,7 @@ x.guestName
 x.hostName
 );
 
+
 return `
 
 <div class="history-item">
@@ -3480,7 +3206,14 @@ return `
 <div class="history-guess">
 
 <span class="hn">
-${String(v.order).padStart(2,"0")}
+
+${String(
+v.order
+).padStart(
+2,
+"0"
+)}
+
 </span>
 
 ${v.guess}
@@ -3488,24 +3221,38 @@ ${v.guess}
 </div>
 
 <div class="muted">
+
 ${who}
+
 </div>
 
-<div style="font-size:13px;margin-top:5px">
+<div
+style="
+font-size:13px;
+margin-top:5px
+">
 
 <span class="green">
-🟢 ${v.place} certo(s) no lugar
+
+🟢 ${v.place}
+certo(s) no lugar
+
 </span>
 
 <br>
 
 <span class="yellow">
-🟡 ${v.out} certo(s) fora do lugar
+
+🟡 ${v.out}
+certo(s) fora do lugar
+
 </span>
 
 </div>
 
-</div>`;
+</div>
+
+`;
 
 }
 )
@@ -3542,36 +3289,40 @@ return;
 
 }
 
+
 const e =
-document.getElementById(
-"timer"
-);
+$("timer");
 
 const start =
 Number(
 state.turnStartedAt || 0
 );
 
-const dur =
+const duration =
 Number(
 state.turnTime || 30
 );
+
 
 if(
 !start
 ){
 
 e.textContent =
-String(dur);
+String(
+duration
+);
 
 return;
 
 }
 
+
 const left =
+
 Math.max(
 0,
-dur -
+duration -
 Math.floor(
 (
 serverNow() -
@@ -3581,13 +3332,16 @@ start
 )
 );
 
+
 e.textContent =
 String(
 left
-).padStart(
+)
+.padStart(
 2,
 "0"
 );
+
 
 e.classList.toggle(
 "danger",
@@ -3599,6 +3353,7 @@ e.classList.toggle(
 left > 5 &&
 left <= 10
 );
+
 
 if(
 left <= 0 &&
@@ -3625,17 +3380,25 @@ return;
 
 }
 
-busy = true;
-turnLocked = true;
 
-keys(false);
+busy =
+true;
+
+turnLocked =
+true;
+
+keys(
+false
+);
+
 
 try{
 
-await window.FB.runTransaction(
-window.FB.ref(
-window.FB.db,
-"rooms/" + room
+await runTransaction(
+ref(
+db,
+"rooms/" +
+room
 ),
 x => {
 
@@ -3649,21 +3412,26 @@ return x;
 
 }
 
+
 const elapsed =
 serverNow() -
 Number(
 x.turnStartedAt || 0
 );
 
+
 if(
 elapsed <
-Number(x.turnTime) *
+Number(
+x.turnTime
+) *
 1000
 ){
 
 return x;
 
 }
+
 
 x.currentTurn =
 role === "host"
@@ -3672,8 +3440,10 @@ role === "host"
 :
 "host";
 
+
 x.turnStartedAt =
 serverNow();
+
 
 return x;
 
@@ -3688,9 +3458,12 @@ console.error(e);
 
 }
 
+
 setTimeout(
-() => busy = false,
-500
+() => {
+busy = false;
+},
+400
 );
 
 }
@@ -3710,14 +3483,12 @@ return;
 
 }
 
+
 if(
 guessing.length !== 4
 ){
 
-document
-.getElementById(
-"msg"
-)
+$("msg")
 .textContent =
 "Digite 4 números.";
 
@@ -3725,30 +3496,40 @@ return;
 
 }
 
-busy = true;
-turnLocked = true;
 
-keys(false);
+busy =
+true;
 
-const myTarget =
-mySecret(state);
+turnLocked =
+true;
+
+keys(
+false
+);
+
+
+const target =
+mySecret(
+state
+);
 
 const myGuess =
 guessing;
 
-const r =
+const result =
 calcResult(
-myTarget,
+target,
 myGuess
 );
 
 
 try{
 
-await window.FB.runTransaction(
-window.FB.ref(
-window.FB.db,
-"rooms/" + room
+await runTransaction(
+ref(
+db,
+"rooms/" +
+room
 ),
 x => {
 
@@ -3762,15 +3543,19 @@ return x;
 
 }
 
+
 const elapsed =
 serverNow() -
 Number(
 x.turnStartedAt || 0
 );
 
+
 if(
 elapsed >
-Number(x.turnTime) *
+Number(
+x.turnTime
+) *
 1000
 ){
 
@@ -3778,13 +3563,17 @@ return x;
 
 }
 
+
 x.history =
 x.history || {};
+
 
 const order =
 Object.keys(
 x.history
-).length + 1;
+).length +
+1;
+
 
 x.history[
 "h" +
@@ -3794,50 +3583,41 @@ role
 ] = {
 
 player:role,
+
 guess:myGuess,
-place:r.place,
-out:r.out,
+
+place:result.place,
+
+out:result.out,
+
 order
 
 };
 
 
 if(
-r.place === 4
+result.place === 4
 ){
-
-const score =
-
-(
-role === "host"
-
-?
-
-Number(
-x.hostScore || 0
-)
-
-:
-
-Number(
-x.guestScore || 0
-)
-) + 1;
-
 
 if(
 role === "host"
 ){
 
 x.hostScore =
-score;
+Number(
+x.hostScore || 0
+) +
+1;
 
 }
 
 else{
 
 x.guestScore =
-score;
+Number(
+x.guestScore || 0
+) +
+1;
 
 }
 
@@ -3846,7 +3626,7 @@ x.roundWinner =
 role;
 
 x.revealedSecret =
-myTarget;
+target;
 
 x.turnStartedAt =
 0;
@@ -3858,48 +3638,68 @@ x.nextReadyGuest =
 false;
 
 
-if(
+const score =
+
+role === "host"
+
+?
+
+x.hostScore
+
+:
+
+x.guestScore;
+
+
+x.status =
+
 score >=
 Math.ceil(
-Number(x.bestOf) /
+Number(
+x.bestOf
+) /
 2
 )
-){
 
-x.status =
-"matchFinished";
+?
 
-}
+"matchFinished"
 
-else{
+:
 
-x.status =
 "roundFinished";
-
-}
 
 }
 
 else{
 
 x.currentTurn =
+
 role === "host"
+
 ?
+
 "guest"
+
 :
+
 "host";
+
 
 x.turnStartedAt =
 serverNow();
 
 }
 
+
 return x;
 
 }
 );
 
-guessing = "";
+
+guessing =
+"";
 
 renderGuess();
 
@@ -3909,21 +3709,24 @@ catch(e){
 
 console.error(e);
 
-document
-.getElementById(
-"msg"
-)
+$("msg")
 .textContent =
 "Não foi possível registrar o chute.";
 
-turnLocked = false;
+turnLocked =
+false;
 
-keys(true);
+keys(
+true
+);
 
 }
 
+
 setTimeout(
-() => busy = false,
+() => {
+busy = false;
+},
 350
 );
 
@@ -3936,7 +3739,8 @@ if(
 !resultShown
 ){
 
-resultShown = true;
+resultShown =
+true;
 
 showScreen(
 "roundResult"
@@ -3944,8 +3748,10 @@ showScreen(
 
 }
 
+
 const win =
 x.roundWinner === role;
+
 
 const my =
 
@@ -3963,6 +3769,7 @@ Number(
 x.guestScore || 0
 );
 
+
 const op =
 
 role === "host"
@@ -3979,10 +3786,8 @@ Number(
 x.hostScore || 0
 );
 
-document
-.getElementById(
-"rrIcon"
-)
+
+$("rrIcon")
 .textContent =
 win
 ?
@@ -3990,10 +3795,8 @@ win
 :
 "😔";
 
-document
-.getElementById(
-"rrTitle"
-)
+
+$("rrTitle")
 .textContent =
 win
 ?
@@ -4001,33 +3804,34 @@ win
 :
 "Você perdeu a rodada";
 
-document
-.getElementById(
-"rrText"
-)
-.textContent =
+
+$("rrText")
+textContent =
 win
+
 ?
+
 "Você descobriu a senha primeiro."
+
 :
+
 "O adversário descobriu a senha primeiro.";
 
-document
-.getElementById(
-"rrSecret"
-)
+
+$("rrSecret")
 .textContent =
 x.revealedSecret ||
 "----";
 
-document
-.getElementById(
-"rrScore"
-)
+
+$("rrScore")
 .textContent =
+
 `Placar: ${my} × ${op}`;
 
+
 const ready =
+
 role === "host"
 
 ?
@@ -4038,17 +3842,13 @@ x.nextReadyHost
 
 x.nextReadyGuest;
 
-document
-.getElementById(
-"nextBtn"
-)
+
+$("nextBtn")
 .disabled =
 !!ready;
 
-document
-.getElementById(
-"nextStatus"
-)
+
+$("nextStatus")
 .textContent =
 
 ready
@@ -4075,13 +3875,17 @@ return;
 
 }
 
+
 const base =
-window.FB.ref(
-window.FB.db,
-"rooms/" + room
+ref(
+db,
+"rooms/" +
+room
 );
 
+
 const field =
+
 role === "host"
 
 ?
@@ -4092,22 +3896,25 @@ role === "host"
 
 "nextReadyGuest";
 
+
 try{
 
-await window.FB.update(
+await update(
 base,
 {
 [field]:true
 }
 );
 
+
 const snap =
-await window.FB.get(
+await get(
 base
 );
 
 const x =
 snap.val();
+
 
 if(
 x &&
@@ -4115,7 +3922,7 @@ x.nextReadyHost &&
 x.nextReadyGuest
 ){
 
-await window.FB.runTransaction(
+await runTransaction(
 base,
 y => {
 
@@ -4130,8 +3937,12 @@ return y;
 
 }
 
+
 y.round =
-Number(y.round) + 1;
+Number(
+y.round
+) +
+1;
 
 y.status =
 "active";
@@ -4142,7 +3953,8 @@ y.currentTurn =
 y.turnStartedAt =
 serverNow();
 
-y.history = {};
+y.history =
+{};
 
 y.nextReadyHost =
 false;
@@ -4156,6 +3968,7 @@ null;
 y.revealedSecret =
 null;
 
+
 if(
 y.mode === "shared"
 ){
@@ -4164,6 +3977,7 @@ y.sharedSecret =
 randomSecret();
 
 }
+
 
 return y;
 
@@ -4192,6 +4006,7 @@ function matchFinished(x){
 const win =
 x.roundWinner === role;
 
+
 const my =
 
 role === "host"
@@ -4207,6 +4022,7 @@ x.hostScore || 0
 Number(
 x.guestScore || 0
 );
+
 
 const op =
 
@@ -4224,14 +4040,13 @@ Number(
 x.hostScore || 0
 );
 
+
 showScreen(
 "result"
 );
 
-document
-.getElementById(
-"resIcon"
-)
+
+$("resIcon")
 .textContent =
 win
 ?
@@ -4239,10 +4054,8 @@ win
 :
 "😔";
 
-document
-.getElementById(
-"resTitle"
-)
+
+$("resTitle")
 .textContent =
 win
 ?
@@ -4250,10 +4063,8 @@ win
 :
 "Você perdeu o duelo";
 
-document
-.getElementById(
-"resText"
-)
+
+$("resText")
 .innerHTML =
 
 win
@@ -4270,10 +4081,8 @@ Placar final:
 Placar final:
 <b>${op} × ${my}</b>`;
 
-document
-.getElementById(
-"resSecret"
-)
+
+$("resSecret")
 .textContent =
 x.revealedSecret ||
 "----";
@@ -4290,10 +4099,11 @@ room &&
 role === "host"
 ){
 
-await window.FB.remove(
-window.FB.ref(
-window.FB.db,
-"rooms/" + room
+await remove(
+ref(
+db,
+"rooms/" +
+room
 )
 );
 
@@ -4301,15 +4111,128 @@ window.FB.db,
 
 }
 
-catch(e){
-
-console.error(e);
-
-}
+catch(e){}
 
 home();
 
 }
+
+
+onValue(
+ref(
+db,
+".info/connected"
+),
+snapshot => {
+
+const e =
+$("conn");
+
+if(e){
+
+const connected =
+snapshot.val();
+
+e.textContent =
+connected
+
+?
+
+"● Conectado ao servidor"
+
+:
+
+"● Sem conexão com o servidor";
+
+e.className =
+"connection " +
+(
+connected
+?
+"online"
+:
+"offline"
+);
+
+}
+
+}
+);
+
+
+onValue(
+ref(
+db,
+".info/serverTimeOffset"
+),
+snapshot => {
+
+serverOffset =
+Number(
+snapshot.val() ||
+0
+);
+
+}
+);
+
+
+/*
+====================================================
+DISPONIBILIZA AS FUNÇÕES PARA OS BOTÕES HTML
+====================================================
+*/
+
+window.dailyPage =
+dailyPage;
+
+window.onlinePage =
+onlinePage;
+
+window.friendPage =
+friendPage;
+
+window.showScreen =
+showScreen;
+
+window.home =
+home;
+
+window.startDaily =
+startDaily;
+
+window.digit =
+digit;
+
+window.backspace =
+backspace;
+
+window.guess =
+guess;
+
+window.best =
+best;
+
+window.setTime =
+setTime;
+
+window.gameMode =
+gameMode;
+
+window.createRoom =
+createRoom;
+
+window.whatsapp =
+whatsapp;
+
+window.joinRoom =
+joinRoom;
+
+window.cancelRoom =
+cancelRoom;
+
+window.nextRound =
+nextRound;
 
 
 loadName();
@@ -4318,17 +4241,62 @@ gameMode(
 "creator"
 );
 
-best(3);
+best(
+3
+);
 
-setTime(30);
+setTime(
+30
+);
 
 showScreen(
 "home"
 );
 
+
+/*
+====================================================
+ENTRADA AUTOMÁTICA PELO LINK DO WHATSAPP
+====================================================
+*/
+
+const params =
+new URLSearchParams(
+location.search
+);
+
+const roomParam =
+params.get(
+"room"
+);
+
+
+if(
+roomParam
+){
+
+showScreen(
+"online"
+);
+
+$("join")
+.value =
+roomParam.toUpperCase();
+
+setTimeout(
+() => {
+
+joinRoom(
+true
+);
+
+},
+1000
+);
+
+}
+
 </script>
 
-</div>
-
 </body>
-  </html>
+</html>
