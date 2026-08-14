@@ -1592,13 +1592,28 @@ window.addEventListener(
 "load",
 () => {
 
-document.getElementById(
-"join"
-).value =
+const joinInput =
+document.getElementById("join");
+
+if(joinInput){
+
+joinInput.value =
 roomParam.toUpperCase();
 
+}
+
 setTimeout(
-() => joinRoom(true),
+() => {
+
+if(
+typeof joinRoom === "function"
+){
+
+joinRoom(true);
+
+}
+
+},
 700
 );
 
@@ -1613,41 +1628,30 @@ setTimeout(
 <script>
 
 let player = "";
-
 let room = "";
-
 let role = "";
-
 let state = null;
-
 let unsubscribe = null;
 
 let bestOf = 3;
-
 let turnTime = 30;
-
 let playMode = "creator";
 
 let secret = "";
-
 let guessing = "";
 
 let mode = "normal";
 
 let dailyAttempts = 0;
-
 let attempts = 0;
 
 let timerId = null;
-
 let turnLocked = false;
 
 let lastRound = 0;
-
 let lastStatus = "";
 
 let resultShown = false;
-
 let busy = false;
 
 
@@ -1660,7 +1664,6 @@ window.serverOffset || 0
 
 
 const screenIds = [
-
 "home",
 "daily",
 "online",
@@ -1670,7 +1673,6 @@ const screenIds = [
 "game",
 "roundResult",
 "result"
-
 ];
 
 
@@ -1679,13 +1681,17 @@ function showScreen(id){
 screenIds.forEach(
 x => {
 
-document
-.getElementById(x)
-.classList
-.toggle(
+const element =
+document.getElementById(x);
+
+if(element){
+
+element.classList.toggle(
 "hidden",
 x !== id
 );
+
+}
 
 }
 );
@@ -1704,11 +1710,16 @@ if(n){
 
 player = n;
 
-document
-.getElementById(
+const input =
+document.getElementById(
 "playerName"
-)
-.value = n;
+);
+
+if(input){
+
+input.value = n;
+
+}
 
 }
 
@@ -1717,18 +1728,30 @@ document
 
 function saveName(){
 
+const input =
+document.getElementById(
+"playerName"
+);
+
 player =
 (
-document
-.getElementById(
-"playerName"
-)
-.value
-.trim()
+input
+?
+input.value.trim()
+:
+""
 ||
-"Jogador"
-)
-.substring(
+""
+);
+
+if(!player){
+
+player = "Jogador";
+
+}
+
+player =
+player.substring(
 0,
 18
 );
@@ -1759,10 +1782,9 @@ timerId
 );
 
 room = "";
-
 role = "";
-
 state = null;
+mode = "normal";
 
 showScreen(
 "home"
@@ -1960,11 +1982,18 @@ summary();
 
 function summary(){
 
-document
-.getElementById(
+const e =
+document.getElementById(
 "summary"
-)
-.innerHTML =
+);
+
+if(!e){
+
+return;
+
+}
+
+e.innerHTML =
 
 `Melhor de ${bestOf}<br>` +
 
@@ -2102,11 +2131,9 @@ dailySecret();
 guessing = "";
 
 attempts = 0;
-
 dailyAttempts = 0;
 
 mode = "daily";
-
 turnLocked = false;
 
 document
@@ -2359,22 +2386,10 @@ t
 ){
 
 let place = 0;
-
 let out = 0;
 
-let su = [
-0,
-0,
-0,
-0
-];
-
-let tu = [
-0,
-0,
-0,
-0
-];
+let su = [0,0,0,0];
+let tu = [0,0,0,0];
 
 
 for(
@@ -2390,7 +2405,6 @@ t[i] === s[i]
 place++;
 
 su[i] = 1;
-
 tu[i] = 1;
 
 }
@@ -2426,7 +2440,6 @@ t[i] === s[j]
 out++;
 
 su[j] = 1;
-
 tu[i] = 1;
 
 break;
@@ -2441,10 +2454,8 @@ break;
 
 
 return {
-
 place,
 out
-
 };
 
 }
@@ -2540,7 +2551,6 @@ return;
 
 
 dailyAttempts++;
-
 attempts++;
 
 updateAttempts();
@@ -2716,19 +2726,15 @@ turnLocked = true;
 const base = {
 
 hostName:n,
-
 guestName:"",
 
 bestOf,
-
 turnTime,
-
 mode:playMode,
 
 round:1,
 
 hostScore:0,
-
 guestScore:0,
 
 status:"waiting",
@@ -2740,7 +2746,6 @@ turnStartedAt:0,
 history:{},
 
 nextReadyHost:false,
-
 nextReadyGuest:false
 
 };
@@ -2814,7 +2819,7 @@ playMode === "creator"
 
 :
 
-"🤝 Senha compartilhada"
+"🤝 Os dois descobrem a mesma senha"
 
 ) +
 
@@ -2904,14 +2909,19 @@ return;
 
 }
 
-const id =
-document
-.getElementById(
+const input =
+document.getElementById(
 "join"
-)
-.value
+);
+
+const id =
+input
+?
+input.value
 .trim()
-.toUpperCase();
+.toUpperCase()
+:
+"";
 
 if(
 id.length !== 6
@@ -2979,7 +2989,6 @@ return;
 
 
 room = id;
-
 role = "guest";
 
 await window.FB.update(
@@ -2999,7 +3008,6 @@ turnStartedAt:
 serverNow(),
 
 nextReadyHost:false,
-
 nextReadyGuest:false
 
 }
@@ -3080,7 +3088,6 @@ x.hostSecret
 :
 
 (
-
 x.mode === "creator"
 
 ?
@@ -3213,8 +3220,7 @@ false;
 
 guessing = "";
 
-turnLocked =
-false;
+turnLocked = false;
 
 mode =
 "duel";
@@ -3304,6 +3310,15 @@ document
 "msg"
 )
 .textContent = "";
+
+document
+.getElementById(
+"attemptBox"
+)
+.classList
+.add(
+"hidden"
+);
 
 renderGuess();
 
@@ -3476,8 +3491,7 @@ ${v.guess}
 ${who}
 </div>
 
-<div
-style="font-size:13px;margin-top:5px">
+<div style="font-size:13px;margin-top:5px">
 
 <span class="green">
 🟢 ${v.place} certo(s) no lugar
@@ -3612,7 +3626,6 @@ return;
 }
 
 busy = true;
-
 turnLocked = true;
 
 keys(false);
@@ -3713,7 +3726,6 @@ return;
 }
 
 busy = true;
-
 turnLocked = true;
 
 keys(false);
@@ -3782,13 +3794,9 @@ role
 ] = {
 
 player:role,
-
 guess:myGuess,
-
 place:r.place,
-
 out:r.out,
-
 order
 
 };
@@ -3997,7 +4005,7 @@ document
 .getElementById(
 "rrText"
 )
-textContent =
+.textContent =
 win
 ?
 "Você descobriu a senha primeiro."
@@ -4084,6 +4092,8 @@ role === "host"
 
 "nextReadyGuest";
 
+try{
+
 await window.FB.update(
 base,
 {
@@ -4100,6 +4110,7 @@ const x =
 snap.val();
 
 if(
+x &&
 x.nextReadyHost &&
 x.nextReadyGuest
 ){
@@ -4157,6 +4168,18 @@ randomSecret();
 return y;
 
 }
+);
+
+}
+
+}
+
+catch(e){
+
+console.error(e);
+
+alert(
+"Não foi possível iniciar a próxima rodada."
 );
 
 }
@@ -4278,7 +4301,11 @@ window.FB.db,
 
 }
 
-catch(e){}
+catch(e){
+
+console.error(e);
+
+}
 
 home();
 
@@ -4304,4 +4331,4 @@ showScreen(
 </div>
 
 </body>
-</html>
+  </html>
