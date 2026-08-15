@@ -2,12 +2,14 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#061329">
 <title>SENHA — Descubra • Desafie • Vença</title>
 
 <style>
-*{box-sizing:border-box}
+*{
+box-sizing:border-box;
+}
 
 html,body{
 margin:0;
@@ -70,12 +72,7 @@ margin:auto;
 }
 
 .card{
-background:
-linear-gradient(
-145deg,
-rgba(25,49,88,.78),
-rgba(12,28,56,.88)
-);
+background:linear-gradient(145deg,rgba(25,49,88,.78),rgba(12,28,56,.88));
 border:1px solid rgba(130,173,240,.2);
 border-radius:22px;
 padding:18px;
@@ -233,9 +230,10 @@ color:#4ade80;
 color:#ff7b86;
 }
 
-/* =========================
-FERRAMENTAS
-========================= */
+
+/* =========================================
+   DESAFIO DIÁRIO
+   ========================================= */
 
 .daily-tools{
 display:grid;
@@ -262,9 +260,10 @@ font-size:12px;
 margin-top:5px;
 }
 
-/* =========================
-PROGRESSO
-========================= */
+
+/* =========================================
+   PROGRESSO
+   ========================================= */
 
 .stats{
 display:grid;
@@ -303,9 +302,10 @@ color:#4ade80;
 color:#ffd34d;
 }
 
-/* =========================
-RANKING
-========================= */
+
+/* =========================================
+   RANKING
+   ========================================= */
 
 .rank-item{
 display:grid;
@@ -340,9 +340,10 @@ font-weight:900;
 border:1px solid #168cff;
 }
 
-/* =========================
-JOGO
-========================= */
+
+/* =========================================
+   JOGO
+   ========================================= */
 
 .scoreboard{
 display:grid;
@@ -424,42 +425,10 @@ color:#4ade80;
 color:#ffd34d;
 }
 
-.attempt{
-text-align:center;
-margin:10px 0 18px;
-}
 
-.attempt-label{
-font-size:11px;
-font-weight:900;
-letter-spacing:2px;
-color:#8fa4c6;
-}
-
-.attempt-num{
-font-size:30px;
-font-weight:900;
-color:#53b0ff;
-}
-
-.bar{
-height:8px;
-background:#142641;
-border-radius:20px;
-overflow:hidden;
-margin-top:8px;
-}
-
-.bar i{
-display:block;
-height:100%;
-width:0;
-background:linear-gradient(90deg,#168cff,#5146f5);
-}
-
-/* =========================
-MINHA SENHA
-========================= */
+/* =========================================
+   SENHA DO JOGADOR
+   ========================================= */
 
 .my-secret-box{
 background:linear-gradient(
@@ -488,57 +457,10 @@ letter-spacing:8px;
 margin-top:6px;
 }
 
-/* =========================
-PALPITE
-========================= */
 
-.guess{
-display:flex;
-justify-content:center;
-gap:8px;
-margin:18px 0;
-}
-
-.digit{
-width:54px;
-height:60px;
-border-radius:13px;
-border:2px solid #385173;
-background:#08152b;
-text-align:center;
-font-size:27px;
-font-weight:900;
-line-height:56px;
-cursor:pointer;
-}
-
-.digit.selected{
-border-color:#53a7ff;
-box-shadow:0 0 0 3px rgba(22,140,255,.15);
-}
-
-.keys{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:7px;
-}
-
-.key{
-padding:14px 4px;
-border-radius:12px;
-background:#263854;
-}
-
-.message{
-text-align:center;
-min-height:22px;
-margin-top:12px;
-color:#c8d6e9;
-}
-
-/* =========================
-PALPITES ADVERSÁRIO
-========================= */
+/* =========================================
+   ÁREA DO ADVERSÁRIO
+   ========================================= */
 
 .opponent-box{
 background:#0a192f;
@@ -561,7 +483,7 @@ margin-bottom:10px;
 }
 
 .opponent-history{
-max-height:260px;
+max-height:230px;
 overflow-y:auto;
 }
 
@@ -572,9 +494,164 @@ font-size:12px;
 padding:12px 0;
 }
 
-/* =========================
-EMOJIS
-========================= */
+
+/* =========================================
+   ÁREAS DIFERENTES DE JOGADA
+   ========================================= */
+
+.duel-play-area{
+border-radius:20px;
+padding:13px;
+margin-bottom:14px;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.duel-play-area.host-area{
+background:
+linear-gradient(
+145deg,
+rgba(22,86,145,.35),
+rgba(7,24,49,.94)
+);
+}
+
+.duel-play-area.guest-area{
+background:
+linear-gradient(
+145deg,
+rgba(69,43,137,.35),
+rgba(7,24,49,.94)
+);
+}
+
+.shared-play-area{
+background:
+linear-gradient(
+145deg,
+rgba(20,73,111,.45),
+rgba(11,29,55,.96)
+);
+border:1px solid rgba(83,176,255,.2);
+border-radius:20px;
+padding:14px;
+margin-bottom:14px;
+}
+
+.play-area-title{
+text-align:center;
+font-size:11px;
+font-weight:900;
+letter-spacing:1.5px;
+color:#8fbde8;
+margin-bottom:10px;
+}
+
+
+/* =========================================
+   SENHAS NO MODO COMPARTILHADO
+   ========================================= */
+
+.shared-passwords{
+display:flex;
+flex-direction:column;
+gap:8px;
+margin-bottom:14px;
+}
+
+.shared-password{
+border-radius:14px;
+padding:11px 13px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:10px;
+}
+
+.shared-password.player-a{
+background:rgba(22,140,255,.18);
+border:1px solid rgba(83,176,255,.25);
+}
+
+.shared-password.player-b{
+background:rgba(139,92,246,.18);
+border:1px solid rgba(167,139,250,.25);
+}
+
+.shared-password-name{
+font-size:11px;
+font-weight:900;
+color:#b8c9df;
+}
+
+.shared-password-value{
+font-size:23px;
+font-weight:900;
+letter-spacing:6px;
+}
+
+.shared-password-note{
+font-size:9px;
+color:#8295b5;
+}
+
+
+/* =========================================
+   PALPITE
+   ========================================= */
+
+.guess{
+display:flex;
+justify-content:center;
+gap:8px;
+margin:16px 0;
+}
+
+.digit{
+width:54px;
+height:60px;
+border-radius:13px;
+border:2px solid #385173;
+background:#08152b;
+text-align:center;
+font-size:27px;
+font-weight:900;
+line-height:56px;
+cursor:pointer;
+}
+
+.digit.selected{
+border-color:#53a7ff;
+box-shadow:0 0 0 3px rgba(22,140,255,.15);
+}
+
+
+/* =========================================
+   TECLADO
+   ========================================= */
+
+.keys{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:7px;
+}
+
+.key{
+padding:14px 4px;
+border-radius:12px;
+background:#263854;
+}
+
+.message{
+text-align:center;
+min-height:22px;
+margin-top:12px;
+color:#c8d6e9;
+}
+
+
+/* =========================================
+   EMOJIS
+   ========================================= */
 
 .reaction-box{
 background:#0b1a31;
@@ -582,7 +659,6 @@ border:1px solid rgba(255,255,255,.06);
 border-radius:18px;
 padding:10px;
 margin-top:10px;
-margin-bottom:14px;
 }
 
 .reaction-title{
@@ -598,63 +674,31 @@ margin-bottom:8px;
 display:grid;
 grid-template-columns:repeat(8,1fr);
 gap:4px;
-width:100%;
 }
 
 .reaction-button{
 background:#182d4c;
-border-radius:9px;
+border-radius:10px;
 padding:8px 2px;
-font-size:19px;
+font-size:20px;
 line-height:1;
-min-height:39px;
 }
 
 .reaction-button:active{
 transform:scale(.92);
 }
 
-/* Emoji que aparece sobre a tela */
-.floating-reaction{
-position:fixed;
-left:50%;
-bottom:22px;
-transform:translateX(-50%) scale(.5);
-z-index:9999;
-font-size:72px;
-pointer-events:none;
-opacity:0;
-text-shadow:
-0 4px 18px rgba(0,0,0,.8),
-0 0 25px rgba(83,176,255,.5);
+.reaction-display{
+text-align:center;
+min-height:28px;
+font-size:25px;
+margin-top:6px;
 }
 
-.floating-reaction.show{
-animation:floatEmoji 2.5s ease-out forwards;
-}
 
-@keyframes floatEmoji{
-0%{
-opacity:0;
-transform:translateX(-50%) translateY(25px) scale(.5);
-}
-15%{
-opacity:1;
-transform:translateX(-50%) translateY(0) scale(1);
-}
-70%{
-opacity:1;
-transform:translateX(-50%) translateY(-10px) scale(1.05);
-}
-100%{
-opacity:0;
-transform:translateX(-50%) translateY(-65px) scale(.85);
-}
-}
-
-/* =========================
-HISTÓRICO
-========================= */
+/* =========================================
+   HISTÓRICO
+   ========================================= */
 
 .history-title{
 font-size:16px;
@@ -665,7 +709,7 @@ font-weight:900;
 background:#0b1a31;
 border:1px solid rgba(255,255,255,.05);
 border-radius:12px;
-padding:12px;
+padding:11px;
 margin-top:7px;
 }
 
@@ -682,9 +726,10 @@ letter-spacing:0;
 margin-right:8px;
 }
 
-/* =========================
-RESULTADO
-========================= */
+
+/* =========================================
+   RESULTADO
+   ========================================= */
 
 .result-card{
 text-align:center;
@@ -715,15 +760,10 @@ border-radius:13px;
 margin:15px 0;
 }
 
-.result-score{
-font-size:18px;
-font-weight:900;
-margin:12px 0;
-}
 
-/* =========================
-RESPONSIVO
-========================= */
+/* =========================================
+   RESPONSIVO
+   ========================================= */
 
 @media(max-width:360px){
 
@@ -731,9 +771,12 @@ RESPONSIVO
 width:49px;
 }
 
-.reaction-button{
-font-size:18px;
-padding:8px 1px;
+.reactions{
+grid-template-columns:repeat(4,1fr);
+}
+
+.menu-title{
+font-size:16px;
 }
 
 }
@@ -744,9 +787,10 @@ padding:8px 1px;
 
 <div class="app">
 
-<!-- =========================
-HOME
-========================= -->
+
+<!-- =====================================================
+     HOME
+     ===================================================== -->
 
 <section id="home">
 
@@ -772,14 +816,18 @@ Seu nome será usado no progresso e no ranking.
 
 </div>
 
+
 <button
 type="button"
 class="menu-button menu-daily"
 onclick="dailyPage()">
 
-<div class="menu-icon">📅</div>
+<div class="menu-icon">
+📅
+</div>
 
 <div>
+
 <div class="menu-title">
 Desafio Diário
 </div>
@@ -787,18 +835,23 @@ Desafio Diário
 <div class="menu-description">
 Uma senha para todos
 </div>
+
 </div>
 
 </button>
+
 
 <button
 type="button"
 class="menu-button menu-online"
 onclick="onlinePage()">
 
-<div class="menu-icon">⚔️</div>
+<div class="menu-icon">
+⚔️
+</div>
 
 <div>
+
 <div class="menu-title">
 Duelo Online
 </div>
@@ -806,18 +859,23 @@ Duelo Online
 <div class="menu-description">
 Entre pelo código da partida
 </div>
+
 </div>
 
 </button>
+
 
 <button
 type="button"
 class="menu-button menu-friend"
 onclick="friendPage()">
 
-<div class="menu-icon">👥</div>
+<div class="menu-icon">
+👥
+</div>
 
 <div>
+
 <div class="menu-title">
 Desafiar Amigo
 </div>
@@ -825,29 +883,38 @@ Desafiar Amigo
 <div class="menu-description">
 Crie uma partida e envie o convite
 </div>
+
 </div>
 
 </button>
+
 
 <button
 type="button"
 class="menu-button menu-tournament"
 onclick="showScreen('tournament')">
 
-<div class="menu-icon">🏆</div>
+<div class="menu-icon">
+🏆
+</div>
 
 <div>
+
 <div class="menu-title">
 Torneio
-<span class="badge">EM BREVE</span>
+<span class="badge">
+EM BREVE
+</span>
 </div>
 
 <div class="menu-description">
 Campeonatos eliminatórios
 </div>
+
 </div>
 
 </button>
+
 
 <div class="footer">
 SENHA • VERSÃO BETA
@@ -856,9 +923,11 @@ SENHA • VERSÃO BETA
 </section>
 
 
-<!-- =========================
-DIÁRIO
-========================= -->
+
+<!-- =====================================================
+     DESAFIO DIÁRIO
+     NÃO ALTERAR
+     ===================================================== -->
 
 <section id="daily" class="hidden">
 
@@ -877,6 +946,7 @@ onclick="home()">
 Todos tentam descobrir a mesma senha.
 </div>
 
+
 <div class="daily-tools">
 
 <button
@@ -884,22 +954,34 @@ type="button"
 class="tool"
 onclick="showProgress()">
 
-<div class="tool-icon">📊</div>
-<div class="tool-title">MEU PROGRESSO</div>
+<div class="tool-icon">
+📊
+</div>
+
+<div class="tool-title">
+MEU PROGRESSO
+</div>
 
 </button>
+
 
 <button
 type="button"
 class="tool"
 onclick="showRanking()">
 
-<div class="tool-icon">🏆</div>
-<div class="tool-title">RANKING</div>
+<div class="tool-icon">
+🏆
+</div>
+
+<div class="tool-title">
+RANKING
+</div>
 
 </button>
 
 </div>
+
 
 <div
 id="dailyOpen"
@@ -927,6 +1009,7 @@ COMEÇAR DESAFIO
 </button>
 
 </div>
+
 
 <div
 id="dailyDone"
@@ -963,9 +1046,10 @@ onclick="showRanking()">
 </section>
 
 
-<!-- =========================
-PROGRESSO
-========================= -->
+
+<!-- =====================================================
+     PROGRESSO
+     ===================================================== -->
 
 <section id="progress" class="hidden">
 
@@ -1035,6 +1119,7 @@ Continue jogando diariamente.
 
 </div>
 
+
 <div class="card">
 
 <div class="history-title">
@@ -1048,6 +1133,7 @@ style="margin-top:10px;">
 
 </div>
 
+
 <button
 type="button"
 class="primary"
@@ -1058,9 +1144,10 @@ onclick="showRanking()">
 </section>
 
 
-<!-- =========================
-RANKING
-========================= -->
+
+<!-- =====================================================
+     RANKING
+     ===================================================== -->
 
 <section id="ranking" class="hidden">
 
@@ -1093,6 +1180,7 @@ Sua posição
 
 </div>
 
+
 <div class="card">
 
 <div class="history-title">
@@ -1112,9 +1200,10 @@ Carregando...
 </section>
 
 
-<!-- =========================
-ONLINE
-========================= -->
+
+<!-- =====================================================
+     ONLINE
+     ===================================================== -->
 
 <section id="online" class="hidden">
 
@@ -1139,6 +1228,7 @@ class="connection offline">
 Conectando...
 </div>
 
+
 <div class="card">
 
 <h3 class="center">
@@ -1160,6 +1250,7 @@ ENTRAR NA PARTIDA
 </button>
 
 </div>
+
 
 <div class="card center">
 
@@ -1187,9 +1278,10 @@ CRIAR DESAFIO
 </section>
 
 
-<!-- =========================
-AMIGO
-========================= -->
+
+<!-- =====================================================
+     DESAFIAR AMIGO
+     ===================================================== -->
 
 <section id="friend" class="hidden">
 
@@ -1208,9 +1300,12 @@ onclick="home()">
 Configure a partida.
 </div>
 
+
 <div class="card">
 
-<div class="center" style="font-size:45px">
+<div
+class="center"
+style="font-size:45px">
 ⚔️
 </div>
 
@@ -1224,6 +1319,7 @@ class="center"
 style="font-size:21px;font-weight:900;margin:8px 0 18px;">
 Jogador
 </div>
+
 
 <div class="muted">
 <b>Melhor de:</b>
@@ -1257,6 +1353,7 @@ onclick="setBest(7)">
 
 </div>
 
+
 <div class="muted">
 <b>Dinâmica:</b>
 </div>
@@ -1269,7 +1366,7 @@ id="modeCreator"
 class="tool"
 onclick="setMode('creator')">
 🔐<br>
-Cada jogador escolhe
+Cada um escolhe a senha
 </button>
 
 <button
@@ -1283,10 +1380,11 @@ Senha compartilhada
 
 </div>
 
+
 <div id="creatorConfig">
 
 <div class="muted">
-<b>Senha que seu amigo deverá descobrir:</b>
+<b>Sua senha para o adversário descobrir:</b>
 </div>
 
 <input
@@ -1303,7 +1401,10 @@ Obrigatoriamente 4 números diferentes.
 
 </div>
 
-<div style="margin-top:15px">
+
+<div
+id="timeConfig"
+style="margin-top:15px;">
 
 <div class="muted">
 <b>Tempo por turno:</b>
@@ -1339,11 +1440,13 @@ onclick="setTurnTime(60)">
 
 </div>
 
+
 <div
 id="friendSummary"
 class="muted center"
 style="margin-top:15px;">
 </div>
+
 
 <button
 type="button"
@@ -1357,9 +1460,10 @@ CRIAR DESAFIO
 </section>
 
 
-<!-- =========================
-SENHA DO CONVIDADO
-========================= -->
+
+<!-- =====================================================
+     SENHA DO CONVIDADO
+     ===================================================== -->
 
 <section id="guestSecret" class="hidden">
 
@@ -1405,9 +1509,10 @@ CONFIRMAR SENHA
 </section>
 
 
-<!-- =========================
-CONVITE
-========================= -->
+
+<!-- =====================================================
+     CONVITE
+     ===================================================== -->
 
 <section id="invite" class="hidden">
 
@@ -1480,9 +1585,10 @@ CANCELAR SALA
 </section>
 
 
-<!-- =========================
-TORNEIO
-========================= -->
+
+<!-- =====================================================
+     TORNEIO
+     ===================================================== -->
 
 <section id="tournament" class="hidden">
 
@@ -1516,19 +1622,36 @@ Os torneios serão liberados futuramente.
 </section>
 
 
-<!-- =========================
-JOGO
-========================= -->
+
+<!-- =====================================================
+     JOGO
+     ===================================================== -->
 
 <section id="game" class="hidden">
 
-<div class="card">
+
+<!-- PLACAR SOMENTE PARA DUELO -->
+
+<div
+id="duelScoreCard"
+class="card">
 
 <div class="scoreboard">
 
 <div>
-<div id="me" class="pname">Você</div>
-<div id="myScore" class="score"></div>
+
+<div
+id="me"
+class="pname">
+Você
+</div>
+
+<div
+id="myScore"
+class="score">
+0
+</div>
+
 </div>
 
 <div class="vs">
@@ -1536,16 +1659,32 @@ VS
 </div>
 
 <div>
-<div id="opp" class="pname">Adversário</div>
-<div id="opScore" class="score"></div>
+
+<div
+id="opp"
+class="pname">
+Adversário
+</div>
+
+<div
+id="opScore"
+class="score">
+0
 </div>
 
 </div>
 
-<div id="round" class="round"></div>
+</div>
+
+<div
+id="round"
+class="round">
+</div>
 
 </div>
 
+
+<!-- SENHA QUE EU ESCOLHI -->
 
 <div
 id="mySecretBox"
@@ -1568,11 +1707,33 @@ Esta é a senha que seu adversário precisa descobrir.
 </div>
 
 
+<!-- SENHAS DO MODO COMPARTILHADO -->
+
+<div
+id="sharedPasswordsBox"
+class="shared-play-area hidden">
+
+<div class="play-area-title">
+🤝 SENHAS DA PARTIDA
+</div>
+
+<div
+id="sharedPasswords"
+class="shared-passwords">
+</div>
+
+</div>
+
+
+<!-- STATUS -->
+
 <div
 id="duelStatus"
 class="duel-status hidden">
 </div>
 
+
+<!-- TENTATIVAS DIÁRIAS -->
 
 <div
 id="attemptBox"
@@ -1594,7 +1755,7 @@ class="attempt-num">
 
 <div
 id="attemptMsg"
-class="muted">
+class="attempt-msg">
 </div>
 
 </div>
@@ -1632,7 +1793,7 @@ id="opponentBox"
 class="opponent-box hidden">
 
 <div class="opponent-title">
-👀 Palpites do adversário
+👀 Últimos palpites do adversário
 </div>
 
 <div
@@ -1654,13 +1815,25 @@ Nenhum palpite ainda.
 </div>
 
 
-<!-- PALPITE -->
+<!-- ÁREA DE JOGO -->
 
-<div class="card">
+<div
+id="duelPlayArea"
+class="duel-play-area hidden">
+
+<div
+id="duelPlayTitle"
+class="play-area-title">
+SEU PALPITE
+</div>
+
+
+<div class="card" style="margin-bottom:0;">
 
 <p class="center">
 Monte seu chute.
 </p>
+
 
 <div class="guess">
 
@@ -1690,25 +1863,95 @@ onclick="selectPosition(3)">
 
 </div>
 
+
 <div class="keys">
 
-<button type="button" class="key" onclick="addDigit('1')">1</button>
-<button type="button" class="key" onclick="addDigit('2')">2</button>
-<button type="button" class="key" onclick="addDigit('3')">3</button>
+<button
+type="button"
+class="key"
+onclick="addDigit('1')">
+1
+</button>
 
-<button type="button" class="key" onclick="addDigit('4')">4</button>
-<button type="button" class="key" onclick="addDigit('5')">5</button>
-<button type="button" class="key" onclick="addDigit('6')">6</button>
+<button
+type="button"
+class="key"
+onclick="addDigit('2')">
+2
+</button>
 
-<button type="button" class="key" onclick="addDigit('7')">7</button>
-<button type="button" class="key" onclick="addDigit('8')">8</button>
-<button type="button" class="key" onclick="addDigit('9')">9</button>
+<button
+type="button"
+class="key"
+onclick="addDigit('3')">
+3
+</button>
 
-<button type="button" class="key" onclick="deleteDigit()">⌫</button>
-<button type="button" class="key" onclick="addDigit('0')">0</button>
-<button type="button" class="key" onclick="submitGuess()">✓</button>
+<button
+type="button"
+class="key"
+onclick="addDigit('4')">
+4
+</button>
+
+<button
+type="button"
+class="key"
+onclick="addDigit('5')">
+5
+</button>
+
+<button
+type="button"
+class="key"
+onclick="addDigit('6')">
+6
+</button>
+
+<button
+type="button"
+class="key"
+onclick="addDigit('7')">
+7
+</button>
+
+<button
+type="button"
+class="key"
+onclick="addDigit('8')">
+8
+</button>
+
+<button
+type="button"
+class="key"
+onclick="addDigit('9')">
+9
+</button>
+
+<button
+type="button"
+class="key"
+onclick="deleteDigit()">
+⌫
+</button>
+
+<button
+type="button"
+class="key"
+onclick="addDigit('0')">
+0
+</button>
+
+<button
+type="button"
+class="key"
+onclick="submitGuess()">
+✓
+</button>
 
 </div>
+
 
 <div
 id="gameMessage"
@@ -1716,7 +1959,12 @@ class="message">
 </div>
 
 <div class="center muted">
-⏱️ <span id="timeText">Sem limite</span>
+⏱️
+<span id="timeText">
+Sem limite
+</span>
+</div>
+
 </div>
 
 </div>
@@ -1734,15 +1982,67 @@ class="reaction-box hidden">
 
 <div class="reactions">
 
-<button type="button" class="reaction-button" onclick="sendReaction('😈')">😈</button>
-<button type="button" class="reaction-button" onclick="sendReaction('😂')">😂</button>
-<button type="button" class="reaction-button" onclick="sendReaction('👀')">👀</button>
-<button type="button" class="reaction-button" onclick="sendReaction('🔥')">🔥</button>
-<button type="button" class="reaction-button" onclick="sendReaction('😱')">😱</button>
-<button type="button" class="reaction-button" onclick="sendReaction('🤔')">🤔</button>
-<button type="button" class="reaction-button" onclick="sendReaction('🧠')">🧠</button>
-<button type="button" class="reaction-button" onclick="sendReaction('🏆')">🏆</button>
+<button
+type="button"
+class="reaction-button"
+onclick="sendReaction('😈')">
+😈
+</button>
 
+<button
+type="button"
+class="reaction-button"
+onclick="sendReaction('😂')">
+😂
+</button>
+
+<button
+type="button"
+class="reaction-button"
+onclick="sendReaction('👀')">
+👀
+</button>
+
+<button
+type="button"
+class="reaction-button"
+onclick="sendReaction('🔥')">
+🔥
+</button>
+
+<button
+type="button"
+class="reaction-button"
+onclick="sendReaction('😱')">
+😱
+</button>
+
+<button
+type="button"
+class="reaction-button"
+onclick="sendReaction('🤔')">
+🤔
+</button>
+
+<button
+type="button"
+class="reaction-button"
+onclick="sendReaction('🧠')">
+🧠
+</button>
+
+<button
+type="button"
+class="reaction-button"
+onclick="sendReaction('🏆')">
+🏆
+</button>
+
+</div>
+
+<div
+id="reactionDisplay"
+class="reaction-display">
 </div>
 
 </div>
@@ -1756,7 +2056,8 @@ class="reaction-box hidden">
 📋 Meus palpites
 </div>
 
-<div id="gameHistory">
+<div
+id="gameHistory">
 
 <p class="muted center">
 Nenhuma tentativa ainda.
@@ -1769,17 +2070,10 @@ Nenhuma tentativa ainda.
 </section>
 
 
-<!-- EMOJI FLUTUANTE -->
 
-<div
-id="floatingReaction"
-class="floating-reaction">
-</div>
-
-
-<!-- =========================
-RESULTADO
-========================= -->
+<!-- =====================================================
+     RESULTADO
+     ===================================================== -->
 
 <section id="result" class="hidden">
 
@@ -1796,17 +2090,13 @@ DESAFIO ENCERRADO
 </div>
 
 <h2 id="resultTitle">
+Você venceu!
 </h2>
 
 <p
 id="resultText"
 class="muted">
 </p>
-
-<div
-id="resultScore"
-class="result-score">
-</div>
 
 <div class="muted">
 A senha era:
@@ -1815,14 +2105,18 @@ A senha era:
 <div
 id="resultSecret"
 class="secret">
-----</div>
+0000
+</div>
+
 
 <div
 id="resultProgress"
 class="card"
 style="text-align:left;margin-top:20px;">
 
-<div class="center" style="font-size:19px;font-weight:900;">
+<div
+class="center"
+style="font-size:19px;font-weight:900;">
 📊 Seu Progresso
 </div>
 
@@ -1835,26 +2129,51 @@ style="margin-top:6px;">
 <div class="stats">
 
 <div class="stat">
-<div id="resultPlayed" class="stat-number blue">0</div>
-<div class="stat-label">DESAFIOS</div>
+<div
+id="resultPlayed"
+class="stat-number blue">
+0
+</div>
+<div class="stat-label">
+DESAFIOS
+</div>
 </div>
 
 <div class="stat">
-<div id="resultWins" class="stat-number green">0</div>
-<div class="stat-label">VITÓRIAS</div>
+<div
+id="resultWins"
+class="stat-number green">
+0
+</div>
+<div class="stat-label">
+VITÓRIAS
+</div>
 </div>
 
 <div class="stat">
-<div id="resultAverage" class="stat-number blue">—</div>
-<div class="stat-label">MÉDIA</div>
+<div
+id="resultAverage"
+class="stat-number blue">
+—
+</div>
+<div class="stat-label">
+MÉDIA
+</div>
 </div>
 
 <div class="stat">
-<div id="resultStreak" class="stat-number yellow">0</div>
-<div class="stat-label">SEQUÊNCIA</div>
+<div
+id="resultStreak"
+class="stat-number yellow">
+0
+</div>
+<div class="stat-label">
+SEQUÊNCIA
+</div>
 </div>
 
 </div>
+
 
 <button
 type="button"
@@ -1864,6 +2183,7 @@ onclick="showRanking()">
 </button>
 
 </div>
+
 
 <button
 type="button"
@@ -1879,9 +2199,10 @@ onclick="dailyPage()">
 </div>
 
 
-<!-- =========================
-FIREBASE
-========================= -->
+
+<!-- =====================================================
+     FIREBASE
+     ===================================================== -->
 
 <script type="module">
 
@@ -1903,6 +2224,7 @@ runTransaction
 }
 from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-database.js";
+
 
 const firebaseConfig = {
 
@@ -1926,17 +2248,22 @@ messagingSenderId:
 
 appId:
 "1:405309556115:web:7bbcf7e1438b37a711d466"
+
 };
+
 
 try{
 
 const app =
-initializeApp(firebaseConfig);
+initializeApp(
+firebaseConfig
+);
 
 const db =
 getDatabase(app);
 
 window.FB = {
+
 db:db,
 ref:ref,
 set:set,
@@ -1945,61 +2272,82 @@ update:update,
 remove:remove,
 onValue:onValue,
 runTransaction:runTransaction
+
 };
 
+
 onValue(
-ref(db,".info/connected"),
+ref(
+db,
+".info/connected"
+),
 function(snapshot){
 
 const element =
-document.getElementById("connection");
+document.getElementById(
+"connection"
+);
 
-if(!element)return;
+if(!element){
+return;
+}
+
+if(snapshot.val()){
 
 element.textContent =
-snapshot.val()
-?
-"● Conectado ao servidor"
-:
+"● Conectado ao servidor";
+
+element.className =
+"connection online";
+
+}else{
+
+element.textContent =
 "● Sem conexão com o servidor";
 
 element.className =
-"connection " +
-(
-snapshot.val()
-?
-"online"
-:
-"offline"
-);
+"connection offline";
+
+}
 
 }
 );
 
+
 onValue(
-ref(db,".info/serverTimeOffset"),
+ref(
+db,
+".info/serverTimeOffset"
+),
 function(snapshot){
 
 window.serverOffset =
-Number(snapshot.val() || 0);
+Number(
+snapshot.val() || 0
+);
 
 }
+
 );
 
 }catch(error){
 
-console.error("Firebase:",error);
+console.error(
+"Firebase:",
+error
+);
 
 }
 
 </script>
 
 
-<script>
 
-/* =========================
-VARIÁVEIS
-========================= */
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
+
+<script>
 
 let player = "Jogador";
 
@@ -2007,7 +2355,12 @@ let mode = "normal";
 
 let secret = "";
 
-let guess = ["","","",""];
+let guess = [
+"",
+"",
+"",
+""
+];
 
 let selectedPosition = 0;
 
@@ -2042,9 +2395,9 @@ let resultAlreadyShown = false;
 let lastReactionAt = 0;
 
 
-/* =========================
-NAVEGAÇÃO
-========================= */
+/* =====================================================
+   NAVEGAÇÃO
+   ===================================================== */
 
 function showScreen(id){
 
@@ -2062,10 +2415,13 @@ const screens = [
 "result"
 ];
 
-screens.forEach(function(name){
+screens.forEach(
+function(name){
 
 const element =
-document.getElementById(name);
+document.getElementById(
+name
+);
 
 if(element){
 
@@ -2076,20 +2432,24 @@ name !== id
 
 }
 
-});
+}
+);
 
 }
 
 
 function home(){
 
-clearInterval(timerInterval);
+clearInterval(
+timerInterval
+);
 
 if(roomListener){
 
 roomListener();
 
-roomListener = null;
+roomListener =
+null;
 
 }
 
@@ -2101,31 +2461,50 @@ roomState = null;
 
 lastRoomStatus = "";
 
-showScreen("home");
+lastRoomRound = 0;
+
+showScreen(
+"home"
+);
 
 }
 
 
 function dailyPage(){
 
-clearInterval(timerInterval);
+clearInterval(
+timerInterval
+);
 
 const done =
 localStorage.getItem(
-"senha_diario_" + today()
+"senha_diario_" +
+today()
 ) === "done";
 
 document
-.getElementById("dailyOpen")
+.getElementById(
+"dailyOpen"
+)
 .classList
-.toggle("hidden",done);
+.toggle(
+"hidden",
+done
+);
 
 document
-.getElementById("dailyDone")
+.getElementById(
+"dailyDone"
+)
 .classList
-.toggle("hidden",!done);
+.toggle(
+"hidden",
+!done
+);
 
-showScreen("daily");
+showScreen(
+"daily"
+);
 
 }
 
@@ -2134,7 +2513,9 @@ function onlinePage(){
 
 savePlayer();
 
-showScreen("online");
+showScreen(
+"online"
+);
 
 }
 
@@ -2144,13 +2525,17 @@ function friendPage(){
 savePlayer();
 
 document
-.getElementById("friendName")
+.getElementById(
+"friendName"
+)
 .textContent =
 player;
 
 updateFriendSummary();
 
-showScreen("friend");
+showScreen(
+"friend"
+);
 
 }
 
@@ -2161,7 +2546,9 @@ savePlayer();
 
 renderProgress();
 
-showScreen("progress");
+showScreen(
+"progress"
+);
 
 }
 
@@ -2172,14 +2559,16 @@ savePlayer();
 
 renderRanking();
 
-showScreen("ranking");
+showScreen(
+"ranking"
+);
 
 }
 
 
-/* =========================
-NOME
-========================= */
+/* =====================================================
+   NOME
+   ===================================================== */
 
 function loadPlayer(){
 
@@ -2190,13 +2579,19 @@ localStorage.getItem(
 
 if(saved){
 
-player = saved;
+player =
+saved;
 
 const input =
-document.getElementById("playerName");
+document.getElementById(
+"playerName"
+);
 
 if(input){
-input.value = saved;
+
+input.value =
+saved;
+
 }
 
 }
@@ -2207,13 +2602,21 @@ input.value = saved;
 function savePlayer(){
 
 const input =
-document.getElementById("playerName");
+document.getElementById(
+"playerName"
+);
 
 if(input){
 
 player =
-(input.value.trim() || "Jogador")
-.substring(0,18);
+(
+input.value.trim() ||
+"Jogador"
+)
+.substring(
+0,
+18
+);
 
 }
 
@@ -2227,9 +2630,9 @@ return player;
 }
 
 
-/* =========================
-DATA
-========================= */
+/* =====================================================
+   DATA
+   ===================================================== */
 
 function today(){
 
@@ -2239,9 +2642,19 @@ new Date();
 return (
 date.getFullYear() +
 "-" +
-String(date.getMonth()+1).padStart(2,"0") +
+String(
+date.getMonth()+1
+).padStart(
+2,
+"0"
+) +
 "-" +
-String(date.getDate()).padStart(2,"0")
+String(
+date.getDate()
+).padStart(
+2,
+"0"
+)
 );
 
 }
@@ -2263,21 +2676,27 @@ parts[0]
 }
 
 
-/* =========================
-SENHA DIÁRIA
-========================= */
+/* =====================================================
+   DESAFIO DIÁRIO
+   NÃO ALTERADO
+   ===================================================== */
 
 function createDailySecret(){
 
 let number =
 parseInt(
-today().replaceAll("-",""),
+today().replaceAll(
+"-",
+""
+),
 10
 );
 
 const result = [];
 
-while(result.length < 4){
+while(
+result.length < 4
+){
 
 number =
 (
@@ -2288,9 +2707,15 @@ number * 9301 +
 const digit =
 number % 10;
 
-if(!result.includes(digit)){
+if(
+!result.includes(
+digit
+)
+){
 
-result.push(digit);
+result.push(
+digit
+);
 
 }
 
@@ -2301,26 +2726,9 @@ return result.join("");
 }
 
 
-/* =========================
-INICIAR DIÁRIO
-========================= */
-
 function startDaily(){
 
 savePlayer();
-
-const alreadyDone =
-localStorage.getItem(
-"senha_diario_" + today()
-) === "done";
-
-if(alreadyDone){
-
-dailyPage();
-
-return;
-
-}
 
 secret =
 createDailySecret();
@@ -2331,8 +2739,12 @@ mode =
 dailyAttempts =
 0;
 
-guess =
-["","","",""];
+guess = [
+"",
+"",
+"",
+""
+];
 
 selectedPosition =
 0;
@@ -2340,94 +2752,213 @@ selectedPosition =
 turnLocked =
 false;
 
-document.getElementById("me").textContent =
+document
+.getElementById(
+"me"
+)
+.textContent =
 player;
 
-document.getElementById("opp").textContent =
-"Desafio Diário";
-
-document.getElementById("myScore").textContent =
+document
+.getElementById(
+"opp"
+)
+.textContent =
 "";
 
-document.getElementById("opScore").textContent =
+document
+.getElementById(
+"myScore"
+)
+.textContent =
 "";
 
-document.getElementById("round").textContent =
+document
+.getElementById(
+"opScore"
+)
+.textContent =
+"";
+
+document
+.getElementById(
+"round"
+)
+.textContent =
 "DESAFIO DIÁRIO";
 
-document.getElementById("duelStatus")
-.classList.add("hidden");
+document
+.getElementById(
+"duelScoreCard"
+)
+.classList
+.add(
+"hidden"
+);
 
-document.getElementById("mySecretBox")
-.classList.add("hidden");
+document
+.getElementById(
+"duelStatus"
+)
+.classList
+.add(
+"hidden"
+);
 
-document.getElementById("opponentBox")
-.classList.add("hidden");
+document
+.getElementById(
+"mySecretBox"
+)
+.classList
+.add(
+"hidden"
+);
 
-document.getElementById("reactionBox")
-.classList.add("hidden");
+document
+.getElementById(
+"sharedPasswordsBox"
+)
+.classList
+.add(
+"hidden"
+);
 
-document.getElementById("attemptBox")
-.classList.remove("hidden");
+document
+.getElementById(
+"opponentBox"
+)
+.classList
+.add(
+"hidden"
+);
 
-document.getElementById("timer").textContent =
+document
+.getElementById(
+"reactionBox"
+)
+.classList
+.add(
+"hidden"
+);
+
+document
+.getElementById(
+"duelPlayArea"
+)
+.classList
+.add(
+"hidden"
+);
+
+document
+.getElementById(
+"attemptBox"
+)
+.classList
+.remove(
+"hidden"
+);
+
+document
+.getElementById(
+"timer"
+)
+.textContent =
 "∞";
 
-document.getElementById("timeText").textContent =
+document
+.getElementById(
+"timeText"
+)
+.textContent =
 "Sem limite";
 
-document.getElementById("gameMessage").textContent =
+document
+.getElementById(
+"gameMessage"
+)
+.textContent =
 "";
 
-document.getElementById("gameHistory").innerHTML =
+document
+.getElementById(
+"gameHistory"
+)
+.innerHTML =
 '<p class="muted center">Nenhuma tentativa ainda.</p>';
 
 updateDailyAttempts();
 
 renderGuess();
 
-setKeys(true);
+setKeys(
+true
+);
 
-showScreen("game");
+showScreen(
+"game"
+);
 
 }
 
 
 function updateDailyAttempts(){
 
-document.getElementById("attemptNum").textContent =
-dailyAttempts + " / 15";
+document
+.getElementById(
+"attemptNum"
+)
+.textContent =
+dailyAttempts +
+" / 15";
 
-document.getElementById("attemptBar").style.width =
-(dailyAttempts / 15 * 100) + "%";
+document
+.getElementById(
+"attemptBar"
+)
+.style
+.width =
+(
+dailyAttempts /
+15 *
+100
+) +
+"%";
 
 const remaining =
-15 - dailyAttempts;
+15 -
+dailyAttempts;
 
-document.getElementById("attemptMsg").textContent =
+document
+.getElementById(
+"attemptMsg"
+)
+.textContent =
 
-remaining <= 0
-?
-"Limite atingido"
-:
 remaining === 1
+
 ?
+
 "Resta 1 tentativa"
+
 :
-"Restam " + remaining + " tentativas";
+
+"Restam " +
+remaining +
+" tentativas";
 
 }
 
 
-/* =========================
-PALPITE
-========================= */
+/* =====================================================
+   PALPITE
+   ===================================================== */
 
 function selectPosition(position){
 
 if(
 mode === "duel" &&
-false
+turnLocked
 ){
 
 return;
@@ -2442,13 +2973,23 @@ renderGuess();
 }
 
 
-/*
-Agora é permitido montar o palpite
-mesmo durante a vez do adversário.
-A trava fica somente no envio.
-*/
-
 function addDigit(number){
+
+if(
+mode === "duel" &&
+turnLocked
+){
+
+return;
+
+}
+
+
+/*
+Permite preencher fora de ordem.
+O jogador pode tocar em qualquer uma das
+quatro casas e colocar o número.
+*/
 
 let position =
 selectedPosition;
@@ -2469,9 +3010,12 @@ next++;
 
 }
 
-if(next < 4){
+if(
+next < 4
+){
 
-position = next;
+position =
+next;
 
 }else{
 
@@ -2484,15 +3028,12 @@ return;
 guess[position] =
 number;
 
-if(position < 3){
+if(
+position < 3
+){
 
 selectedPosition =
 position + 1;
-
-}else{
-
-selectedPosition =
-3;
 
 }
 
@@ -2502,6 +3043,15 @@ renderGuess();
 
 
 function deleteDigit(){
+
+if(
+mode === "duel" &&
+turnLocked
+){
+
+return;
+
+}
 
 let position =
 selectedPosition;
@@ -2529,18 +3079,23 @@ renderGuess();
 function renderGuess(){
 
 for(
-let i=0;
-i<4;
+let i = 0;
+i < 4;
 i++
 ){
 
 const element =
-document.getElementById("digit" + i);
+document.getElementById(
+"digit" + i
+);
 
-if(!element)continue;
+if(!element){
+continue;
+}
 
 element.textContent =
-guess[i] || "";
+guess[i] ||
+"";
 
 element.classList.toggle(
 "selected",
@@ -2555,39 +3110,61 @@ i === selectedPosition
 function setKeys(enabled){
 
 document
-.querySelectorAll(".key")
-.forEach(function(button){
+.querySelectorAll(
+".key"
+)
+.forEach(
+function(button){
 
 button.disabled =
 !enabled;
 
-});
+}
+);
 
 }
 
 
-/* =========================
-RESULTADO DA SENHA
-========================= */
+function getGuess(){
+
+return guess.join("");
+
+}
+
+
+/* =====================================================
+   CÁLCULO
+   ===================================================== */
 
 function calculateResult(
 secretNumber,
 guessNumber
 ){
 
-let correctPlace = 0;
+let correctPlace =
+0;
 
-let correctOutside = 0;
+let correctOutside =
+0;
 
-const usedSecret =
-[false,false,false,false];
+const usedSecret = [
+false,
+false,
+false,
+false
+];
 
-const usedGuess =
-[false,false,false,false];
+const usedGuess = [
+false,
+false,
+false,
+false
+];
+
 
 for(
-let i=0;
-i<4;
+let i = 0;
+i < 4;
 i++
 ){
 
@@ -2608,19 +3185,24 @@ true;
 
 }
 
+
 for(
-let i=0;
-i<4;
+let i = 0;
+i < 4;
 i++
 ){
 
-if(usedGuess[i]){
+if(
+usedGuess[i]
+){
+
 continue;
+
 }
 
 for(
-let j=0;
-j<4;
+let j = 0;
+j < 4;
 j++
 ){
 
@@ -2654,9 +3236,9 @@ outside:correctOutside
 }
 
 
-/* =========================
-HISTÓRICO DIÁRIO
-========================= */
+/* =====================================================
+   HISTÓRICO DIÁRIO
+   ===================================================== */
 
 function addGameHistory(
 number,
@@ -2665,16 +3247,23 @@ attemptNumber
 ){
 
 const container =
-document.getElementById("gameHistory");
+document.getElementById(
+"gameHistory"
+);
 
-if(attemptNumber === 1){
+if(
+attemptNumber === 1
+){
 
-container.innerHTML = "";
+container.innerHTML =
+"";
 
 }
 
 const item =
-document.createElement("div");
+document.createElement(
+"div"
+);
 
 item.className =
 "history-item";
@@ -2684,7 +3273,12 @@ item.innerHTML =
 '<div class="history-guess">' +
 
 '<span class="hn">' +
-String(attemptNumber).padStart(2,"0") +
+String(
+attemptNumber
+).padStart(
+2,
+"0"
+) +
 '</span>' +
 
 number +
@@ -2707,39 +3301,48 @@ result.outside +
 
 "</div>";
 
-container.prepend(item);
+container.prepend(
+item
+);
 
 }
 
 
-/* =========================
-ENVIO
-========================= */
+/* =====================================================
+   ENVIO DO PALPITE
+   ===================================================== */
 
 function submitGuess(){
 
 const currentGuess =
-guess.join("");
+getGuess();
 
 if(
 currentGuess.length !== 4 ||
 guess.includes("")
 ){
 
-document.getElementById("gameMessage").textContent =
+document
+.getElementById(
+"gameMessage"
+)
+.textContent =
 "Preencha os 4 números antes de enviar.";
 
 return;
 
 }
 
-if(mode === "duel"){
+if(
+mode === "duel"
+){
 
 submitDuelGuess();
 
 return;
 
 }
+
 
 dailyAttempts++;
 
@@ -2757,34 +3360,48 @@ dailyAttempts
 
 updateDailyAttempts();
 
-if(result.place === 4){
+
+if(
+result.place === 4
+){
 
 saveDailyResult(
 true,
 dailyAttempts
 );
 
-finishDaily(true);
+finishDaily(
+true
+);
 
 return;
 
 }
 
-if(dailyAttempts >= 15){
+
+if(
+dailyAttempts >= 15
+){
 
 saveDailyResult(
 false,
 dailyAttempts
 );
 
-finishDaily(false);
+finishDaily(
+false
+);
 
 return;
 
 }
 
-guess =
-["","","",""];
+guess = [
+"",
+"",
+"",
+""
+];
 
 selectedPosition =
 0;
@@ -2794,9 +3411,9 @@ renderGuess();
 }
 
 
-/* =========================
-PROGRESSO
-========================= */
+/* =====================================================
+   PROGRESSO
+   ===================================================== */
 
 function progressStorageKey(){
 
@@ -2829,13 +3446,9 @@ history:{}
 
 try{
 
-const data =
-JSON.parse(value);
-
-data.history =
-data.history || {};
-
-return data;
+return JSON.parse(
+value
+);
 
 }catch(error){
 
@@ -2875,15 +3488,29 @@ getProgress();
 const day =
 today();
 
-if(data.history[day]){
+if(
+data.history &&
+data.history[day]
+){
 
 return;
 
 }
 
+if(
+!data.history
+){
+
+data.history =
+{};
+
+}
+
 data.played++;
 
-if(won){
+if(
+won
+){
 
 data.wins++;
 
@@ -2916,118 +3543,201 @@ won:won,
 attempts:attempts
 };
 
-saveProgress(data);
+saveProgress(
+data
+);
 
-saveRankingData(data);
-
-localStorage.setItem(
-"senha_diario_" + day,
-"done"
+saveRankingData(
+data
 );
 
 }
 
 
-/* =========================
-RESULTADO DIÁRIO
-========================= */
+/* =====================================================
+   RESULTADO DIÁRIO
+   ===================================================== */
 
 function finishDaily(won){
 
-setKeys(false);
+setKeys(
+false
+);
 
-clearInterval(timerInterval);
+clearInterval(
+timerInterval
+);
 
-/*
-IMPORTANTE:
-usa a variável secret real do desafio.
-Nunca usa 0000.
-*/
+document
+.getElementById(
+"duelScoreCard"
+)
+.classList
+.add(
+"hidden"
+);
 
-document.getElementById("resultIcon").textContent =
-won ? "🏆" : "😔";
+document
+.getElementById(
+"resultIcon"
+)
+.textContent =
+won
+?
+"🏆"
+:
+"😔";
 
-document.getElementById("resultTitle").textContent =
+document
+.getElementById(
+"resultTitle"
+)
+.textContent =
 won
 ?
 "Você venceu!"
 :
 "Desafio encerrado";
 
-document.getElementById("resultText").innerHTML =
+document
+.getElementById(
+"resultText"
+)
+.innerHTML =
+
 won
+
 ?
+
 "Parabéns! Você descobriu a senha em <b>" +
 dailyAttempts +
 "</b> tentativa(s)."
+
 :
+
 "Você não descobriu a senha nas 15 tentativas.";
 
-document.getElementById("resultScore").textContent =
-"";
-
-document.getElementById("resultSecret").textContent =
+document
+.getElementById(
+"resultSecret"
+)
+.textContent =
 secret;
 
 renderResultProgress();
 
-showScreen("result");
+showScreen(
+"result"
+);
 
 }
 
 
-/* =========================
-PROGRESSO
-========================= */
+/* =====================================================
+   RENDER PROGRESSO
+   ===================================================== */
 
 function renderProgress(){
 
 const data =
 getProgress();
 
-document.getElementById("progressName").textContent =
+document
+.getElementById(
+"progressName"
+)
+.textContent =
 player;
 
-document.getElementById("statPlayed").textContent =
+document
+.getElementById(
+"statPlayed"
+)
+.textContent =
 data.played;
 
-document.getElementById("statWins").textContent =
+document
+.getElementById(
+"statWins"
+)
+.textContent =
 data.wins;
 
-document.getElementById("statLosses").textContent =
+document
+.getElementById(
+"statLosses"
+)
+.textContent =
 data.losses;
 
-document.getElementById("statStreak").textContent =
+document
+.getElementById(
+"statStreak"
+)
+.textContent =
 data.streak;
 
-document.getElementById("statBest").textContent =
+document
+.getElementById(
+"statBest"
+)
+.textContent =
 data.bestStreak;
 
-document.getElementById("statAverage").textContent =
+document
+.getElementById(
+"statAverage"
+)
+.textContent =
+
 data.wins
+
 ?
-(data.totalAttempts / data.wins).toFixed(1)
+
+(
+data.totalAttempts /
+data.wins
+).toFixed(
+1
+)
+
 :
+
 "—";
 
-document.getElementById("progressText").textContent =
+document
+.getElementById(
+"progressText"
+)
+.textContent =
+
 data.streak > 1
+
 ?
+
 "🔥 Você está em uma sequência de " +
 data.streak +
 " dias!"
+
 :
+
 "Continue jogando diariamente.";
 
 const history =
-document.getElementById("progressHistory");
+document.getElementById(
+"progressHistory"
+);
 
 const days =
-Object.keys(data.history || {})
+Object.keys(
+data.history || {}
+)
 .sort()
 .reverse();
 
-if(!days.length){
+if(
+!days.length
+){
 
 history.innerHTML =
 '<div class="muted center">Nenhum desafio realizado ainda.</div>';
@@ -3037,12 +3747,14 @@ return;
 }
 
 history.innerHTML =
-days.map(function(day){
+days.map(
+function(day){
 
 const item =
 data.history[day];
 
 return `
+
 <div class="rank-item">
 
 <div class="rank-pos">
@@ -3050,105 +3762,166 @@ ${item.won ? "🏆" : "😔"}
 </div>
 
 <div>
+
 <div class="rank-name">
 ${formatDate(day)}
 </div>
 
 <div class="muted">
 ${item.won
-?
-"Desafio concluído"
-:
-"Não descobriu a senha"}
+? "Desafio concluído"
+: "Não descobriu a senha"}
 </div>
+
 </div>
 
 <div class="rank-score">
-${item.won ? item.attempts + "x" : "—"}
+${item.won
+? item.attempts + "x"
+: "—"}
 </div>
 
 </div>
+
 `;
 
-}).join("");
+}
+).join("");
 
 }
 
 
-/* =========================
-RESULTADO + PROGRESSO
-========================= */
+/* =====================================================
+   RESULTADO + PROGRESSO
+   ===================================================== */
 
 function renderResultProgress(){
 
 const data =
 getProgress();
 
-document.getElementById("resultPlayed").textContent =
+document
+.getElementById(
+"resultPlayed"
+)
+.textContent =
 data.played;
 
-document.getElementById("resultWins").textContent =
+document
+.getElementById(
+"resultWins"
+)
+.textContent =
 data.wins;
 
-document.getElementById("resultAverage").textContent =
+document
+.getElementById(
+"resultAverage"
+)
+.textContent =
+
 data.wins
+
 ?
-(data.totalAttempts / data.wins).toFixed(1)
+
+(
+data.totalAttempts /
+data.wins
+).toFixed(
+1
+)
+
 :
+
 "—";
 
-document.getElementById("resultStreak").textContent =
+document
+.getElementById(
+"resultStreak"
+)
+.textContent =
 data.streak;
 
-document.getElementById("resultProgressText").textContent =
+document
+.getElementById(
+"resultProgressText"
+)
+.textContent =
 
 data.streak > 1
+
 ?
-"🔥 Sequência atual: " + data.streak + " dias"
+
+"🔥 Sequência atual: " +
+data.streak +
+" dias"
+
 :
+
 data.streak === 1
+
 ?
+
 "🔥 Você iniciou uma sequência!"
+
 :
+
 "Continue amanhã.";
 
 }
 
 
-/* =========================
-RANKING
-========================= */
+/* =====================================================
+   RANKING
+   ===================================================== */
 
 async function saveRankingData(data){
 
-if(!window.FB){
+if(
+!window.FB
+){
+
 return;
+
 }
 
 try{
 
 const safe =
-player.replace(/[.#$[\]/]/g,"_");
+player.replace(
+/[.#$[\]/]/g,
+"_"
+);
 
 await window.FB.set(
 window.FB.ref(
 window.FB.db,
-"ranking/" + safe
+"ranking/" +
+safe
 ),
 {
+
 name:player,
 played:data.played,
 wins:data.wins,
 losses:data.losses,
 streak:data.streak,
 bestStreak:data.bestStreak,
-average:data.wins
+
+average:
+data.wins
 ?
 Number(
-(data.totalAttempts / data.wins).toFixed(2)
+(
+data.totalAttempts /
+data.wins
+).toFixed(
+2
+)
 )
 :
 9999
+
 }
 );
 
@@ -3167,12 +3940,16 @@ error
 async function renderRanking(){
 
 const list =
-document.getElementById("rankingList");
+document.getElementById(
+"rankingList"
+);
 
 list.innerHTML =
 '<div class="muted center">Carregando ranking...</div>';
 
-if(!window.FB){
+if(
+!window.FB
+){
 
 list.innerHTML =
 '<div class="muted center">Ranking indisponível.</div>';
@@ -3191,12 +3968,18 @@ window.FB.db,
 )
 );
 
-if(!snapshot.exists()){
+if(
+!snapshot.exists()
+){
 
 list.innerHTML =
 '<div class="muted center">Ainda não existem jogadores no ranking.</div>';
 
-document.getElementById("myRank").textContent =
+document
+.getElementById(
+"myRank"
+)
+.textContent =
 "—";
 
 return;
@@ -3204,17 +3987,24 @@ return;
 }
 
 const players =
-Object.values(snapshot.val());
+Object.values(
+snapshot.val()
+);
 
-players.sort(function(a,b){
+players.sort(
+function(a,b){
 
 if(
 Number(b.wins || 0) !==
 Number(a.wins || 0)
 ){
 
-return Number(b.wins || 0) -
-Number(a.wins || 0);
+return Number(
+b.wins || 0
+) -
+Number(
+a.wins || 0
+);
 
 }
 
@@ -3223,44 +4013,91 @@ Number(b.streak || 0) !==
 Number(a.streak || 0)
 ){
 
-return Number(b.streak || 0) -
-Number(a.streak || 0);
+return Number(
+b.streak || 0
+) -
+Number(
+a.streak || 0
+);
 
 }
 
-return Number(a.average || 9999) -
-Number(b.average || 9999);
+return Number(
+a.average || 9999
+) -
+Number(
+b.average || 9999
+);
 
-});
+}
+);
 
 const position =
-players.findIndex(function(item){
+players.findIndex(
+function(item){
 
-return item.name === player;
+return item.name ===
+player;
 
-});
+}
+);
 
-document.getElementById("myRank").textContent =
+document
+.getElementById(
+"myRank"
+)
+.textContent =
+
 position >= 0
+
 ?
-(position + 1) + "º"
+
+(position + 1) +
+"º"
+
 :
+
 "—";
 
 list.innerHTML =
-players.slice(0,50).map(function(item,index){
+players
+.slice(
+0,
+50
+)
+.map(
+function(item,index){
 
 const isMe =
-item.name === player;
+item.name ===
+player;
 
 let medal =
 index + 1;
 
-if(index === 0)medal = "🥇";
-if(index === 1)medal = "🥈";
-if(index === 2)medal = "🥉";
+if(
+index === 0
+){
+medal =
+"🥇";
+}
+
+if(
+index === 1
+){
+medal =
+"🥈";
+}
+
+if(
+index === 2
+){
+medal =
+"🥉";
+}
 
 return `
+
 <div class="rank-item ${isMe ? "rank-me" : ""}">
 
 <div class="rank-pos">
@@ -3282,20 +4119,23 @@ ${item.streak || 0} 🔥
 
 <div class="rank-score">
 ${item.average
-?
-Number(item.average).toFixed(1)
-:
-"—"}
+? Number(item.average).toFixed(1)
+: "—"}
 </div>
 
 </div>
+
 `;
 
-}).join("");
+}
+)
+.join("");
 
 }catch(error){
 
-console.error(error);
+console.error(
+error
+);
 
 list.innerHTML =
 '<div class="muted center">Não foi possível carregar o ranking.</div>';
@@ -3305,20 +4145,22 @@ list.innerHTML =
 }
 
 
-/* =========================
-CONFIGURAÇÃO AMIGO
-========================= */
+/* =====================================================
+   CONFIGURAÇÃO AMIGO
+   ===================================================== */
 
 function setBest(value){
 
 bestOf =
 value;
 
-[3,5,7].forEach(function(number){
+[3,5,7].forEach(
+function(number){
 
 const button =
 document.getElementById(
-"best" + number
+"best" +
+number
 );
 
 button.style.background =
@@ -3335,7 +4177,8 @@ number === value
 :
 "transparent";
 
-});
+}
+);
 
 updateFriendSummary();
 
@@ -3347,11 +4190,13 @@ function setTurnTime(value){
 turnTime =
 value;
 
-[30,45,60].forEach(function(number){
+[30,45,60].forEach(
+function(number){
 
 const button =
 document.getElementById(
-"time" + number
+"time" +
+number
 );
 
 button.style.background =
@@ -3368,7 +4213,8 @@ number === value
 :
 "transparent";
 
-});
+}
+);
 
 updateFriendSummary();
 
@@ -3380,24 +4226,36 @@ function setMode(value){
 playMode =
 value;
 
-document.getElementById("modeCreator")
-.style.background =
+document
+.getElementById(
+"modeCreator"
+)
+.style
+.background =
 value === "creator"
 ?
 "#155bc4"
 :
 "#182d4c";
 
-document.getElementById("modeShared")
-.style.background =
+document
+.getElementById(
+"modeShared"
+)
+.style
+.background =
 value === "shared"
 ?
 "#155bc4"
 :
 "#182d4c";
 
-document.getElementById("creatorConfig")
-.classList.toggle(
+document
+.getElementById(
+"creatorConfig"
+)
+.classList
+.toggle(
 "hidden",
 value !== "creator"
 );
@@ -3409,7 +4267,11 @@ updateFriendSummary();
 
 function updateFriendSummary(){
 
-document.getElementById("friendSummary").innerHTML =
+document
+.getElementById(
+"friendSummary"
+)
+.innerHTML =
 
 "Melhor de " +
 bestOf +
@@ -3417,10 +4279,15 @@ bestOf +
 
 (
 playMode === "creator"
+
 ?
+
 "🔐 Cada jogador escolherá a senha do adversário"
+
 :
-"🤝 Senha compartilhada"
+
+"🤝 Uma senha será usada pelos dois jogadores"
+
 ) +
 
 "<br>⏱️ " +
@@ -3430,78 +4297,92 @@ turnTime +
 }
 
 
-/* =========================
-VALIDAÇÃO
-========================= */
+/* =====================================================
+   SENHA
+   ===================================================== */
 
 function validUniquePassword(value){
 
-if(!/^\d{4}$/.test(value)){
+if(
+!/^\d{4}$/.test(
+value
+)
+){
 
 return false;
 
 }
 
-return new Set(value).size === 4;
+return new Set(
+value
+).size === 4;
 
 }
 
 
 function randomUniquePassword(){
 
-const numbers =
-[0,1,2,3,4,5,6,7,8,9];
+const numbers = [
+0,1,2,3,4,5,6,7,8,9
+];
 
 for(
-let i=numbers.length-1;
-i>0;
+let i =
+numbers.length - 1;
+i > 0;
 i--
 ){
 
 const j =
 Math.floor(
-Math.random() * (i+1)
+Math.random() *
+(i + 1)
 );
 
-[
-numbers[i],
-numbers[j]
-] =
-[
-numbers[j],
-numbers[i]
-];
+const temp =
+numbers[i];
+
+numbers[i] =
+numbers[j];
+
+numbers[j] =
+temp;
 
 }
 
 return numbers
-.slice(0,4)
+.slice(
+0,
+4
+)
 .join("");
 
 }
 
 
-/* =========================
-SALA
-========================= */
+/* =====================================================
+   SALA
+   ===================================================== */
 
 function generateRoomCode(){
 
 const chars =
 "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 
-let code = "";
+let code =
+"";
 
 for(
-let i=0;
-i<6;
+let i = 0;
+i < 6;
 i++
 ){
 
 code +=
 chars[
 Math.floor(
-Math.random() * chars.length
+Math.random() *
+chars.length
 )
 ];
 
@@ -3522,15 +4403,17 @@ window.serverOffset || 0
 }
 
 
-/* =========================
-CRIAR SALA
-========================= */
+/* =====================================================
+   CRIAR SALA
+   ===================================================== */
 
 async function createRoom(){
 
 savePlayer();
 
-if(player === "Jogador"){
+if(
+player === "Jogador"
+){
 
 alert(
 "Digite seu nome antes de criar a partida."
@@ -3540,17 +4423,26 @@ return;
 
 }
 
-let hostSecret = "";
+let hostSecret =
+"";
 
-if(playMode === "creator"){
+if(
+playMode === "creator"
+){
 
 hostSecret =
 document
-.getElementById("creatorSecret")
+.getElementById(
+"creatorSecret"
+)
 .value
 .trim();
 
-if(!validUniquePassword(hostSecret)){
+if(
+!validUniquePassword(
+hostSecret
+)
+){
 
 alert(
 "A senha precisa ter exatamente 4 números diferentes."
@@ -3562,7 +4454,9 @@ return;
 
 }
 
-if(!window.FB){
+if(
+!window.FB
+){
 
 alert(
 "O servidor ainda está conectando."
@@ -3580,13 +4474,17 @@ role =
 
 const roomData = {
 
-hostName:player,
+hostName:
+player,
 
-guestName:"",
+guestName:
+"",
 
-hostSecret:hostSecret,
+hostSecret:
+hostSecret,
 
-guestSecret:"",
+guestSecret:
+"",
 
 sharedSecret:
 playMode === "shared"
@@ -3595,49 +4493,78 @@ randomUniquePassword()
 :
 "",
 
-bestOf:bestOf,
+bestOf:
+bestOf,
 
-turnTime:turnTime,
+turnTime:
+turnTime,
 
-mode:playMode,
+mode:
+playMode,
 
-round:1,
+round:
+1,
 
-hostScore:0,
+hostScore:
+0,
 
-guestScore:0,
+guestScore:
+0,
 
-status:"waiting",
+status:
+"waiting",
 
-currentTurn:"guest",
+currentTurn:
+"guest",
 
-turnStartedAt:0,
+turnStartedAt:
+0,
 
-history:{},
+history:
+{},
 
-reaction:"",
-reactionBy:"",
-reactionAt:0
+reaction:
+"",
+
+reactionBy:
+"",
+
+reactionAt:
+0
 
 };
+
 
 try{
 
 await window.FB.set(
 window.FB.ref(
 window.FB.db,
-"rooms/" + room
+"rooms/" +
+room
 ),
 roomData
 );
 
-document.getElementById("inviteName").textContent =
+document
+.getElementById(
+"inviteName"
+)
+.textContent =
 player;
 
-document.getElementById("inviteCode").textContent =
+document
+.getElementById(
+"inviteCode"
+)
+.textContent =
 room;
 
-document.getElementById("inviteInfo").innerHTML =
+document
+.getElementById(
+"inviteInfo"
+)
+.innerHTML =
 
 "Melhor de " +
 bestOf +
@@ -3645,23 +4572,32 @@ bestOf +
 
 (
 playMode === "creator"
+
 ?
+
 "🔐 Cada jogador escolherá a senha do adversário."
+
 :
-"🤝 Senha compartilhada."
+
+"🤝 Uma senha compartilhada."
+
 ) +
 
 "<br>⏱️ " +
 turnTime +
 "s por turno";
 
-showScreen("invite");
+showScreen(
+"invite"
+);
 
 listenRoom();
 
 }catch(error){
 
-console.error(error);
+console.error(
+error
+);
 
 alert(
 "Não foi possível criar a partida."
@@ -3672,15 +4608,17 @@ alert(
 }
 
 
-/* =========================
-WHATSAPP
-========================= */
+/* =====================================================
+   WHATSAPP
+   ===================================================== */
 
 function sendWhatsApp(){
 
 const link =
 "https://gamesenha.github.io/Senha-Game/?room=" +
-encodeURIComponent(room);
+encodeURIComponent(
+room
+);
 
 const message =
 
@@ -3695,10 +4633,15 @@ bestOf +
 
 (
 playMode === "creator"
+
 ?
+
 "🔐 Cada jogador escolherá a senha que o adversário deverá descobrir."
+
 :
+
 "🤝 Os dois descobrirão a mesma senha."
+
 ) +
 
 "\n\n⏱️ " +
@@ -3713,28 +4656,41 @@ room;
 
 window.open(
 "https://wa.me/?text=" +
-encodeURIComponent(message),
+encodeURIComponent(
+message
+),
 "_blank"
 );
 
 }
 
 
-/* =========================
-ENTRAR
-========================= */
+/* =====================================================
+   ENTRAR
+   ===================================================== */
 
 async function joinRoom(auto){
 
-if(typeof auto !== "boolean"){
-auto = false;
+if(
+typeof auto !==
+"boolean"
+){
+
+auto =
+false;
+
 }
 
 savePlayer();
 
-if(player === "Jogador"){
+if(
+player ===
+"Jogador"
+){
 
-if(!auto){
+if(
+!auto
+){
 
 alert(
 "Digite seu nome antes de entrar."
@@ -3747,18 +4703,27 @@ return;
 }
 
 const input =
-document.getElementById("joinCode");
+document.getElementById(
+"joinCode"
+);
 
 const code =
-input.value
+input
+.value
 .trim()
 .toUpperCase();
 
-if(code.length !== 6){
+if(
+code.length !== 6
+){
 
-if(!auto){
+if(
+!auto
+){
 
-alert("Código inválido.");
+alert(
+"Código inválido."
+);
 
 }
 
@@ -3766,7 +4731,9 @@ return;
 
 }
 
-if(!window.FB){
+if(
+!window.FB
+){
 
 alert(
 "O servidor ainda está conectando."
@@ -3782,15 +4749,22 @@ const snapshot =
 await window.FB.get(
 window.FB.ref(
 window.FB.db,
-"rooms/" + code
+"rooms/" +
+code
 )
 );
 
-if(!snapshot.exists()){
+if(
+!snapshot.exists()
+){
 
-if(!auto){
+if(
+!auto
+){
 
-alert("Partida não encontrada.");
+alert(
+"Partida não encontrada."
+);
 
 }
 
@@ -3820,9 +4794,14 @@ code;
 role =
 "guest";
 
-if(data.mode === "creator"){
+if(
+data.mode ===
+"creator"
+){
 
-showScreen("guestSecret");
+showScreen(
+"guestSecret"
+);
 
 }else{
 
@@ -3832,7 +4811,9 @@ await enterRoom();
 
 }catch(error){
 
-console.error(error);
+console.error(
+error
+);
 
 alert(
 "Erro ao entrar na partida."
@@ -3843,9 +4824,9 @@ alert(
 }
 
 
-/* =========================
-SENHA CONVIDADO
-========================= */
+/* =====================================================
+   SENHA DO CONVIDADO
+   ===================================================== */
 
 async function confirmGuestSecret(){
 
@@ -3857,7 +4838,11 @@ document.getElementById(
 const value =
 input.value.trim();
 
-if(!validUniquePassword(value)){
+if(
+!validUniquePassword(
+value
+)
+){
 
 alert(
 "A senha precisa ter exatamente 4 números diferentes."
@@ -3867,7 +4852,9 @@ return;
 
 }
 
-if(!window.FB){
+if(
+!window.FB
+){
 
 alert(
 "Servidor não conectado."
@@ -3882,19 +4869,25 @@ try{
 await window.FB.update(
 window.FB.ref(
 window.FB.db,
-"rooms/" + room
+"rooms/" +
+room
 ),
 {
 
-guestSecret:value,
+guestSecret:
+value,
 
-guestName:player,
+guestName:
+player,
 
-status:"active",
+status:
+"active",
 
-currentTurn:"guest",
+currentTurn:
+"guest",
 
-turnStartedAt:serverNow()
+turnStartedAt:
+serverNow()
 
 }
 );
@@ -3903,7 +4896,9 @@ await enterRoom();
 
 }catch(error){
 
-console.error(error);
+console.error(
+error
+);
 
 alert(
 "Não foi possível confirmar a senha."
@@ -3914,19 +4909,26 @@ alert(
 }
 
 
-/* =========================
-ENTRAR NA SALA
-========================= */
+/* =====================================================
+   ENTRAR NA SALA
+   ===================================================== */
 
 async function enterRoom(){
 
-if(!window.FB)return;
+if(
+!window.FB
+){
+
+return;
+
+}
 
 const snapshot =
 await window.FB.get(
 window.FB.ref(
 window.FB.db,
-"rooms/" + room
+"rooms/" +
+room
 )
 );
 
@@ -3941,17 +4943,22 @@ data.mode === "shared"
 await window.FB.update(
 window.FB.ref(
 window.FB.db,
-"rooms/" + room
+"rooms/" +
+room
 ),
 {
 
-guestName:player,
+guestName:
+player,
 
-status:"active",
+status:
+"active",
 
-currentTurn:"guest",
+currentTurn:
+"guest",
 
-turnStartedAt:serverNow()
+turnStartedAt:
+serverNow()
 
 }
 );
@@ -3963,13 +4970,15 @@ listenRoom();
 }
 
 
-/* =========================
-OUVIR SALA
-========================= */
+/* =====================================================
+   OUVIR SALA
+   ===================================================== */
 
 function listenRoom(){
 
-if(roomListener){
+if(
+roomListener
+){
 
 roomListener();
 
@@ -3979,13 +4988,18 @@ roomListener =
 window.FB.onValue(
 window.FB.ref(
 window.FB.db,
-"rooms/" + room
+"rooms/" +
+room
 ),
 function(snapshot){
 
-if(!snapshot.exists()){
+if(
+!snapshot.exists()
+){
 
-alert("A sala foi encerrada.");
+alert(
+"A sala foi encerrada."
+);
 
 home();
 
@@ -4004,26 +5018,47 @@ syncRoom();
 }
 
 
-/* =========================
-SYNC
-========================= */
+/* =====================================================
+   SINCRONIZAÇÃO
+   ===================================================== */
 
 function syncRoom(){
 
-if(!roomState)return;
+if(
+!roomState
+){
 
-if(roomState.status === "waiting"){
+return;
 
-if(role === "host"){
+}
 
-document.getElementById("inviteStatus")
+
+if(
+roomState.status ===
+"waiting"
+){
+
+if(
+role ===
+"host"
+){
+
+document
+.getElementById(
+"inviteStatus"
+)
 .textContent =
+
 roomState.guestName
+
 ?
+
 "🟢 " +
 roomState.guestName +
 " entrou!"
+
 :
+
 "⏳ Aguardando seu amigo...";
 
 }
@@ -4032,11 +5067,19 @@ return;
 
 }
 
-if(roomState.status === "active"){
 
 if(
-lastRoomStatus !== "active" ||
-lastRoomRound !== Number(roomState.round)
+roomState.status ===
+"active"
+){
+
+if(
+lastRoomStatus !==
+"active" ||
+lastRoomRound !==
+Number(
+roomState.round
+)
 ){
 
 prepareRoomGame();
@@ -4058,9 +5101,15 @@ return;
 
 }
 
-if(roomState.status === "roundFinished"){
 
-clearInterval(timerInterval);
+if(
+roomState.status ===
+"roundFinished"
+){
+
+clearInterval(
+timerInterval
+);
 
 showRoundResult();
 
@@ -4071,9 +5120,15 @@ return;
 
 }
 
-if(roomState.status === "matchFinished"){
 
-clearInterval(timerInterval);
+if(
+roomState.status ===
+"matchFinished"
+){
+
+clearInterval(
+timerInterval
+);
 
 showMatchResult();
 
@@ -4085,14 +5140,16 @@ lastRoomStatus =
 }
 
 
-/* =========================
-PREPARAR JOGO
-========================= */
+/* =====================================================
+   PREPARAR JOGO
+   ===================================================== */
 
 function prepareRoomGame(){
 
 lastRoomRound =
-Number(roomState.round);
+Number(
+roomState.round
+);
 
 resultAlreadyShown =
 false;
@@ -4100,83 +5157,221 @@ false;
 mode =
 "duel";
 
-guess =
-["","","",""];
+guess = [
+"",
+"",
+"",
+""
+];
 
 selectedPosition =
 0;
 
-/*
-IMPORTANTE:
-não trava o teclado durante a vez adversária.
-O jogador pode montar o próximo palpite.
-*/
-
 turnLocked =
 false;
 
-document.getElementById("attemptBox")
-.classList.add("hidden");
+document
+.getElementById(
+"attemptBox"
+)
+.classList
+.add(
+"hidden"
+);
 
-document.getElementById("mySecretBox")
-.classList.remove("hidden");
+document
+.getElementById(
+"duelScoreCard"
+)
+.classList
+.remove(
+"hidden"
+);
 
-document.getElementById("opponentBox")
-.classList.remove("hidden");
+document
+.getElementById(
+"mySecretBox"
+)
+.classList
+.toggle(
+"hidden",
+roomState.mode ===
+"shared"
+);
 
-document.getElementById("reactionBox")
-.classList.remove("hidden");
+document
+.getElementById(
+"sharedPasswordsBox"
+)
+.classList
+.toggle(
+"hidden",
+roomState.mode !==
+"shared"
+);
 
-document.getElementById("me").textContent =
-role === "host"
+document
+.getElementById(
+"opponentBox"
+)
+.classList
+.remove(
+"hidden"
+);
+
+document
+.getElementById(
+"reactionBox"
+)
+.classList
+.remove(
+"hidden"
+);
+
+document
+.getElementById(
+"duelPlayArea"
+)
+.classList
+.remove(
+"hidden"
+);
+
+
+document
+.getElementById(
+"me"
+)
+.textContent =
+
+role ===
+"host"
+
 ?
+
 roomState.hostName
+
 :
+
 roomState.guestName;
 
-document.getElementById("opp").textContent =
-role === "host"
+
+document
+.getElementById(
+"opp"
+)
+.textContent =
+
+role ===
+"host"
+
 ?
+
 roomState.guestName
+
 :
+
 roomState.hostName;
 
-document.getElementById("myScore").textContent =
-role === "host"
+
+document
+.getElementById(
+"myScore"
+)
+.textContent =
+
+role ===
+"host"
+
 ?
+
 roomState.hostScore
+
 :
+
 roomState.guestScore;
 
-document.getElementById("opScore").textContent =
-role === "host"
+
+document
+.getElementById(
+"opScore"
+)
+textContent =
+
+role ===
+"host"
+
 ?
+
 roomState.guestScore
+
 :
+
 roomState.hostScore;
 
-document.getElementById("round").textContent =
+
+document
+.getElementById(
+"round"
+)
+.textContent =
+
 "RODADA " +
 roomState.round +
 " • MELHOR DE " +
 roomState.bestOf;
 
+
 const ownSecret =
 getOwnSecret();
 
-document.getElementById("mySecretValue").textContent =
-ownSecret || "----";
+document
+.getElementById(
+"mySecretValue"
+)
+textContent =
+ownSecret ||
+"----";
 
-document.getElementById("gameHistory").innerHTML =
+
+renderSharedPasswords();
+
+
+document
+.getElementById(
+"gameHistory"
+)
+.innerHTML =
 '<p class="muted center">Nenhuma tentativa ainda.</p>';
 
-document.getElementById("opponentHistory").innerHTML =
+
+document
+.getElementById(
+"opponentHistory"
+)
+.innerHTML =
 '<div class="opponent-empty">Nenhum palpite ainda.</div>';
 
-document.getElementById("gameMessage").textContent =
+
+document
+.getElementById(
+"gameMessage"
+)
+textContent =
 "";
 
-showScreen("game");
+
+document
+.getElementById(
+"reactionDisplay"
+)
+.textContent =
+"";
+
+
+showScreen(
+"game"
+);
 
 updateRoomGame();
 
@@ -4185,44 +5380,165 @@ renderGuess();
 }
 
 
-/* =========================
-MINHA SENHA
-========================= */
+/* =====================================================
+   MINHA SENHA
+   ===================================================== */
 
 function getOwnSecret(){
 
-if(!roomState)return "";
-
-if(roomState.mode === "shared"){
+if(
+!roomState
+){
 
 return "";
 
 }
 
-return role === "host"
+if(
+roomState.mode ===
+"shared"
+){
+
+return "";
+
+}
+
+return role ===
+"host"
+
 ?
+
 roomState.hostSecret
+
 :
+
 roomState.guestSecret;
 
 }
 
 
-/* =========================
-SENHA ALVO
-========================= */
+/* =====================================================
+   SENHAS COMPARTILHADAS
+   ===================================================== */
+
+function renderSharedPasswords(){
+
+const container =
+document.getElementById(
+"sharedPasswords"
+);
+
+if(
+!roomState ||
+roomState.mode !==
+"shared"
+){
+
+container.innerHTML =
+"";
+
+return;
+
+}
+
+const firstName =
+roomState.hostName ||
+"Jogador A";
+
+const secondName =
+roomState.guestName ||
+"Jogador B";
+
+const firstSecret =
+roomState.hostSecret ||
+"";
+
+const secondSecret =
+roomState.guestSecret ||
+"";
+
+
+container.innerHTML =
+
+'<div class="shared-password player-a">' +
+
+'<div>' +
+
+'<div class="shared-password-name">' +
+"🔵 " +
+escapeHtml(firstName) +
+"</div>" +
+
+'<div class="shared-password-note">' +
+"Senha que este jogador precisa proteger" +
+"</div>" +
+
+"</div>" +
+
+'<div class="shared-password-value">' +
+(
+firstSecret ||
+"----"
+) +
+"</div>" +
+
+"</div>" +
+
+
+'<div class="shared-password player-b">' +
+
+'<div>' +
+
+'<div class="shared-password-name">' +
+"🟣 " +
+escapeHtml(secondName) +
+"</div>" +
+
+'<div class="shared-password-note">' +
+"Senha que este jogador precisa proteger" +
+"</div>" +
+
+"</div>" +
+
+'<div class="shared-password-value">' +
+(
+secondSecret ||
+"----"
+) +
+"</div>" +
+
+"</div>";
+
+}
+
+
+/* =====================================================
+   SENHA DO ADVERSÁRIO
+   ===================================================== */
 
 function getTargetSecret(){
 
-if(!roomState)return "";
+if(
+!roomState
+){
 
-if(roomState.mode === "shared"){
+return "";
+
+}
+
+if(
+roomState.mode ===
+"shared"
+){
 
 return roomState.sharedSecret;
 
 }
 
-if(role === "host"){
+if(
+role ===
+"host"
+){
 
 return roomState.guestSecret;
 
@@ -4233,95 +5549,216 @@ return roomState.hostSecret;
 }
 
 
-/* =========================
-ATUALIZAR JOGO
-========================= */
+/* =====================================================
+   ATUALIZAR JOGO
+   ===================================================== */
 
 function updateRoomGame(){
 
 const myTurn =
-roomState.currentTurn === role;
+roomState.currentTurn ===
+role;
+
+turnLocked =
+false;
 
 /*
-Aqui NÃO bloqueamos o teclado quando não é a vez.
-A pessoa pode montar seu próximo palpite.
+Importante:
+o jogador pode montar o próximo chute
+mesmo quando não é sua vez.
+O envio continua bloqueado.
 */
 
 const status =
-document.getElementById("duelStatus");
+document.getElementById(
+"duelStatus"
+);
 
-status.classList.remove("hidden");
+status.classList.remove(
+"hidden"
+);
 
-status.classList.toggle("your",myTurn);
+status.classList.toggle(
+"your",
+myTurn
+);
 
-status.classList.toggle("their",!myTurn);
+status.classList.toggle(
+"their",
+!myTurn
+);
 
 status.textContent =
-myTurn
-?
-"🎯 É SUA VEZ — ENVIE SEU PALPITE"
-:
-"⏳ VEZ DO ADVERSÁRIO — MONTE SEU PRÓXIMO PALPITE";
 
-document.getElementById("turnTitle").textContent =
 myTurn
+
 ?
+
+"🎯 É SUA VEZ — envie seu palpite"
+
+:
+
+"⏳ VEZ DO ADVERSÁRIO — você pode preparar seu próximo palpite";
+
+
+document
+.getElementById(
+"turnTitle"
+)
+.textContent =
+
+myTurn
+
+?
+
 "🎯 SUA VEZ"
-:
-"⏳ AGUARDE";
 
-document.getElementById("turnStatus").textContent =
+:
+
+"⏳ VEZ DO ADVERSÁRIO";
+
+
+document
+.getElementById(
+"turnStatus"
+)
+.textContent =
+
 myTurn
-?
-"Você pode enviar o palpite"
-:
-"Você pode preparar seu próximo palpite";
 
-document.getElementById("timeText").textContent =
+?
+
+"Seu palpite pode ser enviado"
+
+:
+
+"Monte seu próximo palpite enquanto aguarda";
+
+
+document
+.getElementById(
+"timeText"
+)
+.textContent =
 roomState.turnTime +
 "s por turno";
 
+
 /*
-Teclado sempre habilitado no duelo.
-O envio é que fica protegido pela função submitDuelGuess().
+Teclado continua liberado durante
+o turno do adversário.
 */
 
-setKeys(true);
+setKeys(
+true
+);
+
+
+const area =
+document.getElementById(
+"duelPlayArea"
+);
+
+if(
+roomState.mode ===
+"shared"
+){
+
+area.className =
+"duel-play-area guest-area";
+
+}else{
+
+area.className =
+
+role === "host"
+
+?
+
+"duel-play-area host-area"
+
+:
+
+"duel-play-area guest-area";
+
+}
+
+
+document
+.getElementById(
+"duelPlayTitle"
+)
+textContent =
+
+myTurn
+
+?
+
+"🎯 SEU AMBIENTE DE JOGADA"
+
+:
+
+"⏳ PREPARE SEU PRÓXIMO PALPITE";
+
 
 renderMyHistory();
 
 renderOpponentHistory();
 
+renderSharedPasswords();
+
 }
 
 
-/* =========================
-MEU HISTÓRICO
-========================= */
+/* =====================================================
+   MEUS PALPITES
+   MAIS RECENTE PRIMEIRO
+   ===================================================== */
 
 function renderMyHistory(){
 
 const container =
-document.getElementById("gameHistory");
+document.getElementById(
+"gameHistory"
+);
 
 const history =
-roomState.history || {};
+roomState.history ||
+{};
 
 const items =
-Object.values(history)
-.filter(function(item){
+Object.values(
+history
+)
+.filter(
+function(item){
 
-return item.player === role;
+return item.player ===
+role;
 
-})
-.sort(function(a,b){
+}
+)
+.sort(
+function(a,b){
 
-return Number(a.order || 0) -
-Number(b.order || 0);
+return Number(
+b.order || 0
+) -
+Number(
+a.order || 0
+);
 
-});
+}
+);
 
-if(!items.length){
+
+/*
+Sem palpites
+*/
+
+if(
+!items.length
+){
 
 container.innerHTML =
 '<p class="muted center">Nenhuma tentativa ainda.</p>';
@@ -4330,10 +5767,18 @@ return;
 
 }
 
+
+/*
+Mais recente primeiro.
+*/
+
 container.innerHTML =
-items.map(function(item){
+items
+.map(
+function(item){
 
 return `
+
 <div class="history-item">
 
 <div class="history-guess">
@@ -4361,47 +5806,82 @@ ${escapeHtml(item.guess)}
 </div>
 
 </div>
+
 `;
 
-}).join("");
+}
+)
+.join("");
 
 }
 
 
-/* =========================
-HISTÓRICO ADVERSÁRIO
-========================= */
+/* =====================================================
+   PALPITES DO ADVERSÁRIO
+   SOMENTE 3 MAIS RECENTES
+   ===================================================== */
 
 function renderOpponentHistory(){
 
 const container =
-document.getElementById("opponentHistory");
+document.getElementById(
+"opponentHistory"
+);
 
 const history =
-roomState.history || {};
+roomState.history ||
+{};
 
 const opponentRole =
-role === "host"
+role ===
+"host"
+
 ?
+
 "guest"
+
 :
+
 "host";
 
+
 const items =
-Object.values(history)
-.filter(function(item){
+Object.values(
+history
+)
+.filter(
+function(item){
 
-return item.player === opponentRole;
+return item.player ===
+opponentRole;
 
-})
-.sort(function(a,b){
+}
+)
+.sort(
+function(a,b){
 
-return Number(a.order || 0) -
-Number(b.order || 0);
+return Number(
+b.order || 0
+) -
+Number(
+a.order || 0
+);
 
-});
+}
+)
+.slice(
+0,
+3
+);
 
-if(!items.length){
+
+/*
+Somente os três últimos palpites.
+*/
+
+if(
+!items.length
+){
 
 container.innerHTML =
 '<div class="opponent-empty">Nenhum palpite ainda.</div>';
@@ -4410,22 +5890,36 @@ return;
 
 }
 
+
 const opponentName =
-role === "host"
+role ===
+"host"
+
 ?
+
 roomState.guestName
+
 :
+
 roomState.hostName;
 
-document.getElementById("opponentSubtitle")
-.textContent =
+
+document
+.getElementById(
+"opponentSubtitle"
+)
+textContent =
 opponentName +
-" está tentando descobrir sua senha.";
+" — mostrando apenas os 3 últimos palpites.";
+
 
 container.innerHTML =
-items.map(function(item){
+items
+.map(
+function(item){
 
 return `
+
 <div class="history-item">
 
 <div class="history-guess">
@@ -4457,16 +5951,19 @@ ${escapeHtml(opponentName)}
 </div>
 
 </div>
+
 `;
 
-}).join("");
+}
+)
+.join("");
 
 }
 
 
-/* =========================
-REAÇÕES
-========================= */
+/* =====================================================
+   REAÇÕES
+   ===================================================== */
 
 async function sendReaction(emoji){
 
@@ -4474,7 +5971,8 @@ if(
 !room ||
 !window.FB ||
 !roomState ||
-roomState.status !== "active"
+roomState.status !==
+"active"
 ){
 
 return;
@@ -4486,15 +5984,19 @@ try{
 await window.FB.update(
 window.FB.ref(
 window.FB.db,
-"rooms/" + room
+"rooms/" +
+room
 ),
 {
 
-reaction:emoji,
+reaction:
+emoji,
 
-reactionBy:role,
+reactionBy:
+role,
 
-reactionAt:serverNow()
+reactionAt:
+serverNow()
 
 }
 );
@@ -4524,7 +6026,9 @@ return;
 }
 
 if(
-Number(roomState.reactionAt) <=
+Number(
+roomState.reactionAt
+) <=
 lastReactionAt
 ){
 
@@ -4533,42 +6037,47 @@ return;
 }
 
 lastReactionAt =
-Number(roomState.reactionAt);
+Number(
+roomState.reactionAt
+);
 
 const display =
 document.getElementById(
-"floatingReaction"
+"reactionDisplay"
 );
 
 display.textContent =
 roomState.reaction;
 
-display.classList.remove("show");
+setTimeout(
+function(){
 
-/*
-Força reinício da animação.
-*/
+if(
+display.textContent ===
+roomState.reaction
+){
 
-void display.offsetWidth;
+display.textContent =
+"";
 
-display.classList.add("show");
+}
 
-setTimeout(function(){
-
-display.classList.remove("show");
-
-},2600);
+},
+2500
+);
 
 }
 
 
-/* =========================
-CRONÔMETRO
-========================= */
+/* =====================================================
+   CRONÔMETRO
+   ===================================================== */
 
 function startRoomClock(){
 
-clearInterval(timerInterval);
+clearInterval(
+timerInterval
+);
 
 timerInterval =
 setInterval(
@@ -4585,7 +6094,8 @@ function updateClock(){
 
 if(
 !roomState ||
-roomState.status !== "active"
+roomState.status !==
+"active"
 ){
 
 return;
@@ -4593,34 +6103,57 @@ return;
 }
 
 const element =
-document.getElementById("timer");
+document.getElementById(
+"timer"
+);
 
 const started =
-Number(roomState.turnStartedAt || 0);
+Number(
+roomState.turnStartedAt ||
+0
+);
 
 const duration =
-Number(roomState.turnTime || 30);
+Number(
+roomState.turnTime ||
+30
+);
 
-if(!started){
+
+if(
+!started
+){
 
 element.textContent =
-String(duration);
+String(
+duration
+);
 
 return;
 
 }
+
 
 const remaining =
 Math.max(
 0,
 duration -
 Math.floor(
-(serverNow() - started) / 1000
+(
+serverNow() -
+started
+) /
+1000
 )
 );
 
 element.textContent =
-String(remaining).padStart(2,"0");
+String(
+remaining
+).padStart(
+2,
+"0"
+);
 
 element.classList.toggle(
 "danger",
@@ -4633,14 +6166,17 @@ remaining > 5 &&
 remaining <= 10
 );
 
+
 /*
-Somente o jogador cuja vez terminou
-faz a transação de troca.
+Somente o jogador cuja vez acabou
+executa a transição.
 */
 
 if(
 remaining <= 0 &&
-roomState.currentTurn === role
+roomState.currentTurn ===
+role &&
+!busy
 ){
 
 timeoutRoomTurn();
@@ -4650,38 +6186,42 @@ timeoutRoomTurn();
 }
 
 
-/* =========================
-TIMEOUT
-========================= */
+/* =====================================================
+   TIMEOUT
+   ===================================================== */
 
 async function timeoutRoomTurn(){
 
 if(
 busy ||
 !roomState ||
-roomState.status !== "active" ||
-roomState.currentTurn !== role
+roomState.currentTurn !==
+role
 ){
 
 return;
 
 }
 
-busy = true;
+busy =
+true;
 
 try{
 
 await window.FB.runTransaction(
 window.FB.ref(
 window.FB.db,
-"rooms/" + room
+"rooms/" +
+room
 ),
 function(data){
 
 if(
 !data ||
-data.status !== "active" ||
-data.currentTurn !== role
+data.status !==
+"active" ||
+data.currentTurn !==
+role
 ){
 
 return data;
@@ -4690,22 +6230,39 @@ return data;
 
 const elapsed =
 serverNow() -
-Number(data.turnStartedAt || 0);
+Number(
+data.turnStartedAt ||
+0
+);
 
 if(
 elapsed <
-Number(data.turnTime) * 1000
+Number(
+data.turnTime
+) *
+1000
 ){
 
 return data;
 
 }
 
+
+/*
+Passa a vez.
+*/
+
 data.currentTurn =
-role === "host"
+
+role ===
+"host"
+
 ?
+
 "guest"
+
 :
+
 "host";
 
 data.turnStartedAt =
@@ -4725,63 +6282,78 @@ error
 
 }
 
-setTimeout(function(){
+setTimeout(
+function(){
 
-busy = false;
+busy =
+false;
 
-},500);
+},
+500
+);
 
 }
 
 
-/* =========================
-PALPITE ONLINE
-========================= */
+/* =====================================================
+   PALPITE ONLINE
+   ===================================================== */
 
 async function submitDuelGuess(){
-
-/*
-Agora a preparação pode ocorrer
-fora da vez, mas o envio não.
-*/
 
 if(
 busy ||
 !roomState ||
-roomState.status !== "active"
+roomState.status !==
+"active"
 ){
 
 return;
 
 }
+
+
+/*
+Agora o envio continua permitido somente
+quando é a vez do jogador.
+*/
 
 if(
-roomState.currentTurn !== role
+roomState.currentTurn !==
+role
 ){
 
-document.getElementById("gameMessage")
+document
+.getElementById(
+"gameMessage"
+)
 .textContent =
-"⏳ Aguarde sua vez para enviar.";
+"Aguarde sua vez para enviar.";
 
 return;
 
 }
 
+
 const currentGuess =
-guess.join("");
+getGuess();
 
 if(
 currentGuess.length !== 4 ||
 guess.includes("")
 ){
 
-document.getElementById("gameMessage")
-.textContent =
-"Preencha os 4 números antes de enviar.";
+document
+.getElementById(
+"gameMessage"
+)
+textContent =
+"Preencha os 4 números.";
 
 return;
 
 }
+
 
 const target =
 getTargetSecret();
@@ -4791,19 +6363,23 @@ if(
 target.length !== 4
 ){
 
-document.getElementById("gameMessage")
-.textContent =
+document
+.getElementById(
+"gameMessage"
+)
+textContent =
 "A senha do adversário ainda não foi definida.";
 
 return;
 
 }
 
-busy = true;
+busy =
+true;
 
-turnLocked = true;
-
-setKeys(false);
+setKeys(
+false
+);
 
 const result =
 calculateResult(
@@ -4811,19 +6387,23 @@ target,
 currentGuess
 );
 
+
 try{
 
 await window.FB.runTransaction(
 window.FB.ref(
 window.FB.db,
-"rooms/" + room
+"rooms/" +
+room
 ),
 function(data){
 
 if(
 !data ||
-data.status !== "active" ||
-data.currentTurn !== role
+data.status !==
+"active" ||
+data.currentTurn !==
+role
 ){
 
 return data;
@@ -4832,22 +6412,34 @@ return data;
 
 const elapsed =
 serverNow() -
-Number(data.turnStartedAt || 0);
+Number(
+data.turnStartedAt ||
+0
+);
 
 if(
 elapsed >
-Number(data.turnTime) * 1000
+Number(
+data.turnTime
+) *
+1000
 ){
 
 return data;
 
 }
 
+
 data.history =
-data.history || {};
+data.history ||
+{};
 
 const order =
-Object.keys(data.history).length + 1;
+Object.keys(
+data.history
+).length +
+1;
+
 
 data.history[
 "try_" +
@@ -4856,29 +6448,53 @@ Date.now() +
 role
 ] = {
 
-player:role,
+player:
+role,
 
-guess:currentGuess,
+guess:
+currentGuess,
 
-place:result.place,
+place:
+result.place,
 
-outside:result.outside,
+outside:
+result.outside,
 
-order:order
+order:
+order
 
 };
 
-if(result.place === 4){
 
-if(role === "host"){
+/*
+Senha acertada.
+*/
+
+if(
+result.place ===
+4
+){
+
+if(
+role ===
+"host"
+){
 
 data.hostScore =
-Number(data.hostScore || 0) + 1;
+Number(
+data.hostScore ||
+0
+) +
+1;
 
 }else{
 
 data.guestScore =
-Number(data.guestScore || 0) + 1;
+Number(
+data.guestScore ||
+0
+) +
+1;
 
 }
 
@@ -4892,16 +6508,30 @@ data.turnStartedAt =
 0;
 
 const myScore =
-role === "host"
+
+role ===
+"host"
+
 ?
-Number(data.hostScore)
+
+Number(
+data.hostScore
+)
+
 :
-Number(data.guestScore);
+
+Number(
+data.guestScore
+);
+
 
 if(
 myScore >=
 Math.ceil(
-Number(data.bestOf) / 2
+Number(
+data.bestOf
+) /
+2
 )
 ){
 
@@ -4917,11 +6547,23 @@ data.status =
 
 }else{
 
+
+/*
+Errou.
+Passa a vez.
+*/
+
 data.currentTurn =
-role === "host"
+
+role ===
+"host"
+
 ?
+
 "guest"
+
 :
+
 "host";
 
 data.turnStartedAt =
@@ -4934,48 +6576,66 @@ return data;
 }
 );
 
-guess =
-["","","",""];
+guess = [
+"",
+"",
+"",
+""
+];
 
 selectedPosition =
 0;
 
 renderGuess();
 
-document.getElementById("gameMessage")
-.textContent =
+document
+.getElementById(
+"gameMessage"
+)
+textContent =
 "";
 
 }catch(error){
 
-console.error(error);
+console.error(
+error
+);
 
-document.getElementById("gameMessage")
-.textContent =
+document
+.getElementById(
+"gameMessage"
+)
+textContent =
 "Não foi possível registrar o palpite.";
 
-turnLocked = false;
+}
 
-setKeys(true);
+setKeys(
+true
+);
+
+setTimeout(
+function(){
+
+busy =
+false;
+
+},
+400
+);
 
 }
 
-setTimeout(function(){
 
-busy = false;
-
-},400);
-
-}
-
-
-/* =========================
-RESULTADO DA RODADA
-========================= */
+/* =====================================================
+   RESULTADO DA RODADA
+   ===================================================== */
 
 function showRoundResult(){
 
-if(resultAlreadyShown){
+if(
+resultAlreadyShown
+){
 
 return;
 
@@ -4985,117 +6645,168 @@ resultAlreadyShown =
 true;
 
 const won =
-roomState.roundWinner === role;
+roomState.roundWinner ===
+role;
 
-document.getElementById("resultIcon")
-.textContent =
+
+document
+.getElementById(
+"resultIcon"
+)
+textContent =
 won
 ?
 "🏆"
 :
 "😔";
 
-document.getElementById("resultTitle")
-.textContent =
+
+document
+.getElementById(
+"resultTitle"
+)
+textContent =
 won
 ?
 "Você venceu a rodada!"
 :
 "Você perdeu a rodada";
 
-document.getElementById("resultText")
-.textContent =
+
+document
+.getElementById(
+"resultText"
+)
+textContent =
 won
 ?
 "Você descobriu a senha primeiro."
 :
 "O adversário descobriu a senha primeiro.";
 
-document.getElementById("resultScore")
-.textContent =
-"Rodada " +
-roomState.round +
-" encerrada.";
 
-document.getElementById("resultSecret")
-.textContent =
-roomState.revealedSecret || "----";
+document
+.getElementById(
+"resultSecret"
+)
+textContent =
+roomState.revealedSecret ||
+"----";
 
-renderResultProgress();
 
-showScreen("result");
+showScreen(
+"result"
+);
 
 }
 
 
-/* =========================
-RESULTADO PARTIDA
-========================= */
+/* =====================================================
+   RESULTADO DA PARTIDA
+   ===================================================== */
 
 function showMatchResult(){
 
 const won =
-roomState.roundWinner === role;
+roomState.roundWinner ===
+role;
 
 const myScore =
-role === "host"
+
+role ===
+"host"
+
 ?
-Number(roomState.hostScore || 0)
+
+roomState.hostScore
+
 :
-Number(roomState.guestScore || 0);
+
+roomState.guestScore;
+
 
 const opponentScore =
-role === "host"
-?
-Number(roomState.guestScore || 0)
-:
-Number(roomState.hostScore || 0);
 
-document.getElementById("resultIcon")
-.textContent =
+role ===
+"host"
+
+?
+
+roomState.guestScore
+
+:
+
+roomState.hostScore;
+
+
+document
+.getElementById(
+"resultIcon"
+)
+textContent =
 won
 ?
 "🏆"
 :
 "😔";
 
-document.getElementById("resultTitle")
-.textContent =
+
+document
+.getElementById(
+"resultTitle"
+)
+textContent =
 won
 ?
 "Você venceu o duelo!"
 :
 "Você perdeu o duelo";
 
-document.getElementById("resultText")
-.innerHTML =
-won
-?
-"Parabéns! Você venceu a partida."
-:
-"O adversário venceu a partida.";
 
-document.getElementById("resultScore")
-textContent =
-"Placar final: " +
+document
+.getElementById(
+"resultText"
+)
+innerHTML =
+
+won
+
+?
+
+"Parabéns!<br><br>Placar final: <b>" +
 myScore +
 " × " +
-opponentScore;
+opponentScore +
+"</b>"
 
-document.getElementById("resultSecret")
-.textContent =
-roomState.revealedSecret || "----";
+:
 
-renderResultProgress();
+"O adversário venceu.<br><br>Placar final: <b>" +
+opponentScore +
+" × " +
+myScore +
+"</b>";
 
-showScreen("result");
+
+document
+.getElementById(
+"resultSecret"
+)
+textContent =
+roomState.revealedSecret ||
+"----";
+
+
+showScreen(
+"result"
+);
 
 }
 
 
-/* =========================
-CANCELAR
-========================= */
+/* =====================================================
+   CANCELAR
+   ===================================================== */
 
 async function cancelRoom(){
 
@@ -5103,14 +6814,16 @@ try{
 
 if(
 room &&
-role === "host" &&
+role ===
+"host" &&
 window.FB
 ){
 
 await window.FB.remove(
 window.FB.ref(
 window.FB.db,
-"rooms/" + room
+"rooms/" +
+room
 )
 );
 
@@ -5118,7 +6831,9 @@ window.FB.db,
 
 }catch(error){
 
-console.error(error);
+console.error(
+error
+);
 
 }
 
@@ -5127,40 +6842,65 @@ home();
 }
 
 
-/* =========================
-ESCAPE
-========================= */
+/* =====================================================
+   ESCAPE HTML
+   ===================================================== */
 
 function escapeHtml(text){
 
-return String(text)
-.replaceAll("&","&amp;")
-.replaceAll("<","&lt;")
-.replaceAll(">","&gt;")
-.replaceAll('"',"&quot;")
-.replaceAll("'","&#039;");
+return String(
+text
+)
+.replaceAll(
+"&",
+"&amp;"
+)
+.replaceAll(
+"<",
+"&lt;"
+)
+.replaceAll(
+">",
+"&gt;"
+)
+.replaceAll(
+'"',
+"&quot;"
+)
+.replaceAll(
+"'",
+"&#039;"
+);
 
 }
 
 
-/* =========================
-INICIALIZAÇÃO
-========================= */
+/* =====================================================
+   INICIALIZAÇÃO
+   ===================================================== */
 
 loadPlayer();
 
-setBest(3);
+setBest(
+3
+);
 
-setTurnTime(30);
+setTurnTime(
+30
+);
 
-setMode("creator");
+setMode(
+"creator"
+);
 
-showScreen("home");
+showScreen(
+"home"
+);
 
 
-/* =========================
-LINK WHATSAPP
-========================= */
+/* =====================================================
+   LINK DO WHATSAPP
+   ===================================================== */
 
 const params =
 new URLSearchParams(
@@ -5168,19 +6908,29 @@ window.location.search
 );
 
 const roomFromUrl =
-params.get("room");
+params.get(
+"room"
+);
 
-if(roomFromUrl){
+if(
+roomFromUrl
+){
 
 window.addEventListener(
 "load",
 function(){
 
 const input =
-document.getElementById("joinCode");
+document.getElementById(
+"joinCode"
+);
+
+if(input){
 
 input.value =
 roomFromUrl.toUpperCase();
+
+}
 
 setTimeout(
 function(){
